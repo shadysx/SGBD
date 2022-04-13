@@ -24,13 +24,22 @@ namespace PL
             f.TopLevel = false;
             f.FormBorderStyle = FormBorderStyle.None;
             f.Dock = DockStyle.Fill;
-            this.pnRight.Controls.Add(f);
+            this.Controls.Add(f);
             f.Show();
             
         }
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.OpenChildForm(new ShopTab(), new Button());
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
