@@ -1,0 +1,11 @@
+C:\Users\fabwa\source\repos\shadysx\SGBD\DAL\bin\Debug\DAL.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\DAL\bin\Debug\DAL.pdb
+C:\Users\fabwa\source\repos\shadysx\SGBD\DAL\bin\Debug\Dapper.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\DAL\bin\Debug\DTO.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\DAL\bin\Debug\DTO.pdb
+C:\Users\fabwa\source\repos\shadysx\SGBD\DAL\bin\Debug\Dapper.xml
+C:\Users\fabwa\source\repos\shadysx\SGBD\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\fabwa\source\repos\shadysx\SGBD\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\fabwa\source\repos\shadysx\SGBD\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\fabwa\source\repos\shadysx\SGBD\DAL\obj\Debug\DAL.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\DAL\obj\Debug\DAL.pdb

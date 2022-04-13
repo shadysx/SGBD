@@ -1,0 +1,13 @@
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\bin\Debug\BLL.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\bin\Debug\BLL.pdb
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\bin\Debug\DAL.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\bin\Debug\Dapper.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\bin\Debug\DTO.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\bin\Debug\DAL.pdb
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\bin\Debug\DTO.pdb
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\bin\Debug\Dapper.xml
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\obj\Debug\BLL.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\BLL\obj\Debug\BLL.pdb
