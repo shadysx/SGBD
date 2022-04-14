@@ -15,6 +15,8 @@ namespace PL
     {
         public Main()
         {
+            Login l = new Login();
+            l.Show();
             InitializeComponent();
         }
 
