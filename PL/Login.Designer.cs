@@ -30,7 +30,7 @@
         {
             this.textBoxUserName = new CustomControls.RJControls.RJTextBox();
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
-            this.bouthon = new System.Windows.Forms.Button();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.SuspendLayout();
             // 
             // textBoxUserName
@@ -77,14 +77,23 @@
             this.rjTextBox1.Texts = "Password";
             this.rjTextBox1.UnderlinedStyle = false;
             // 
-            // bouthon
+            // rjButton1
             // 
-            this.bouthon.Location = new System.Drawing.Point(310, 163);
-            this.bouthon.Name = "bouthon";
-            this.bouthon.Size = new System.Drawing.Size(75, 23);
-            this.bouthon.TabIndex = 2;
-            this.bouthon.Text = "yo la street";
-            this.bouthon.UseVisualStyleBackColor = true;
+            this.rjButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 0;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Location = new System.Drawing.Point(474, 300);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(150, 40);
+            this.rjButton1.TabIndex = 2;
+            this.rjButton1.Text = "rjButton1";
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
             // 
             // Login
             // 
@@ -92,7 +101,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.bouthon);
+            this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.rjTextBox1);
             this.Controls.Add(this.textBoxUserName);
             this.Name = "Login";
@@ -105,6 +114,6 @@
 
         private CustomControls.RJControls.RJTextBox textBoxUserName;
         private CustomControls.RJControls.RJTextBox rjTextBox1;
-        private System.Windows.Forms.Button bouthon;
+        private CustomControls.RJControls.RJButton rjButton1;
     }
 }
