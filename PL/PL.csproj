@@ -153,5 +153,11 @@
   <ItemGroup>
     <None Include="Resources\Stock Overflow.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stock Overflow1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Custommer Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

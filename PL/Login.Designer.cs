@@ -125,6 +125,7 @@
             this.buttonRegister.Text = "Register";
             this.buttonRegister.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             this.buttonRegister.MouseEnter += new System.EventHandler(this.buttonRegister_MouseEnter);
             this.buttonRegister.MouseLeave += new System.EventHandler(this.buttonRegister_MouseLeave);
             // 
@@ -183,7 +184,6 @@
             this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.StateCommon.Border.Rounding = 15;
             this.Text = "Login";
             this.panelLeft.ResumeLayout(false);
