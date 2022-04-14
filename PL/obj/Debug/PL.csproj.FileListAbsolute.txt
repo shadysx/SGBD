@@ -47,3 +47,5 @@ C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\DTO.dll
 C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\BLL.pdb
 C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\DTO.pdb
 C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\Dapper.xml
+C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\CustomControls.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\PL\obj\Debug\PL.Registration.resources
