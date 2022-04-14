@@ -32,6 +32,7 @@ namespace PL
 
         private void buttonRegister_MouseLeave(object sender, EventArgs e)
         {
+            this.buttonRegister.BackColor = Color.White;
             this.buttonRegister.TextColor = CustomColor.Orange;
         }
 
