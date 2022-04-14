@@ -22,13 +22,18 @@ namespace PL
         public void FormStyles()
         {
 
-            this.BackColor = CustomColor.Custom1;
+            this.BackColor = CustomColor.DarkBlue;
             this.buttonLogin.BackColor = Color.DarkOrange;
             this.buttonRegister.BorderColor = Color.DarkOrange;
-            this.textBoxUserName.BorderFocusColor = CustomColor.Custom1;
-            this.textBoxPassWord.BorderFocusColor = CustomColor.Custom1;
+            this.textBoxUserName.BorderFocusColor = CustomColor.DarkBlue;
+            this.textBoxPassWord.BorderFocusColor = CustomColor.DarkBlue;
             this.buttonRegister.TextColor = Color.DarkOrange;
             this.buttonRegister.FlatAppearance.MouseOverBackColor = Color.DarkOrange;
+
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
 
         }
     }

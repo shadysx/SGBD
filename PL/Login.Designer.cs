@@ -33,11 +33,12 @@
             this.buttonLogin = new CustomControls.RJControls.RJButton();
             this.buttonRegister = new CustomControls.RJControls.RJButton();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.labelWelcome = new System.Windows.Forms.Label();
             this.panelRight = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLeft.SuspendLayout();
             this.panelRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.textBoxUserName.BorderSize = 2;
             this.textBoxUserName.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxUserName.Location = new System.Drawing.Point(79, 153);
+            this.textBoxUserName.Location = new System.Drawing.Point(41, 171);
             this.textBoxUserName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUserName.Multiline = false;
             this.textBoxUserName.Name = "textBoxUserName";
@@ -72,7 +73,7 @@
             this.textBoxPassWord.BorderSize = 2;
             this.textBoxPassWord.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxPassWord.Location = new System.Drawing.Point(79, 199);
+            this.textBoxPassWord.Location = new System.Drawing.Point(41, 217);
             this.textBoxPassWord.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassWord.Multiline = false;
             this.textBoxPassWord.Name = "textBoxPassWord";
@@ -97,7 +98,7 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(79, 244);
+            this.buttonLogin.Location = new System.Drawing.Point(41, 262);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(120, 33);
             this.buttonLogin.TabIndex = 2;
@@ -116,32 +117,23 @@
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegister.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.buttonRegister.Location = new System.Drawing.Point(209, 244);
+            this.buttonRegister.Location = new System.Drawing.Point(171, 262);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(120, 33);
             this.buttonRegister.TabIndex = 3;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // panelLeft
             // 
+            this.panelLeft.Controls.Add(this.pictureBox2);
             this.panelLeft.Controls.Add(this.pictureBox1);
-            this.panelLeft.Controls.Add(this.labelWelcome);
             this.panelLeft.Location = new System.Drawing.Point(-2, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(396, 448);
+            this.panelLeft.Size = new System.Drawing.Size(476, 448);
             this.panelLeft.TabIndex = 4;
-            // 
-            // labelWelcome
-            // 
-            this.labelWelcome.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWelcome.ForeColor = System.Drawing.Color.White;
-            this.labelWelcome.Location = new System.Drawing.Point(55, 51);
-            this.labelWelcome.Name = "labelWelcome";
-            this.labelWelcome.Size = new System.Drawing.Size(338, 151);
-            this.labelWelcome.TabIndex = 0;
-            this.labelWelcome.Text = "Welcome";
             // 
             // panelRight
             // 
@@ -150,10 +142,20 @@
             this.panelRight.Controls.Add(this.textBoxPassWord);
             this.panelRight.Controls.Add(this.buttonRegister);
             this.panelRight.Controls.Add(this.buttonLogin);
-            this.panelRight.Location = new System.Drawing.Point(393, 0);
+            this.panelRight.Location = new System.Drawing.Point(472, 0);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(416, 451);
+            this.panelRight.Size = new System.Drawing.Size(337, 451);
             this.panelRight.TabIndex = 5;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::PL.Properties.Resources.Stock_Overflow;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(44, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(382, 111);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -161,7 +163,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(29, 99);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(347, 293);
+            this.pictureBox1.Size = new System.Drawing.Size(421, 329);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -183,6 +185,7 @@
             this.Text = "Login";
             this.panelLeft.ResumeLayout(false);
             this.panelRight.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -196,7 +199,7 @@
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelRight;
         private CustomControls.RJControls.RJButton buttonLogin;
-        private System.Windows.Forms.Label labelWelcome;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

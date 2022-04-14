@@ -9,7 +9,7 @@ namespace PL
 {
     public static class CustomColor
     {
-        public static Color Custom1 
+        public static Color DarkBlue 
         {
             get        
             {                
@@ -17,11 +17,11 @@ namespace PL
             }
         }
 
-        public static Color Custom2
+        public static Color Orange
         {
             get
             {
-                return Color.FromArgb(134, 84, 57);
+                return Color.FromArgb(254, 137, 8);
             }
         }
 
