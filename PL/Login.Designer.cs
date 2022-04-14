@@ -30,6 +30,7 @@
         {
             this.textBoxUserName = new CustomControls.RJControls.RJTextBox();
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
+            this.bouthon = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxUserName
@@ -76,12 +77,22 @@
             this.rjTextBox1.Texts = "Password";
             this.rjTextBox1.UnderlinedStyle = false;
             // 
+            // bouthon
+            // 
+            this.bouthon.Location = new System.Drawing.Point(310, 163);
+            this.bouthon.Name = "bouthon";
+            this.bouthon.Size = new System.Drawing.Size(75, 23);
+            this.bouthon.TabIndex = 2;
+            this.bouthon.Text = "yo la street";
+            this.bouthon.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bouthon);
             this.Controls.Add(this.rjTextBox1);
             this.Controls.Add(this.textBoxUserName);
             this.Name = "Login";
@@ -94,5 +105,6 @@
 
         private CustomControls.RJControls.RJTextBox textBoxUserName;
         private CustomControls.RJControls.RJTextBox rjTextBox1;
+        private System.Windows.Forms.Button bouthon;
     }
 }
