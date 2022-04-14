@@ -15,6 +15,12 @@ namespace PL
         public Login()
         {
             InitializeComponent();
+            FormStyles();
+        }
+
+        public void FormStyles()
+        {
+            this.BackColor = CustomColor.Custom1;
         }
     }
 }
