@@ -33,13 +33,13 @@
             this.buttonLogin = new CustomControls.RJControls.RJButton();
             this.buttonRegister = new CustomControls.RJControls.RJButton();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.panelRight = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelRight = new System.Windows.Forms.Panel();
             this.panelLeft.SuspendLayout();
-            this.panelRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxUserName
@@ -114,6 +114,7 @@
             this.buttonRegister.BorderRadius = 15;
             this.buttonRegister.BorderSize = 2;
             this.buttonRegister.FlatAppearance.BorderSize = 0;
+            this.buttonRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegister.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -124,7 +125,8 @@
             this.buttonRegister.Text = "Register";
             this.buttonRegister.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.buttonRegister.UseVisualStyleBackColor = false;
-            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
+            this.buttonRegister.MouseEnter += new System.EventHandler(this.buttonRegister_MouseEnter);
+            this.buttonRegister.MouseLeave += new System.EventHandler(this.buttonRegister_MouseLeave);
             // 
             // panelLeft
             // 
@@ -134,18 +136,6 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(476, 448);
             this.panelLeft.TabIndex = 4;
-            // 
-            // panelRight
-            // 
-            this.panelRight.BackColor = System.Drawing.Color.White;
-            this.panelRight.Controls.Add(this.textBoxUserName);
-            this.panelRight.Controls.Add(this.textBoxPassWord);
-            this.panelRight.Controls.Add(this.buttonRegister);
-            this.panelRight.Controls.Add(this.buttonLogin);
-            this.panelRight.Location = new System.Drawing.Point(472, 0);
-            this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(337, 451);
-            this.panelRight.TabIndex = 5;
             // 
             // pictureBox2
             // 
@@ -167,6 +157,18 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // panelRight
+            // 
+            this.panelRight.BackColor = System.Drawing.Color.White;
+            this.panelRight.Controls.Add(this.textBoxUserName);
+            this.panelRight.Controls.Add(this.textBoxPassWord);
+            this.panelRight.Controls.Add(this.buttonRegister);
+            this.panelRight.Controls.Add(this.buttonLogin);
+            this.panelRight.Location = new System.Drawing.Point(472, 0);
+            this.panelRight.Name = "panelRight";
+            this.panelRight.Size = new System.Drawing.Size(337, 451);
+            this.panelRight.TabIndex = 5;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,12 +183,13 @@
             this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.StateCommon.Border.Rounding = 15;
             this.Text = "Login";
             this.panelLeft.ResumeLayout(false);
-            this.panelRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelRight.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

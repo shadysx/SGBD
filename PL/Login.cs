@@ -21,20 +21,25 @@ namespace PL
 
         public void FormStyles()
         {
-
             this.BackColor = CustomColor.DarkBlue;
-            this.buttonLogin.BackColor = Color.DarkOrange;
-            this.buttonRegister.BorderColor = Color.DarkOrange;
+            this.buttonLogin.BackColor = CustomColor.Orange;
+            this.buttonRegister.BorderColor = CustomColor.Orange;
             this.textBoxUserName.BorderFocusColor = CustomColor.DarkBlue;
             this.textBoxPassWord.BorderFocusColor = CustomColor.DarkBlue;
-            this.buttonRegister.TextColor = Color.DarkOrange;
-            this.buttonRegister.FlatAppearance.MouseOverBackColor = Color.DarkOrange;
-
+            this.buttonRegister.TextColor = CustomColor.Orange;
+            this.ActiveControl = this.pictureBox1;
         }
 
-        private void buttonRegister_Click(object sender, EventArgs e)
+        private void buttonRegister_MouseLeave(object sender, EventArgs e)
         {
-
+            this.buttonRegister.TextColor = CustomColor.Orange;
         }
+
+        private void buttonRegister_MouseEnter(object sender, EventArgs e)
+        {
+            this.buttonRegister.BackColor = CustomColor.Orange;
+            this.buttonRegister.TextColor = Color.White;
+        }
+
     }
 }
