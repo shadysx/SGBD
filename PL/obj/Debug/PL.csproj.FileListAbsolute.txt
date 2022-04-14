@@ -41,3 +41,9 @@ C:\Users\laure\source\repos\SGBD\PL\obj\Debug\PL.csproj.CoreCompileInputs.cache
 C:\Users\laure\source\repos\SGBD\PL\obj\Debug\PL.csproj.CopyComplete
 C:\Users\laure\source\repos\SGBD\PL\obj\Debug\PL.exe
 C:\Users\laure\source\repos\SGBD\PL\obj\Debug\PL.pdb
+C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\BLL.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\Dapper.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\DTO.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\BLL.pdb
+C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\DTO.pdb
+C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\Dapper.xml
