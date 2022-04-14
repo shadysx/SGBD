@@ -54,3 +54,5 @@ C:\Users\laure\source\repos\SGBD\PL\bin\Debug\BLL.pdb
 C:\Users\laure\source\repos\SGBD\PL\bin\Debug\DTO.pdb
 C:\Users\laure\source\repos\SGBD\PL\bin\Debug\Dapper.xml
 C:\Users\laure\source\repos\SGBD\PL\obj\Debug\PL.Registration.resources
+C:\Users\laure\source\repos\SGBD\PL\obj\Debug\PL.Login.resources
+C:\Users\laure\source\repos\SGBD\PL\bin\Debug\CustomControls.dll
