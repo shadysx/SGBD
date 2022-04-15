@@ -28,5 +28,24 @@ namespace DAL
                 }
             return retVal;
         }
+
+        public static int InsertNewAccount(Account newAccount)
+        {
+            int retVal;
+
+            using (var connection = CON_MGR.Connection())
+                try
+                {
+                    retVal = connection.Query<int>("INSERT INTO ACCOUNT (ACCOUNT_EMAIL,  ACCOUNT_USERNAME,  ACCOUNT_PASSWORD,  ACCOUNT_LAST_NAME, ACCOUNT_FIRST_NAME, ACCOUNT_BIRTH_DATE, ACCOUNT_ADDRESS, ACCOUNT_CITY, ACCOUNT_POSTAL_CODE, ACCOUNT_COUNTRY, ACCOUNT_ROLE)  " +
+                                                   "       VALUES   (@ACCOUNT_EMAIL,  @ACCOUNT_USERNAME,  @ACCOUNT_PASSWORD,  @ACCOUNT_LAST_NAME, @ACCOUNT_FIRST_NAME, @ACCOUNT_BIRTH_DATE, @ACCOUNT_ADDRESS, @ACCOUNT_CITY, @ACCOUNT_POSTAL_CODE, @ACCOUNT_COUNTRY, @ACCOUNT_ROLE)" +
+                                                   "SELECT CAST(SCOPE_IDENTITY() AS INT)",
+                                                   newAccount).Single();
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+            return retVal;
+        }
     }
 }
