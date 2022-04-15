@@ -374,3 +374,9 @@ InteropTests/NativeTests/out
 # Shady
 /PL/obj/*
 /PL/bin/*
+/DAL/obj/*
+/DAL/bin/*
+/DTO/obj/*
+/DTO/bin/*
+/BLL/obj/*
+/BLL/bin/*

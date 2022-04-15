@@ -51,7 +51,7 @@
             this.textBoxUserName.BorderSize = 2;
             this.textBoxUserName.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxUserName.Location = new System.Drawing.Point(41, 171);
+            this.textBoxUserName.Location = new System.Drawing.Point(20, 158);
             this.textBoxUserName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUserName.Multiline = false;
             this.textBoxUserName.Name = "textBoxUserName";
@@ -73,7 +73,7 @@
             this.textBoxPassWord.BorderSize = 2;
             this.textBoxPassWord.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxPassWord.Location = new System.Drawing.Point(41, 217);
+            this.textBoxPassWord.Location = new System.Drawing.Point(20, 204);
             this.textBoxPassWord.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassWord.Multiline = false;
             this.textBoxPassWord.Name = "textBoxPassWord";
@@ -98,13 +98,14 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(41, 262);
+            this.buttonLogin.Location = new System.Drawing.Point(20, 249);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(120, 33);
             this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "Log In";
             this.buttonLogin.TextColor = System.Drawing.Color.White;
             this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // buttonRegister
             // 
@@ -118,7 +119,7 @@
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegister.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.buttonRegister.Location = new System.Drawing.Point(171, 262);
+            this.buttonRegister.Location = new System.Drawing.Point(150, 249);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(120, 33);
             this.buttonRegister.TabIndex = 3;
@@ -135,7 +136,7 @@
             this.panelLeft.Controls.Add(this.pictureBox1);
             this.panelLeft.Location = new System.Drawing.Point(-2, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(476, 448);
+            this.panelLeft.Size = new System.Drawing.Size(518, 448);
             this.panelLeft.TabIndex = 4;
             // 
             // pictureBox2
@@ -165,9 +166,9 @@
             this.panelRight.Controls.Add(this.textBoxPassWord);
             this.panelRight.Controls.Add(this.buttonRegister);
             this.panelRight.Controls.Add(this.buttonLogin);
-            this.panelRight.Location = new System.Drawing.Point(472, 0);
+            this.panelRight.Location = new System.Drawing.Point(517, 0);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(337, 451);
+            this.panelRight.Size = new System.Drawing.Size(292, 451);
             this.panelRight.TabIndex = 5;
             // 
             // Login
