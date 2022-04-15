@@ -30,8 +30,12 @@ namespace BLL
                 throw new Exception($"Username or password does not match");
         }
 
-        public static void SignUp(Account newAccount)
+        public static bool SignUp(Account newAccount)
         {
+            bool result = false;
+
+
+
             try
             {
                 newAccount.ACCOUNT_PASSWORD = ComputeSha256Hash(newAccount.ACCOUNT_PASSWORD);
@@ -41,6 +45,9 @@ namespace BLL
             {
                 throw ex;
             }
+
+
+            return result;
         }
 
         public static string ComputeSha256Hash(string rawData)

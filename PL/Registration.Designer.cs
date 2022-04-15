@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.buttonCancel = new CustomControls.RJControls.RJButton();
@@ -58,9 +59,12 @@
             this.textBoxPostalCode = new CustomControls.RJControls.RJTextBox();
             this.buttonSelectProfileImage = new CustomControls.RJControls.RJButton();
             this.labelIcon = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLeft
@@ -135,7 +139,6 @@
             this.labelEmail.Size = new System.Drawing.Size(57, 28);
             this.labelEmail.TabIndex = 1;
             this.labelEmail.Text = "Email";
-            
             // 
             // textBoxEmail
             // 
@@ -158,7 +161,7 @@
             this.textBoxEmail.TabIndex = 2;
             this.textBoxEmail.Texts = "";
             this.textBoxEmail.UnderlinedStyle = false;
-            
+            this.textBoxEmail.Leave += new System.EventHandler(this.textBoxEmail_Leave);
             // 
             // labelUsername
             // 
@@ -534,6 +537,14 @@
             this.labelIcon.TabIndex = 36;
             this.labelIcon.Text = "Profile\'s Icon";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "ALLLEEEEEEDDDDD";
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,11 +582,13 @@
             this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.StateCommon.Border.Rounding = 15;
             this.Text = "Registration";
             this.panelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -612,5 +625,7 @@
         private CustomControls.RJControls.RJTextBox textBoxPostalCode;
         private CustomControls.RJControls.RJButton buttonSelectProfileImage;
         private System.Windows.Forms.Label labelIcon;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

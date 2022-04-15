@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
+using BLL;
 
 namespace PL
 {
@@ -41,7 +42,7 @@ namespace PL
         {
             try
             {
-                Account newCustommer = new Account
+                Account newAccount = new Account
                 {
                     ACCOUNT_EMAIL = this.textBoxEmail.Texts,
                     ACCOUNT_USERNAME = this.textBoxUsername.Texts,
@@ -55,6 +56,14 @@ namespace PL
                     ACCOUNT_COUNTRY = this.textBoxCountry.Texts,
                     ACCOUNT_ROLE = "CLIENT"
                 };
+
+                if(!Auth.SignUp(newAccount))
+                {
+
+                }
+
+
+                
 
                 //Auth.SignUp(Email, username, ...)
                 MessageBox.Show("Registration Success, Redirect to Log In");
@@ -73,7 +82,9 @@ namespace PL
 
         }
 
-
-
+        private void textBoxEmail_Leave(object sender, EventArgs e)
+        {
+                       
+        }
     }
 }
