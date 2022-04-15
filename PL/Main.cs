@@ -15,7 +15,7 @@ namespace PL
     {
         public Main()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
 

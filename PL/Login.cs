@@ -45,11 +45,30 @@ namespace PL
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            
-            Registration r = new Registration();            
-            r.StartPosition = FormStartPosition.CenterScreen;
-            r.Show();            
             this.Hide();
+            Registration r = new Registration();
+            DialogResult result = r.ShowDialog();
+
+            //if cancel
+            if (result == DialogResult.Cancel)
+            {
+                r.Close();
+                this.Show();
+            }
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Auth.Login(this.textBoxUserName.Text, this.textBoxPassWord.Text);
+                this.Hide();
+                new Main().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+                    }
     }
 }
