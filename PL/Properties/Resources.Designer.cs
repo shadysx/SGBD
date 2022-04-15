@@ -73,9 +73,29 @@ namespace PL.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap New_Custommer_Logo {
+            get {
+                object obj = ResourceManager.GetObject("New Custommer Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Stock_Overflow {
             get {
                 object obj = ResourceManager.GetObject("Stock Overflow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Stock_Overflow1 {
+            get {
+                object obj = ResourceManager.GetObject("Stock Overflow1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

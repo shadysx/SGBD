@@ -25,19 +25,19 @@ namespace PL
             }
         }
 
-        public static Color Custom3
+        public static Color LightBlue
         {
             get
             {
-                return Color.FromArgb(198, 139, 89);
+                return Color.FromArgb(37, 38, 88);
             }
         }
 
-        public static Color Custom4
+        public static Color White
         {
             get
             {
-                return Color.FromArgb(215, 177, 157);
+                return Color.FromArgb(240, 240, 240);
             }
         }
     }
