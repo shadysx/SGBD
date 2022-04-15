@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace PL
 {
@@ -17,7 +18,7 @@ namespace PL
         {
             InitializeComponent();
             FormStyles();
-       }
+        }
 
         private void FormStyles()
         {
@@ -34,22 +35,27 @@ namespace PL
         {
             this.Close();
             
-        }
-
-        private void rjTextBox1__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelEmail_Click(object sender, EventArgs e)
-        {
-
-        }
+        }        
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             try
             {
+                Account newCustommer = new Account
+                {
+                    ACCOUNT_EMAIL = this.textBoxEmail.Texts,
+                    ACCOUNT_USERNAME = this.textBoxUsername.Texts,
+                    ACCOUNT_PASSWORD = this.textBoxPassword.Texts,
+                    ACCOUNT_LAST_NAME = this.textBoxLastName.Texts,
+                    ACCOUNT_FIRST_NAME = this.textBoxFirstName.Texts,
+                    ACCOUNT_BIRTH_DATE = this.datePicker.Value,
+                    ACCOUNT_ADDRESS = this.textBoxAddress.Texts,
+                    ACCOUNT_CITY = this.textBoxCity.Texts,
+                    ACCOUNT_POSTAL_CODE = this.textBoxPostalCode.Texts,
+                    ACCOUNT_COUNTRY = this.textBoxCountry.Texts,
+                    ACCOUNT_ROLE = "CLIENT"
+                };
+
                 //Auth.SignUp(Email, username, ...)
                 MessageBox.Show("Registration Success, Redirect to Log In");
                 this.Close();
@@ -59,5 +65,15 @@ namespace PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        
+
+        private void buttonSelectProfileImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
     }
 }
