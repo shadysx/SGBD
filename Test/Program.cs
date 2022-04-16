@@ -14,7 +14,9 @@ namespace Test
         {
             try
             {
-                Auth.Login("ShadySX", "password");
+                Console.WriteLine("Hello world");
+                Console.Read();
+                //Auth.Login("ShadySX", "password");
             }
             catch (Exception ex)
             {
