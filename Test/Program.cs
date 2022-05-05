@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using BLL;
 using DAL;
@@ -12,6 +13,7 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            /*
             try
             {
                 Console.WriteLine("Hello world");
@@ -24,8 +26,11 @@ namespace Test
             }
 
             Console.WriteLine(Auth.CurrentUser);
+            */
 
+            Console.WriteLine(Regex.Match("LiDelLaCosta", "^\\S+$").Success);
 
+             
 
             Console.Read();
         }

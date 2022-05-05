@@ -39,6 +39,7 @@ namespace BLL
             {
                 newAccount.ACCOUNT_PASSWORD = ComputeSha256Hash(newAccount.ACCOUNT_PASSWORD);
                 DataAccess.InsertNewAccount(newAccount);
+                result = true;
             }
             catch (Exception ex)
             {
