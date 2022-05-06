@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using BLL;
-using DTO;
 using DAL;
 
 namespace Test
@@ -13,9 +13,12 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            /*
             try
             {
-                Auth.Login("ShadySX", "password"); 
+                Console.WriteLine("Hello world");
+                Console.Read();
+                //Auth.Login("ShadySX", "password");
             }
             catch (Exception ex)
             {
@@ -23,9 +26,11 @@ namespace Test
             }
 
             Console.WriteLine(Auth.CurrentUser);
-        
+            */
 
+            Console.WriteLine(Regex.Match("LiDelLaCosta", "^\\S+$").Success);
 
+             
 
             Console.Read();
         }

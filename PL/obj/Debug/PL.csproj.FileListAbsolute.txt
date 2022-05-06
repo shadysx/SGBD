@@ -58,5 +58,5 @@ C:\Users\laure\source\repos\SGBD\PL\obj\Debug\PL.Login.resources
 C:\Users\laure\source\repos\SGBD\PL\bin\Debug\CustomControls.dll
 C:\Users\fabwa\source\repos\shadysx\SGBD\PL\obj\Debug\PL.Login.resources
 C:\Users\fabwa\source\repos\shadysx\SGBD\PL\obj\Debug\PL.Registration.resources
-C:\Users\laure\source\repos\SGBD\PL\bin\Debug\DAL.dll
-C:\Users\laure\source\repos\SGBD\PL\bin\Debug\DAL.pdb
+C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\DAL.dll
+C:\Users\fabwa\source\repos\shadysx\SGBD\PL\bin\Debug\DAL.pdb

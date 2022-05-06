@@ -11,7 +11,6 @@ namespace DTO
         public string ACCOUNT_EMAIL { get; set; }
         public string ACCOUNT_USERNAME { get; set; }
         public string ACCOUNT_PASSWORD { get; set; }
-
         public string ACCOUNT_LAST_NAME { get; set; }
         public string ACCOUNT_FIRST_NAME { get; set; }
         public DateTime ACCOUNT_BIRTH_DATE { get; set; }
