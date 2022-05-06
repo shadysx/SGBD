@@ -61,7 +61,7 @@
             this.textBoxUserName.PlaceholderText = "";
             this.textBoxUserName.Size = new System.Drawing.Size(250, 38);
             this.textBoxUserName.TabIndex = 0;
-            this.textBoxUserName.Texts = "Admin";
+            this.textBoxUserName.Texts = "Irwin";
             this.textBoxUserName.UnderlinedStyle = false;
             // 
             // textBoxPassWord
@@ -83,7 +83,7 @@
             this.textBoxPassWord.PlaceholderText = "";
             this.textBoxPassWord.Size = new System.Drawing.Size(250, 38);
             this.textBoxPassWord.TabIndex = 1;
-            this.textBoxPassWord.Texts = "Password";
+            this.textBoxPassWord.Texts = "password";
             this.textBoxPassWord.UnderlinedStyle = false;
             // 
             // buttonLogin

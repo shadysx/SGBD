@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BLL;
+using DTO;
 using DAL;
 
 namespace Test
@@ -14,7 +15,7 @@ namespace Test
         {
             try
             {
-                Auth.Login("ShadySX", "password");
+                Auth.Login("ShadySX", "password"); 
             }
             catch (Exception ex)
             {
@@ -22,6 +23,7 @@ namespace Test
             }
 
             Console.WriteLine(Auth.CurrentUser);
+        
 
 
 

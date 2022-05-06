@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace PL
 {
@@ -27,8 +28,8 @@ namespace PL
             this.textBoxUserName.BorderFocusColor = CustomColor.DarkBlue;
             this.textBoxPassWord.BorderFocusColor = CustomColor.DarkBlue;
             this.buttonRegister.TextColor = CustomColor.Orange;
-            this.ActiveControl = this.pictureBox1;
             this.panelRight.BackColor = CustomColor.White;
+            this.ActiveControl = this.pictureBox1;
         }
 
         private void buttonRegister_MouseLeave(object sender, EventArgs e)
@@ -61,7 +62,7 @@ namespace PL
         {
             try
             {
-                //Auth.Login(this.textBoxUserName.Text, this.textBoxPassWord.Text);
+                Auth.Login(this.textBoxUserName.Texts, this.textBoxPassWord.Texts);
                 this.Hide();
                 new Main().Show();
             }
@@ -69,6 +70,6 @@ namespace PL
             {
                 MessageBox.Show(ex.Message);
             }
-                    }
+        }
     }
 }
