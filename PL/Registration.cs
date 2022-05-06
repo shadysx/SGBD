@@ -76,11 +76,11 @@ namespace PL
 
 
 
-                if (CheckValidityNewAccount(newAccount, accounts))
-                {
+                CheckValidityNewAccount(newAccount, accounts);
+                
 
-                }
-
+                
+                
 
 
                 if(!Auth.SignUp(newAccount))
@@ -154,7 +154,7 @@ namespace PL
 
             /* CHECK LAST NAME PATTERN (ERROR[6]) */
 
-            if (!Regex.Match(newAccount.ACCOUNT_LAST_NAME, "^((([A-Z]{1})([a-z]+))(((\\s[A-Z]{1})([a-z]+))+))$").Success))
+            if (!Regex.Match(newAccount.ACCOUNT_LAST_NAME, "^((([A-Z]{1})([a-z]+))(((\\s[A-Z]{1})([a-z]+))+))$").Success)
                 tabErros[6] = true;
 
             /* CHECK LAST NAME LENGTH */
@@ -173,7 +173,7 @@ namespace PL
             ACCOUNT_ROLE = "CLIENT"
            */
 
-            return result;
+            
         }
         
 
