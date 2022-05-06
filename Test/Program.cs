@@ -28,7 +28,7 @@ namespace Test
             Console.WriteLine(Auth.CurrentUser);
             */
 
-            Console.WriteLine(Regex.Match("LiDelLaCosta", "^\\S+$").Success);
+            Console.WriteLine();
 
              
 
