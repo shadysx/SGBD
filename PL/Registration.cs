@@ -76,11 +76,11 @@ namespace PL
 
 
 
-                if (CheckValidityNewAccount(newAccount, accounts))
-                {
-                    
-                }
+                CheckValidityNewAccount(newAccount, accounts);
+                
 
+                
+                
 
 
                 if(!Auth.SignUp(newAccount))
@@ -173,7 +173,7 @@ namespace PL
             ACCOUNT_ROLE = "CLIENT"
            */
 
-            return result;
+            
         }
         
 
