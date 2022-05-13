@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace PL
 {
@@ -33,7 +34,7 @@ namespace PL
         }
         private void Main_Load(object sender, EventArgs e)
         {
-
+            this.iconButtonProfile.Text = Auth.CurrentUser.ACCOUNT_USERNAME;
         }
 
         private void iconPictureBox2_Click(object sender, EventArgs e)
@@ -48,6 +49,11 @@ namespace PL
         private void iconButtonShop_Click(object sender, EventArgs e)
         {
             this.OpenChildForm(new ShopTab());
+        }
+
+        private void iconButtonProfile_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

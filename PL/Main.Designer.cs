@@ -37,6 +37,8 @@
             this.iconButtonHome = new FontAwesome.Sharp.IconButton();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.panelRight = new System.Windows.Forms.Panel();
+            this.iconButtonCard = new FontAwesome.Sharp.IconButton();
+            this.iconButtonProfile = new FontAwesome.Sharp.IconButton();
             this.pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -46,6 +48,7 @@
             // pnTop
             // 
             this.pnTop.BackColor = System.Drawing.Color.Black;
+            this.pnTop.Controls.Add(this.iconButtonProfile);
             this.pnTop.Controls.Add(this.iconPictureBox2);
             this.pnTop.Controls.Add(this.iconPictureBox1);
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -88,6 +91,7 @@
             // pnLeft
             // 
             this.pnLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnLeft.Controls.Add(this.iconButtonCard);
             this.pnLeft.Controls.Add(this.iconButtonShop);
             this.pnLeft.Controls.Add(this.iconButtonHome);
             this.pnLeft.Dock = System.Windows.Forms.DockStyle.Left;
@@ -144,6 +148,46 @@
             this.panelRight.Size = new System.Drawing.Size(1131, 697);
             this.panelRight.TabIndex = 2;
             // 
+            // iconButtonCard
+            // 
+            this.iconButtonCard.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonCard.FlatAppearance.BorderSize = 0;
+            this.iconButtonCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCard.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonCard.ForeColor = System.Drawing.Color.White;
+            this.iconButtonCard.IconChar = FontAwesome.Sharp.IconChar.CreditCard;
+            this.iconButtonCard.IconColor = System.Drawing.Color.White;
+            this.iconButtonCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonCard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCard.Location = new System.Drawing.Point(31, 127);
+            this.iconButtonCard.Name = "iconButtonCard";
+            this.iconButtonCard.Size = new System.Drawing.Size(136, 47);
+            this.iconButtonCard.TabIndex = 2;
+            this.iconButtonCard.Text = "Card";
+            this.iconButtonCard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonCard.UseVisualStyleBackColor = false;
+            // 
+            // iconButtonProfile
+            // 
+            this.iconButtonProfile.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonProfile.FlatAppearance.BorderSize = 0;
+            this.iconButtonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonProfile.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonProfile.ForeColor = System.Drawing.Color.White;
+            this.iconButtonProfile.IconChar = FontAwesome.Sharp.IconChar.Portrait;
+            this.iconButtonProfile.IconColor = System.Drawing.Color.White;
+            this.iconButtonProfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonProfile.IconSize = 35;
+            this.iconButtonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonProfile.Location = new System.Drawing.Point(1138, 18);
+            this.iconButtonProfile.Name = "iconButtonProfile";
+            this.iconButtonProfile.Size = new System.Drawing.Size(123, 40);
+            this.iconButtonProfile.TabIndex = 2;
+            this.iconButtonProfile.Text = "Home";
+            this.iconButtonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonProfile.UseVisualStyleBackColor = false;
+            this.iconButtonProfile.Click += new System.EventHandler(this.iconButtonProfile_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,5 +224,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
         private FontAwesome.Sharp.IconButton iconButtonShop;
         private System.Windows.Forms.Panel panelRight;
+        private FontAwesome.Sharp.IconButton iconButtonProfile;
+        private FontAwesome.Sharp.IconButton iconButtonCard;
     }
 }
