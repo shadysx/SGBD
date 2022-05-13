@@ -46,10 +46,11 @@ namespace PL
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             Registration r = new Registration();
             DialogResult result = r.ShowDialog();
 
+            this.Hide();
             //if cancel
             if (result == DialogResult.Cancel)
             {
@@ -63,8 +64,9 @@ namespace PL
             try
             {
                 Auth.Login(this.textBoxUserName.Texts, this.textBoxPassWord.Texts);
-                this.Hide();
                 new Main().Show();
+                this.Hide();
+                
             }
             catch (Exception ex)
             {

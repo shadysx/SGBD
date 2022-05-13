@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using BLL;
 using DAL;
+using DTO;
 
 namespace Test
 {
@@ -28,7 +29,11 @@ namespace Test
             Console.WriteLine(Auth.CurrentUser);
             */
 
-            Console.WriteLine();
+            Account a = new Account();
+
+            a.ACCOUNT_BIRTH_DATE = DateTime.Now;
+
+            Console.WriteLine(a.ToString());
 
              
 
