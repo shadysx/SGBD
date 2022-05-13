@@ -16,6 +16,8 @@ namespace PL
         public Main()
         {
             InitializeComponent();
+            this.pnTop.BackColor = CustomColor.DarkBlue;
+            this.pnLeft.BackColor = CustomColor.DarkBlue;
         }
 
 
@@ -37,9 +39,5 @@ namespace PL
         {
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

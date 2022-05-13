@@ -94,7 +94,7 @@ namespace PL
 
                 else
                 {
-                    //Auth.SignUp(Email, username, ...)
+                    Auth.SignUp(newAccount);
                     MessageBox.Show("Registration Success, Redirect to Log In");
                     this.Close();
                 }
