@@ -111,17 +111,9 @@ namespace PL
                 }
                 else
                 {
-<<<<<<< HEAD
-                    Auth.SignUp(newAccount);
+                    //Auth.SignUp(Email, username, ...)
                     MessageBox.Show("Registration Success, Redirect to Log In");
                     this.Close();
-=======
-                    if (Auth.SignUp(newAccount))
-                    {
-                        MessageBox.Show("Registration Success, Redirect to Log In");
-                        this.Close();
-                    }
->>>>>>> origin/master
                 }
 
 
