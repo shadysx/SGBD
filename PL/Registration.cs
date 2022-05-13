@@ -40,7 +40,7 @@ namespace PL
 
         private void InitializeValue()
         {
-             tabErros = new bool[11];         
+             tabErros = new bool[17];         
 
         }
 
