@@ -45,7 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CON_MGR.cs" />
-    <Compile Include="DataAccess.cs" />
+    <Compile Include="AccountAccess.cs" />
+    <Compile Include="ProductsAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
