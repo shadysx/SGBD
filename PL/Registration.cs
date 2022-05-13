@@ -110,11 +110,17 @@ namespace PL
                 }
                 else
                 {
+<<<<<<< HEAD
                     if (Auth.SignUp(newAccount))
                     {
                         MessageBox.Show("Registration Success, Redirect to Log In");
                         this.Close();
                     }
+=======
+                    //Auth.SignUp(Email, username, ...)
+                    MessageBox.Show("Registration Success, Redirect to Log In");
+                    this.Close();
+>>>>>>> a5314c45c7079fd0cf118c3b152d63df89dfd845
                 }
             }
             catch (Exception ex)
