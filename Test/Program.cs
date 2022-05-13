@@ -29,13 +29,12 @@ namespace Test
             Console.WriteLine(Auth.CurrentUser);
             */
 
-            Account a = new Account();
+            List<Product> l = DAL.ProductsAccess.Select20RandomProducts();
 
-            a.ACCOUNT_BIRTH_DATE = DateTime.Now;
-
-            Console.WriteLine(a.ToString());
-
-             
+            foreach (Product p in l)
+            {
+                Console.WriteLine(p);
+            }
 
             Console.Read();
         }

@@ -15,7 +15,7 @@ namespace BLL
         public static Account CurrentUser { get; set; }
         public static void Login(string username, string password)
         {
-            List<Account> accounts = DataAccess.SelectAllAccounts();
+            List<Account> accounts = AccountAccess.SelectAllAccounts();
 
             foreach (Account account in accounts)
             {
@@ -38,7 +38,7 @@ namespace BLL
             try
             {
                 newAccount.ACCOUNT_PASSWORD = ComputeSha256Hash(newAccount.ACCOUNT_PASSWORD);
-                DataAccess.InsertNewAccount(newAccount);
+                AccountAccess.InsertNewAccount(newAccount);
                 result = true;
             }
             catch (Exception ex)

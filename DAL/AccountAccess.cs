@@ -10,7 +10,7 @@ using Dapper;
 
 namespace DAL
 {
-    public static class DataAccess
+    public static class AccountAccess
     {
         public static List<Account> SelectAllAccounts()
         {

@@ -21,23 +21,33 @@ namespace PL
         }
 
 
-        private void OpenChildForm(Form f, Button btnSender)
+        private void OpenChildForm(Form f)
         {
             f.TopLevel = false;
             f.FormBorderStyle = FormBorderStyle.None;
             f.Dock = DockStyle.Fill;
-            this.Controls.Add(f);
+            this.panelRight.Controls.Add(f);
+            f.BringToFront();
             f.Show();
             
         }
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            this.OpenChildForm(new ShopTab(), new Button());
-        }
-
         private void Main_Load(object sender, EventArgs e)
         {
+
         }
 
+        private void iconPictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void iconButtonHome_Click(object sender, EventArgs e)
+        { 
+        }
+
+        private void iconButtonShop_Click(object sender, EventArgs e)
+        {
+            this.OpenChildForm(new ShopTab());
+        }
     }
 }

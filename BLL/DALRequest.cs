@@ -10,7 +10,7 @@ namespace BLL
 {
     public static class DALRequest
     {
-        public static List<Account> SelectAllAccounts() { return DataAccess.SelectAllAccounts(); } 
+        public static List<Account> SelectAllAccounts() { return AccountAccess.SelectAllAccounts(); } 
 
     }
 }

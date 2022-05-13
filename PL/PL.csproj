@@ -74,6 +74,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Article.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Article.Designer.cs">
+      <DependentUpon>Article.cs</DependentUpon>
+    </Compile>
     <Compile Include="Assets\CustomColor.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -101,6 +107,9 @@
     <Compile Include="ShopTab.Designer.cs">
       <DependentUpon>ShopTab.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Article.resx">
+      <DependentUpon>Article.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +133,7 @@
       <DependentUpon>ShopTab.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DTO.Account.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -142,6 +152,10 @@
       <Project>{3f6cf331-26d3-424f-b5cb-4a10c131e99e}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{58e8b955-d5c0-4031-a9fb-63056b7946aa}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{20a50b23-8672-4a6e-a6ed-4aadedbe9111}</Project>
       <Name>DTO</Name>
@@ -158,6 +172,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\New Custommer Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttons\mc-red.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
