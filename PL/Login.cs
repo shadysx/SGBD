@@ -45,8 +45,7 @@ namespace PL
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
-        {
-            
+        {            
             Registration r = new Registration();
             DialogResult result = r.ShowDialog();
 
@@ -65,8 +64,7 @@ namespace PL
             {
                 Auth.Login(this.textBoxUserName.Texts, this.textBoxPassWord.Texts);
                 new Main().Show();
-                this.Hide();
-                
+                this.Hide();                
             }
             catch (Exception ex)
             {

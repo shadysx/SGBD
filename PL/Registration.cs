@@ -80,7 +80,6 @@ namespace PL
 
             try
             {
-
                 Account newAccount = new Account
                 {
                     ACCOUNT_EMAIL = this.textBoxEmail.Texts,
@@ -96,7 +95,7 @@ namespace PL
                     ACCOUNT_ROLE = "CLIENT"
                 };
 
-                CheckValidityNewAccount(newAccount, accounts);
+                tabErros = LogicLayer.CheckValidityNewAccount(newAccount, accounts, this.tabErros);
 
                 if (tabErros.Contains(true))
                 {
@@ -111,127 +110,21 @@ namespace PL
                 }
                 else
                 {
-<<<<<<< HEAD
-                    Auth.SignUp(newAccount);
-                    MessageBox.Show("Registration Success, Redirect to Log In");
-                    this.Close();
-=======
                     if (Auth.SignUp(newAccount))
                     {
                         MessageBox.Show("Registration Success, Redirect to Log In");
                         this.Close();
                     }
->>>>>>> origin/master
                 }
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            
         }
 
-        private void CheckValidityNewAccount(Account newAccount, List<Account> accounts)
-        {
-
-            /* CHECK IF USERNAME ALREADY EXIST  (ERROR [0])  */
-
-            foreach (Account a in accounts)
-            {
-                if (a.ACCOUNT_USERNAME == newAccount.ACCOUNT_USERNAME)
-                    tabErros[0] = true;
-            }
-
-            /* CHECK IF USERNAME HAVE AN "ESPACE"  (ERROR [1])  */
-
-            if (!Regex.Match(newAccount.ACCOUNT_USERNAME, "^\\S+$").Success)
-                tabErros[1] = true;
-
-            /* CHECK USERNAME LENGTH (minimum 4, maximum 99)  (ERROR [2])  */
-
-            foreach (Account a in accounts)
-            {
-                if (a.ACCOUNT_USERNAME.Length > 99)
-                    tabErros[2] = true;
-            }
-
-            /* CHECK IF EMAIL PATTERN IS OK (ERROR[3]) */
-
-            if (!Regex.Match(newAccount.ACCOUNT_EMAIL.ToLower(), @"^((.{4,50})([@])([a-z]{2,10})[.]([a-z]{2,3}))$").Success)
-                tabErros[3] = true;
-
-
-            /* CHECK IF EMAIL ALREADY EXIST (ERROR[4]) */
-
-            foreach (Account a in accounts)
-            {
-                if (a.ACCOUNT_EMAIL == newAccount.ACCOUNT_EMAIL)
-                    tabErros[4] = true;
-            }
-
-            /* CHECK PASSWORD SIZE (ERROR[5])*/
-
-            if (!Regex.Match(newAccount.ACCOUNT_PASSWORD, "^((.){8,49})$").Success)
-                tabErros[5] = true;
-
-
-            /* CHECK LAST NAME PATTERN (ERROR[6]) */
-
-            if (!Regex.Match(newAccount.ACCOUNT_LAST_NAME, "^((([A-Z]{1})([a-z]+))((((\\s|[-]))[A-Z]{1})([a-z]+))*)$").Success)
-                tabErros[6] = true;
-
-            /* CHECK LAST NAME LENGTH (ERROR[7]) */
-
-            if (newAccount.ACCOUNT_LAST_NAME.Length > 99)
-                tabErros[7] = true;
-
-            /* CHECK FIRST NAME PATTERN (ERROR[8]) */
-
-            if (!Regex.Match(newAccount.ACCOUNT_FIRST_NAME, "^((([A-Z]{1})([a-z]+))((((\\s|[-]))[A-Z]{1})([a-z]+))*)$").Success)
-                tabErros[8] = true;
-
-            /* CHECK FIRST NAME LENGTH (ERROR[9]) */
-
-            if (newAccount.ACCOUNT_FIRST_NAME.Length > 99)
-                tabErros[9] = true;
-
-            /* CHECK DATE VALIDITY BETWEEN [1880 and Now] (ERROR[10]) */
-
-            if (newAccount.ACCOUNT_BIRTH_DATE < new DateTime(1880, 1, 1) || newAccount.ACCOUNT_BIRTH_DATE > DateTime.Now)
-                tabErros[10] = true;
-
-            /* CHECK ADDRESS LENGTH (ERROR[11]) */
-
-            if (newAccount.ACCOUNT_ADDRESS.Length > 249)
-                tabErros[11] = true;
-
-            /* CHECK CITY LENGTH (ERROR[12]) */
-
-            if (newAccount.ACCOUNT_CITY.Length > 49)
-                tabErros[12] = true;
-
-            /* CHECK POSTAL CODE PATTERN (ERROR[13]) */
-
-            if (!Regex.Match(newAccount.ACCOUNT_POSTAL_CODE, "^([0-9]+)(([-]|[0-9])*)([0-9]+)$").Success)
-                tabErros[13] = true;
-
-            /* CHECK POSTAL CODE (ERROR[14]) */
-
-            if (newAccount.ACCOUNT_POSTAL_CODE.Length > 49)
-                tabErros[14] = true;
-
-            /* CHECK COUNTRY PATTERN (ERROR[15]) */
-
-            if (!Regex.Match(newAccount.ACCOUNT_COUNTRY, "^(\\D)+$").Success)
-                tabErros[15] = true;
-
-            /* CHECK COUNTRY LENGTH (ERROR[16]) */
-
-            if (newAccount.ACCOUNT_COUNTRY.Length > 49)
-                tabErros[16] = true;
-
-        }
+        
 
 
         private void buttonSelectProfileImage_Click(object sender, EventArgs e)

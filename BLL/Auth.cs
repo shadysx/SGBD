@@ -33,8 +33,6 @@ namespace BLL
         {
             bool result = false;
 
-
-
             try
             {
                 newAccount.ACCOUNT_PASSWORD = ComputeSha256Hash(newAccount.ACCOUNT_PASSWORD);
@@ -45,7 +43,6 @@ namespace BLL
             {
                 throw ex;
             }
-
 
             return result;
         }
