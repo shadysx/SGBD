@@ -16,7 +16,9 @@ namespace PL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+
+            //CONNECTION TEMPORAIRE MAIN, NE PAS OUBLIER D'ENLEVER LE COMPTE DANS LAOD_MAIN
+            Application.Run(new Main());
         }
     }
 }
