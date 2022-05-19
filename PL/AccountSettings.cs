@@ -19,7 +19,7 @@ namespace PL
         public AccountSettings(string username)
         {
             InitializeComponent();
-            this.label1.Text = username;
+            this.labelUsername.Text = username;
         }
 
     }
