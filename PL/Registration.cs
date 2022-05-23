@@ -41,7 +41,7 @@ namespace PL
 
         private void InitializeValue()
         {
-            tabErros = new bool[17];
+            tabErros = new bool[2];
 
             // Charge de la liste des comptes dans la BD //
             if (accounts == null)
@@ -74,61 +74,111 @@ namespace PL
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            // Réinitialise TabErrors to false
-            for(int i = 0; i < tabErros.Length; i++)
-                tabErros[i] = false;
+            RulesBookAccount rbAccount = new RulesBookAccount();
 
-            try
+
+            Account newAccount = new Account
             {
-                Account newAccount = new Account
-                {
-                    ACCOUNT_EMAIL = this.textBoxEmail.Texts,
-                    ACCOUNT_USERNAME = this.textBoxUsername.Texts.Trim(),
-                    ACCOUNT_PASSWORD = this.textBoxPassword.Texts,
-                    ACCOUNT_LAST_NAME = this.textBoxLastName.Texts.Trim(),
-                    ACCOUNT_FIRST_NAME = this.textBoxFirstName.Texts.Trim(),
-                    ACCOUNT_BIRTH_DATE = this.datePicker.Value.Date,
-                    ACCOUNT_ADDRESS = this.textBoxAddress.Texts.Trim(),
-                    ACCOUNT_CITY = this.textBoxCity.Texts.Trim(),
-                    ACCOUNT_POSTAL_CODE = this.textBoxPostalCode.Texts,
-                    ACCOUNT_COUNTRY = this.textBoxCountry.Texts.Trim(),
-                    ACCOUNT_ROLE = "CLIENT"
-                };
+                ACCOUNT_EMAIL = this.textBoxEmail.Texts,
+                ACCOUNT_USERNAME = this.textBoxUsername.Texts.Trim(),
+                ACCOUNT_PASSWORD = this.textBoxPassword.Texts,
+                ACCOUNT_LAST_NAME = this.textBoxLastName.Texts.Trim(),
+                ACCOUNT_FIRST_NAME = this.textBoxFirstName.Texts.Trim(),
+                ACCOUNT_BIRTH_DATE = this.datePicker.Value.Date,
+                ACCOUNT_ADDRESS = this.textBoxAddress.Texts.Trim(),
+                ACCOUNT_CITY = this.textBoxCity.Texts.Trim(),
+                ACCOUNT_POSTAL_CODE = this.textBoxPostalCode.Texts,
+                ACCOUNT_COUNTRY = this.textBoxCountry.Texts.Trim(),
+                ACCOUNT_ROLE = "CLIENT"
+            };
 
-                tabErros = LogicLayer.CheckValidityNewAccount(newAccount, accounts, this.tabErros);
-
-                if (tabErros.Contains(true))
+            foreach (Account a in accounts)
+            {
+                if (a.ACCOUNT_USERNAME == newAccount.ACCOUNT_USERNAME)
                 {
-                    for (int i = 0; i < tabErros.Length; i++)
-                    {
-                        if (tabErros[i] == true)
-                        {
-                            Debug.Print("tabErrors : " + i + "");
-                        }
-                    }
-                    Debug.Print("\n");                     
+                   
                 }
-                else
+                if (a.ACCOUNT_EMAIL == newAccount.ACCOUNT_EMAIL)
                 {
-
-                    if (Auth.SignUp(newAccount))
-                    {
-                        MessageBox.Show("Registration Success, Redirect to Log In");
-                        this.Close();
-                    }
 
                 }
-
-
             }
-            catch (Exception ex)
+
+
+
+            var result = rbAccount.Validate(newAccount);
+
+            Debug.Print($"Is Valid {result.IsValid}");
+
+
+
+            if (!result.IsValid)
             {
-                MessageBox.Show(ex.Message);
+                foreach (var failure in result.Errors)
+                {
+                    string s = failure.ErrorMessage;
+                    int found = s.IndexOf("' ");
+                    Debug.Print(failure.PropertyName + ": " + s.Substring(found + 2));
+
+                    //Debug.Print($"{failure.PropertyName}. error {failure.ErrorMessage}");
+                }
             }
-            
+
+            /* // Réinitialise TabErrors to false
+             for(int i = 0; i < tabErros.Length; i++)
+                 tabErros[i] = false;
+
+             try
+             {
+                 Account newAccount = new Account
+                 {
+                     ACCOUNT_EMAIL = this.textBoxEmail.Texts,
+                     ACCOUNT_USERNAME = this.textBoxUsername.Texts.Trim(),
+                     ACCOUNT_PASSWORD = this.textBoxPassword.Texts,
+                     ACCOUNT_LAST_NAME = this.textBoxLastName.Texts.Trim(),
+                     ACCOUNT_FIRST_NAME = this.textBoxFirstName.Texts.Trim(),
+                     ACCOUNT_BIRTH_DATE = this.datePicker.Value.Date,
+                     ACCOUNT_ADDRESS = this.textBoxAddress.Texts.Trim(),
+                     ACCOUNT_CITY = this.textBoxCity.Texts.Trim(),
+                     ACCOUNT_POSTAL_CODE = this.textBoxPostalCode.Texts,
+                     ACCOUNT_COUNTRY = this.textBoxCountry.Texts.Trim(),
+                     ACCOUNT_ROLE = "CLIENT"
+                 };
+
+                 tabErros = LogicLayer.CheckValidityNewAccount(newAccount, accounts, this.tabErros);
+
+                 if (tabErros.Contains(true))
+                 {
+                     for (int i = 0; i < tabErros.Length; i++)
+                     {
+                         if (tabErros[i] == true)
+                         {
+                             Debug.Print("tabErrors : " + i + "");
+                         }
+                     }
+                     Debug.Print("\n");                     
+                 }
+                 else
+                 {
+
+                     if (Auth.SignUp(newAccount))
+                     {
+                         MessageBox.Show("Registration Success, Redirect to Log In");
+                         this.Close();
+                     }
+
+                 }
+
+
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show(ex.Message);
+             }*/
+
         }
 
-        
+
 
 
         private void buttonSelectProfileImage_Click(object sender, EventArgs e)

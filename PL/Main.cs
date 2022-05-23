@@ -79,6 +79,7 @@ namespace PL
         private void label2_Click(object sender, EventArgs e)
         {
             this.Close();
+            //Rajouter le retour au Logian avec un Event
         }
 
         private void label1_MouseHover(object sender, EventArgs e)

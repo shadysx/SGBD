@@ -37,7 +37,7 @@
             this.textBoxPostalCode = new System.Windows.Forms.TextBox();
             this.textBoxCity = new System.Windows.Forms.TextBox();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxCountry = new System.Windows.Forms.TextBox();
             this.labelCountry = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -47,7 +47,7 @@
             this.labelNewPassword = new System.Windows.Forms.Label();
             this.labelOldPassword = new System.Windows.Forms.Label();
             this.buttonProfilePicture = new CustomControls.RJControls.RJButton();
-            this.buttonConfirmAccountSetting = new CustomControls.RJControls.RJButton();
+            this.buttonConfirmAccountSettings = new CustomControls.RJControls.RJButton();
             this.buttonConfirmNewPassword = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -129,12 +129,12 @@
             this.textBoxAddress.Size = new System.Drawing.Size(168, 20);
             this.textBoxAddress.TabIndex = 16;
             // 
-            // textBox4
+            // textBoxCountry
             // 
-            this.textBox4.Location = new System.Drawing.Point(321, 513);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(168, 20);
-            this.textBox4.TabIndex = 23;
+            this.textBoxCountry.Location = new System.Drawing.Point(321, 513);
+            this.textBoxCountry.Name = "textBoxCountry";
+            this.textBoxCountry.Size = new System.Drawing.Size(168, 20);
+            this.textBoxCountry.TabIndex = 23;
             // 
             // labelCountry
             // 
@@ -224,25 +224,26 @@
             this.buttonProfilePicture.TextColor = System.Drawing.Color.Black;
             this.buttonProfilePicture.UseVisualStyleBackColor = false;
             // 
-            // buttonConfirmAccountSetting
+            // buttonConfirmAccountSettings
             // 
-            this.buttonConfirmAccountSetting.BackColor = System.Drawing.Color.White;
-            this.buttonConfirmAccountSetting.BackgroundColor = System.Drawing.Color.White;
-            this.buttonConfirmAccountSetting.BorderColor = System.Drawing.Color.Black;
-            this.buttonConfirmAccountSetting.BorderRadius = 10;
-            this.buttonConfirmAccountSetting.BorderSize = 1;
-            this.buttonConfirmAccountSetting.FlatAppearance.BorderSize = 0;
-            this.buttonConfirmAccountSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.buttonConfirmAccountSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonConfirmAccountSetting.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConfirmAccountSetting.ForeColor = System.Drawing.Color.Black;
-            this.buttonConfirmAccountSetting.Location = new System.Drawing.Point(413, 539);
-            this.buttonConfirmAccountSetting.Name = "buttonConfirmAccountSetting";
-            this.buttonConfirmAccountSetting.Size = new System.Drawing.Size(76, 24);
-            this.buttonConfirmAccountSetting.TabIndex = 32;
-            this.buttonConfirmAccountSetting.Text = "Confirm";
-            this.buttonConfirmAccountSetting.TextColor = System.Drawing.Color.Black;
-            this.buttonConfirmAccountSetting.UseVisualStyleBackColor = false;
+            this.buttonConfirmAccountSettings.BackColor = System.Drawing.Color.White;
+            this.buttonConfirmAccountSettings.BackgroundColor = System.Drawing.Color.White;
+            this.buttonConfirmAccountSettings.BorderColor = System.Drawing.Color.Black;
+            this.buttonConfirmAccountSettings.BorderRadius = 10;
+            this.buttonConfirmAccountSettings.BorderSize = 1;
+            this.buttonConfirmAccountSettings.FlatAppearance.BorderSize = 0;
+            this.buttonConfirmAccountSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.buttonConfirmAccountSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfirmAccountSettings.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConfirmAccountSettings.ForeColor = System.Drawing.Color.Black;
+            this.buttonConfirmAccountSettings.Location = new System.Drawing.Point(413, 539);
+            this.buttonConfirmAccountSettings.Name = "buttonConfirmAccountSettings";
+            this.buttonConfirmAccountSettings.Size = new System.Drawing.Size(76, 24);
+            this.buttonConfirmAccountSettings.TabIndex = 32;
+            this.buttonConfirmAccountSettings.Text = "Confirm";
+            this.buttonConfirmAccountSettings.TextColor = System.Drawing.Color.Black;
+            this.buttonConfirmAccountSettings.UseVisualStyleBackColor = false;
+            this.buttonConfirmAccountSettings.Click += new System.EventHandler(this.buttonConfirmAccountSettings_Click);
             // 
             // buttonConfirmNewPassword
             // 
@@ -270,7 +271,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1259, 653);
             this.Controls.Add(this.buttonConfirmNewPassword);
-            this.Controls.Add(this.buttonConfirmAccountSetting);
+            this.Controls.Add(this.buttonConfirmAccountSettings);
             this.Controls.Add(this.buttonProfilePicture);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox3);
@@ -279,7 +280,7 @@
             this.Controls.Add(this.labelConfirmPassword);
             this.Controls.Add(this.labelNewPassword);
             this.Controls.Add(this.labelOldPassword);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBoxCountry);
             this.Controls.Add(this.labelCountry);
             this.Controls.Add(this.textBoxPostalCode);
             this.Controls.Add(this.textBoxCity);
@@ -308,7 +309,7 @@
         private System.Windows.Forms.TextBox textBoxPostalCode;
         private System.Windows.Forms.TextBox textBoxCity;
         private System.Windows.Forms.TextBox textBoxAddress;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxCountry;
         private System.Windows.Forms.Label labelCountry;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
@@ -318,7 +319,7 @@
         private System.Windows.Forms.Label labelNewPassword;
         private System.Windows.Forms.Label labelOldPassword;
         private CustomControls.RJControls.RJButton buttonProfilePicture;
-        private CustomControls.RJControls.RJButton buttonConfirmAccountSetting;
+        private CustomControls.RJControls.RJButton buttonConfirmAccountSettings;
         private CustomControls.RJControls.RJButton buttonConfirmNewPassword;
     }
 }

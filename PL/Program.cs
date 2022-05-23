@@ -18,7 +18,7 @@ namespace PL
             Application.SetCompatibleTextRenderingDefault(false);
 
             //CONNECTION TEMPORAIRE MAIN, NE PAS OUBLIER D'ENLEVER LE COMPTE DANS LAOD_MAIN
-            Application.Run(new Main());
+            Application.Run(new Login());
         }
     }
 }

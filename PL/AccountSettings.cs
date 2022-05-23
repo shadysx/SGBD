@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using DTO;
 
 namespace PL
 {
@@ -22,5 +24,23 @@ namespace PL
             this.labelUsername.Text = username;
         }
 
+        private void buttonConfirmAccountSettings_Click(object sender, EventArgs e)
+        {
+            string address, city, postalCode, country;
+            address = this.textBoxAddress.Text;
+            city = this.textBoxCity.Text;
+            postalCode = this.textBoxPostalCode.Text;
+            country =  this.textBoxCountry.Text;
+
+            if(LogicLayer.ModifyAccountSetting(address, city, postalCode, country))
+            {
+
+            }
+            else
+            {
+
+            }
+            
+        }
     }
 }
