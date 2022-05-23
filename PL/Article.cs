@@ -18,6 +18,12 @@ namespace PL
             this.labelNomArticle.Text = productName;
             this.labelTypeArticle.Text = productType;
             this.pictureBox1.Image = productImage;
+            this.iconButton1.IconColor = CustomColor.Orange;
+        }
+
+        private void Article_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
