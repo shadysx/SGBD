@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelUsername = new System.Windows.Forms.Label();
             this.labelAddress = new System.Windows.Forms.Label();
             this.labelCity = new System.Windows.Forms.Label();
@@ -49,7 +50,9 @@
             this.buttonProfilePicture = new CustomControls.RJControls.RJButton();
             this.buttonConfirmAccountSettings = new CustomControls.RJControls.RJButton();
             this.buttonConfirmNewPassword = new CustomControls.RJControls.RJButton();
+            this.errorProviderCountryTextBox = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCountryTextBox)).BeginInit();
             this.SuspendLayout();
             // 
             // labelUsername
@@ -265,6 +268,10 @@
             this.buttonConfirmNewPassword.TextColor = System.Drawing.Color.Black;
             this.buttonConfirmNewPassword.UseVisualStyleBackColor = false;
             // 
+            // errorProviderCountryTextBox
+            // 
+            this.errorProviderCountryTextBox.ContainerControl = this;
+            // 
             // AccountSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,6 +301,7 @@
             this.Name = "AccountSettings";
             this.Text = "AccountSettings";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCountryTextBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,5 +329,6 @@
         private CustomControls.RJControls.RJButton buttonProfilePicture;
         private CustomControls.RJControls.RJButton buttonConfirmAccountSettings;
         private CustomControls.RJControls.RJButton buttonConfirmNewPassword;
+        private System.Windows.Forms.ErrorProvider errorProviderCountryTextBox;
     }
 }

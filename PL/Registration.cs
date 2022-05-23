@@ -13,13 +13,13 @@ using BLL;
 using System.Text.RegularExpressions;
 using System.Collections;
 using System.Diagnostics;
+using CustomControls.RJControls;
 
 namespace PL
 {
     public partial class Registration : KryptonForm
     {
-        private List<Account> accounts;
-        private bool[] tabErros;
+        private List<Account> accounts;       
 
         public Registration()
         {
@@ -36,23 +36,14 @@ namespace PL
             this.buttonCancel.BackColor = CustomColor.Orange;
             this.buttonSubmit.BackColor = CustomColor.DarkBlue;
             this.buttonSubmit.FlatAppearance.MouseOverBackColor = CustomColor.LightBlue;
-
+            this.labelSuccess.ForeColor = CustomColor.White;
         }
 
         private void InitializeValue()
         {
-            tabErros = new bool[2];
-
-            // Charge de la liste des comptes dans la BD //
-            if (accounts == null)
-            {
-                accounts = BLL.DALRequest.SelectAllAccounts();
-            }
-
-
 
             // TEMPORAIRE
-            this.textBoxEmail.Texts = "vroomz.lol@gmail.coum";
+            this.textBoxEmail.Texts = "vroomz.lol@gmail.com";
             this.textBoxUsername.Texts = "Irwin";
             this.textBoxPassword.Texts = "UN Mot de passe";
             this.textBoxConfirmPassword.Texts = "UN Mot de passe";
@@ -63,7 +54,6 @@ namespace PL
             this.textBoxCity.Texts = "Verviers";
             this.textBoxPostalCode.Texts = "4800";
             this.textBoxCountry.Texts = "Belgium";
-
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -74,14 +64,37 @@ namespace PL
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            bool isDuplicated = false;
+            accounts = null;
+            accounts = BLL.DALRequest.SelectAllAccounts();
 
-            // Réinitialise TabErrors to false
-            for (int i = 0; i < tabErros.Length; i++)
-                tabErros[i] = false;
+            // Reset de valeurs
+
+            bool isDuplicated = false;
+            bool isBookChecked = false;
+            bool isPasswordConfirm = false;
+            this.panelSuccess.Visible = false;
+
+            //Reset des erreurs
+
+            errorProviderEmail.SetError(textBoxEmail, null);
+            errorProviderUsername.SetError(textBoxUsername, null);
+            errorProviderPassword.SetError(textBoxPassword, null);
+            errorProviderConfirmPassword.SetError(textBoxConfirmPassword, null);
+            errorProviderBirthDate.SetError(datePicker, null);
+            errorProviderLastName.SetError(textBoxLastName, null);
+            errorProviderFirstName.SetError(textBoxFirstName, null);
+            errorProviderAddress.SetError(textBoxAddress, null);
+            errorProviderCity.SetError(textBoxCity, null);
+            errorProviderPostalCode.SetError(textBoxPostalCode, null);
+            errorProviderCountry.SetError(textBoxCountry, null);
+
+            // Reset la couleur de la Bordure des textbox en noir
+            foreach (RJTextBox tb in this.Controls.OfType<RJTextBox>())
+            {
+                tb.BorderColor = Color.Black;
+            }
 
             RulesBookAccount rbAccount = new RulesBookAccount();
-
 
             Account newAccount = new Account
             {
@@ -98,107 +111,131 @@ namespace PL
                 ACCOUNT_ROLE = "CLIENT"
             };
 
+            // Check des doublons
             foreach (Account a in accounts)
             {
                 if (a.ACCOUNT_USERNAME == newAccount.ACCOUNT_USERNAME)
                 {
+                    errorProviderUsername.SetError(textBoxUsername, "This username already exist");
+                    this.textBoxUsername.BorderColor = Color.Red;
                     isDuplicated = true;
-
-                    //this.textBoxUsername.
-                    MessageBox.Show("compte existe deja");
-
                 }
 
                 if (a.ACCOUNT_EMAIL == newAccount.ACCOUNT_EMAIL)
                 {
+                    errorProviderEmail.SetError(textBoxEmail, "This Email already exist");
+                    this.textBoxEmail.BorderColor = Color.Red;
                     isDuplicated = true;
-                    MessageBox.Show("email existe deja");
                 }
-            }
+            }                        
 
-            if (!isDuplicated)
+            // Check à l'aide du RulesBook
+
+            var result = rbAccount.Validate(newAccount);            
+
+            if (!result.IsValid)
             {
-                var result = rbAccount.Validate(newAccount);
-
-                Debug.Print($"Is Valid {result.IsValid}");
-
-                if (!result.IsValid)
+                foreach (var failure in result.Errors)
                 {
-                    foreach (var failure in result.Errors)
-                    {
-                        string s = failure.ErrorMessage;
-                        int found = s.IndexOf("' ");
-                        Debug.Print(failure.PropertyName + ": " + s.Substring(found + 2));
+                    string s = failure.ErrorMessage;                    
 
-                        //Debug.Print($"{failure.PropertyName}. error {failure.ErrorMessage}");
+                    if (failure.PropertyName.Contains("EMAIL"))
+                    {
+                        errorProviderEmail.SetError(textBoxEmail, "Email unvalid");
+                        this.textBoxEmail.BorderColor = Color.Red;
+                    }                        
+                    else if (failure.PropertyName.Contains("USERNAME") && s.Contains("format"))
+                    {
+                        errorProviderUsername.SetError(textBoxUsername, "Unvalid Format");
+                        this.textBoxUsername.BorderColor = Color.Red;
+                    }                       
+                    else if (failure.PropertyName.Contains("USERNAME") && s.Contains("caract"))
+                    {
+                        errorProviderUsername.SetError(textBoxUsername, "Must contains at least between 4 and 99 char");
+                        this.textBoxUsername.BorderColor = Color.Red;
                     }
+                    else if (failure.PropertyName.Contains("PASSWORD"))
+                    {
+                        this.textBoxPassword.BorderColor = Color.Red;
+                        errorProviderUsername.SetError(textBoxPassword, "Must contains at least between 4 and 49 char");
+                    }
+                    else if (failure.PropertyName.Contains("LAST_NAME") && s.Contains("format"))
+                    {
+                        this.textBoxLastName.BorderColor = Color.Red;
+                        errorProviderUsername.SetError(textBoxLastName, "Unvalid Format");
+                    }
+                    else if (failure.PropertyName.Contains("LAST_NAME") && s.Contains("caract"))
+                    {
+                        this.textBoxLastName.BorderColor = Color.Red;
+                        errorProviderUsername.SetError(textBoxLastName, "Must contains at least between 1 and 99 char");
+                    }
+                    else if (failure.PropertyName.Contains("FIRST_NAME") && s.Contains("format"))
+                    {
+                        this.textBoxFirstName.BorderColor = Color.Red;
+                        errorProviderUsername.SetError(textBoxFirstName, "Unvalid Format");
+                    }
+                    else if (failure.PropertyName.Contains("FIRST_NAME") && s.Contains("caract"))
+                    {
+                        this.textBoxFirstName.BorderColor = Color.Red;
+                        errorProviderUsername.SetError(textBoxFirstName, "Must contains at least between 1 and 99 char");
+                    }
+                    else if (failure.PropertyName.Contains("BIRTH"))
+                    {
+                        this.datePicker.BorderColor = Color.Red;
+                        errorProviderUsername.SetError(datePicker, "Impossible Birth Date");
+                    }
+                    else if (failure.PropertyName.Contains("ADDRESS"))
+                    {
+                        this.textBoxAddress.BorderColor = Color.Red;
+                        errorProviderUsername.SetError(textBoxAddress, "Must contains at least between 1 and 249 char");
+                    }
+                    else if (failure.PropertyName.Contains("CITY"))
+                    {
+                        this.textBoxCity.BorderColor = Color.Red;
+                        errorProviderUsername.SetError(textBoxCity, "Must contains at least between 1 and 49 char");
+                    }
+                    else if (failure.PropertyName.Contains("POSTAL_CODE") && s.Contains("format"))
+                    {
+                        this.textBoxPostalCode.BorderColor = Color.Red;
+                        errorProviderUsername.SetError(textBoxPostalCode, "Unvalid Format");
+                    }
+                    else if (failure.PropertyName.Contains("POSTAL_CODE") && s.Contains("caract"))
+                    {
+                        this.textBoxPostalCode.BorderColor = Color.Red;
+                        errorProviderUsername.SetError(textBoxPostalCode, "Must contains at least between 1 and 49 char");
+                    }
+                    else if (failure.PropertyName.Contains("COUNTRY") && s.Contains("format"))
+                    {
+                        this.textBoxCountry.BorderColor = Color.Red;
+                        errorProviderUsername.SetError(textBoxCountry, "Unvalid Format");
+                    }
+                        
+                    else if (failure.PropertyName.Contains("COUNTRY") && s.Contains("caract"))
+                    {
+                        this.textBoxCountry.BorderColor = Color.Red;
+                        errorProviderUsername.SetError(textBoxCountry, "Must contains at least between 1 and 49 char");
+                    }                        
                 }
+                isBookChecked = true;
             }
 
+            // Check if Confirm Password is same than Password
+            if (textBoxPassword.Texts != textBoxConfirmPassword.Texts)
+            {
+                errorProviderUsername.SetError(textBoxConfirmPassword, "Passwords are different !");
+                this.textBoxConfirmPassword.BorderColor = Color.Red;
+                isPasswordConfirm = true;
+            }             
 
+            // INSERT
 
-
-
-
-
-
-
-
-
-
-
-            /* // Réinitialise TabErrors to false
-             for(int i = 0; i < tabErros.Length; i++)
-                 tabErros[i] = false;
-
-             try
-             {
-                 Account newAccount = new Account
-                 {
-                     ACCOUNT_EMAIL = this.textBoxEmail.Texts,
-                     ACCOUNT_USERNAME = this.textBoxUsername.Texts.Trim(),
-                     ACCOUNT_PASSWORD = this.textBoxPassword.Texts,
-                     ACCOUNT_LAST_NAME = this.textBoxLastName.Texts.Trim(),
-                     ACCOUNT_FIRST_NAME = this.textBoxFirstName.Texts.Trim(),
-                     ACCOUNT_BIRTH_DATE = this.datePicker.Value.Date,
-                     ACCOUNT_ADDRESS = this.textBoxAddress.Texts.Trim(),
-                     ACCOUNT_CITY = this.textBoxCity.Texts.Trim(),
-                     ACCOUNT_POSTAL_CODE = this.textBoxPostalCode.Texts,
-                     ACCOUNT_COUNTRY = this.textBoxCountry.Texts.Trim(),
-                     ACCOUNT_ROLE = "CLIENT"
-                 };
-
-                 tabErros = LogicLayer.CheckValidityNewAccount(newAccount, accounts, this.tabErros);
-
-                 if (tabErros.Contains(true))
-                 {
-                     for (int i = 0; i < tabErros.Length; i++)
-                     {
-                         if (tabErros[i] == true)
-                         {
-                             Debug.Print("tabErrors : " + i + "");
-                         }
-                     }
-                     Debug.Print("\n");                     
-                 }
-                 else
-                 {
-
-                     if (Auth.SignUp(newAccount))
-                     {
-                         MessageBox.Show("Registration Success, Redirect to Log In");
-                         this.Close();
-                     }
-
-                 }
-
-
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message);
-             }*/
-
+            if (!isDuplicated && !isBookChecked && !isPasswordConfirm)
+            {
+                if (Auth.SignUp(newAccount))
+                {                    
+                    this.panelSuccess.Visible = true;                    
+                }
+            }             
         }
 
 

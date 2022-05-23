@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.buttonCancel = new CustomControls.RJControls.RJButton();
@@ -59,17 +60,42 @@
             this.textBoxPostalCode = new CustomControls.RJControls.RJTextBox();
             this.buttonSelectProfileImage = new CustomControls.RJControls.RJButton();
             this.labelIcon = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.errorProviderUsername = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderConfirmPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderFirstName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderLastName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderBirthDate = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderAddress = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCity = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPostalCode = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCountry = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderEmail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panelSuccess = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelSuccess = new System.Windows.Forms.Label();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderConfirmPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFirstName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLastName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderBirthDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPostalCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCountry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
+            this.panelSuccess.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLeft
             // 
             this.panelLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelLeft.Controls.Add(this.panelSuccess);
             this.panelLeft.Controls.Add(this.panelRight);
             this.panelLeft.Controls.Add(this.buttonCancel);
             this.panelLeft.Controls.Add(this.pictureBoxNewCustomer);
@@ -157,7 +183,7 @@
             this.textBoxEmail.PasswordChar = false;
             this.textBoxEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxEmail.PlaceholderText = "";
-            this.textBoxEmail.Size = new System.Drawing.Size(452, 34);
+            this.textBoxEmail.Size = new System.Drawing.Size(447, 34);
             this.textBoxEmail.TabIndex = 2;
             this.textBoxEmail.Texts = "";
             this.textBoxEmail.UnderlinedStyle = false;
@@ -335,7 +361,7 @@
             this.textBoxPassword.PasswordChar = false;
             this.textBoxPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxPassword.PlaceholderText = "";
-            this.textBoxPassword.Size = new System.Drawing.Size(172, 34);
+            this.textBoxPassword.Size = new System.Drawing.Size(167, 34);
             this.textBoxPassword.TabIndex = 26;
             this.textBoxPassword.Texts = "";
             this.textBoxPassword.UnderlinedStyle = false;
@@ -357,7 +383,7 @@
             this.textBoxConfirmPassword.PasswordChar = false;
             this.textBoxConfirmPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxConfirmPassword.PlaceholderText = "";
-            this.textBoxConfirmPassword.Size = new System.Drawing.Size(172, 34);
+            this.textBoxConfirmPassword.Size = new System.Drawing.Size(167, 34);
             this.textBoxConfirmPassword.TabIndex = 27;
             this.textBoxConfirmPassword.Texts = "";
             this.textBoxConfirmPassword.UnderlinedStyle = false;
@@ -379,7 +405,7 @@
             this.textBoxLastName.PasswordChar = false;
             this.textBoxLastName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxLastName.PlaceholderText = "";
-            this.textBoxLastName.Size = new System.Drawing.Size(172, 34);
+            this.textBoxLastName.Size = new System.Drawing.Size(167, 34);
             this.textBoxLastName.TabIndex = 28;
             this.textBoxLastName.Texts = "";
             this.textBoxLastName.UnderlinedStyle = false;
@@ -423,7 +449,7 @@
             this.textBoxAddress.PasswordChar = false;
             this.textBoxAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxAddress.PlaceholderText = "";
-            this.textBoxAddress.Size = new System.Drawing.Size(452, 34);
+            this.textBoxAddress.Size = new System.Drawing.Size(447, 34);
             this.textBoxAddress.TabIndex = 30;
             this.textBoxAddress.Texts = "";
             this.textBoxAddress.UnderlinedStyle = false;
@@ -500,7 +526,7 @@
             this.textBoxPostalCode.PasswordChar = false;
             this.textBoxPostalCode.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxPostalCode.PlaceholderText = "";
-            this.textBoxPostalCode.Size = new System.Drawing.Size(105, 34);
+            this.textBoxPostalCode.Size = new System.Drawing.Size(100, 34);
             this.textBoxPostalCode.TabIndex = 34;
             this.textBoxPostalCode.Texts = "";
             this.textBoxPostalCode.UnderlinedStyle = false;
@@ -537,13 +563,93 @@
             this.labelIcon.TabIndex = 36;
             this.labelIcon.Text = "Profile\'s Icon";
             // 
-            // errorProvider1
+            // errorProviderUsername
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.errorProviderUsername.BlinkRate = 0;
+            this.errorProviderUsername.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderUsername.ContainerControl = this;
             // 
-            // helpProvider1
+            // errorProviderPassword
             // 
-            this.helpProvider1.HelpNamespace = "ALLLEEEEEEDDDDD";
+            this.errorProviderPassword.BlinkRate = 0;
+            this.errorProviderPassword.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderPassword.ContainerControl = this;
+            // 
+            // errorProviderConfirmPassword
+            // 
+            this.errorProviderConfirmPassword.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderConfirmPassword.ContainerControl = this;
+            // 
+            // errorProviderFirstName
+            // 
+            this.errorProviderFirstName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderFirstName.ContainerControl = this;
+            // 
+            // errorProviderLastName
+            // 
+            this.errorProviderLastName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderLastName.ContainerControl = this;
+            // 
+            // errorProviderBirthDate
+            // 
+            this.errorProviderBirthDate.BlinkRate = 0;
+            this.errorProviderBirthDate.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderBirthDate.ContainerControl = this;
+            // 
+            // errorProviderAddress
+            // 
+            this.errorProviderAddress.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderAddress.ContainerControl = this;
+            // 
+            // errorProviderCity
+            // 
+            this.errorProviderCity.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderCity.ContainerControl = this;
+            // 
+            // errorProviderPostalCode
+            // 
+            this.errorProviderPostalCode.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderPostalCode.ContainerControl = this;
+            // 
+            // errorProviderCountry
+            // 
+            this.errorProviderCountry.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderCountry.ContainerControl = this;
+            // 
+            // errorProviderEmail
+            // 
+            this.errorProviderEmail.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderEmail.ContainerControl = this;
+            // 
+            // panelSuccess
+            // 
+            this.panelSuccess.Controls.Add(this.labelSuccess);
+            this.panelSuccess.Controls.Add(this.pictureBox1);
+            this.panelSuccess.Location = new System.Drawing.Point(10, 322);
+            this.panelSuccess.Name = "panelSuccess";
+            this.panelSuccess.Size = new System.Drawing.Size(204, 62);
+            this.panelSuccess.TabIndex = 3;
+            this.panelSuccess.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 45);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // labelSuccess
+            // 
+            this.labelSuccess.AutoSize = true;
+            this.labelSuccess.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSuccess.Location = new System.Drawing.Point(59, 22);
+            this.labelSuccess.Name = "labelSuccess";
+            this.labelSuccess.Size = new System.Drawing.Size(139, 19);
+            this.labelSuccess.TabIndex = 1;
+            this.labelSuccess.Text = "Registration Successful";
             // 
             // Registration
             // 
@@ -588,7 +694,20 @@
             this.panelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderConfirmPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFirstName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLastName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderBirthDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPostalCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCountry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).EndInit();
+            this.panelSuccess.ResumeLayout(false);
+            this.panelSuccess.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,7 +744,19 @@
         private CustomControls.RJControls.RJTextBox textBoxPostalCode;
         private CustomControls.RJControls.RJButton buttonSelectProfileImage;
         private System.Windows.Forms.Label labelIcon;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.ErrorProvider errorProviderUsername;
+        private System.Windows.Forms.ErrorProvider errorProviderPassword;
+        private System.Windows.Forms.ErrorProvider errorProviderConfirmPassword;
+        private System.Windows.Forms.ErrorProvider errorProviderFirstName;
+        private System.Windows.Forms.ErrorProvider errorProviderLastName;
+        private System.Windows.Forms.ErrorProvider errorProviderBirthDate;
+        private System.Windows.Forms.ErrorProvider errorProviderAddress;
+        private System.Windows.Forms.ErrorProvider errorProviderCity;
+        private System.Windows.Forms.ErrorProvider errorProviderPostalCode;
+        private System.Windows.Forms.ErrorProvider errorProviderCountry;
+        private System.Windows.Forms.ErrorProvider errorProviderEmail;
+        private System.Windows.Forms.Panel panelSuccess;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelSuccess;
     }
 }
