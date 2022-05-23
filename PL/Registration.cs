@@ -52,8 +52,8 @@ namespace PL
 
 
             // TEMPORAIRE
-            this.textBoxEmail.Texts = "vroomz.lol@gmail.com";
-            this.textBoxUsername.Texts = "UnUSER";
+            this.textBoxEmail.Texts = "vroomz.lol@gmail.coum";
+            this.textBoxUsername.Texts = "Irwin";
             this.textBoxPassword.Texts = "UN Mot de passe";
             this.textBoxConfirmPassword.Texts = "UN Mot de passe";
             this.textBoxLastName.Texts = "Gourou";
@@ -74,6 +74,12 @@ namespace PL
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
+            bool isDuplicated = false;
+
+            // Réinitialise TabErrors to false
+            for (int i = 0; i < tabErros.Length; i++)
+                tabErros[i] = false;
+
             RulesBookAccount rbAccount = new RulesBookAccount();
 
 
@@ -96,33 +102,50 @@ namespace PL
             {
                 if (a.ACCOUNT_USERNAME == newAccount.ACCOUNT_USERNAME)
                 {
-                   
+                    isDuplicated = true;
+
+                    //this.textBoxUsername.
+                    MessageBox.Show("compte existe deja");
+
                 }
+
                 if (a.ACCOUNT_EMAIL == newAccount.ACCOUNT_EMAIL)
                 {
-
+                    isDuplicated = true;
+                    MessageBox.Show("email existe deja");
                 }
             }
 
-
-
-            var result = rbAccount.Validate(newAccount);
-
-            Debug.Print($"Is Valid {result.IsValid}");
-
-
-
-            if (!result.IsValid)
+            if (!isDuplicated)
             {
-                foreach (var failure in result.Errors)
-                {
-                    string s = failure.ErrorMessage;
-                    int found = s.IndexOf("' ");
-                    Debug.Print(failure.PropertyName + ": " + s.Substring(found + 2));
+                var result = rbAccount.Validate(newAccount);
 
-                    //Debug.Print($"{failure.PropertyName}. error {failure.ErrorMessage}");
+                Debug.Print($"Is Valid {result.IsValid}");
+
+                if (!result.IsValid)
+                {
+                    foreach (var failure in result.Errors)
+                    {
+                        string s = failure.ErrorMessage;
+                        int found = s.IndexOf("' ");
+                        Debug.Print(failure.PropertyName + ": " + s.Substring(found + 2));
+
+                        //Debug.Print($"{failure.PropertyName}. error {failure.ErrorMessage}");
+                    }
                 }
             }
+
+
+
+
+
+
+
+
+
+
+
+
 
             /* // Réinitialise TabErrors to false
              for(int i = 0; i < tabErros.Length; i++)
