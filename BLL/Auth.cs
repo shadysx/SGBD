@@ -15,13 +15,15 @@ namespace BLL
         public static Account CurrentUser { get; set; }
         public static void Login(string username, string password)
         {
+            Auth.CurrentUser = null;
+
             List<Account> accounts = AccountAccess.SelectAllAccounts();
 
             foreach (Account account in accounts)
             {
                 if (account.ACCOUNT_USERNAME == username && account.ACCOUNT_PASSWORD == Auth.ComputeSha256Hash(password))
                 {
-                    CurrentUser = account;
+                    Auth.CurrentUser = account;
                 }
             }
 

@@ -92,10 +92,10 @@
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 20;
-            this.iconPictureBox2.Location = new System.Drawing.Point(1289, 12);
+            this.iconPictureBox2.IconSize = 17;
+            this.iconPictureBox2.Location = new System.Drawing.Point(1300, 8);
             this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(27, 20);
+            this.iconPictureBox2.Size = new System.Drawing.Size(17, 21);
             this.iconPictureBox2.TabIndex = 1;
             this.iconPictureBox2.TabStop = false;
             this.iconPictureBox2.Click += new System.EventHandler(this.iconPictureBox2_Click);

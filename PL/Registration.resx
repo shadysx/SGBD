@@ -121,7 +121,7 @@
   <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAB9AAAAfQCAYAAACaOMR5AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsQAAALEAGtI711AAAAB3RJ
         TUUH5QIJFgsGn6mfRwAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAANeFSURBVHhe
         7N3NQSRJkgXgEgEREAEREIEjR0RABERABERABETgUAKUCKXBrlkXTGVHPyCT/IsI/w7f5e1Mb0+Ve6Rb
         WLj7j//7v/8DAAAAAAAAgOHFEAAAAAAAAABGE0MAAAAAAAAAGE0MAQAAAAAAAGA0MQQAAAAAAACA0cQQ
@@ -1055,7 +1055,7 @@
     <value>360, 40</value>
   </metadata>
   <metadata name="errorProviderConfirmPassword.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>510, 40</value>
+    <value>531, 18</value>
   </metadata>
   <metadata name="errorProviderFirstName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>723, 38</value>
@@ -1076,7 +1076,7 @@
     <value>293, 71</value>
   </metadata>
   <metadata name="errorProviderCountry.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>423, 71</value>
+    <value>928, 41</value>
   </metadata>
   <metadata name="errorProviderEmail.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>574, 73</value>

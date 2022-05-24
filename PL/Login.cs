@@ -14,10 +14,12 @@ namespace PL
 {
     public partial class Login : KryptonForm
     {
+        private Registration registrationForm;
         public Login()
         {
             InitializeComponent();
             FormStyles();
+            registrationForm = new Registration(this);
         }
 
         public void FormStyles()
@@ -46,7 +48,12 @@ namespace PL
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {            
-            Registration r = new Registration();
+
+            
+            this.registrationForm.Show();
+            this.Hide();
+            
+            /*Registration r = new Registration();
             DialogResult result = r.ShowDialog();
 
             this.Hide();
@@ -55,7 +62,7 @@ namespace PL
             {
                 r.Close();
                 this.Show();
-            }
+            }*/
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -63,13 +70,18 @@ namespace PL
             try
             {
                 Auth.Login(this.textBoxUserName.Texts, this.textBoxPassWord.Texts);
-                new Main().Show();
+                new Main(this).Show();
                 this.Hide();                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void iconPictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

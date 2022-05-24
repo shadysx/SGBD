@@ -14,12 +14,15 @@ namespace PL
 {
     public partial class Main : KryptonForm
     {
+
+        private Login loginForm;
         
-       
-        
-        public Main()
+        public Main(Form f)
         {
             InitializeComponent();
+
+            this.loginForm = (Login)f;
+            this.iconButtonProfile.Text = Auth.CurrentUser.ACCOUNT_USERNAME;
 
             this.panel1.BackColor = CustomColor.Orange;
             this.panelTop.BackColor = CustomColor.DarkBlue;
@@ -39,8 +42,8 @@ namespace PL
         }
         private void Main_Load(object sender, EventArgs e)
         {
-            Auth.Login("Irwin", "password");            
-            this.iconButtonProfile.Text = Auth.CurrentUser.ACCOUNT_USERNAME;
+            /*Auth.Login("Irwin", "password");*/
+            
         }
 
         private void iconPictureBox2_Click(object sender, EventArgs e)
@@ -78,8 +81,8 @@ namespace PL
 
         private void label2_Click(object sender, EventArgs e)
         {
-            this.Close();
-            //Rajouter le retour au Logian avec un Event
+            loginForm.Show();
+            this.Close();            
         }
 
         private void label1_MouseHover(object sender, EventArgs e)

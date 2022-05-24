@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.panelSuccess = new System.Windows.Forms.Panel();
+            this.labelSuccess = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelRight = new System.Windows.Forms.Panel();
             this.buttonCancel = new CustomControls.RJControls.RJButton();
             this.pictureBoxNewCustomer = new System.Windows.Forms.PictureBox();
@@ -71,10 +74,10 @@
             this.errorProviderPostalCode = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderCountry = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderEmail = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panelSuccess = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelSuccess = new System.Windows.Forms.Label();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.panelLeft.SuspendLayout();
+            this.panelSuccess.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsername)).BeginInit();
@@ -88,8 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPostalCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCountry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
-            this.panelSuccess.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLeft
@@ -105,6 +107,36 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(225, 450);
             this.panelLeft.TabIndex = 0;
+            // 
+            // panelSuccess
+            // 
+            this.panelSuccess.Controls.Add(this.labelSuccess);
+            this.panelSuccess.Controls.Add(this.pictureBox1);
+            this.panelSuccess.Location = new System.Drawing.Point(10, 322);
+            this.panelSuccess.Name = "panelSuccess";
+            this.panelSuccess.Size = new System.Drawing.Size(204, 62);
+            this.panelSuccess.TabIndex = 3;
+            this.panelSuccess.Visible = false;
+            // 
+            // labelSuccess
+            // 
+            this.labelSuccess.AutoSize = true;
+            this.labelSuccess.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSuccess.Location = new System.Drawing.Point(59, 22);
+            this.labelSuccess.Name = "labelSuccess";
+            this.labelSuccess.Size = new System.Drawing.Size(139, 19);
+            this.labelSuccess.TabIndex = 1;
+            this.labelSuccess.Text = "Registration Successful";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 45);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panelRight
             // 
@@ -160,7 +192,7 @@
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmail.ForeColor = System.Drawing.Color.Black;
-            this.labelEmail.Location = new System.Drawing.Point(234, 25);
+            this.labelEmail.Location = new System.Drawing.Point(234, 33);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(57, 28);
             this.labelEmail.TabIndex = 1;
@@ -175,7 +207,7 @@
             this.textBoxEmail.BorderSize = 2;
             this.textBoxEmail.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxEmail.Location = new System.Drawing.Point(332, 19);
+            this.textBoxEmail.Location = new System.Drawing.Point(332, 27);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmail.Multiline = false;
             this.textBoxEmail.Name = "textBoxEmail";
@@ -194,7 +226,7 @@
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.Color.Black;
-            this.labelUsername.Location = new System.Drawing.Point(234, 71);
+            this.labelUsername.Location = new System.Drawing.Point(234, 79);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(97, 28);
             this.labelUsername.TabIndex = 3;
@@ -205,7 +237,7 @@
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.ForeColor = System.Drawing.Color.Black;
-            this.labelPassword.Location = new System.Drawing.Point(520, 71);
+            this.labelPassword.Location = new System.Drawing.Point(520, 79);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(92, 28);
             this.labelPassword.TabIndex = 5;
@@ -216,7 +248,7 @@
             this.labelFirstName.AutoSize = true;
             this.labelFirstName.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFirstName.ForeColor = System.Drawing.Color.Black;
-            this.labelFirstName.Location = new System.Drawing.Point(234, 165);
+            this.labelFirstName.Location = new System.Drawing.Point(234, 173);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(99, 28);
             this.labelFirstName.TabIndex = 7;
@@ -227,7 +259,7 @@
             this.labelLastName.AutoSize = true;
             this.labelLastName.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLastName.ForeColor = System.Drawing.Color.Black;
-            this.labelLastName.Location = new System.Drawing.Point(512, 165);
+            this.labelLastName.Location = new System.Drawing.Point(512, 173);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(99, 28);
             this.labelLastName.TabIndex = 8;
@@ -238,7 +270,7 @@
             this.labelAddress.AutoSize = true;
             this.labelAddress.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAddress.ForeColor = System.Drawing.Color.Black;
-            this.labelAddress.Location = new System.Drawing.Point(234, 270);
+            this.labelAddress.Location = new System.Drawing.Point(234, 278);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(79, 28);
             this.labelAddress.TabIndex = 11;
@@ -249,7 +281,7 @@
             this.labelCountry.AutoSize = true;
             this.labelCountry.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCountry.ForeColor = System.Drawing.Color.Black;
-            this.labelCountry.Location = new System.Drawing.Point(234, 377);
+            this.labelCountry.Location = new System.Drawing.Point(234, 385);
             this.labelCountry.Name = "labelCountry";
             this.labelCountry.Size = new System.Drawing.Size(78, 28);
             this.labelCountry.TabIndex = 13;
@@ -260,7 +292,7 @@
             this.labelCity.AutoSize = true;
             this.labelCity.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCity.ForeColor = System.Drawing.Color.Black;
-            this.labelCity.Location = new System.Drawing.Point(234, 322);
+            this.labelCity.Location = new System.Drawing.Point(234, 330);
             this.labelCity.Name = "labelCity";
             this.labelCity.Size = new System.Drawing.Size(44, 28);
             this.labelCity.TabIndex = 15;
@@ -271,7 +303,7 @@
             this.labelPostalCode.AutoSize = true;
             this.labelPostalCode.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPostalCode.ForeColor = System.Drawing.Color.Black;
-            this.labelPostalCode.Location = new System.Drawing.Point(553, 322);
+            this.labelPostalCode.Location = new System.Drawing.Point(553, 330);
             this.labelPostalCode.Name = "labelPostalCode";
             this.labelPostalCode.Size = new System.Drawing.Size(109, 28);
             this.labelPostalCode.TabIndex = 17;
@@ -307,7 +339,7 @@
             this.textBoxUsername.BorderSize = 2;
             this.textBoxUsername.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxUsername.Location = new System.Drawing.Point(332, 65);
+            this.textBoxUsername.Location = new System.Drawing.Point(332, 73);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Multiline = false;
             this.textBoxUsername.Name = "textBoxUsername";
@@ -325,7 +357,7 @@
             this.labelPasswordConfirm.AutoSize = true;
             this.labelPasswordConfirm.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPasswordConfirm.ForeColor = System.Drawing.Color.Black;
-            this.labelPasswordConfirm.Location = new System.Drawing.Point(450, 116);
+            this.labelPasswordConfirm.Location = new System.Drawing.Point(450, 124);
             this.labelPasswordConfirm.Name = "labelPasswordConfirm";
             this.labelPasswordConfirm.Size = new System.Drawing.Size(162, 28);
             this.labelPasswordConfirm.TabIndex = 22;
@@ -336,7 +368,7 @@
             this.datePicker.BorderColor = System.Drawing.Color.Black;
             this.datePicker.BorderSize = 2;
             this.datePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePicker.Location = new System.Drawing.Point(332, 209);
+            this.datePicker.Location = new System.Drawing.Point(332, 217);
             this.datePicker.MinimumSize = new System.Drawing.Size(4, 35);
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(186, 35);
@@ -353,12 +385,12 @@
             this.textBoxPassword.BorderSize = 2;
             this.textBoxPassword.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxPassword.Location = new System.Drawing.Point(612, 65);
+            this.textBoxPassword.Location = new System.Drawing.Point(612, 73);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Multiline = false;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.textBoxPassword.PasswordChar = false;
+            this.textBoxPassword.PasswordChar = true;
             this.textBoxPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxPassword.PlaceholderText = "";
             this.textBoxPassword.Size = new System.Drawing.Size(167, 34);
@@ -375,12 +407,12 @@
             this.textBoxConfirmPassword.BorderSize = 2;
             this.textBoxConfirmPassword.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxConfirmPassword.Location = new System.Drawing.Point(612, 111);
+            this.textBoxConfirmPassword.Location = new System.Drawing.Point(612, 119);
             this.textBoxConfirmPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxConfirmPassword.Multiline = false;
             this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
             this.textBoxConfirmPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.textBoxConfirmPassword.PasswordChar = false;
+            this.textBoxConfirmPassword.PasswordChar = true;
             this.textBoxConfirmPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxConfirmPassword.PlaceholderText = "";
             this.textBoxConfirmPassword.Size = new System.Drawing.Size(167, 34);
@@ -397,7 +429,7 @@
             this.textBoxLastName.BorderSize = 2;
             this.textBoxLastName.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxLastName.Location = new System.Drawing.Point(612, 159);
+            this.textBoxLastName.Location = new System.Drawing.Point(612, 167);
             this.textBoxLastName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLastName.Multiline = false;
             this.textBoxLastName.Name = "textBoxLastName";
@@ -419,7 +451,7 @@
             this.textBoxFirstName.BorderSize = 2;
             this.textBoxFirstName.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxFirstName.Location = new System.Drawing.Point(332, 159);
+            this.textBoxFirstName.Location = new System.Drawing.Point(332, 167);
             this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFirstName.Multiline = false;
             this.textBoxFirstName.Name = "textBoxFirstName";
@@ -441,7 +473,7 @@
             this.textBoxAddress.BorderSize = 2;
             this.textBoxAddress.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxAddress.Location = new System.Drawing.Point(332, 264);
+            this.textBoxAddress.Location = new System.Drawing.Point(332, 272);
             this.textBoxAddress.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAddress.Multiline = false;
             this.textBoxAddress.Name = "textBoxAddress";
@@ -459,7 +491,7 @@
             this.labelBirthDate.AutoSize = true;
             this.labelBirthDate.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBirthDate.ForeColor = System.Drawing.Color.Black;
-            this.labelBirthDate.Location = new System.Drawing.Point(234, 218);
+            this.labelBirthDate.Location = new System.Drawing.Point(234, 226);
             this.labelBirthDate.Name = "labelBirthDate";
             this.labelBirthDate.Size = new System.Drawing.Size(91, 28);
             this.labelBirthDate.TabIndex = 31;
@@ -474,7 +506,7 @@
             this.textBoxCountry.BorderSize = 2;
             this.textBoxCountry.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxCountry.Location = new System.Drawing.Point(332, 371);
+            this.textBoxCountry.Location = new System.Drawing.Point(332, 379);
             this.textBoxCountry.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCountry.Multiline = false;
             this.textBoxCountry.Name = "textBoxCountry";
@@ -496,7 +528,7 @@
             this.textBoxCity.BorderSize = 2;
             this.textBoxCity.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxCity.Location = new System.Drawing.Point(332, 316);
+            this.textBoxCity.Location = new System.Drawing.Point(332, 324);
             this.textBoxCity.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCity.Multiline = false;
             this.textBoxCity.Name = "textBoxCity";
@@ -518,7 +550,7 @@
             this.textBoxPostalCode.BorderSize = 2;
             this.textBoxPostalCode.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPostalCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxPostalCode.Location = new System.Drawing.Point(679, 316);
+            this.textBoxPostalCode.Location = new System.Drawing.Point(679, 324);
             this.textBoxPostalCode.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPostalCode.Multiline = false;
             this.textBoxPostalCode.Name = "textBoxPostalCode";
@@ -543,7 +575,7 @@
             this.buttonSelectProfileImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSelectProfileImage.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSelectProfileImage.ForeColor = System.Drawing.Color.White;
-            this.buttonSelectProfileImage.Location = new System.Drawing.Point(353, 113);
+            this.buttonSelectProfileImage.Location = new System.Drawing.Point(353, 121);
             this.buttonSelectProfileImage.Name = "buttonSelectProfileImage";
             this.buttonSelectProfileImage.Size = new System.Drawing.Size(91, 32);
             this.buttonSelectProfileImage.TabIndex = 35;
@@ -557,7 +589,7 @@
             this.labelIcon.AutoSize = true;
             this.labelIcon.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIcon.ForeColor = System.Drawing.Color.Black;
-            this.labelIcon.Location = new System.Drawing.Point(234, 116);
+            this.labelIcon.Location = new System.Drawing.Point(234, 124);
             this.labelIcon.Name = "labelIcon";
             this.labelIcon.Size = new System.Drawing.Size(113, 28);
             this.labelIcon.TabIndex = 36;
@@ -621,41 +653,29 @@
             this.errorProviderEmail.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderEmail.ContainerControl = this;
             // 
-            // panelSuccess
+            // iconPictureBox2
             // 
-            this.panelSuccess.Controls.Add(this.labelSuccess);
-            this.panelSuccess.Controls.Add(this.pictureBox1);
-            this.panelSuccess.Location = new System.Drawing.Point(10, 322);
-            this.panelSuccess.Name = "panelSuccess";
-            this.panelSuccess.Size = new System.Drawing.Size(204, 62);
-            this.panelSuccess.TabIndex = 3;
-            this.panelSuccess.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 45);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // labelSuccess
-            // 
-            this.labelSuccess.AutoSize = true;
-            this.labelSuccess.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSuccess.Location = new System.Drawing.Point(59, 22);
-            this.labelSuccess.Name = "labelSuccess";
-            this.labelSuccess.Size = new System.Drawing.Size(139, 19);
-            this.labelSuccess.TabIndex = 1;
-            this.labelSuccess.Text = "Registration Successful";
+            this.iconPictureBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.iconPictureBox2.BackgroundImage = global::PL.Properties.Resources.mc_red;
+            this.iconPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.Black;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.Black;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 17;
+            this.iconPictureBox2.Location = new System.Drawing.Point(771, 3);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(17, 21);
+            this.iconPictureBox2.TabIndex = 37;
+            this.iconPictureBox2.TabStop = false;
+            this.iconPictureBox2.Click += new System.EventHandler(this.iconPictureBox2_Click);
             // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.iconPictureBox2);
             this.Controls.Add(this.labelIcon);
             this.Controls.Add(this.buttonSelectProfileImage);
             this.Controls.Add(this.textBoxPostalCode);
@@ -688,10 +708,13 @@
             this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.StateCommon.Border.Rounding = 15;
             this.Text = "Registration";
+            this.Load += new System.EventHandler(this.Registration_Load);
             this.panelLeft.ResumeLayout(false);
+            this.panelSuccess.ResumeLayout(false);
+            this.panelSuccess.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsername)).EndInit();
@@ -705,9 +728,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPostalCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCountry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).EndInit();
-            this.panelSuccess.ResumeLayout(false);
-            this.panelSuccess.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -758,5 +779,6 @@
         private System.Windows.Forms.Panel panelSuccess;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelSuccess;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
     }
 }

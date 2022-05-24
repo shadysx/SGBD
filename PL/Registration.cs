@@ -19,13 +19,17 @@ namespace PL
 {
     public partial class Registration : KryptonForm
     {
-        private List<Account> accounts;       
+        private List<Account> accounts;
+        private Login loginForm;
+        public static string tbEmail { get; set; }
 
-        public Registration()
+
+        public Registration(Form f)
         {
             InitializeComponent();
             FormStyles();
             InitializeValue();
+            this.loginForm = (Login)f;
         }
 
         private void FormStyles()
@@ -42,24 +46,49 @@ namespace PL
         private void InitializeValue()
         {
 
-            // TEMPORAIRE
-            this.textBoxEmail.Texts = "vroomz.lol@gmail.com";
-            this.textBoxUsername.Texts = "Irwin";
-            this.textBoxPassword.Texts = "UN Mot de passe";
-            this.textBoxConfirmPassword.Texts = "UN Mot de passe";
-            this.textBoxLastName.Texts = "Gourou";
-            this.textBoxFirstName.Texts = "Legende";
-            this.datePicker.Value = new DateTime(2015, 2, 2);
-            this.textBoxAddress.Texts = "Rue Straat 47";
-            this.textBoxCity.Texts = "Verviers";
-            this.textBoxPostalCode.Texts = "4800";
-            this.textBoxCountry.Texts = "Belgium";
+
+            
+            
+        }
+
+        private void iconPictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Registration_Load(object sender, EventArgs e)
+        {
+            this.textBoxEmail.Texts = (string)this.textBoxEmail.Tag;
+            this.textBoxUsername.Texts = (string)this.textBoxUsername.Tag;
+            this.textBoxPassword.Texts = (string)this.textBoxPassword.Tag;
+            this.textBoxConfirmPassword.Texts = (string)this.textBoxConfirmPassword.Tag;
+            this.textBoxLastName.Texts = (string)this.textBoxLastName.Tag;
+            this.textBoxFirstName.Texts = (string)this.textBoxFirstName.Tag;
+            if(datePicker.Tag != null)
+                this.datePicker.Value = Convert.ToDateTime(datePicker.Tag);
+            this.textBoxAddress.Texts = (string)this.textBoxAddress.Tag;
+            this.textBoxCity.Texts = (string)this.textBoxCity.Tag;
+            this.textBoxPostalCode.Texts = (string)this.textBoxPostalCode.Tag;
+            this.textBoxCountry.Texts = (string)this.textBoxCountry.Tag;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        {            
+            this.textBoxEmail.Tag = this.textBoxEmail.Texts;
+            this.textBoxUsername.Tag = this.textBoxUsername.Texts;
+            this.textBoxPassword.Tag = this.textBoxPassword.Texts;
+            this.textBoxConfirmPassword.Tag = this.textBoxConfirmPassword.Texts;
+            this.textBoxLastName.Tag = this.textBoxLastName.Texts;
+            this.textBoxFirstName.Tag = this.textBoxFirstName.Texts;
+            this.datePicker.Tag = this.datePicker.Value.ToString();
+            this.textBoxAddress.Tag = this.textBoxAddress.Texts;
+            this.textBoxCity.Tag = this.textBoxCity.Texts;
+            this.textBoxPostalCode.Tag = this.textBoxPostalCode.Texts;
+            this.textBoxCountry.Tag = this.textBoxCountry.Texts;
 
+            this.loginForm.Show();
+            this.Hide();
+            
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
@@ -76,17 +105,8 @@ namespace PL
 
             //Reset des erreurs
 
-            errorProviderEmail.SetError(textBoxEmail, null);
-            errorProviderUsername.SetError(textBoxUsername, null);
-            errorProviderPassword.SetError(textBoxPassword, null);
-            errorProviderConfirmPassword.SetError(textBoxConfirmPassword, null);
-            errorProviderBirthDate.SetError(datePicker, null);
-            errorProviderLastName.SetError(textBoxLastName, null);
-            errorProviderFirstName.SetError(textBoxFirstName, null);
-            errorProviderAddress.SetError(textBoxAddress, null);
-            errorProviderCity.SetError(textBoxCity, null);
-            errorProviderPostalCode.SetError(textBoxPostalCode, null);
-            errorProviderCountry.SetError(textBoxCountry, null);
+            ResetErrorProvider();
+            
 
             // Reset la couleur de la Bordure des textbox en noir
             foreach (RJTextBox tb in this.Controls.OfType<RJTextBox>())
@@ -130,9 +150,8 @@ namespace PL
             }                        
 
             // Check à l'aide du RulesBook
-
-            var result = rbAccount.Validate(newAccount);            
-
+            var result = rbAccount.Validate(newAccount);   
+            
             if (!result.IsValid)
             {
                 foreach (var failure in result.Errors)
@@ -157,7 +176,7 @@ namespace PL
                     else if (failure.PropertyName.Contains("PASSWORD"))
                     {
                         this.textBoxPassword.BorderColor = Color.Red;
-                        errorProviderUsername.SetError(textBoxPassword, "Must contains at least between 4 and 49 char");
+                        errorProviderUsername.SetError(textBoxPassword, "Must contains at least between 8 and 49 char");
                     }
                     else if (failure.PropertyName.Contains("LAST_NAME") && s.Contains("format"))
                     {
@@ -219,6 +238,7 @@ namespace PL
                 isBookChecked = true;
             }
 
+
             // Check if Confirm Password is same than Password
             if (textBoxPassword.Texts != textBoxConfirmPassword.Texts)
             {
@@ -228,18 +248,35 @@ namespace PL
             }             
 
             // INSERT
-
             if (!isDuplicated && !isBookChecked && !isPasswordConfirm)
             {
                 if (Auth.SignUp(newAccount))
-                {                    
-                    this.panelSuccess.Visible = true;                    
+                {
+                    
+                    this.panelSuccess.Visible = true;
+
+                    foreach (RJTextBox tb in this.Controls.OfType<RJTextBox>())
+                        tb.Texts = "";
+                    
                 }
             }             
         }
 
-
-
+        private void ResetErrorProvider()
+        {
+            this.errorProviderEmail.SetError(textBoxEmail, null);
+            this.errorProviderUsername.SetError(textBoxUsername, null);
+            this.errorProviderPassword.SetError(textBoxPassword, null);
+            this.errorProviderConfirmPassword.SetError(textBoxConfirmPassword, null);
+            Debug.Print("Test done");
+            this.errorProviderBirthDate.SetError(datePicker, null);
+            this.errorProviderLastName.SetError(textBoxLastName, null);
+            this.errorProviderFirstName.SetError(textBoxFirstName, null);
+            this.errorProviderAddress.SetError(textBoxAddress, null);
+            this.errorProviderCity.SetError(textBoxCity, null);
+            this.errorProviderPostalCode.SetError(textBoxPostalCode, null);
+            this.errorProviderCountry.SetError(textBoxCountry, null);
+        }
 
         private void buttonSelectProfileImage_Click(object sender, EventArgs e)
         {
@@ -250,5 +287,7 @@ namespace PL
         {
 
         }
+
+        
     }
 }
