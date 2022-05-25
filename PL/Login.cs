@@ -51,6 +51,12 @@ namespace PL
 
             
             this.registrationForm.Show();
+
+            
+
+
+
+
             this.Hide();
             
             /*Registration r = new Registration();

@@ -219,7 +219,7 @@
             this.textBoxEmail.TabIndex = 2;
             this.textBoxEmail.Texts = "";
             this.textBoxEmail.UnderlinedStyle = false;
-            this.textBoxEmail.Leave += new System.EventHandler(this.textBoxEmail_Leave);
+            
             // 
             // labelUsername
             // 
@@ -710,7 +710,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.StateCommon.Border.Rounding = 15;
             this.Text = "Registration";
-            this.Load += new System.EventHandler(this.Registration_Load);
+            this.Activated += new System.EventHandler(this.Registration_Activated);            
             this.panelLeft.ResumeLayout(false);
             this.panelSuccess.ResumeLayout(false);
             this.panelSuccess.PerformLayout();
