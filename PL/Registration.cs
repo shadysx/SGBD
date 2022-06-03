@@ -136,7 +136,7 @@ namespace PL
                 ACCOUNT_BIRTH_DATE = this.datePicker.Value.Date,
                 ACCOUNT_ADDRESS = this.textBoxAddress.Texts.Trim(),
                 ACCOUNT_CITY = this.textBoxCity.Texts.Trim(),
-                ACCOUNT_POSTAL_CODE = this.textBoxPostalCode.Texts,
+                ACCOUNT_POSTAL_CODE = this.textBoxPostalCode.Texts.Trim(),
                 ACCOUNT_COUNTRY = this.textBoxCountry.Texts.Trim(),
                 ACCOUNT_ROLE = "CLIENT"
             };
@@ -166,10 +166,11 @@ namespace PL
             var result = rbAccount.Validate(newAccount);            
 
             if (!result.IsValid)
-            {
+            {              
+
                 foreach (var failure in result.Errors)
                 {
-                    string s = failure.ErrorMessage;
+                    string s = failure.ErrorMessage;                    
 
                     if (failure.PropertyName.Contains("EMAIL"))
                     {

@@ -77,7 +77,7 @@ namespace PL
 
         private void label1_Click(object sender, EventArgs e)
         {
-            this.OpenChildForm(new AccountSettings(Auth.CurrentUser.ACCOUNT_USERNAME));
+            this.OpenChildForm(new AccountSettings());
             this.panel1.Visible = false;
         }
 
