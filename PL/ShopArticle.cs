@@ -12,13 +12,22 @@ namespace PL
 {
     public partial class ShopArticle : Form
     {
-        public ShopArticle(string vendeur, decimal prix, int quantite, string pays)
+        string nom;
+        public ShopArticle(string nom, string vendeur, decimal prix, int quantite, string pays)
         {
             InitializeComponent();
             this.labelPrix.Text = "€ " + prix.ToString();
             this.labelVendeur.Text = vendeur;
             this.labelQuantite.Text = "Quantité en stock : " + quantite.ToString();
             this.labelPays.Text = pays;
+            this.iconButton1.IconColor = CustomColor.Orange;
+            this.nom = nom;
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show($"{this.nom} A bien été ajouté au panier");
         }
     }
 }

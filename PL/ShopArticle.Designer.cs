@@ -39,7 +39,7 @@
             // 
             this.labelVendeur.AutoSize = true;
             this.labelVendeur.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVendeur.Location = new System.Drawing.Point(12, 9);
+            this.labelVendeur.Location = new System.Drawing.Point(1, -1);
             this.labelVendeur.Name = "labelVendeur";
             this.labelVendeur.Size = new System.Drawing.Size(174, 33);
             this.labelVendeur.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             this.labelPrix.AutoSize = true;
             this.labelPrix.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrix.Location = new System.Drawing.Point(513, 65);
+            this.labelPrix.Location = new System.Drawing.Point(612, 40);
             this.labelPrix.Name = "labelPrix";
             this.labelPrix.Size = new System.Drawing.Size(123, 33);
             this.labelPrix.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             this.labelQuantite.AutoSize = true;
             this.labelQuantite.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuantite.Location = new System.Drawing.Point(11, 102);
+            this.labelQuantite.Location = new System.Drawing.Point(0, 79);
             this.labelQuantite.Name = "labelQuantite";
             this.labelQuantite.Size = new System.Drawing.Size(175, 33);
             this.labelQuantite.TabIndex = 2;
@@ -70,19 +70,20 @@
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconColor = System.Drawing.Color.IndianRed;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(651, 63);
+            this.iconButton1.Location = new System.Drawing.Point(741, 38);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(72, 49);
             this.iconButton1.TabIndex = 3;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // labelPays
             // 
             this.labelPays.AutoSize = true;
             this.labelPays.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPays.Location = new System.Drawing.Point(12, 54);
+            this.labelPays.Location = new System.Drawing.Point(1, 40);
             this.labelPays.Name = "labelPays";
             this.labelPays.Size = new System.Drawing.Size(131, 33);
             this.labelPays.TabIndex = 4;
@@ -92,8 +93,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(781, 163);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(825, 120);
             this.Controls.Add(this.labelPays);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.labelQuantite);

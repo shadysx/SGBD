@@ -17,15 +17,18 @@ namespace PL
         public ArticleDetails(string articleName)
         {
             InitializeComponent();
-            this.label1.Text = articleName;
+            this.BackColor = CustomColor.DarkBlue;
+            this.panel1.BackColor = CustomColor.DarkBlue;
+            this.labelTop.Text = "Produit Selectionné :";
+            this.labelNom.Text = articleName;
             List<Stock> stock = StockAccess.GetStock(articleName);
             DisplayProducts(stock);
 
         }
 
-        public void AddProduct(string vendeur, decimal prix, int quantite, string pays)
+        public void AddProduct(string nom, string vendeur, decimal prix, int quantite, string pays)
         {
-            ShopArticle article = new ShopArticle(vendeur, prix, quantite, pays);
+            ShopArticle article = new ShopArticle(nom, vendeur, prix, quantite, pays);
             article.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(article);
             article.Show();
@@ -35,11 +38,16 @@ namespace PL
         {
             foreach (Stock s in stock)
             {
-                AddProduct(s.SHOP_NAME, s.SELLING_PRICE_EXCL_VAT, s.STOCK_QUANTITY, s.SHOP_COUNTRY);
+                AddProduct(s.PRODUCT_NAME, s.SHOP_NAME, s.SELLING_PRICE_EXCL_VAT, s.STOCK_QUANTITY, s.SHOP_COUNTRY);
             }
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelNom_Click(object sender, EventArgs e)
         {
 
         }
