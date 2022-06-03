@@ -31,7 +31,7 @@ namespace PL
 
         public void AddProduct(string productName, string productType, Image productImage)
         {
-            Article article = new Article(productName, productType, productImage);
+            Article article = new Article(this, productName, productType, productImage);
             article.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(article);
             article.Show();

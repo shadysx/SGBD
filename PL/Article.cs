@@ -12,7 +12,7 @@ namespace PL
 {
     public partial class Article : Form
     {
-        public Article(string productName, string productType, Image productImage)
+        public Article(Form parent, string productName, string productType, Image productImage)
         {
             InitializeComponent();
             this.labelNomArticle.Text = productName;
@@ -23,7 +23,11 @@ namespace PL
 
         private void Article_Load(object sender, EventArgs e)
         {
+        }
 
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            Main.mainInstance.OpenChildForm(new ArticleDetails(this.labelNomArticle.Text));
         }
     }
 }

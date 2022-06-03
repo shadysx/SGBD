@@ -89,6 +89,12 @@
     <Compile Include="Article.Designer.cs">
       <DependentUpon>Article.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArticleDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArticleDetails.Designer.cs">
+      <DependentUpon>ArticleDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Assets\CustomColor.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Article.resx">
       <DependentUpon>Article.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArticleDetails.resx">
+      <DependentUpon>ArticleDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

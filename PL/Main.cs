@@ -14,11 +14,13 @@ namespace PL
 {
     public partial class Main : KryptonForm
     {
+        public static Main mainInstance;
 
         private Login loginForm;
         
         public Main(Form f)
         {
+            Main.mainInstance = this;
             InitializeComponent();
 
             this.loginForm = (Login)f;
@@ -30,7 +32,7 @@ namespace PL
         }
 
 
-        private void OpenChildForm(Form f)
+        public void OpenChildForm(Form f)
         {
             f.TopLevel = false;
             f.FormBorderStyle = FormBorderStyle.None;
