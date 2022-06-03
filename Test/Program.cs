@@ -29,12 +29,13 @@ namespace Test
             Console.WriteLine(Auth.CurrentUser);
             */
 
-            List<Product> l = DAL.ProductsAccess.Select20RandomProducts();
+            List<Product> products = ProductsAccess.Select20RandomProducts();
 
-            foreach (Product p in l)
+            foreach (Product p in products)
             {
                 Console.WriteLine(p);
             }
+
 
             Console.Read();
         }

@@ -12,10 +12,11 @@ namespace PL
 {
     public partial class Article : Form
     {
-        public Article(Form parent, string productName, string productType, Image productImage)
+        public Article(Form parent, string productName, string productType, Image productImage, decimal bestPrice)
         {
             InitializeComponent();
             this.labelNomArticle.Text = productName;
+            this.labelPrix.Text = $"From {bestPrice} €";
             this.labelTypeArticle.Text = productType;
             this.pictureBox1.Image = productImage;
             this.iconButton1.IconColor = CustomColor.Orange;

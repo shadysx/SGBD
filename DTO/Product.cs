@@ -28,6 +28,8 @@ namespace DTO
             }
         }
 
+        public decimal PRODUCT_BEST_PRICE { get; set; }
+
 
         public override string ToString()
         {
@@ -35,6 +37,7 @@ namespace DTO
                    "PRODUCT_NAME : " + PRODUCT_NAME + "\n" +
                    "PRODUCT_TYPE : " + PRODUCT_TYPE + "\n" +
                    "PRODUCT_DESCRIPTION : " + PRODUCT_DESCRIPTION + "\n" +
+                   "PRODUCT_BEST_PRICE : " + PRODUCT_BEST_PRICE + "\n" +
                    "ID_PICTURE : " + ID_PICTURE + "\n" +
                    "PICTURE_URL : " + PICTURE_URL + "\n";
         }

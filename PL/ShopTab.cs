@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using DAL;
+using System.Diagnostics;
 
 namespace PL
 {
@@ -29,9 +30,9 @@ namespace PL
         
         }
 
-        public void AddProduct(string productName, string productType, Image productImage)
+        public void AddProduct(string productName, string productType, Image productImage, decimal productBestPrice)
         {
-            Article article = new Article(this, productName, productType, productImage);
+            Article article = new Article(this, productName, productType, productImage, productBestPrice);
             article.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(article);
             article.Show();
@@ -41,7 +42,7 @@ namespace PL
         {
             foreach(Product p in products)
             {
-                AddProduct(p.PRODUCT_NAME, p.PRODUCT_TYPE, p.PRODUCT_PICTURE);
+                AddProduct(p.PRODUCT_NAME, p.PRODUCT_TYPE, p.PRODUCT_PICTURE, p.PRODUCT_BEST_PRICE);
             }
         }
     }

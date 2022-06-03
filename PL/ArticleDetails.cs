@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
 
 namespace PL
 {
@@ -16,6 +17,13 @@ namespace PL
         {
             InitializeComponent();
             this.label1.Text = articleName;
+            this.dataGridView1.DataSource = StockAccess.GetStock(articleName);
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
