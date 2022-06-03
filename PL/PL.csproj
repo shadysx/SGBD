@@ -34,22 +34,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Docking">
-      <HintPath>..\..\..\..\Documents\Krypton\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+      <HintPath>\\Mac\Home\Documents\Krypton\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Navigator">
-      <HintPath>..\..\..\..\Documents\Krypton\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+      <HintPath>\\Mac\Home\Documents\Krypton\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Ribbon">
-      <HintPath>..\..\..\..\Documents\Krypton\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+      <HintPath>\\Mac\Home\Documents\Krypton\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\..\..\Documents\Krypton\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <HintPath>\\Mac\Home\Documents\Krypton\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Workspace">
-      <HintPath>..\..\..\..\Documents\Krypton\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+      <HintPath>\\Mac\Home\Documents\Krypton\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="CustomControls">
-      <HintPath>..\..\..\..\Documents\DLL\CustomControls.dll</HintPath>
+      <HintPath>\\Mac\Home\Downloads\CustomControls\CustomControls.dll</HintPath>
     </Reference>
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
@@ -116,6 +116,12 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShopArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopArticle.Designer.cs">
+      <DependentUpon>ShopArticle.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShopTab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </Compile>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopArticle.resx">
+      <DependentUpon>ShopArticle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShopTab.resx">
       <DependentUpon>ShopTab.cs</DependentUpon>
