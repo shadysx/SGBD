@@ -28,8 +28,6 @@ namespace PL
             this.panel1.BackColor = CustomColor.Orange;
             this.panelTop.BackColor = CustomColor.DarkBlue;
             this.panelLeft.BackColor = CustomColor.DarkBlue;
-
-            
         }
 
 
@@ -46,8 +44,6 @@ namespace PL
         private void Main_Load(object sender, EventArgs e)
         {
             /*Auth.Login("Irwin", "password");*/
-            MessageBox.Show(Environment.CurrentDirectory);
-
 
         }
 
