@@ -17,7 +17,8 @@ namespace DTO
         public string PRODUCT_DESCRIPTION { get; set; }
         public int ID_PICTURE { get; set; }
         public string PICTURE_URL { get; set; }
-        public Image PRODUCT_PICTURE
+                
+        /*public Image PRODUCT_PICTURE
         {
             get
             {
@@ -26,7 +27,7 @@ namespace DTO
                 MemoryStream ms = new MemoryStream(bytes);
                 return Image.FromStream(ms);
             }
-        }
+        }*/
 
         public decimal PRODUCT_BEST_PRICE { get; set; }
 

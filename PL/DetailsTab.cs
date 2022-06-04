@@ -14,21 +14,22 @@ namespace PL
 {
     public partial class DetailsTab : Form
     {
-        public DetailsTab(string articleName)
+        public DetailsTab(string productName, Image image)
         {
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
             this.panel1.BackColor = CustomColor.DarkBlue;            
-            this.labelNom.Text = articleName;
+            this.labelNom.Text = productName;
             this.iconButton1.IconColor = CustomColor.Orange;
-            List<Stock> stock = StockAccess.GetStock(articleName);
-            DisplayProducts(stock);
+            List<Stock> stocks = StockAccess.GetStock(productName);
+            this.pictureBox1.Image = image;            
+            DisplayProducts(stocks);
 
         }
 
         public void AddProduct(string name, string seller, decimal price, int quantity, string country)
         {
-            Product article = new ShopArticle(nom, vendeur, prix, quantite, pays);
+            Product article = new Product(name, seller, price, quantity, country);
             article.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(article);
             article.Show();
@@ -55,7 +56,9 @@ namespace PL
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-
+            Main.mainInstance.OpenChildForm(new ShopTab());
+            this.Dispose();
+            
         }
     }
 }

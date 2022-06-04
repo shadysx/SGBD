@@ -28,7 +28,7 @@ namespace PL
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            Main.mainInstance.OpenChildForm(new DetailsTab(this.labelNameArticle.Text));
+            Main.mainInstance.OpenChildForm(new DetailsTab(this.labelNameArticle.Text, this.pictureBox1.Image));
         }
     }
 }

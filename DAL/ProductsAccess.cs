@@ -31,5 +31,27 @@ namespace DAL
 
             return products;
         }
+
+        public static List<Product> SelectProductImage(string productName)
+        {
+
+            List<Product> products = new List<Product>();
+
+            string query = $"select PRODUCT_NAME, ID_PICTURE, PICTURE_URL from PRODUCT p  inner join PICTURE pic on pic.ID_PRODUCT = p.ID_PRODUCT where p.PRODUCT_NAME = '{productName}'";
+
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    products = connexion.Query<Product>(query).ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            return products;
+        }
     }
 }
