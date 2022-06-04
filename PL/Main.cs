@@ -16,19 +16,20 @@ namespace PL
     {
         public static Main mainInstance;
 
-        private Login loginForm;
-        
+        private Login loginForm;        
+       
         public Main(Form f)
         {
             Main.mainInstance = this;
-            InitializeComponent();
 
+            InitializeComponent();
             this.loginForm = (Login)f;
             this.iconButtonProfile.Text = Auth.CurrentUser.ACCOUNT_USERNAME;
-
             this.panel1.BackColor = CustomColor.Orange;
             this.panelTop.BackColor = CustomColor.DarkBlue;
-            this.panelLeft.BackColor = CustomColor.DarkBlue;            
+            this.panelLeft.BackColor = CustomColor.DarkBlue;
+
+            
         }
 
 

@@ -76,10 +76,9 @@
             this.iconButtonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonProfile.Location = new System.Drawing.Point(1115, 24);
             this.iconButtonProfile.Name = "iconButtonProfile";
-            this.iconButtonProfile.Size = new System.Drawing.Size(123, 40);
+            this.iconButtonProfile.Size = new System.Drawing.Size(150, 40);
             this.iconButtonProfile.TabIndex = 2;
-            this.iconButtonProfile.Text = "Home";
-            this.iconButtonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonProfile.Text = "HOME";
             this.iconButtonProfile.UseVisualStyleBackColor = false;
             this.iconButtonProfile.Click += new System.EventHandler(this.iconButtonProfile_Click);
             this.iconButtonProfile.MouseEnter += new System.EventHandler(this.iconButtonProfile_MouseEnter);

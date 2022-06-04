@@ -18,9 +18,9 @@ namespace PL
         {
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
-            this.panel1.BackColor = CustomColor.DarkBlue;
-            this.labelTop.Text = "Produit Selectionné :";
+            this.panel1.BackColor = CustomColor.DarkBlue;            
             this.labelNom.Text = articleName;
+            this.iconButton1.IconColor = CustomColor.Orange;
             List<Stock> stock = StockAccess.GetStock(articleName);
             DisplayProducts(stock);
 
@@ -29,9 +29,10 @@ namespace PL
         public void AddProduct(string nom, string vendeur, decimal prix, int quantite, string pays)
         {
             ShopArticle article = new ShopArticle(nom, vendeur, prix, quantite, pays);
-            article.TopLevel = false;
-            this.flowLayoutPanel1.Controls.Add(article);
+            article.TopLevel = false;           
+            this.flowLayoutPanel1.Controls.Add(article);            
             article.Show();
+            
         }
 
         public void DisplayProducts(List<Stock> stock)
@@ -48,6 +49,11 @@ namespace PL
         }
 
         private void labelNom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
         {
 
         }

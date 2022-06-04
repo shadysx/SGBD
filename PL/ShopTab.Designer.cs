@@ -39,26 +39,6 @@
             this.panelFilter.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1015, 634);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // panelFilter
-            // 
-            this.panelFilter.Controls.Add(labelOrderBy);
-            this.panelFilter.Controls.Add(textBoxSearchByName);
-            this.panelFilter.Controls.Add(labelFilters);
-            this.panelFilter.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelFilter.Location = new System.Drawing.Point(1021, 0);
-            this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(308, 634);
-            this.panelFilter.TabIndex = 1;
-            // 
             // labelOrderBy
             // 
             labelOrderBy.AutoSize = true;
@@ -92,6 +72,26 @@
             labelFilters.Size = new System.Drawing.Size(80, 37);
             labelFilters.TabIndex = 0;
             labelFilters.Text = "Filters";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1015, 634);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // panelFilter
+            // 
+            this.panelFilter.Controls.Add(textBoxSearchByName);
+            this.panelFilter.Controls.Add(labelFilters);
+            this.panelFilter.Controls.Add(labelOrderBy);
+            this.panelFilter.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelFilter.Location = new System.Drawing.Point(1021, 0);
+            this.panelFilter.Name = "panelFilter";
+            this.panelFilter.Size = new System.Drawing.Size(308, 634);
+            this.panelFilter.TabIndex = 1;
             // 
             // ShopTab
             // 
