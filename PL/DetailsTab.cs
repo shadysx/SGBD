@@ -26,11 +26,11 @@ namespace PL
 
         }
 
-        public void AddProduct(string nom, string vendeur, decimal prix, int quantite, string pays)
+        public void AddProduct(string name, string seller, decimal price, int quantity, string country)
         {
-            Product article = new Product(nom, vendeur, prix, quantite, pays);
-            article.TopLevel = false;           
-            this.flowLayoutPanel1.Controls.Add(article);            
+            Product article = new ShopArticle(nom, vendeur, prix, quantite, pays);
+            article.TopLevel = false;
+            this.flowLayoutPanel1.Controls.Add(article);
             article.Show();
             
         }

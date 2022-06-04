@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.labelTypeArticle = new System.Windows.Forms.Label();
-            this.labelNomArticle = new System.Windows.Forms.Label();
+            this.labelNameArticle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.labelPrix = new System.Windows.Forms.Label();
@@ -46,15 +46,15 @@
             this.labelTypeArticle.TabIndex = 1;
             this.labelTypeArticle.Text = "label1";
             // 
-            // labelNomArticle
+            // labelNameArticle
             // 
-            this.labelNomArticle.AutoSize = true;
-            this.labelNomArticle.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomArticle.Location = new System.Drawing.Point(166, 46);
-            this.labelNomArticle.Name = "labelNomArticle";
-            this.labelNomArticle.Size = new System.Drawing.Size(58, 28);
-            this.labelNomArticle.TabIndex = 2;
-            this.labelNomArticle.Text = "label1";
+            this.labelNameArticle.AutoSize = true;
+            this.labelNameArticle.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNameArticle.Location = new System.Drawing.Point(166, 46);
+            this.labelNameArticle.Name = "labelNameArticle";
+            this.labelNameArticle.Size = new System.Drawing.Size(58, 28);
+            this.labelNameArticle.TabIndex = 2;
+            this.labelNameArticle.Text = "label1";
             // 
             // pictureBox1
             // 
@@ -99,7 +99,7 @@
             this.ClientSize = new System.Drawing.Size(825, 120);
             this.Controls.Add(this.labelPrix);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.labelNomArticle);
+            this.Controls.Add(this.labelNameArticle);
             this.Controls.Add(this.labelTypeArticle);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -116,7 +116,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelTypeArticle;
-        private System.Windows.Forms.Label labelNomArticle;
+        private System.Windows.Forms.Label labelNameArticle;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label labelPrix;
     }

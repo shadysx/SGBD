@@ -15,7 +15,7 @@ namespace PL
         public ShopTabProduct(Form parent, string productName, string productType, Image productImage, decimal bestPrice)
         {
             InitializeComponent();
-            this.labelNomArticle.Text = productName;
+            this.labelNameArticle.Text = productName;
             this.labelPrix.Text = $"From {bestPrice} €";
             this.labelTypeArticle.Text = productType;
             this.pictureBox1.Image = productImage;
@@ -28,7 +28,7 @@ namespace PL
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            Main.mainInstance.OpenChildForm(new DetailsTab(this.labelNomArticle.Text));
+            Main.mainInstance.OpenChildForm(new DetailsTab(this.labelNameArticle.Text));
         }
     }
 }
