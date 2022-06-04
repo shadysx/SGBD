@@ -21,6 +21,7 @@ namespace PL
             this.BackColor = CustomColor.DarkBlue;
             this.panelFilter.BackColor = CustomColor.DarkBlue;
             List<DTO.Product> products = ProductsAccess.Select20RandomProducts();
+            this.flowLayoutPanel1.VerticalScroll.Visible = false;
             DisplayProducts(products);
         }
 
@@ -30,20 +31,19 @@ namespace PL
         
         }
 
-        public void AddProduct(string productName, string productType, string productImagePath, decimal productBestPrice)
+        public void AddProduct(string productName, string productType, string description, string productImagePath, decimal productBestPrice)
         {
-            ShopTabProduct article = new ShopTabProduct(this, productName, productType, productImagePath, productBestPrice);
+            ShopTabProduct article = new ShopTabProduct(productName, productType, description, productImagePath, productBestPrice);
             article.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(article);
             article.Show();
         }
 
         public void DisplayProducts(List<DTO.Product> products)
-        {
-            string imagePath = Environment.CurrentDirectory + @"\test.jpeg";
+        {            
             foreach (DTO.Product p in products)
             {
-                AddProduct(p.PRODUCT_NAME, p.PRODUCT_TYPE, p.PICTURE_PATH, p.PRODUCT_BEST_PRICE);
+                AddProduct(p.PRODUCT_NAME, p.PRODUCT_TYPE,p.PRODUCT_DESCRIPTION, p.PICTURE_PATH, p.PRODUCT_BEST_PRICE);
             }
         }
     }
