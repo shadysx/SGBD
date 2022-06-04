@@ -29,6 +29,10 @@ namespace PL
             this.panel1.BackColor = CustomColor.Orange;
             this.panelTop.BackColor = CustomColor.DarkBlue;
             this.panelLeft.BackColor = CustomColor.DarkBlue;
+            if (Auth.CurrentUser.ACCOUNT_ROLE == "ADMIN")
+            {
+                this.iconButtonAdminPanel.Visible = true;
+            }
         }
 
 
@@ -61,7 +65,6 @@ namespace PL
         private void iconButtonShop_Click(object sender, EventArgs e)
         {            
             this.OpenChildForm(new ShopTab());
-            
         }        
 
         private void iconButtonProfile_MouseEnter(object sender, EventArgs e)
@@ -117,6 +120,12 @@ namespace PL
         {
             if (this.panel1.Visible)
                 this.panel1.Visible = false;
+        }
+
+        private void iconButtonAdminPanel_Click(object sender, EventArgs e)
+        {
+            this.OpenChildForm(new AdminPanel());
+
         }
     }
 }

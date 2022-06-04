@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.iconButtonAdminPanel = new FontAwesome.Sharp.IconButton();
             this.iconButtonCard = new FontAwesome.Sharp.IconButton();
             this.iconButtonShop = new FontAwesome.Sharp.IconButton();
             this.iconButtonHome = new FontAwesome.Sharp.IconButton();
@@ -159,6 +160,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelLeft.Controls.Add(this.iconButtonAdminPanel);
             this.panelLeft.Controls.Add(this.iconButtonCard);
             this.panelLeft.Controls.Add(this.iconButtonShop);
             this.panelLeft.Controls.Add(this.iconButtonHome);
@@ -167,6 +169,27 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(200, 697);
             this.panelLeft.TabIndex = 1;
+            // 
+            // iconButtonAdminPanel
+            // 
+            this.iconButtonAdminPanel.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonAdminPanel.FlatAppearance.BorderSize = 0;
+            this.iconButtonAdminPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonAdminPanel.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonAdminPanel.ForeColor = System.Drawing.Color.White;
+            this.iconButtonAdminPanel.IconChar = FontAwesome.Sharp.IconChar.SlidersH;
+            this.iconButtonAdminPanel.IconColor = System.Drawing.Color.White;
+            this.iconButtonAdminPanel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonAdminPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonAdminPanel.Location = new System.Drawing.Point(31, 180);
+            this.iconButtonAdminPanel.Name = "iconButtonAdminPanel";
+            this.iconButtonAdminPanel.Size = new System.Drawing.Size(136, 47);
+            this.iconButtonAdminPanel.TabIndex = 3;
+            this.iconButtonAdminPanel.Text = "Admin";
+            this.iconButtonAdminPanel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonAdminPanel.UseVisualStyleBackColor = false;
+            this.iconButtonAdminPanel.Visible = false;
+            this.iconButtonAdminPanel.Click += new System.EventHandler(this.iconButtonAdminPanel_Click);
             // 
             // iconButtonCard
             // 
@@ -281,5 +304,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton iconButtonAdminPanel;
     }
 }

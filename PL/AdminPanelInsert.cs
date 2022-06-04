@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace PL
 {
-    public partial class Admin : Form
+    public partial class AdminPanelInsert : Form
     {
-        public Admin()
+        public AdminPanelInsert()
         {
             InitializeComponent();
-            this.pictureBox1.ImageLocation = Environment.CurrentDirectory + @"\test.jpeg";
-            this.pictureBox1.Dock = DockStyle.Fill;
+            this.BackColor = CustomColor.DarkBlue;
         }
     }
 }

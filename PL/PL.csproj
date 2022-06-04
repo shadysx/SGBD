@@ -83,11 +83,17 @@
     <Compile Include="AccountSettings.Designer.cs">
       <DependentUpon>AccountSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin.cs">
+    <Compile Include="AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <Compile Include="AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanelInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanelInsert.Designer.cs">
+      <DependentUpon>AdminPanelInsert.cs</DependentUpon>
     </Compile>
     <Compile Include="ShopTabProduct.cs">
       <SubType>Form</SubType>
@@ -137,8 +143,11 @@
     <EmbeddedResource Include="AccountSettings.resx">
       <DependentUpon>AccountSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin.resx">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <EmbeddedResource Include="AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanelInsert.resx">
+      <DependentUpon>AdminPanelInsert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShopTabProduct.resx">
       <DependentUpon>ShopTabProduct.cs</DependentUpon>

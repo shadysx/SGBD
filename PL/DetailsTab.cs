@@ -58,7 +58,6 @@ namespace PL
         {
             Main.mainInstance.OpenChildForm(new ShopTab());
             this.Dispose();
-            
         }
     }
 }
