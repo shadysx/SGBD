@@ -28,7 +28,7 @@ namespace PL
 
         public void AddProduct(string name, string seller, decimal price, int quantity, string country)
         {
-            Product article = new ShopArticle(nom, vendeur, prix, quantite, pays);
+            Product article = new Product(name, seller, price, quantity, country);
             article.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(article);
             article.Show();

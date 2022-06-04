@@ -46,7 +46,9 @@ namespace PL
         private void Main_Load(object sender, EventArgs e)
         {
             /*Auth.Login("Irwin", "password");*/
-            
+            MessageBox.Show(Environment.CurrentDirectory);
+
+
         }
 
         private void iconPictureBox2_Click(object sender, EventArgs e)

@@ -17,7 +17,14 @@ namespace DTO
         public string PRODUCT_DESCRIPTION { get; set; }
         public int ID_PICTURE { get; set; }
         public string PICTURE_URL { get; set; }
-        public Image PRODUCT_PICTURE
+        public string PICTURE_PATH
+        {
+            get
+            {
+                return Environment.CurrentDirectory + $@"\{PICTURE_URL}";
+            }
+        }
+/*        public Image PRODUCT_PICTURE
         {
             get
             {
@@ -26,7 +33,7 @@ namespace DTO
                 MemoryStream ms = new MemoryStream(bytes);
                 return Image.FromStream(ms);
             }
-        }
+        }*/
 
         public decimal PRODUCT_BEST_PRICE { get; set; }
 
@@ -39,7 +46,7 @@ namespace DTO
                    "PRODUCT_DESCRIPTION : " + PRODUCT_DESCRIPTION + "\n" +
                    "PRODUCT_BEST_PRICE : " + PRODUCT_BEST_PRICE + "\n" +
                    "ID_PICTURE : " + ID_PICTURE + "\n" +
-                   "PICTURE_URL : " + PICTURE_URL + "\n";
+                   "PICTURE_PATH : " + PICTURE_PATH + "\n";
         }
     }
 }
