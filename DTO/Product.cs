@@ -21,7 +21,7 @@ namespace DTO
         {
             get
             {
-                return Environment.CurrentDirectory + $@"\{PICTURE_URL}";
+                return Environment.CurrentDirectory + $@"\..\..\..\Assets\Image\ProductImages\{PICTURE_URL}";
             }
         }
 /*        public Image PRODUCT_PICTURE
