@@ -12,7 +12,8 @@ namespace PL
 {
     public partial class ShopTabProduct : Form
     {
-        public ShopTabProduct(Form parent, string productName, string productType, string productImagePath, decimal bestPrice)
+        private string description;
+        public ShopTabProduct(string productName, string productType, string description, string productImagePath, decimal bestPrice)
         {
             InitializeComponent();
             this.labelNameArticle.Text = productName;
@@ -20,6 +21,7 @@ namespace PL
             this.labelTypeArticle.Text = productType;
             this.pictureBox1.ImageLocation = productImagePath;
             this.iconButton1.IconColor = CustomColor.Orange;
+            this.description = description;
         }
 
         private void Article_Load(object sender, EventArgs e)
@@ -28,7 +30,7 @@ namespace PL
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            Main.mainInstance.OpenChildForm(new DetailsTab(this.labelNameArticle.Text, this.pictureBox1.Image));
+            Main.mainInstance.OpenChildForm(new DetailsTab(this.labelNameArticle.Text, this.description, this.pictureBox1.Image));
         }
     }
 }
