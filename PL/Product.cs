@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace PL
 {
-    public partial class ShopArticle : Form
+    public partial class Product : Form
     {
         string nom;
-        public ShopArticle(string nom, string vendeur, decimal prix, int quantite, string pays)
+        public Product(string nom, string vendeur, decimal prix, int quantite, string pays)
         {
             InitializeComponent();
             this.labelPrix.Text = "€ " + prix.ToString();

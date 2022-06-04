@@ -12,9 +12,9 @@ using DTO;
 
 namespace PL
 {
-    public partial class ArticleDetails : Form
+    public partial class DetailsTab : Form
     {
-        public ArticleDetails(string articleName)
+        public DetailsTab(string articleName)
         {
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
@@ -28,7 +28,7 @@ namespace PL
 
         public void AddProduct(string nom, string vendeur, decimal prix, int quantite, string pays)
         {
-            ShopArticle article = new ShopArticle(nom, vendeur, prix, quantite, pays);
+            Product article = new Product(nom, vendeur, prix, quantite, pays);
             article.TopLevel = false;           
             this.flowLayoutPanel1.Controls.Add(article);            
             article.Show();

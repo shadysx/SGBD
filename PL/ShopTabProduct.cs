@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PL
 {
-    public partial class Article : Form
+    public partial class ShopTabProduct : Form
     {
-        public Article(Form parent, string productName, string productType, Image productImage, decimal bestPrice)
+        public ShopTabProduct(Form parent, string productName, string productType, Image productImage, decimal bestPrice)
         {
             InitializeComponent();
             this.labelNomArticle.Text = productName;
@@ -28,7 +28,7 @@ namespace PL
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            Main.mainInstance.OpenChildForm(new ArticleDetails(this.labelNomArticle.Text));
+            Main.mainInstance.OpenChildForm(new DetailsTab(this.labelNomArticle.Text));
         }
     }
 }

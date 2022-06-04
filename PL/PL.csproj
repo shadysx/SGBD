@@ -83,17 +83,17 @@
     <Compile Include="AccountSettings.Designer.cs">
       <DependentUpon>AccountSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Article.cs">
+    <Compile Include="ShopTabProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Article.Designer.cs">
-      <DependentUpon>Article.cs</DependentUpon>
+    <Compile Include="ShopTabProduct.Designer.cs">
+      <DependentUpon>ShopTabProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="ArticleDetails.cs">
+    <Compile Include="DetailsTab.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ArticleDetails.Designer.cs">
-      <DependentUpon>ArticleDetails.cs</DependentUpon>
+    <Compile Include="DetailsTab.Designer.cs">
+      <DependentUpon>DetailsTab.cs</DependentUpon>
     </Compile>
     <Compile Include="Assets\CustomColor.cs" />
     <Compile Include="Login.cs">
@@ -116,11 +116,11 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShopArticle.cs">
+    <Compile Include="Product.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShopArticle.Designer.cs">
-      <DependentUpon>ShopArticle.cs</DependentUpon>
+    <Compile Include="Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
     </Compile>
     <Compile Include="ShopTab.cs">
       <SubType>Form</SubType>
@@ -131,11 +131,11 @@
     <EmbeddedResource Include="AccountSettings.resx">
       <DependentUpon>AccountSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Article.resx">
-      <DependentUpon>Article.cs</DependentUpon>
+    <EmbeddedResource Include="ShopTabProduct.resx">
+      <DependentUpon>ShopTabProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ArticleDetails.resx">
-      <DependentUpon>ArticleDetails.cs</DependentUpon>
+    <EmbeddedResource Include="DetailsTab.resx">
+      <DependentUpon>DetailsTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -156,8 +156,8 @@
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShopArticle.resx">
-      <DependentUpon>ShopArticle.cs</DependentUpon>
+    <EmbeddedResource Include="Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShopTab.resx">
       <DependentUpon>ShopTab.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace PL
 {
-    partial class ArticleDetails
+    partial class DetailsTab
     {
         /// <summary>
         /// Required designer variable.
