@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PL
 {
-    public partial class AdminPanelInsert : Form
+    public partial class EmployeeInsertNewProductPanel : Form
     {
-        public AdminPanelInsert()
+        public EmployeeInsertNewProductPanel()
         {
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;

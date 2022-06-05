@@ -14,14 +14,14 @@ using System.Diagnostics;
 
 namespace PL
 {
-    public partial class Product : Form
+    public partial class Article : Form
     {
         string name;
         decimal price;
         int quantity;
         int idShop;
         int idProduct;
-        public Product(string name, string seller, decimal price, int quantity, string country, int idShop, int idProduct)
+        public Article(string name, string seller, decimal price, int quantity, string country, int idShop, int idProduct)
         {
             InitializeComponent();
             this.labelPrix.Text = "€ " + price.ToString();

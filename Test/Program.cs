@@ -29,12 +29,11 @@ namespace Test
             Console.WriteLine(Auth.CurrentUser);
             */
 
-            List<Product> products = ProductsAccess.Select20RandomProducts();
+            ShopInfo shopInfo = ShopInfoAccess.GetShopInfo(1);
 
-            foreach (Product p in products)
-            {
-                Console.WriteLine(p);
-            }
+            Console.WriteLine(shopInfo.SHOP_NAME);
+
+            ProductsAccess.InsertDecimal(420.20m);
 
 
             Console.Read();

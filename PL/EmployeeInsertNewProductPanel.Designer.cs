@@ -1,6 +1,6 @@
 ﻿namespace PL
 {
-    partial class AdminPanelInsert
+    partial class EmployeeInsertNewProductPanel
     {
         /// <summary>
         /// Required designer variable.

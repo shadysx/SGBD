@@ -24,6 +24,8 @@ namespace BLL
                 if (account.ACCOUNT_USERNAME == username && account.ACCOUNT_PASSWORD == Auth.ComputeSha256Hash(password))
                 {
                     LoadCard(account);
+                    if (account.ACCOUNT_ROLE == "ADMIN" && account.ID_SHOP > 0 )
+                        account.ACCOUNT_SHOP_INFO = ShopInfoAccess.GetShopInfo(account.ID_SHOP);
                     Auth.CurrentUser = account;
                     break;
                 }
