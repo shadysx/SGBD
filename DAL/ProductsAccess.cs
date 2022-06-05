@@ -85,21 +85,6 @@ namespace DAL
             return productsNames;
         }
 
-        public static void InsertDecimal(decimal amount)
-        {
-            string query = $"insert into ORDER_LINE values(1,{amount},5,1,3)";
-
-            using (var connexion = CON_MGR.Connection())
-                ////= SQL directe
-                try
-                {
-                    connexion.Query<Product>(query);
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-        }
 
         /* public static List<Product> SelectProductImage(string productName)
          {

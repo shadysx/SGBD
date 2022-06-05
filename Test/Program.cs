@@ -31,9 +31,9 @@ namespace Test
 
             ShopInfo shopInfo = ShopInfoAccess.GetShopInfo(1);
 
-            Console.WriteLine(shopInfo.SHOP_NAME);
+            decimal d = 420.00m;
+            Console.WriteLine(d);
 
-            ProductsAccess.InsertDecimal(420.20m);
 
 
             Console.Read();
