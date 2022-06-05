@@ -71,10 +71,7 @@ namespace DAL
             using (var connection = CON_MGR.Connection())
                 try
                 {
-                    /*connection.Execute("UPDATE ACCOUNT " +
-                                        "SET ACCOUNT_PASSWORD = '" + newPassword + "' " +
-                                        "WHERE ACCOUNT_USERNAME = '" + username + "'");*/
-
+                    
                     connection.Execute(String.Format("UPDATE ACCOUNT " +
                                         "SET ACCOUNT_PASSWORD = '{0}' " +
                                         "WHERE ACCOUNT_USERNAME = '{1}'", newPassword, username));

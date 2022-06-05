@@ -207,6 +207,7 @@
             this.iconButtonCard.TabIndex = 2;
             this.iconButtonCard.Text = "  Card";
             this.iconButtonCard.UseVisualStyleBackColor = false;
+            this.iconButtonCard.Click += new System.EventHandler(this.iconButtonCard_Click);
             // 
             // iconButtonShop
             // 

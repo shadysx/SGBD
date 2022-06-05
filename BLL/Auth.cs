@@ -23,10 +23,12 @@ namespace BLL
             {
                 if (account.ACCOUNT_USERNAME == username && account.ACCOUNT_PASSWORD == Auth.ComputeSha256Hash(password))
                 {
+
                     LoadCard(account);
                     if (account.ACCOUNT_ROLE == "ADMIN" && account.ID_SHOP > 0 )
                         account.ACCOUNT_SHOP_INFO = ShopInfoAccess.GetShopInfo(account.ID_SHOP);
                     Auth.CurrentUser = account;
+                    
                     break;
                 }
             }
@@ -39,10 +41,36 @@ namespace BLL
         {
             Ordered ordered = OrderedAccess.SelectOrdered(account.ID_ACCOUNT);
 
-            if (ordered != null && ordered.ORDERED_DATE == null)
+            if (ordered != null)
+            {
+                Debug.Print("C'est pas null");
+                Debug.Print(ordered.ID_ORDERED + "");
+            }
+            else
+                Debug.Print("C'est null a fou");
+
+            if (ordered != null && ordered.ORDERED_DATE < new DateTime (1880,1,1))
+            {
+                account.ACCOUNT_CURRENT_CARD = ordered;
+            }
+            
+            
+
+            if (account.ACCOUNT_CURRENT_CARD != null)
+            {
+                Debug.Print("account ordered n'est pas null");
+                Debug.Print(ordered.ID_ORDERED + "");
+            }
+            else
+                Debug.Print("account ordered en null");
+
+
+            /*if (ordered != null && ordered.ORDERED_DATE == null)
                 account.ACCOUNT_CURRENT_CARD = ordered;
             else
-                account.ACCOUNT_CURRENT_CARD = null;          
+                account.ACCOUNT_CURRENT_CARD = null;*/
+
+            
 
         }
 

@@ -39,6 +39,15 @@ namespace PL
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+                   
+
+            // On regarde si le compte User dispose 
+            if (Auth.CurrentUser.ACCOUNT_CURRENT_CARD == null)
+            {
+                OrderedAccess.InsertNewOrdered(Auth.CurrentUser.ID_ACCOUNT);
+                Auth.CurrentUser.ACCOUNT_CURRENT_CARD = OrderedAccess.SelectOrdered(Auth.CurrentUser.ID_ACCOUNT);
+            }
+
             OrderLine orderLine = new OrderLine
             {
                 ORDER_LINE_QUANTITY = Convert.ToInt32(this.numericUpDown1.Value),
@@ -46,17 +55,35 @@ namespace PL
                 ID_SHOP = this.idShop,
                 ID_PRODUCT = this.idProduct,
                 ID_ORDERED = Auth.CurrentUser.ACCOUNT_CURRENT_CARD.ID_ORDERED
-            };            
+            };
 
-            if (Auth.CurrentUser.ACCOUNT_CURRENT_CARD == null)
+
+            // Charge la liste d'oderline qui partage le meme ID_ORDERRED
+            List<OrderLine> list = OrderLineAccess.SelectAllOrderLine(Auth.CurrentUser.ACCOUNT_CURRENT_CARD.ID_ORDERED);
+
+            // On compare cette liste avec ID_PRODUCT et ID_SHOP pour pouvoir modifier l'insert dans la DB
+            bool isModified = false;
+            int idOrdered = 0;
+            foreach(OrderLine ol in list)
             {
-                OrderedAccess.InsertNewOrdered(Auth.CurrentUser.ID_ACCOUNT);
-                Auth.CurrentUser.ACCOUNT_CURRENT_CARD = OrderedAccess.SelectOrdered(Auth.CurrentUser.ID_ACCOUNT);
-            }            
-           
-            OrderLineAccess.AddProductToCard(orderLine);
+                if(ol.ID_SHOP == orderLine.ID_SHOP && ol.ID_PRODUCT == orderLine.ID_PRODUCT)
+                {                    
+                    orderLine.ORDER_LINE_QUANTITY += ol.ORDER_LINE_QUANTITY;
+                    orderLine.ORDER_LINE_BUYING_PRICE += ol.ORDER_LINE_QUANTITY * ol.ORDER_LINE_BUYING_PRICE;
+                    idOrdered = ol.ID_ORDERED;
+                    isModified = true;                   
 
-            
+                    break;
+                }
+            }
+
+            // Suivant s'il faut Insert ou Update la table 
+            if (isModified)
+                OrderLineAccess.ModifyOrderline(orderLine, idOrdered);
+            else
+                OrderLineAccess.AddProductToCard(orderLine);
+
+
 
         }
 
