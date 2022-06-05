@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Ordered.cs" />
     <Compile Include="OrderLine.cs" />
     <Compile Include="Product.cs" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,5 +29,44 @@ namespace DAL
                 }
             return retVal;
         }
+
+        public static void ModifyOrderline(OrderLine orderLine, int idOrdered)
+        {
+            //long price = Convert.ToInt64(Convert.ToDecimal(orderLine.ORDER_LINE_BUYING_PRICE) * 100);
+
+            using (var connection = CON_MGR.Connection())
+                try
+                {
+                    connection.Execute($"update ORDER_LINE set ORDER_LINE_QUANTITY = {orderLine.ORDER_LINE_QUANTITY}, order_line_buying_price = {Convert.ToDecimal(orderLine.ORDER_LINE_BUYING_PRICE)} where ID_ORDERED = {idOrdered}");
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+
+            Debug.Print("Done");
+            
+        }
+
+
+
+
+        public static List<OrderLine> SelectAllOrderLine(int idOrdered)
+        {
+            List<OrderLine> retVal;
+
+            using (var connection = CON_MGR.Connection())
+                try
+                {
+                    retVal = connection.Query<OrderLine>($"select * from order_line where ID_ORDERED = {idOrdered}").ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+            return retVal;
+        }
+
+
     }
 }

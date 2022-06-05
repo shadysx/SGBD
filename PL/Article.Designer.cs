@@ -1,6 +1,6 @@
 ﻿namespace PL
 {
-    partial class Product
+    partial class Article
     {
         /// <summary>
         /// Required designer variable.

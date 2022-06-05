@@ -209,6 +209,7 @@
             this.iconButtonCard.Text = "Card";
             this.iconButtonCard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonCard.UseVisualStyleBackColor = false;
+            this.iconButtonCard.Click += new System.EventHandler(this.iconButtonCard_Click);
             // 
             // iconButtonShop
             // 

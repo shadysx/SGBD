@@ -127,5 +127,10 @@ namespace PL
             this.OpenChildForm(new AdminPanel());
 
         }
+
+        private void iconButtonCard_Click(object sender, EventArgs e)
+        {
+            this.OpenChildForm(new Card());
+        }
     }
 }

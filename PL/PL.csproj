@@ -101,6 +101,12 @@
     <Compile Include="Card.Designer.cs">
       <DependentUpon>Card.cs</DependentUpon>
     </Compile>
+    <Compile Include="CardItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardItem.Designer.cs">
+      <DependentUpon>CardItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShopTabProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,11 +140,11 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product.cs">
+    <Compile Include="Article.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product.Designer.cs">
-      <DependentUpon>Product.cs</DependentUpon>
+    <Compile Include="Article.Designer.cs">
+      <DependentUpon>Article.cs</DependentUpon>
     </Compile>
     <Compile Include="ShopTab.cs">
       <SubType>Form</SubType>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Card.resx">
       <DependentUpon>Card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardItem.resx">
+      <DependentUpon>CardItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShopTabProduct.resx">
       <DependentUpon>ShopTabProduct.cs</DependentUpon>
@@ -183,8 +192,8 @@
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product.resx">
-      <DependentUpon>Product.cs</DependentUpon>
+    <EmbeddedResource Include="Article.resx">
+      <DependentUpon>Article.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShopTab.resx">
       <DependentUpon>ShopTab.cs</DependentUpon>
