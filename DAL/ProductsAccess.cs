@@ -31,13 +31,13 @@ namespace DAL
 
             return products;
         }
-
-        public static List<Product> SelectProductImage(string productName)
+        public static List<string> SelectAllProductTypes()
         {
 
             List<Product> products = new List<Product>();
+            List<string> productsTypes = new List<string>();
 
-            string query = $"select PRODUCT_NAME, ID_PICTURE, PICTURE_URL from PRODUCT p  inner join PICTURE pic on pic.ID_PRODUCT = p.ID_PRODUCT where p.PRODUCT_NAME = '{productName}'";
+            string query = "select distinct PRODUCT.PRODUCT_TYPE from PRODUCT";
 
 
             using (var connexion = CON_MGR.Connection())
@@ -45,13 +45,72 @@ namespace DAL
                 try
                 {
                     products = connexion.Query<Product>(query).ToList();
+                    foreach (Product product in products)
+                    {
+                        productsTypes.Add(product.PRODUCT_TYPE);
+                    }
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
 
-            return products;
+            return productsTypes;
+        }
+
+        public static List<string> SelectProductsNamesByType(string type)
+        {
+
+            List<Product> products = new List<Product>();
+            List<string> productsNames = new List<string>();
+
+            string query = $"select * from product where PRODUCT_TYPE = '{type}'";
+
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    products = connexion.Query<Product>(query).ToList();
+                    foreach (Product product in products)
+                    {
+                        productsNames.Add(product.PRODUCT_NAME);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            return productsNames;
+        }
+
+
+        /* public static List<Product> SelectProductImage(string productName)
+         {
+
+             List<Product> products = new List<Product>();
+
+             string query = $"select PRODUCT_NAME, ID_PICTURE, PICTURE_URL from PRODUCT p  inner join PICTURE pic on pic.ID_PRODUCT = p.ID_PRODUCT where p.PRODUCT_NAME = '{productName}'";
+
+
+             using (var connexion = CON_MGR.Connection())
+                 ////= SQL directe
+                 try
+                 {
+                     products = connexion.Query<Product>(query).ToList();
+                 }
+                 catch (Exception ex)
+                 {
+                     throw ex;
+                 }
+
+             return products;
+         }*/
+
+        public static void InsertProduct(string productName, string productType, string productDescription )
+        {
+            string query = $"INSERT INTO PRODUCT VALUES('{productName}', 'Processeur', 'Le processeur AMD Ryzen 5 3600 Wraith Stealth (3.6 GHz / 4.2 GHz) fait partie des premiers processeurs pour PC gravés en 7 nm.')";
         }
     }
 }

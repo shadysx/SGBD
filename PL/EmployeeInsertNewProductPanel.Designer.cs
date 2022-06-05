@@ -1,6 +1,6 @@
 ﻿namespace PL
 {
-    partial class AdminPanelInsert
+    partial class EmployeeInsertNewProductPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelProductName = new System.Windows.Forms.Label();
+            this.labelSellingPrice = new System.Windows.Forms.Label();
+            this.labelProductType = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelDescription = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.buttonConfirmNewPassword = new CustomControls.RJControls.RJButton();
             this.SuspendLayout();
@@ -57,35 +57,35 @@
             this.textBox1.Size = new System.Drawing.Size(297, 20);
             this.textBox1.TabIndex = 1;
             // 
-            // label2
+            // labelProductName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 26);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Product Name";
+            this.labelProductName.AutoSize = true;
+            this.labelProductName.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProductName.Location = new System.Drawing.Point(14, 62);
+            this.labelProductName.Name = "labelProductName";
+            this.labelProductName.Size = new System.Drawing.Size(134, 26);
+            this.labelProductName.TabIndex = 3;
+            this.labelProductName.Text = "Product Name";
             // 
-            // label3
+            // labelSellingPrice
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(286, 26);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Product Selling Price (VAT EXCL)";
+            this.labelSellingPrice.AutoSize = true;
+            this.labelSellingPrice.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSellingPrice.Location = new System.Drawing.Point(14, 164);
+            this.labelSellingPrice.Name = "labelSellingPrice";
+            this.labelSellingPrice.Size = new System.Drawing.Size(286, 26);
+            this.labelSellingPrice.TabIndex = 4;
+            this.labelSellingPrice.Text = "Product Selling Price (VAT EXCL)";
             // 
-            // label4
+            // labelProductType
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 26);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Product Type";
+            this.labelProductType.AutoSize = true;
+            this.labelProductType.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProductType.Location = new System.Drawing.Point(14, 112);
+            this.labelProductType.Name = "labelProductType";
+            this.labelProductType.Size = new System.Drawing.Size(124, 26);
+            this.labelProductType.TabIndex = 5;
+            this.labelProductType.Text = "Product Type";
             // 
             // textBox3
             // 
@@ -102,15 +102,15 @@
             this.textBox4.Size = new System.Drawing.Size(297, 117);
             this.textBox4.TabIndex = 8;
             // 
-            // label5
+            // labelDescription
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 212);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(182, 26);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Product Description";
+            this.labelDescription.AutoSize = true;
+            this.labelDescription.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescription.Location = new System.Drawing.Point(14, 212);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(182, 26);
+            this.labelDescription.TabIndex = 7;
+            this.labelDescription.Text = "Product Description";
             // 
             // comboBox1
             // 
@@ -148,11 +148,11 @@
             this.Controls.Add(this.buttonConfirmNewPassword);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelProductType);
+            this.Controls.Add(this.labelSellingPrice);
+            this.Controls.Add(this.labelProductName);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
@@ -167,12 +167,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelProductName;
+        private System.Windows.Forms.Label labelSellingPrice;
+        private System.Windows.Forms.Label labelProductType;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.ComboBox comboBox1;
         private CustomControls.RJControls.RJButton buttonConfirmNewPassword;
     }

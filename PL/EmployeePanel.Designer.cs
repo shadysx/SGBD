@@ -1,6 +1,6 @@
 ﻿namespace PL
 {
-    partial class AdminPanel
+    partial class EmployeePanel
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.labelShop = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -68,19 +69,31 @@
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(315, 100);
             this.iconButton1.TabIndex = 4;
-            this.iconButton1.Text = "Edit Product";
+            this.iconButton1.Text = "Edit Stock";
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
-            // AdminPanel
+            // labelShop
+            // 
+            this.labelShop.AutoSize = true;
+            this.labelShop.Font = new System.Drawing.Font("Poppins Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShop.Location = new System.Drawing.Point(12, 334);
+            this.labelShop.Name = "labelShop";
+            this.labelShop.Size = new System.Drawing.Size(88, 37);
+            this.labelShop.TabIndex = 5;
+            this.labelShop.Text = "label2";
+            // 
+            // EmployeePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelShop);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.label1);
-            this.Name = "AdminPanel";
+            this.Name = "EmployeePanel";
             this.Text = "Admin";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -92,5 +105,6 @@
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Label labelShop;
     }
 }

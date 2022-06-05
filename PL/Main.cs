@@ -124,7 +124,7 @@ namespace PL
 
         private void iconButtonAdminPanel_Click(object sender, EventArgs e)
         {
-            this.OpenChildForm(new AdminPanel());
+            this.OpenChildForm(new EmployeePanel());
 
         }
 

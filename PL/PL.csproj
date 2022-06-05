@@ -83,17 +83,23 @@
     <Compile Include="AccountSettings.Designer.cs">
       <DependentUpon>AccountSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminPanel.cs">
+    <Compile Include="EmployeeAddStockPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminPanel.Designer.cs">
-      <DependentUpon>AdminPanel.cs</DependentUpon>
+    <Compile Include="EmployeeAddStockPanel.Designer.cs">
+      <DependentUpon>EmployeeAddStockPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminPanelInsert.cs">
+    <Compile Include="EmployeePanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminPanelInsert.Designer.cs">
-      <DependentUpon>AdminPanelInsert.cs</DependentUpon>
+    <Compile Include="EmployeePanel.Designer.cs">
+      <DependentUpon>EmployeePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeInsertNewProductPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeInsertNewProductPanel.Designer.cs">
+      <DependentUpon>EmployeeInsertNewProductPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Card.cs">
       <SubType>Form</SubType>
@@ -155,11 +161,14 @@
     <EmbeddedResource Include="AccountSettings.resx">
       <DependentUpon>AccountSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminPanel.resx">
-      <DependentUpon>AdminPanel.cs</DependentUpon>
+    <EmbeddedResource Include="EmployeeAddStockPanel.resx">
+      <DependentUpon>EmployeeAddStockPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminPanelInsert.resx">
-      <DependentUpon>AdminPanelInsert.cs</DependentUpon>
+    <EmbeddedResource Include="EmployeePanel.resx">
+      <DependentUpon>EmployeePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeInsertNewProductPanel.resx">
+      <DependentUpon>EmployeeInsertNewProductPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Card.resx">
       <DependentUpon>Card.cs</DependentUpon>

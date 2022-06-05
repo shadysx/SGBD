@@ -7,24 +7,16 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Account
+    public class ShopInfo
     {
-        public int ID_ACCOUNT { get; set; }
-        public string ACCOUNT_EMAIL { get; set; }
-        public string ACCOUNT_USERNAME { get; set; }
-        public string ACCOUNT_PASSWORD { get; set; }
-        public string ACCOUNT_LAST_NAME { get; set; }
-        public string ACCOUNT_FIRST_NAME { get; set; }
-        public DateTime ACCOUNT_BIRTH_DATE { get; set; }
-        public string ACCOUNT_ADDRESS { get; set; }
-        public string ACCOUNT_CITY { get; set; }
-        public string ACCOUNT_POSTAL_CODE { get; set; }
-        public string ACCOUNT_COUNTRY { get; set; }
-        public string ACCOUNT_ROLE { get; set; }
-        public Ordered ACCOUNT_CURRENT_CARD { get; set; }
-        public ShopInfo ACCOUNT_SHOP_INFO { get; set; }
-        public int ID_SHOP { get; set; }
-        public override string ToString()
+        public string SHOP_ID { get; set; }
+        public string SHOP_NAME { get; set; } 
+        public string SHOP_ADDRESS { get; set; } 
+        public string SHOP_POSTAL_CODE { get; set; } 
+        public string SHOP_CITY { get; set; } 
+        public string SHOP_COUNTRY { get; set; } 
+
+        /*public override string ToString()
         {
             return "ACCOUNT_EMAIL: " + ACCOUNT_EMAIL + "\n" +
                     "ACCOUNT_USERNAME: " + ACCOUNT_USERNAME + "\n" +
@@ -37,7 +29,7 @@ namespace DTO
                     "ACCOUNT_POSTAL_CODE: " + ACCOUNT_POSTAL_CODE + "\n" +
                     "ACCOUNT_COUNTRY: " + ACCOUNT_COUNTRY + "\n" +
                     "ACCOUNT_ROLE: " + ACCOUNT_ROLE + "\n";
-        }
+        }*/
 
     }
 

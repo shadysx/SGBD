@@ -29,6 +29,12 @@ namespace Test
             Console.WriteLine(Auth.CurrentUser);
             */
 
+            ShopInfo shopInfo = ShopInfoAccess.GetShopInfo(1);
+
+            decimal d = 420.00m;
+            Console.WriteLine(d);
+
+
             decimal d = 420.30m;
             string s = Convert.ToInt32(d).ToString() + "." + d.ToString().Substring(d.ToString().Length - 2);
             
