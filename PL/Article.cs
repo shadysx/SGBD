@@ -63,23 +63,22 @@ namespace PL
 
             // On compare cette liste avec ID_PRODUCT et ID_SHOP pour pouvoir modifier l'insert dans la DB
             bool isModified = false;
-            int idOrdered = 0;
+            int idOrderLine = 0;
             foreach(OrderLine ol in list)
             {
                 if(ol.ID_SHOP == orderLine.ID_SHOP && ol.ID_PRODUCT == orderLine.ID_PRODUCT)
                 {                    
                     orderLine.ORDER_LINE_QUANTITY += ol.ORDER_LINE_QUANTITY;
                     orderLine.ORDER_LINE_BUYING_PRICE += ol.ORDER_LINE_QUANTITY * ol.ORDER_LINE_BUYING_PRICE;
-                    idOrdered = ol.ID_ORDERED;
-                    isModified = true;                   
-
+                    idOrderLine = ol.ID_ORDER_LINE;
+                    isModified = true;                 
                     break;
                 }
             }
 
             // Suivant s'il faut Insert ou Update la table 
             if (isModified)
-                OrderLineAccess.ModifyOrderline(orderLine, idOrdered);
+                OrderLineAccess.ModifyOrderline(orderLine, idOrderLine);
             else
                 OrderLineAccess.AddProductToCard(orderLine);
 

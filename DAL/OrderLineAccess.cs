@@ -30,14 +30,15 @@ namespace DAL
             return retVal;
         }
 
-        public static void ModifyOrderline(OrderLine orderLine, int idOrdered)
+        public static void ModifyOrderline(OrderLine orderLine, int idOrderLine)
         {
-            //long price = Convert.ToInt64(Convert.ToDecimal(orderLine.ORDER_LINE_BUYING_PRICE) * 100);
+            // La Ligne ci-bas est juste parce que mon Visual Studio est en Français
+            string s = Convert.ToInt32(orderLine.ORDER_LINE_BUYING_PRICE).ToString() + "." + orderLine.ORDER_LINE_BUYING_PRICE.ToString().Substring(orderLine.ORDER_LINE_BUYING_PRICE.ToString().Length - 2);
 
             using (var connection = CON_MGR.Connection())
                 try
                 {
-                    connection.Execute($"update ORDER_LINE set ORDER_LINE_QUANTITY = {orderLine.ORDER_LINE_QUANTITY}, order_line_buying_price = {Convert.ToDecimal(orderLine.ORDER_LINE_BUYING_PRICE)} where ID_ORDERED = {idOrdered}");
+                    connection.Execute($"update ORDER_LINE set ORDER_LINE_QUANTITY = {orderLine.ORDER_LINE_QUANTITY}, order_line_buying_price = {s} where id_order_line = {idOrderLine}");
                 }
                 catch (Exception ex)
                 {
