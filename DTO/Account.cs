@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DTO
 {
     public class Account
     {
+        public int ID_ACCOUNT { get; set; }
         public string ACCOUNT_EMAIL { get; set; }
         public string ACCOUNT_USERNAME { get; set; }
         public string ACCOUNT_PASSWORD { get; set; }
@@ -19,6 +21,7 @@ namespace DTO
         public string ACCOUNT_POSTAL_CODE { get; set; }
         public string ACCOUNT_COUNTRY { get; set; }
         public string ACCOUNT_ROLE { get; set; }
+        public Ordered ACCOUNT_CURRENT_CARD { get; set; }
         public override string ToString()
         {
             return "ACCOUNT_EMAIL: " + ACCOUNT_EMAIL + "\n" +

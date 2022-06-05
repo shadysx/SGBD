@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DTO;
 using DAL;
 using System.Diagnostics;
+using System.Threading;
 
 namespace PL
 {
@@ -20,15 +21,17 @@ namespace PL
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
             this.panelFilter.BackColor = CustomColor.DarkBlue;
-            List<DTO.Product> products = ProductsAccess.Select20RandomProducts();
-            this.flowLayoutPanel1.VerticalScroll.Visible = false;
+            List<DTO.Product> products = ProductsAccess.Select20RandomProducts();           
             DisplayProducts(products);
+
+            
+            
         }
 
 
         private void ShopTab_Load(object sender, EventArgs e)
         {
-        
+            
         }
 
         public void AddProduct(string productName, string productType, string description, string productImagePath, decimal productBestPrice)

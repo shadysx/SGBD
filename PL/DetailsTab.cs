@@ -14,7 +14,7 @@ namespace PL
 {
     public partial class DetailsTab : Form
     {
-        public DetailsTab(string productName,string description , Image image)
+        public DetailsTab(string productName, string description , Image image)
         {
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
@@ -38,9 +38,9 @@ namespace PL
 
         }
 
-        public void AddProduct(string name, string seller, decimal price, int quantity, string country)
+        public void AddProduct(string name, string seller, decimal price, int quantity, string country, int idShop, int idProduct)
         {
-            Product article = new Product(name, seller, price, quantity, country);
+            Product article = new Product(name, seller, price, quantity, country, idShop, idProduct);
             article.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(article);
             article.Show();
@@ -51,7 +51,7 @@ namespace PL
         {
             foreach (Stock s in stock)
             {
-                AddProduct(s.PRODUCT_NAME, s.SHOP_NAME, s.SELLING_PRICE_EXCL_VAT, s.STOCK_QUANTITY, s.SHOP_COUNTRY);
+                AddProduct(s.PRODUCT_NAME, s.SHOP_NAME, s.SELLING_PRICE_EXCL_VAT, s.STOCK_QUANTITY, s.SHOP_COUNTRY, s.ID_SHOP, s.ID_PRODUCT);
             }
         }
 

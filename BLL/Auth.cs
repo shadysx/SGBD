@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DAL;
 using DTO;
 using System.Security.Cryptography;
-
+using System.Diagnostics;
 
 namespace BLL
 {
@@ -23,12 +23,25 @@ namespace BLL
             {
                 if (account.ACCOUNT_USERNAME == username && account.ACCOUNT_PASSWORD == Auth.ComputeSha256Hash(password))
                 {
+                    LoadCard(account);
                     Auth.CurrentUser = account;
+                    break;
                 }
             }
 
             if (CurrentUser is null)
                 throw new Exception($"Username or password does not match");
+        }
+
+        private static void LoadCard(Account account)
+        {
+            Ordered ordered = OrderedAccess.SelectOrdered(account.ID_ACCOUNT);
+
+            if (ordered != null && ordered.ORDERED_DATE == null)
+                account.ACCOUNT_CURRENT_CARD = ordered;
+            else
+                account.ACCOUNT_CURRENT_CARD = null;          
+
         }
 
         public static bool SignUp(Account newAccount)
@@ -63,6 +76,8 @@ namespace BLL
                 return builder.ToString();
             }
         }
+
+
     }
 }
 

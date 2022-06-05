@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="CON_MGR.cs" />
     <Compile Include="AccountAccess.cs" />
+    <Compile Include="OrderedAccess.cs" />
+    <Compile Include="OrderLineAccess.cs" />
     <Compile Include="ProductsAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StockAccess.cs" />
