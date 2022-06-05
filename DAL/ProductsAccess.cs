@@ -53,5 +53,10 @@ namespace DAL
 
             return products;
         }
+
+        public static void InsertProduct(string productName, string productType, string productDescription )
+        {
+            string query = $"INSERT INTO PRODUCT VALUES('{productName}', 'Processeur', 'Le processeur AMD Ryzen 5 3600 Wraith Stealth (3.6 GHz / 4.2 GHz) fait partie des premiers processeurs pour PC gravés en 7 nm.')"
+        }
     }
 }
