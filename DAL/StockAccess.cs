@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using DTO;
+using System.Diagnostics;
 
 namespace DAL
 {
@@ -32,6 +33,31 @@ namespace DAL
             return stock;
         }
 
+        public static decimal GetProductPriceFromSpecificShop(string productName, int shopID)
+        {
+
+            Stock stock = new Stock();
+            decimal price = 0;
+
+            string query = $"select SELLING_PRICE_EXCL_VAT from stock  inner join shop on shop.ID_SHOP = stock.ID_SHOP inner join product on product.ID_PRODUCT = stock.ID_PRODUCT where PRODUCT_NAME = '{productName}' and shop.ID_SHOP = {shopID}";
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    stock = connexion.QuerySingleOrDefault<Stock>(query);
+
+                    if (stock != null)
+                        price = stock.SELLING_PRICE_EXCL_VAT;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            return price;
+        }
+
         public static void UpdateStockAfterBuy(List<Item> items)
         {           
             foreach(Item i in items)
@@ -47,10 +73,59 @@ namespace DAL
                         throw ex;
                     }                
             }
+        }
 
+        public static void UpdateStock(int productID, int shopID, int newStock, decimal sellingPrice)
+        {
+            int res;
+            string query = $"update stock  set STOCK_QUANTITY = {newStock}, SELLING_PRICE_EXCL_VAT = {sellingPrice}  where ID_PRODUCT = {productID} and ID_SHOP = {shopID}";
+            string query2 = $"insert into stock values({productID},{shopID},{newStock}, {sellingPrice})";
+            Debug.WriteLine(sellingPrice);
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    res = connexion.Execute(query);
+                    Debug.WriteLine(res);
+
+                    if (res == 0)
+                    {
+                        res = connexion.Execute(query2);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+        }
+
+        public static int GetStockByShopIDAndProductName(int shopID, string productName)
+        {
+            string query = $"select STOCK_QUANTITY from dbo.stock inner join shop on stock.ID_SHOP = shop.ID_SHOP inner join product on product.ID_PRODUCT = stock.ID_PRODUCT where shop.ID_SHOP = {shopID}  and product.PRODUCT_NAME = '{productName}'";
+            Stock res;
+            int stock;
             
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    res = connexion.QuerySingleOrDefault<Stock>(query);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            if (res == null)
+            {
+                stock = 0;
+            }
+            else
+            {
+                stock = res.STOCK_QUANTITY;
+            }
 
-           
+            return stock;
+
         }
     }
 }
