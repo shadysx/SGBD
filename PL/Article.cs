@@ -11,6 +11,7 @@ using DTO;
 using DAL;
 using BLL;
 using System.Diagnostics;
+using System.Threading;
 
 namespace PL
 {
@@ -21,31 +22,49 @@ namespace PL
         int quantity;
         int idShop;
         int idProduct;
+        
+
         public Article(string name, string seller, decimal price, int quantity, string country, int idShop, int idProduct)
         {
             InitializeComponent();
-            this.labelPrix.Text = "€ " + price.ToString();
-            this.labelVendeur.Text = seller;
-            this.labelQuantite.Text = "Available quantity : " + quantity.ToString();
+            
+            this.labelVendeur.Text = seller;            
             this.labelPays.Text = country;
-            this.iconButton1.IconColor = CustomColor.Orange;
             this.name = name;
             this.price = price;
             this.quantity = quantity;
             this.idShop = idShop;
-            this.idProduct = idProduct;
-            this.labelPriceSelected.Text = "€ " + price.ToString();
+            this.idProduct = idProduct;        
+            this.iconButton1.IconColor = CustomColor.Orange;
+            this.timer1.Stop();
+            
+            if(this.quantity <= 0)
+            {
+                this.labelQuantite.Text = "This Product is Sold Out !";
+                this.labelPrix.Visible = false;
+                this.labelPriceSelected.Visible = false;
+            }
+            else
+            {
+                this.labelQuantite.Text = "Available quantity : " + quantity.ToString();
+                this.labelPrix.Text = "€ " + price.ToString();
+                this.labelPriceSelected.Text = "€ " + price.ToString();
+            }
+                
+
+
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-                   
-            // On regarde si le compte User dispose 
+            /*// On regarde si le compte User dispose 
             if (Auth.CurrentUser.ACCOUNT_CURRENT_CARD == null)
             {
                 OrderedAccess.InsertNewOrdered(Auth.CurrentUser.ID_ACCOUNT);
                 Auth.CurrentUser.ACCOUNT_CURRENT_CARD = OrderedAccess.SelectOrdered(Auth.CurrentUser.ID_ACCOUNT);
-            }
+            }*/
+            // NORMALEMENT LE BLOC AU DESSUS N'EST PLUS NECESSAIRE            
+            
 
             OrderLine orderLine = new OrderLine
             {
@@ -56,7 +75,6 @@ namespace PL
                 ID_ORDERED = Auth.CurrentUser.ACCOUNT_CURRENT_CARD.ID_ORDERED
             };
 
-
             // Charge la liste d'oderline qui partage le meme ID_ORDERRED
             List<OrderLine> list = OrderLineAccess.SelectAllOrderLine(Auth.CurrentUser.ACCOUNT_CURRENT_CARD.ID_ORDERED);
 
@@ -64,7 +82,7 @@ namespace PL
             bool isModified = false;
             bool isValide = true;
             int idOrderLine = 0;
-            int quantityLeft = 1;
+            int quantityLeft = 0;
             
             foreach(OrderLine ol in list)
             {
@@ -83,39 +101,44 @@ namespace PL
                         idOrderLine = ol.ID_ORDER_LINE;
                         isModified = true;
                         break;
-                    }                    
+                    }
+                    
                 }
             }
 
-
-
-
             // Suivant s'il faut Insert ou Update la table 
+            
             if (!isModified && isValide)
             {
                 if (this.quantity > 0)
+                {
                     OrderLineAccess.AddProductToCard(orderLine);
+                    timer1.Start();
+                    this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Check;
+                    this.iconButton1.IconColor = Color.Green;         
+                }
+                    
                 else
                     MessageBox.Show("The product " + this.name + " is sold out in this shop");
-            }           
-            
-            else if (isModified && isValide)            
-                OrderLineAccess.ModifyOrderline(orderLine, idOrderLine);            
+            }         
+            else if (isModified && isValide)
+            {
+                OrderLineAccess.ModifyOrderline(orderLine, idOrderLine);
+                timer1.Start();
+                this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Check;
+                this.iconButton1.IconColor = Color.Green;
+            }
+                
             else if(!isModified && !isValide)
                 MessageBox.Show("Cannot Add " + this.numericUpDown1.Value + " x " + this.name + "\nOnly " + quantityLeft + " still available in this shop");
 
-
-
+            
+            
+            
 
 
         }    
             
-            
-                
-
-
-
-        
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
@@ -130,12 +153,18 @@ namespace PL
                 {
                     this.numericUpDown1.Value = quantity;
                     MessageBox.Show("Cannot select more than the available stock");
-                }
-                            
+                }                            
             }                         
             else
                 this.labelPriceSelected.Text = "€ " + (numericUpDown1.Value * this.price).ToString();
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButton1.IconColor = CustomColor.Orange;
+            timer1.Stop();
         }
     }
 }

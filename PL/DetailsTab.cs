@@ -14,9 +14,13 @@ namespace PL
 {
     public partial class DetailsTab : Form
     {
-        public DetailsTab(string productName, string description , Image image)
+        private string fromParent;        
+
+        public DetailsTab(string productName, string description , Image image, string fromParent)
         {
             InitializeComponent();
+            this.fromParent = fromParent;
+
             this.BackColor = CustomColor.DarkBlue;
             this.panelTop.BackColor = CustomColor.DarkBlue;            
             this.labelNom.Text = productName;
@@ -31,8 +35,17 @@ namespace PL
             this.labelDescription.AutoSize = false;
             this.labelDescription.Size = new System.Drawing.Size(this.panelRight.Size.Width - 150, this.panelRight.Size.Height);
 
-            List<Stock> stocks = StockAccess.GetStock(productName);
-            DisplayProducts(stocks);
+
+
+            if (fromParent == "ShopTabProduct")
+            {
+                List<Stock> stocks = StockAccess.GetStock(productName);
+                DisplayProducts(stocks);
+            }
+            else if(fromParent == "BasketItem")
+            {
+                labelAvailable.Visible = false;
+            }
 
 
         }
@@ -66,8 +79,17 @@ namespace PL
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            Main.mainInstance.OpenChildForm(new ShopTab());
-            this.Dispose();
+            if (fromParent == "ShopTabProduct")
+            {
+                Main.mainInstance.OpenChildForm(new ShopTab());
+                this.Dispose();
+            }
+            else if (fromParent == "BasketItem")
+            {
+                this.Dispose();
+            }
+            
+            
         }
     }
 }

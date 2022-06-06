@@ -101,17 +101,17 @@
     <Compile Include="EmployeeInsertNewProductPanel.Designer.cs">
       <DependentUpon>EmployeeInsertNewProductPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Card.cs">
+    <Compile Include="Basket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Card.Designer.cs">
-      <DependentUpon>Card.cs</DependentUpon>
+    <Compile Include="Basket.Designer.cs">
+      <DependentUpon>Basket.cs</DependentUpon>
     </Compile>
-    <Compile Include="CardItem.cs">
+    <Compile Include="BasketItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CardItem.Designer.cs">
-      <DependentUpon>CardItem.cs</DependentUpon>
+    <Compile Include="BasketItem.Designer.cs">
+      <DependentUpon>BasketItem.cs</DependentUpon>
     </Compile>
     <Compile Include="ShopTabProduct.cs">
       <SubType>Form</SubType>
@@ -170,11 +170,11 @@
     <EmbeddedResource Include="EmployeeInsertNewProductPanel.resx">
       <DependentUpon>EmployeeInsertNewProductPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Card.resx">
-      <DependentUpon>Card.cs</DependentUpon>
+    <EmbeddedResource Include="Basket.resx">
+      <DependentUpon>Basket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CardItem.resx">
-      <DependentUpon>CardItem.cs</DependentUpon>
+    <EmbeddedResource Include="BasketItem.resx">
+      <DependentUpon>BasketItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShopTabProduct.resx">
       <DependentUpon>ShopTabProduct.cs</DependentUpon>

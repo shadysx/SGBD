@@ -37,8 +37,8 @@
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.labelAvailable = new System.Windows.Forms.Label();
             this.panelRight = new System.Windows.Forms.Panel();
-            this.labelProductDesctiption = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
+            this.labelProductDesctiption = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -145,6 +145,16 @@
             this.panelRight.Size = new System.Drawing.Size(741, 384);
             this.panelRight.TabIndex = 1;
             // 
+            // labelDescription
+            // 
+            this.labelDescription.AutoSize = true;
+            this.labelDescription.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescription.Location = new System.Drawing.Point(17, 45);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(105, 22);
+            this.labelDescription.TabIndex = 6;
+            this.labelDescription.Text = "labelDescription";
+            // 
             // labelProductDesctiption
             // 
             this.labelProductDesctiption.AutoSize = true;
@@ -155,16 +165,6 @@
             this.labelProductDesctiption.Size = new System.Drawing.Size(184, 28);
             this.labelProductDesctiption.TabIndex = 5;
             this.labelProductDesctiption.Text = "Product Description :";
-            // 
-            // labelDescription
-            // 
-            this.labelDescription.AutoSize = true;
-            this.labelDescription.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescription.Location = new System.Drawing.Point(17, 45);
-            this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(105, 22);
-            this.labelDescription.TabIndex = 6;
-            this.labelDescription.Text = "labelDescription";
             // 
             // DetailsTab
             // 

@@ -13,9 +13,10 @@ using BLL;
 
 namespace PL
 {
-    public partial class CardItem : Form
+    public partial class BasketItem : Form
     {
-        public CardItem(int iD_ORDERED, int iD_ORDER_LINE, int oRDER_LINE_QUANTITY, decimal oRDER_LINE_BUYING_PRICE, int iD_SHOP, 
+        private string description;
+        public BasketItem(int iD_ORDERED, int iD_ORDER_LINE, int oRDER_LINE_QUANTITY, decimal oRDER_LINE_BUYING_PRICE, int iD_SHOP, 
                         string sHOP_NAME, string sHOP_ADDRESS, string sHOP_CITY, string sHOP_COUNTRY, int iD_PRODUCT, string pRODUCT_NAME, 
                         string pRODUCT_TYPE, string pRODUCT_DESCRIPTION, string pICTURE_URL, string pICTURE_PATH)
         {
@@ -31,9 +32,14 @@ namespace PL
             this.labelShopCity.Text = sHOP_CITY;
             this.labelQuantity.Text = "Quantity : " + oRDER_LINE_QUANTITY;
             this.labelPrice.Text = "€ " + oRDER_LINE_BUYING_PRICE;
+            this.description = pRODUCT_DESCRIPTION;
             this.pictureBox1.ImageLocation = pICTURE_PATH;
+            this.iconButton1.IconColor = CustomColor.Orange;
         }
 
-       
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            Main.mainInstance.OpenChildForm(new DetailsTab(this.labelNameArticle.Text, this.description, this.pictureBox1.Image, "BasketItem"));
+        }
     }
 }

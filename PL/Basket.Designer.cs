@@ -1,6 +1,6 @@
 ﻿namespace PL
 {
-    partial class Card
+    partial class Basket
     {
         /// <summary>
         /// Required designer variable.

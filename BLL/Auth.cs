@@ -49,10 +49,7 @@ namespace BLL
             {
                 OrderedAccess.InsertNewOrdered(account.ID_ACCOUNT);
                 account.ACCOUNT_CURRENT_CARD = OrderedAccess.SelectOrdered(account.ID_ACCOUNT);
-            }
-               
-
-
+            }              
         }
 
         public static bool SignUp(Account newAccount)

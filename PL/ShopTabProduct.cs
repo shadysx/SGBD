@@ -30,7 +30,7 @@ namespace PL
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            Main.mainInstance.OpenChildForm(new DetailsTab(this.labelNameArticle.Text, this.description, this.pictureBox1.Image));
+            Main.mainInstance.OpenChildForm(new DetailsTab(this.labelNameArticle.Text, this.description, this.pictureBox1.Image, "ShopTabProduct"));
         }
     }
 }

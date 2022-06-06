@@ -205,7 +205,7 @@
             this.iconButtonCard.Name = "iconButtonCard";
             this.iconButtonCard.Size = new System.Drawing.Size(197, 47);
             this.iconButtonCard.TabIndex = 2;
-            this.iconButtonCard.Text = "  Card";
+            this.iconButtonCard.Text = "    Basket";
             this.iconButtonCard.UseVisualStyleBackColor = false;
             this.iconButtonCard.Click += new System.EventHandler(this.iconButtonCard_Click);
             // 

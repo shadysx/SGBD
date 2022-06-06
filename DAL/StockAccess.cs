@@ -32,7 +32,7 @@ namespace DAL
             return stock;
         }
 
-        public static void UpdateStock(List<Item> items)
+        public static void UpdateStockAfterBuy(List<Item> items)
         {           
             foreach(Item i in items)
             {

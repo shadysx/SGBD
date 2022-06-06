@@ -14,12 +14,12 @@ using System.Diagnostics;
 
 namespace PL
 {
-    public partial class Card : Form
+    public partial class Basket : Form
     {
         private decimal totalPrice;
         private int totalNumberArticle;
         private List<Item> items;
-        public Card()
+        public Basket()
         {
             InitializeComponent();
             InitializeValues();       
@@ -31,8 +31,7 @@ namespace PL
 
             if (Auth.CurrentUser.ACCOUNT_CURRENT_CARD != null)
             {
-                items = ItemAccess.SelectAllItem(Auth.CurrentUser.ACCOUNT_CURRENT_CARD.ID_ORDERED);
-                Debug.Print(items.Count + "");
+                items = ItemAccess.SelectAllItem(Auth.CurrentUser.ACCOUNT_CURRENT_CARD.ID_ORDERED);                
                 DisplayProducts(items);
 
                 this.labelTotalNumberArticle.Text = "" + this.totalNumberArticle;
@@ -43,29 +42,26 @@ namespace PL
                 this.labelNumber.ForeColor = CustomColor.Orange;
                 this.labelPrice.ForeColor = CustomColor.Orange;
                 this.iconButton1.IconColor = CustomColor.Orange;
-            }
-            
+            }            
         }
 
         private void AddProduct(int iD_ORDERED, int iD_ORDER_LINE, int oRDER_LINE_QUANTITY, decimal oRDER_LINE_BUYING_PRICE, int iD_SHOP, 
                                 string sHOP_NAME, string sHOP_ADDRESS, string sHOP_CITY, string sHOP_COUNTRY, int iD_PRODUCT, string pRODUCT_NAME, 
                                 string pRODUCT_TYPE, string pRODUCT_DESCRIPTION, string pICTURE_URL, string pICTURE_PATH)
         {
-            CardItem cardItem = new CardItem(iD_ORDERED, iD_ORDER_LINE, oRDER_LINE_QUANTITY, oRDER_LINE_BUYING_PRICE, iD_SHOP, sHOP_NAME, sHOP_ADDRESS, sHOP_CITY, sHOP_COUNTRY, iD_PRODUCT, pRODUCT_NAME, pRODUCT_TYPE, pRODUCT_DESCRIPTION, pICTURE_URL, pICTURE_PATH);
+            BasketItem cardItem = new BasketItem(iD_ORDERED, iD_ORDER_LINE, oRDER_LINE_QUANTITY, oRDER_LINE_BUYING_PRICE, iD_SHOP, sHOP_NAME, sHOP_ADDRESS, sHOP_CITY, sHOP_COUNTRY, iD_PRODUCT, pRODUCT_NAME, pRODUCT_TYPE, pRODUCT_DESCRIPTION, pICTURE_URL, pICTURE_PATH);
             cardItem.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(cardItem);
             cardItem.Show();
         }               
 
         public void DisplayProducts(List<Item> itemsList)
-        {
-            int j = 0;
+        {            
             foreach (Item i in itemsList)
             {
                 AddProduct(i.ID_ORDERED, i.ID_ORDER_LINE, i.ORDER_LINE_QUANTITY, i.ORDER_LINE_BUYING_PRICE, i.ID_SHOP, i.SHOP_NAME, i.SHOP_ADDRESS, i.SHOP_CITY, i.SHOP_COUNTRY, i.ID_PRODUCT, i.PRODUCT_NAME, i.PRODUCT_TYPE, i.PRODUCT_DESCRIPTION, i.PICTURE_URL, i.PICTURE_PATH);
                 this.totalNumberArticle += i.ORDER_LINE_QUANTITY;
-                this.totalPrice += i.ORDER_LINE_BUYING_PRICE;
-                
+                this.totalPrice += i.ORDER_LINE_BUYING_PRICE;                
             }
         }
 
@@ -73,18 +69,19 @@ namespace PL
         {
             if(items.Count >= 1)
             {
-                MessageBox.Show("Merci Pigeon !");
+                DialogResult result = MessageBox.Show("Confirm purchase ?", "Validation", MessageBoxButtons.OKCancel);
+                if(result == DialogResult.OK)
+                {
+                    OrderedAccess.UpdateOrderer(Auth.CurrentUser.ID_ACCOUNT);
+                    StockAccess.UpdateStockAfterBuy(items);
 
-                OrderedAccess.UpdateOrderer(Auth.CurrentUser.ID_ACCOUNT);
-                StockAccess.UpdateStock(items);
+                    Auth.CurrentUser.ACCOUNT_CURRENT_CARD = null;
+                    OrderedAccess.InsertNewOrdered(Auth.CurrentUser.ID_ACCOUNT);
+                    Auth.CurrentUser.ACCOUNT_CURRENT_CARD = OrderedAccess.SelectOrdered(Auth.CurrentUser.ID_ACCOUNT);
 
-                Auth.CurrentUser.ACCOUNT_CURRENT_CARD = null;
-                OrderedAccess.InsertNewOrdered(Auth.CurrentUser.ID_ACCOUNT);
-                Auth.CurrentUser.ACCOUNT_CURRENT_CARD = OrderedAccess.SelectOrdered(Auth.CurrentUser.ID_ACCOUNT);
-
-                this.Dispose();
-            }
-            
+                    this.Dispose();
+                }                
+            }           
 
         }
     }

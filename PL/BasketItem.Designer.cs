@@ -1,6 +1,6 @@
 ﻿namespace PL
 {
-    partial class CardItem
+    partial class BasketItem
     {
         /// <summary>
         /// Required designer variable.
@@ -66,6 +66,7 @@
             this.iconButton1.Size = new System.Drawing.Size(88, 48);
             this.iconButton1.TabIndex = 8;
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // labelNameArticle
             // 
@@ -156,7 +157,7 @@
             this.labelShopCity.TabIndex = 15;
             this.labelShopCity.Text = "labelShopCity";
             // 
-            // CardItem
+            // BasketItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,7 +174,7 @@
             this.Controls.Add(this.labelTypeArticle);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CardItem";
+            this.Name = "BasketItem";
             this.Text = "CardItem";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
