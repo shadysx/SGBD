@@ -43,9 +43,7 @@ namespace DAL
                 catch (Exception ex)
                 {
                     throw (ex);
-                }
-
-            Debug.Print("Done");
+                }           
             
         }
 

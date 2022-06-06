@@ -52,7 +52,7 @@
             // 
             this.labelPrix.AutoSize = true;
             this.labelPrix.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrix.Location = new System.Drawing.Point(466, 26);
+            this.labelPrix.Location = new System.Drawing.Point(504, 26);
             this.labelPrix.Name = "labelPrix";
             this.labelPrix.Size = new System.Drawing.Size(79, 28);
             this.labelPrix.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             this.labelQuantite.AutoSize = true;
             this.labelQuantite.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuantite.Location = new System.Drawing.Point(233, 25);
+            this.labelQuantite.Location = new System.Drawing.Point(271, 25);
             this.labelQuantite.Name = "labelQuantite";
             this.labelQuantite.Size = new System.Drawing.Size(122, 28);
             this.labelQuantite.TabIndex = 2;
@@ -117,7 +117,7 @@
             this.labelPriceSelected.TabIndex = 6;
             this.labelPriceSelected.Text = "Price";
             // 
-            // Product
+            // Article
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -131,7 +131,7 @@
             this.Controls.Add(this.labelPrix);
             this.Controls.Add(this.labelVendeur);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Product";
+            this.Name = "Article";
             this.Text = "ShopArticle";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);

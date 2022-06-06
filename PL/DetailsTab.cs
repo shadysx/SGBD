@@ -21,18 +21,17 @@ namespace PL
             this.panelTop.BackColor = CustomColor.DarkBlue;            
             this.labelNom.Text = productName;
             this.iconButton1.IconColor = CustomColor.Orange;
-            List<Stock> stocks = StockAccess.GetStock(productName);
+            
             this.pictureBox.Image = image;
             this.labelAvailable.ForeColor = CustomColor.Orange;
             this.labelProductDesctiption.ForeColor = CustomColor.Orange;
 
-            // this.labelDescription.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a suscipit nibh. Donec justo metus, luctus nec dignissim sit amet, lobortis vitae est. Nam congue pulvinar turpis ac cursus. Vestibulum luctus a quam quis accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pretium elit vel elit sollicitudin, in luctus odio hendrerit. Aliquam pellentesque diam pellentesque ligula venenatis ultrices. Sed mauris nulla, gravida nec imperdiet et, tristique eu ex.Quisque blandit dolor nec dignissim finibus. Ut elementum nisl leo, sed porttitor magna pretium a. Ut ac lacus rhoncus, gravida lectus sit amet, molestie diam. Sed vitae turpis quis erat tempor consectetur.Mauris facilisis dui eget est maximus, id vulputate neque bibendum.Donec malesuada eu turpis quis convallis. Donec vestibulum mattis ultricies. Suspendisse dapibus laoreet ipsum. Maecenas id ullamcorper erat. Nunc tincidunt nulla dolor, in convallis sem sagittis ac. Ut magna justo, interdum at eros ac, pulvinar aliquam sapien.Sed eu fermentum nulla. Cras malesuada lacinia sem, dapibus pretium purus malesuada vel.";
             this.labelDescription.Text = description;
             this.labelDescription.ForeColor = CustomColor.White;
-
             this.labelDescription.AutoSize = false;
             this.labelDescription.Size = new System.Drawing.Size(this.panelRight.Size.Width - 150, this.panelRight.Size.Height);
-            
+
+            List<Stock> stocks = StockAccess.GetStock(productName);
             DisplayProducts(stocks);
 
 

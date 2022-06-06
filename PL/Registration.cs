@@ -262,7 +262,7 @@ namespace PL
                 isPasswordDifferent = true;
             }            
 
-            // INSERT
+            // Lance l'INSERT
             if (!isDuplicated && !isBookUnvalidate && !isPasswordDifferent)
             {
                 if (Auth.SignUp(newAccount))

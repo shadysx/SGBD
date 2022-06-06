@@ -40,7 +40,6 @@ namespace PL
         private void iconButton1_Click(object sender, EventArgs e)
         {
                    
-
             // On regarde si le compte User dispose 
             if (Auth.CurrentUser.ACCOUNT_CURRENT_CARD == null)
             {
@@ -63,35 +62,76 @@ namespace PL
 
             // On compare cette liste avec ID_PRODUCT et ID_SHOP pour pouvoir modifier l'insert dans la DB
             bool isModified = false;
+            bool isValide = true;
             int idOrderLine = 0;
+            int quantityLeft = 1;
+            
             foreach(OrderLine ol in list)
             {
                 if(ol.ID_SHOP == orderLine.ID_SHOP && ol.ID_PRODUCT == orderLine.ID_PRODUCT)
-                {                    
-                    orderLine.ORDER_LINE_QUANTITY += ol.ORDER_LINE_QUANTITY;
-                    orderLine.ORDER_LINE_BUYING_PRICE += ol.ORDER_LINE_QUANTITY * ol.ORDER_LINE_BUYING_PRICE;
-                    idOrderLine = ol.ID_ORDER_LINE;
-                    isModified = true;                 
-                    break;
+                {                                 
+                    if(orderLine.ORDER_LINE_QUANTITY + ol.ORDER_LINE_QUANTITY > this.quantity)
+                    {                       
+                        quantityLeft = this.quantity - ol.ORDER_LINE_QUANTITY;
+                        isValide = false;
+                        break;
+                    }
+                    else
+                    {
+                        orderLine.ORDER_LINE_QUANTITY += ol.ORDER_LINE_QUANTITY;
+                        orderLine.ORDER_LINE_BUYING_PRICE += ol.ORDER_LINE_QUANTITY * ol.ORDER_LINE_BUYING_PRICE;
+                        idOrderLine = ol.ID_ORDER_LINE;
+                        isModified = true;
+                        break;
+                    }                    
                 }
             }
 
+
+
+
             // Suivant s'il faut Insert ou Update la table 
-            if (isModified)
-                OrderLineAccess.ModifyOrderline(orderLine, idOrderLine);
-            else
-                OrderLineAccess.AddProductToCard(orderLine);
+            if (!isModified && isValide)
+            {
+                if (this.quantity > 0)
+                    OrderLineAccess.AddProductToCard(orderLine);
+                else
+                    MessageBox.Show("The product " + this.name + " is sold out in this shop");
+            }           
+            
+            else if (isModified && isValide)            
+                OrderLineAccess.ModifyOrderline(orderLine, idOrderLine);            
+            else if(!isModified && !isValide)
+                MessageBox.Show("Cannot Add " + this.numericUpDown1.Value + " x " + this.name + "\nOnly " + quantityLeft + " still available in this shop");
 
 
 
-        }
+
+
+        }    
+            
+            
+                
+
+
+
+        
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             if(this.numericUpDown1.Value > quantity)
             {
-                MessageBox.Show("Cannot select more than the available stock");
-                this.numericUpDown1.Value = quantity;
+                if(quantity <= 0)
+                {
+                    this.numericUpDown1.Value = quantity;
+                    MessageBox.Show("The product " + this.name + " is sold out in this shop");
+                }
+                else
+                {
+                    this.numericUpDown1.Value = quantity;
+                    MessageBox.Show("Cannot select more than the available stock");
+                }
+                            
             }                         
             else
                 this.labelPriceSelected.Text = "€ " + (numericUpDown1.Value * this.price).ToString();
