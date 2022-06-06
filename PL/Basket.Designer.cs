@@ -127,15 +127,15 @@
             this.labelTotalPrice.TabIndex = 5;
             this.labelTotalPrice.Text = "label";
             // 
-            // Card
+            // Basket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1189, 686);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Card";
-            this.Text = "Card";
+            this.Name = "Basket";
+            this.Text = "Basket";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

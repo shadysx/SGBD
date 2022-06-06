@@ -11,7 +11,7 @@ namespace DAL
 {
     public class OrderLineAccess
     {
-        public static int AddProductToCard(OrderLine orderline)
+        public static int AddProductToBasket(OrderLine orderline)
         {
             int retVal;
 

@@ -31,11 +31,12 @@ namespace Test
 
             ShopInfo shopInfo = ShopInfoAccess.GetShopInfo(1);
 
-            decimal d = 420.00m;
+
+            decimal d = 420.30m;
             Console.WriteLine(d);
 
 
-            decimal d = 420.30m;
+            
             string s = Convert.ToInt32(d).ToString() + "." + d.ToString().Substring(d.ToString().Length - 2);
             
             Console.WriteLine(s);

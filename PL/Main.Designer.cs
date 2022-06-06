@@ -33,12 +33,12 @@
             this.iconButtonProfile = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelProfileSubMenu = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.iconButtonAdminPanel = new FontAwesome.Sharp.IconButton();
-            this.iconButtonCard = new FontAwesome.Sharp.IconButton();
+            this.iconButtonBasket = new FontAwesome.Sharp.IconButton();
             this.iconButtonShop = new FontAwesome.Sharp.IconButton();
             this.iconButtonHome = new FontAwesome.Sharp.IconButton();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
@@ -46,7 +46,7 @@
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelProfileSubMenu.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +82,6 @@
             this.iconButtonProfile.Text = "HOME";
             this.iconButtonProfile.UseVisualStyleBackColor = false;
             this.iconButtonProfile.Click += new System.EventHandler(this.iconButtonProfile_Click);
-            this.iconButtonProfile.MouseEnter += new System.EventHandler(this.iconButtonProfile_MouseEnter);
             // 
             // iconPictureBox2
             // 
@@ -115,17 +114,17 @@
             this.iconPictureBox1.TabIndex = 0;
             this.iconPictureBox1.TabStop = false;
             // 
-            // panel1
+            // panelProfileSubMenu
             // 
-            this.panel1.BackColor = System.Drawing.Color.IndianRed;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(921, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(137, 66);
-            this.panel1.TabIndex = 10;
-            this.panel1.Visible = false;
+            this.panelProfileSubMenu.BackColor = System.Drawing.Color.IndianRed;
+            this.panelProfileSubMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelProfileSubMenu.Controls.Add(this.label2);
+            this.panelProfileSubMenu.Controls.Add(this.label1);
+            this.panelProfileSubMenu.Location = new System.Drawing.Point(921, 0);
+            this.panelProfileSubMenu.Name = "panelProfileSubMenu";
+            this.panelProfileSubMenu.Size = new System.Drawing.Size(137, 66);
+            this.panelProfileSubMenu.TabIndex = 10;
+            this.panelProfileSubMenu.Visible = false;
             // 
             // label2
             // 
@@ -161,7 +160,7 @@
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panelLeft.Controls.Add(this.iconButtonAdminPanel);
-            this.panelLeft.Controls.Add(this.iconButtonCard);
+            this.panelLeft.Controls.Add(this.iconButtonBasket);
             this.panelLeft.Controls.Add(this.iconButtonShop);
             this.panelLeft.Controls.Add(this.iconButtonHome);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
@@ -190,24 +189,24 @@
             this.iconButtonAdminPanel.Visible = false;
             this.iconButtonAdminPanel.Click += new System.EventHandler(this.iconButtonAdminPanel_Click);
             // 
-            // iconButtonCard
+            // iconButtonBasket
             // 
-            this.iconButtonCard.BackColor = System.Drawing.Color.Transparent;
-            this.iconButtonCard.FlatAppearance.BorderSize = 0;
-            this.iconButtonCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonCard.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonCard.ForeColor = System.Drawing.Color.White;
-            this.iconButtonCard.IconChar = FontAwesome.Sharp.IconChar.CreditCard;
-            this.iconButtonCard.IconColor = System.Drawing.Color.White;
-            this.iconButtonCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonCard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCard.Location = new System.Drawing.Point(0, 125);
-            this.iconButtonCard.Name = "iconButtonCard";
-            this.iconButtonCard.Size = new System.Drawing.Size(197, 47);
-            this.iconButtonCard.TabIndex = 2;
-            this.iconButtonCard.Text = "    Basket";
-            this.iconButtonCard.UseVisualStyleBackColor = false;
-            this.iconButtonCard.Click += new System.EventHandler(this.iconButtonCard_Click);
+            this.iconButtonBasket.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonBasket.FlatAppearance.BorderSize = 0;
+            this.iconButtonBasket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonBasket.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonBasket.ForeColor = System.Drawing.Color.White;
+            this.iconButtonBasket.IconChar = FontAwesome.Sharp.IconChar.CreditCard;
+            this.iconButtonBasket.IconColor = System.Drawing.Color.White;
+            this.iconButtonBasket.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonBasket.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonBasket.Location = new System.Drawing.Point(0, 125);
+            this.iconButtonBasket.Name = "iconButtonBasket";
+            this.iconButtonBasket.Size = new System.Drawing.Size(197, 47);
+            this.iconButtonBasket.TabIndex = 2;
+            this.iconButtonBasket.Text = "    Basket";
+            this.iconButtonBasket.UseVisualStyleBackColor = false;
+            this.iconButtonBasket.Click += new System.EventHandler(this.iconButtonBasket_Click);
             // 
             // iconButtonShop
             // 
@@ -249,13 +248,12 @@
             // 
             // panelRight
             // 
-            this.panelRight.Controls.Add(this.panel1);
+            this.panelRight.Controls.Add(this.panelProfileSubMenu);
             this.panelRight.ForeColor = System.Drawing.Color.Black;
             this.panelRight.Location = new System.Drawing.Point(197, 75);
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(1132, 697);
             this.panelRight.TabIndex = 0;
-            this.panelRight.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelRight_MouseClick);
             // 
             // Main
             // 
@@ -274,12 +272,11 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.StateCommon.Border.Rounding = 20;
-            this.Load += new System.EventHandler(this.Main_Load);
             this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelProfileSubMenu.ResumeLayout(false);
+            this.panelProfileSubMenu.PerformLayout();
             this.panelLeft.ResumeLayout(false);
             this.panelRight.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -297,8 +294,8 @@
         private FontAwesome.Sharp.IconButton iconButtonShop;
         private System.Windows.Forms.Panel panelRight;
         private FontAwesome.Sharp.IconButton iconButtonProfile;
-        private FontAwesome.Sharp.IconButton iconButtonCard;
-        private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton iconButtonBasket;
+        private System.Windows.Forms.Panel panelProfileSubMenu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton iconButtonAdminPanel;

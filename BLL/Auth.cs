@@ -24,7 +24,7 @@ namespace BLL
                 if (account.ACCOUNT_USERNAME == username && account.ACCOUNT_PASSWORD == Auth.ComputeSha256Hash(password))
                 {
 
-                    LoadCard(account);
+                    LoadBasket(account);
                     if (account.ACCOUNT_ROLE == "ADMIN" && account.ID_SHOP > 0 )
                         account.ACCOUNT_SHOP_INFO = ShopInfoAccess.GetShopInfo(account.ID_SHOP);
                     Auth.CurrentUser = account;
@@ -37,18 +37,18 @@ namespace BLL
                 throw new Exception($"Username or password does not match");
         }
 
-        private static void LoadCard(Account account)
+        private static void LoadBasket(Account account)
         {
             Ordered ordered = OrderedAccess.SelectOrdered(account.ID_ACCOUNT);
 
             if (ordered != null && ordered.ORDERED_DATE < new DateTime(1880, 1, 1))
             {
-                account.ACCOUNT_CURRENT_CARD = ordered;
+                account.ACCOUNT_CURRENT_BASKET = ordered;
             }
             else
             {
                 OrderedAccess.InsertNewOrdered(account.ID_ACCOUNT);
-                account.ACCOUNT_CURRENT_CARD = OrderedAccess.SelectOrdered(account.ID_ACCOUNT);
+                account.ACCOUNT_CURRENT_BASKET = OrderedAccess.SelectOrdered(account.ID_ACCOUNT);
             }              
         }
 

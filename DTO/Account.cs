@@ -21,7 +21,7 @@ namespace DTO
         public string ACCOUNT_POSTAL_CODE { get; set; }
         public string ACCOUNT_COUNTRY { get; set; }
         public string ACCOUNT_ROLE { get; set; }
-        public Ordered ACCOUNT_CURRENT_CARD { get; set; }
+        public Ordered ACCOUNT_CURRENT_BASKET { get; set; }
         public ShopInfo ACCOUNT_SHOP_INFO { get; set; }
         public int ID_SHOP { get; set; }
         public override string ToString()
