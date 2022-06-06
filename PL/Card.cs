@@ -76,7 +76,7 @@ namespace PL
                 MessageBox.Show("Merci Pigeon !");
 
                 OrderedAccess.UpdateOrderer(Auth.CurrentUser.ID_ACCOUNT);
-                StockAccess.UpdateStock(items);
+                StockAccess.UpdateStockAfterBuy(items);
 
                 Auth.CurrentUser.ACCOUNT_CURRENT_CARD = null;
                 OrderedAccess.InsertNewOrdered(Auth.CurrentUser.ID_ACCOUNT);

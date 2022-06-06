@@ -57,7 +57,31 @@ namespace DAL
 
             return productsTypes;
         }
+        public static int SelectProductIDByName(string productName)
+        {
 
+            Product product =  new Product();
+            int productID;
+
+            string query = $"select ID_PRODUCT from product where PRODUCT_NAME = '{productName}'";
+
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    product = connexion.Query<Product>(query).Single();
+                    productID = product.ID_PRODUCT;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            return productID;
+        }
+
+        
         public static List<string> SelectProductsNamesByType(string type)
         {
 
@@ -84,29 +108,6 @@ namespace DAL
 
             return productsNames;
         }
-
-
-        /* public static List<Product> SelectProductImage(string productName)
-         {
-
-             List<Product> products = new List<Product>();
-
-             string query = $"select PRODUCT_NAME, ID_PICTURE, PICTURE_URL from PRODUCT p  inner join PICTURE pic on pic.ID_PRODUCT = p.ID_PRODUCT where p.PRODUCT_NAME = '{productName}'";
-
-
-             using (var connexion = CON_MGR.Connection())
-                 ////= SQL directe
-                 try
-                 {
-                     products = connexion.Query<Product>(query).ToList();
-                 }
-                 catch (Exception ex)
-                 {
-                     throw ex;
-                 }
-
-             return products;
-         }*/
 
         public static void InsertProduct(string productName, string productType, string productDescription )
         {
