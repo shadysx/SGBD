@@ -182,7 +182,7 @@
             this.iconButtonAdminPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonAdminPanel.Location = new System.Drawing.Point(0, 178);
             this.iconButtonAdminPanel.Name = "iconButtonAdminPanel";
-            this.iconButtonAdminPanel.Size = new System.Drawing.Size(194, 47);
+            this.iconButtonAdminPanel.Size = new System.Drawing.Size(197, 47);
             this.iconButtonAdminPanel.TabIndex = 3;
             this.iconButtonAdminPanel.Text = "        Employee";
             this.iconButtonAdminPanel.UseVisualStyleBackColor = false;
@@ -193,6 +193,7 @@
             // 
             this.iconButtonBasket.BackColor = System.Drawing.Color.Transparent;
             this.iconButtonBasket.FlatAppearance.BorderSize = 0;
+            this.iconButtonBasket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.iconButtonBasket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonBasket.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonBasket.ForeColor = System.Drawing.Color.White;
@@ -221,7 +222,7 @@
             this.iconButtonShop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonShop.Location = new System.Drawing.Point(0, 72);
             this.iconButtonShop.Name = "iconButtonShop";
-            this.iconButtonShop.Size = new System.Drawing.Size(194, 47);
+            this.iconButtonShop.Size = new System.Drawing.Size(197, 47);
             this.iconButtonShop.TabIndex = 1;
             this.iconButtonShop.Text = "  Shop";
             this.iconButtonShop.UseVisualStyleBackColor = false;
@@ -238,9 +239,9 @@
             this.iconButtonHome.IconColor = System.Drawing.Color.White;
             this.iconButtonHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonHome.Location = new System.Drawing.Point(3, 19);
+            this.iconButtonHome.Location = new System.Drawing.Point(0, 19);
             this.iconButtonHome.Name = "iconButtonHome";
-            this.iconButtonHome.Size = new System.Drawing.Size(191, 47);
+            this.iconButtonHome.Size = new System.Drawing.Size(197, 47);
             this.iconButtonHome.TabIndex = 0;
             this.iconButtonHome.Text = "  Home";
             this.iconButtonHome.UseVisualStyleBackColor = false;

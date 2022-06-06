@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using BLL;
 using System.IO;
 using System.Diagnostics;
+using FontAwesome.Sharp;
 
 namespace PL
 {
@@ -20,23 +21,39 @@ namespace PL
 
         private Login loginForm;
 
+        private IconButton iconArrow;       
+
         public Main(Form f)
         {
             Main.mainInstance = this;
 
-            InitializeComponent();
+            InitializeComponent();           
+
             this.loginForm = (Login)f;
             this.iconButtonProfile.Text = Auth.CurrentUser.ACCOUNT_USERNAME;
             this.panelProfileSubMenu.BackColor = CustomColor.Orange;
             this.panelTop.BackColor = CustomColor.DarkBlue;
-            this.panelLeft.BackColor = CustomColor.DarkBlue;
+            this.panelLeft.BackColor = CustomColor.DarkBlue;            
+
             if (Auth.CurrentUser.ACCOUNT_ROLE == "ADMIN")
             {
                 this.iconButtonAdminPanel.Visible = true;
             }
 
-           
+            InitializeArrow();
+            
+            foreach (FontAwesome.Sharp.IconButton i in this.panelLeft.Controls.OfType<FontAwesome.Sharp.IconButton>())
+            {
+                i.Tag = i.Text;
+                i.FlatAppearance.MouseDownBackColor = Color.Transparent;
+                i.FlatAppearance.MouseOverBackColor = CustomColor.Orange;
+            }         
+            
+
         }
+
+
+
 
         public void OpenChildForm(Form f)
         {
@@ -53,37 +70,45 @@ namespace PL
         private void iconButtonHome_Click(object sender, EventArgs e)
         {
             RefreshUI();
-            this.iconButtonHome.IconColor = CustomColor.Orange;
-            this.iconButtonHome.ForeColor = CustomColor.Orange;
         }
-       
+
         private void iconButtonShop_Click(object sender, EventArgs e)
         {
             RefreshUI();
-            this.iconButtonShop.IconColor = CustomColor.Orange;
-            this.iconButtonShop.ForeColor = CustomColor.Orange;
-            this.iconButtonShop.IconSize = 55;
-            this.iconButtonShop.Font = new Font("Poppins", 20, FontStyle.Bold);
-
-            
-            
+            DrawSelectedIcon(this.iconButtonShop);
             this.OpenChildForm(new ShopTab());
-        }        
+        }
         private void iconButtonBasket_Click(object sender, EventArgs e)
         {
             RefreshUI();
-            this.iconButtonBasket.IconColor = CustomColor.Orange;
-            this.iconButtonBasket.ForeColor = CustomColor.Orange;
+            DrawSelectedIcon(this.iconButtonBasket);
             this.OpenChildForm(new Basket());
         }
+
         private void iconButtonAdminPanel_Click(object sender, EventArgs e)
         {
             RefreshUI();
-            this.iconButtonAdminPanel.IconColor = CustomColor.Orange;
-            this.iconButtonAdminPanel.ForeColor = CustomColor.Orange;
+            DrawSelectedIcon(this.iconButtonAdminPanel);
             this.OpenChildForm(new EmployeePanel());
         }
 
+        private void DrawSelectedIcon(IconButton icon)
+        {            
+            icon.IconSize = 52;
+            icon.ForeColor = CustomColor.Orange;            
+            icon.Text = "";
+            icon.IconColor = CustomColor.Orange;
+            icon.Size = new System.Drawing.Size(61, 47);
+            icon.Location = new System.Drawing.Point(136, icon.Location.Y);            
+            icon.FlatAppearance.MouseOverBackColor = Color.Transparent;
+
+            this.iconArrow.IconColor = CustomColor.Orange;
+            this.iconArrow.Visible = true;
+
+            this.iconArrow.Location = new System.Drawing.Point(76, icon.Location.Y);
+            this.iconArrow.FlatAppearance.MouseOverBackColor = Color.Transparent;
+
+        }
 
         // Concern Profile Icon and Profile's sub menu
         private void iconButtonProfile_Click(object sender, EventArgs e)
@@ -130,11 +155,22 @@ namespace PL
         public void RefreshUI()
         {
 
+            // Rend l'arrow invisble 
+            this.iconArrow.Visible = false;           
+            
+
+
             // Redéfini la couleur de tous les Icon Button en Blanc
             foreach (FontAwesome.Sharp.IconButton i in this.panelLeft.Controls.OfType<FontAwesome.Sharp.IconButton>())
             {
+                i.Size = new System.Drawing.Size(197, 47);
+                i.Location = new System.Drawing.Point(0, i.Location.Y);
+                i.Text = i.Tag.ToString();
                 i.IconColor = Color.White;
                 i.ForeColor = Color.White;
+                i.IconSize = 48;
+                i.FlatAppearance.MouseOverBackColor = CustomColor.Orange;
+
             }
             this.iconButtonProfile.IconColor = Color.White;
 
@@ -159,6 +195,8 @@ namespace PL
             this.panelProfileSubMenu.ResumeLayout(false);
             this.panelProfileSubMenu.PerformLayout();
 
+            
+
         }
 
         private void iconPictureBox2_Click(object sender, EventArgs e)
@@ -166,6 +204,29 @@ namespace PL
             Application.Exit();
         }
 
-        
+        private void InitializeArrow()
+        {
+            this.iconArrow = new FontAwesome.Sharp.IconButton();
+            this.panelLeft.Controls.Add(this.iconArrow);
+            this.iconArrow.BackColor = System.Drawing.Color.Transparent;
+            this.iconArrow.FlatAppearance.BorderSize = 0;
+            this.iconArrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconArrow.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconArrow.ForeColor = System.Drawing.Color.White;
+            this.iconArrow.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleRight;
+            this.iconArrow.IconColor = CustomColor.Orange;
+            this.iconArrow.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconArrow.IconSize = 43;
+            this.iconArrow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconArrow.Location = new System.Drawing.Point(76, 125);
+            this.iconArrow.Name = "iconArrow";
+            this.iconArrow.Size = new System.Drawing.Size(54, 47);
+            this.iconArrow.TabIndex = 4;
+            this.iconArrow.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            this.iconArrow.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            this.iconArrow.Visible = false;
+        }
+
+
     }
 }
