@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using DTO;
+using System.Diagnostics;
 
 namespace DAL
 {
@@ -111,7 +112,35 @@ namespace DAL
 
         public static void InsertProduct(string productName, string productType, string productDescription )
         {
-            string query = $"INSERT INTO PRODUCT VALUES('{productName}', 'Processeur', 'Le processeur AMD Ryzen 5 3600 Wraith Stealth (3.6 GHz / 4.2 GHz) fait partie des premiers processeurs pour PC gravés en 7 nm.')";
+            string query = $"INSERT INTO PRODUCT VALUES('{productName.Replace("'", "''")}', '{productType.Replace("'", "''")}', '{productDescription.Replace("'", "''")}')";
+
+            using (var connexion = CON_MGR.Connection())
+                try
+                {
+                    Debug.WriteLine(query);
+                    connexion.Query(query);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+        }
+
+        public static void InsertImageForLastProduct(string filePath)
+        {
+            string lastProductIDQuery = "select top 1 ID_PRODUCT from PRODUCT order by ID_PRODUCT desc";
+            int lastProductID;
+
+            using (var connexion = CON_MGR.Connection())
+                try
+                {
+                    lastProductID = connexion.Query<int>(lastProductIDQuery).Single();
+                    connexion.Query($"INSERT INTO PICTURE VALUES('{filePath}', {lastProductID})");
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
         }
     }
 }
