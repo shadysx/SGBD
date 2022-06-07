@@ -11,12 +11,14 @@ using DAL;
 using DTO;
 using System.Diagnostics;
 using BLL;
+using System.IO;
 
 namespace PL
 {
     public partial class EmployeeAddStockPanel : Form
     {
         List<string> articleTypes = new List<string>();
+        string imagePath = ""; 
         public EmployeeAddStockPanel()
         {
             InitializeComponent();
@@ -43,6 +45,50 @@ namespace PL
             StockAccess.UpdateStock(ProductsAccess.SelectProductIDByName(this.comboBox2.SelectedValue.ToString()) ,Auth.CurrentUser.ID_SHOP, Convert.ToInt32(this.numericUpDown1.Value) , Convert.ToDecimal(this.textBox1.Text));
             MessageBox.Show("Mise a jour effectuée");
             Main.mainInstance.OpenChildForm(new EmployeeAddStockPanel());
+        }
+
+    
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                if(dialog.ShowDialog() == DialogResult.OK)
+                {
+                    this.pictureBox1.ImageLocation = dialog.FileName.ToString();
+                    string path = Path.Combine(@"\image\");
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    var fileName = System.IO.Path.GetFileName(dialog.FileName);
+                    path = path + fileName;
+                    File.Copy(dialog.FileName, path);
+                    this.imagePath = fileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void EmployeeAddStockPanel_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void buttonCreate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProductsAccess.InsertProduct(this.textBoxProductName.Text, this.textBoxProductType.Text, this.textBoxProductDescription.Text);
+                ProductsAccess.InsertImageForLastProduct(this.imagePath);
+                MessageBox.Show("Référence ajoutée, vous pouvez maintenant gerer le stock");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
