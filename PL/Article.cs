@@ -12,22 +12,24 @@ using DAL;
 using BLL;
 using System.Diagnostics;
 using System.Threading;
+using Tulpep.NotificationWindow;
 
 namespace PL
 {
     public partial class Article : Form
     {
-        string name;
-        decimal price;
-        int quantity;
-        int idShop;
-        int idProduct;
-        
+        private string name;
+        private decimal price;
+        private int quantity;
+        private int idShop;
+        private int idProduct;
+        private Image image;
+        private PopupNotifier popUp;
 
-        public Article(string name, string seller, decimal price, int quantity, string country, int idShop, int idProduct)
+        public Article(string name, string seller, decimal price, int quantity, string country, int idShop, int idProduct, Image image)
         {
             InitializeComponent();
-            
+            InitializePopup();
             this.labelVendeur.Text = seller;            
             this.labelPays.Text = country;
             this.name = name;
@@ -36,6 +38,7 @@ namespace PL
             this.idShop = idShop;
             this.idProduct = idProduct;        
             this.iconButton1.IconColor = CustomColor.Orange;
+            this.image = image;
             this.timer1.Stop();
             
             if(this.quantity <= 0)
@@ -53,6 +56,8 @@ namespace PL
 
 
         }
+
+        
 
         private void iconButton1_Click(object sender, EventArgs e)
         {            
@@ -106,6 +111,7 @@ namespace PL
                 {                  
                     OrderLineAccess.AddProductToBasket(orderLine);
                     GreenCheck();
+                    PlayPopUp(orderLine.ORDER_LINE_BUYING_PRICE);
                 }                    
                 else
                     MessageBox.Show("The product " + this.name + " is sold out in this shop");
@@ -113,14 +119,17 @@ namespace PL
             else if (isModified && isValide)
             {                
                 OrderLineAccess.ModifyOrderline(orderLine, idOrderLine);
-                GreenCheck();                               
+                GreenCheck();
+                PlayPopUp(orderLine.ORDER_LINE_BUYING_PRICE);
             }
                 
             else if(!isModified && !isValide)
                 MessageBox.Show("Cannot Add " + this.numericUpDown1.Value + " x " + this.name + "\nOnly " + quantityLeft + " still available in this shop");
 
-        }    
             
+        }
+
+        
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
@@ -155,6 +164,33 @@ namespace PL
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.iconButton1.IconColor = Color.Green;
         }
+        private void PlayPopUp(decimal d)
+        {
+            this.popUp.Image = this.image;
+            this.popUp.ContentText = $"{this.numericUpDown1.Value} x {this.name} added to card\nTotal added : {d} €";
+            this.popUp.Popup();
+        }
 
+        private void InitializePopup()
+        {
+            popUp = new PopupNotifier();            
+            this.popUp.ImageSize = new Size(110, 110);
+            this.popUp.ImagePadding = new Padding(5, 5, 5, 5);
+            this.popUp.TitleText = "Thanks for your purchase";
+            this.popUp.HeaderColor = Color.Transparent;
+            this.popUp.BodyColor = CustomColor.DarkBlue;
+            this.popUp.BorderColor = CustomColor.Orange;
+            this.popUp.Size = new Size(400, 120);
+            this.popUp.HeaderHeight = 1;
+            this.popUp.TitleColor = Color.White;
+            this.popUp.ContentColor = CustomColor.Orange;
+            this.popUp.ContentHoverColor = CustomColor.Orange;
+            this.popUp.ButtonHoverColor = CustomColor.Orange;
+            this.popUp.TitlePadding = new Padding(5, 5, 5, 5);
+            this.popUp.ContentPadding = new Padding(5, 5, 5, 5);
+            this.popUp.ContentFont = new Font("Poppins", 10, FontStyle.Bold);
+            this.popUp.TitleFont = new Font("Poppins", 9, FontStyle.Bold);
+            this.popUp.GradientPower = 0;
+        }
     }
 }

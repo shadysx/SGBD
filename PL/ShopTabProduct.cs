@@ -22,6 +22,7 @@ namespace PL
             this.pictureBox1.ImageLocation = productImagePath;
             this.iconButton1.IconColor = CustomColor.Orange;
             this.description = description;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, CustomColor.White);
         }
 
         private void Article_Load(object sender, EventArgs e)

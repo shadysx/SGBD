@@ -31,12 +31,15 @@ namespace PL
             this.labelNumber.ForeColor = CustomColor.Orange;
             this.labelPrice.ForeColor = CustomColor.Orange;
             this.iconButton1.IconColor = CustomColor.Orange;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, CustomColor.White);
+            
 
             items = ItemAccess.SelectAllItem(Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
             DisplayProducts(items);
 
             this.labelTotalNumberArticle.Text = "" + this.totalNumberArticle;
             this.labelTotalPrice.Text = "" + this.totalPrice + " €";
+            
         }
        
 

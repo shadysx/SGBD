@@ -78,8 +78,12 @@ namespace DAL
         public static void UpdateStock(int productID, int shopID, int newStock, decimal sellingPrice)
         {
             int res;
-            string query = $"update stock  set STOCK_QUANTITY = {newStock}, SELLING_PRICE_EXCL_VAT = {sellingPrice}  where ID_PRODUCT = {productID} and ID_SHOP = {shopID}";
+            // La Ligne ci-bas est juste parce que mon Visual Studio est en Français
+            string s = Convert.ToInt32(sellingPrice).ToString() + "." + sellingPrice.ToString().Substring(sellingPrice.ToString().Length - 2);
+            string query = $"update stock  set STOCK_QUANTITY = {newStock}, SELLING_PRICE_EXCL_VAT = {s}  where ID_PRODUCT = {productID} and ID_SHOP = {shopID}";
             string query2 = $"insert into stock values({productID},{shopID},{newStock}, {sellingPrice})";
+            
+
             Debug.WriteLine(sellingPrice);
             using (var connexion = CON_MGR.Connection())
                 ////= SQL directe

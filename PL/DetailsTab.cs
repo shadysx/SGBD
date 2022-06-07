@@ -52,7 +52,7 @@ namespace PL
 
         public void AddProduct(string name, string seller, decimal price, int quantity, string country, int idShop, int idProduct)
         {
-            Article article = new Article(name, seller, price, quantity, country, idShop, idProduct);
+            Article article = new Article(name, seller, price, quantity, country, idShop, idProduct, this.pictureBox.Image);
             article.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(article);
             article.Show();

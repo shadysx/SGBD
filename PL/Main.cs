@@ -65,6 +65,9 @@ namespace PL
             f.Show();
         }
 
+       
+        
+
 
         // Icon Button Panel Left
         private void iconButtonHome_Click(object sender, EventArgs e)
@@ -91,6 +94,7 @@ namespace PL
             DrawSelectedIcon(this.iconButtonAdminPanel);
             this.OpenChildForm(new EmployeePanel());
         }
+
 
         private void DrawSelectedIcon(IconButton icon)
         {            

@@ -35,11 +35,12 @@ namespace Test
             decimal d = 420.30m;
             Console.WriteLine(d);
 
-
+            
             
             string s = Convert.ToInt32(d).ToString() + "." + d.ToString().Substring(d.ToString().Length - 2);
-            
-            Console.WriteLine(s);
+
+
+                Console.WriteLine(s);
 
             Console.Read();
         }

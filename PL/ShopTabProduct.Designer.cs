@@ -30,9 +30,9 @@
         {
             this.labelTypeArticle = new System.Windows.Forms.Label();
             this.labelNameArticle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.labelPrix = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,14 +56,15 @@
             this.labelNameArticle.TabIndex = 2;
             this.labelNameArticle.Text = "label1";
             // 
-            // pictureBox1
+            // labelPrix
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 114);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.labelPrix.AutoSize = true;
+            this.labelPrix.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrix.Location = new System.Drawing.Point(497, 46);
+            this.labelPrix.Name = "labelPrix";
+            this.labelPrix.Size = new System.Drawing.Size(155, 34);
+            this.labelPrix.TabIndex = 4;
+            this.labelPrix.Text = "From € 245.99";
             // 
             // iconButton1
             // 
@@ -74,24 +75,23 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButton1.Location = new System.Drawing.Point(725, 35);
+            this.iconButton1.Location = new System.Drawing.Point(740, 36);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(88, 48);
+            this.iconButton1.Size = new System.Drawing.Size(50, 48);
             this.iconButton1.TabIndex = 3;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
-            // labelPrix
+            // pictureBox1
             // 
-            this.labelPrix.AutoSize = true;
-            this.labelPrix.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrix.Location = new System.Drawing.Point(564, 46);
-            this.labelPrix.Name = "labelPrix";
-            this.labelPrix.Size = new System.Drawing.Size(155, 34);
-            this.labelPrix.TabIndex = 4;
-            this.labelPrix.Text = "From € 245.99";
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 114);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // Article
+            // ShopTabProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,7 +103,7 @@
             this.Controls.Add(this.labelTypeArticle);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Article";
+            this.Name = "ShopTabProduct";
             this.Text = "Article";
             this.Load += new System.EventHandler(this.Article_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
