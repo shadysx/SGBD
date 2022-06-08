@@ -29,11 +29,7 @@ namespace Test
             Console.WriteLine(Auth.CurrentUser);
             */
 
-            ShopInfo shopInfo = ShopInfoAccess.GetShopInfo(1);
-
-
-            decimal d = 420.30m;
-            Console.WriteLine(d);
+            ProductsAccess.InsertImageForLastProduct("hello");
 
             
             
