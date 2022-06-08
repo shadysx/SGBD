@@ -113,7 +113,7 @@
             // 
             this.labelPriceSelected.AutoSize = true;
             this.labelPriceSelected.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPriceSelected.Location = new System.Drawing.Point(844, 26);
+            this.labelPriceSelected.Location = new System.Drawing.Point(771, 26);
             this.labelPriceSelected.Name = "labelPriceSelected";
             this.labelPriceSelected.Size = new System.Drawing.Size(51, 28);
             this.labelPriceSelected.TabIndex = 6;

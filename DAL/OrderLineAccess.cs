@@ -48,8 +48,6 @@ namespace DAL
         }
 
 
-
-
         public static List<OrderLine> SelectAllOrderLine(int idOrdered)
         {
             List<OrderLine> retVal;
@@ -58,6 +56,22 @@ namespace DAL
                 try
                 {
                     retVal = connection.Query<OrderLine>($"select * from order_line where ID_ORDERED = {idOrdered}").ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+            return retVal;
+        }
+
+        public static OrderLine Select1OrderLine(int idProduct, int idShop, int idOrdered)
+        {
+            OrderLine retVal;
+
+            using (var connection = CON_MGR.Connection())
+                try
+                {
+                    retVal = connection.QuerySingleOrDefault<OrderLine>($"select * from order_line where ID_ORDERED = {idOrdered} and id_product = {idProduct} and id_shop = {idShop}");
                 }
                 catch (Exception ex)
                 {
@@ -82,6 +96,8 @@ namespace DAL
                 }
             
         }
+
+        
 
     }
 }

@@ -27,7 +27,11 @@ namespace PL
         {
             Main.mainInstance = this;
 
-            InitializeComponent();           
+            InitializeComponent();
+            this.panelRight.BackColor = CustomColor.DarkBlue;
+            this.panelRight.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + $@"\..\..\..\Assets\Image\homebackground.png");
+            
+            
 
             this.loginForm = (Login)f;
             this.iconButtonProfile.Text = Auth.CurrentUser.ACCOUNT_USERNAME;
@@ -237,7 +241,8 @@ namespace PL
             this.iconArrow.Name = "iconArrow";
             this.iconArrow.Size = new System.Drawing.Size(54, 47);
             this.iconArrow.TabIndex = 4;
-            this.iconArrow.FlatAppearance.MouseOverBackColor = Color.Transparent;            
+            this.iconArrow.FlatAppearance.MouseOverBackColor = Color.Transparent;    
+            this.iconArrow.FlatAppearance.MouseDownBackColor = Color.Transparent;
             this.iconArrow.Visible = false;
         }
 

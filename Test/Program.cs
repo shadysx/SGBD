@@ -29,7 +29,7 @@ namespace Test
             Console.WriteLine(Auth.CurrentUser);
             */
 
-            ProductsAccess.InsertImageForLastProduct("hello");
+            //ProductsAccess.InsertImageForLastProduct("hello");
 
             
             

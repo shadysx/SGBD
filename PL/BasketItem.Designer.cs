@@ -41,6 +41,7 @@
             this.iconButtonMinus = new FontAwesome.Sharp.IconButton();
             this.iconButtonPlus = new FontAwesome.Sharp.IconButton();
             this.labelQuantityInstant = new System.Windows.Forms.Label();
+            this.labelQuantityChanged = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrice.Location = new System.Drawing.Point(801, 67);
+            this.labelPrice.Location = new System.Drawing.Point(886, 68);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Size = new System.Drawing.Size(86, 26);
             this.labelPrice.TabIndex = 9;
@@ -159,10 +160,10 @@
             this.iconButtonMinus.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonMinus.IconSize = 20;
             this.iconButtonMinus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonMinus.Location = new System.Drawing.Point(885, 35);
+            this.iconButtonMinus.Location = new System.Drawing.Point(890, 37);
             this.iconButtonMinus.Name = "iconButtonMinus";
             this.iconButtonMinus.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.iconButtonMinus.Size = new System.Drawing.Size(30, 30);
+            this.iconButtonMinus.Size = new System.Drawing.Size(26, 25);
             this.iconButtonMinus.TabIndex = 16;
             this.iconButtonMinus.UseVisualStyleBackColor = false;
             this.iconButtonMinus.Click += new System.EventHandler(this.iconButtonMinus_Click);
@@ -177,10 +178,10 @@
             this.iconButtonPlus.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonPlus.IconSize = 20;
             this.iconButtonPlus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonPlus.Location = new System.Drawing.Point(942, 35);
+            this.iconButtonPlus.Location = new System.Drawing.Point(947, 37);
             this.iconButtonPlus.Name = "iconButtonPlus";
             this.iconButtonPlus.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.iconButtonPlus.Size = new System.Drawing.Size(30, 30);
+            this.iconButtonPlus.Size = new System.Drawing.Size(26, 25);
             this.iconButtonPlus.TabIndex = 17;
             this.iconButtonPlus.UseVisualStyleBackColor = false;
             this.iconButtonPlus.Click += new System.EventHandler(this.iconButtonPlus_Click);
@@ -189,17 +190,30 @@
             // 
             this.labelQuantityInstant.AutoSize = true;
             this.labelQuantityInstant.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuantityInstant.Location = new System.Drawing.Point(918, 36);
+            this.labelQuantityInstant.Location = new System.Drawing.Point(917, 36);
             this.labelQuantityInstant.Name = "labelQuantityInstant";
             this.labelQuantityInstant.Size = new System.Drawing.Size(28, 26);
             this.labelQuantityInstant.TabIndex = 18;
             this.labelQuantityInstant.Text = "15";
+            // 
+            // labelQuantityChanged
+            // 
+            this.labelQuantityChanged.AutoSize = true;
+            this.labelQuantityChanged.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuantityChanged.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelQuantityChanged.Location = new System.Drawing.Point(835, 15);
+            this.labelQuantityChanged.Name = "labelQuantityChanged";
+            this.labelQuantityChanged.Size = new System.Drawing.Size(114, 19);
+            this.labelQuantityChanged.TabIndex = 19;
+            this.labelQuantityChanged.Text = "Quantity changed !";
+            this.labelQuantityChanged.Visible = false;
             // 
             // BasketItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1114, 114);
+            this.Controls.Add(this.labelQuantityChanged);
             this.Controls.Add(this.labelQuantityInstant);
             this.Controls.Add(this.iconButtonPlus);
             this.Controls.Add(this.iconButtonMinus);
@@ -223,19 +237,19 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelPrice;
         private FontAwesome.Sharp.IconButton iconButtonInfo;
         private System.Windows.Forms.Label labelNameArticle;
         private System.Windows.Forms.Label labelTypeArticle;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelQuantity;
         private System.Windows.Forms.Label labelShopName;
         private System.Windows.Forms.Label labelShopAddress;
         private System.Windows.Forms.Label labelCountry;
         private System.Windows.Forms.Label labelShopCity;
-        private FontAwesome.Sharp.IconButton iconButtonMinus;
-        private FontAwesome.Sharp.IconButton iconButtonPlus;
-        private System.Windows.Forms.Label labelQuantityInstant;
+        public System.Windows.Forms.Label labelPrice;
+        public System.Windows.Forms.Label labelQuantity;
+        public FontAwesome.Sharp.IconButton iconButtonMinus;
+        public FontAwesome.Sharp.IconButton iconButtonPlus;
+        public System.Windows.Forms.Label labelQuantityInstant;
+        public System.Windows.Forms.Label labelQuantityChanged;
     }
 }

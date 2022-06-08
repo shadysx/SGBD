@@ -63,9 +63,9 @@
             this.panelInside.Controls.Add(this.labelNameArticle);
             this.panelInside.Controls.Add(this.labelTypeArticle);
             this.panelInside.Controls.Add(this.pictureBox1);
-            this.panelInside.Location = new System.Drawing.Point(144, 0);
+            this.panelInside.Location = new System.Drawing.Point(111, 0);
             this.panelInside.Name = "panelInside";
-            this.panelInside.Size = new System.Drawing.Size(972, 120);
+            this.panelInside.Size = new System.Drawing.Size(1005, 120);
             this.panelInside.TabIndex = 0;
             // 
             // labelShopCity
