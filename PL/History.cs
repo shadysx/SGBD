@@ -116,8 +116,7 @@ namespace PL
         public void DisplayProducts(List<HistoryPurchaseDTO> listHistory)
         {
             foreach (HistoryPurchaseDTO h in listHistory)
-            {
-                Debug.Print(h.ID_ORDERED + "");
+            {                
                 AddProduct(h.ID_ACCOUNT, h.ID_ORDERED, h.ORDERED_DATE, h.TOTAL_PRICE, h.TOTAL_QUANTITY);
             }
         }
