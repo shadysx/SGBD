@@ -13,13 +13,13 @@ namespace PL
     public partial class ShopTabProduct : Form
     {
         private string description;
-        public ShopTabProduct(string productName, string productType, string description, string productImagePath, decimal bestPrice)
+        public ShopTabProduct(string productName, string productType, string description, Image productImage, decimal bestPrice)
         {
             InitializeComponent();
             this.labelNameArticle.Text = productName;
             this.labelPrix.Text = $"From {bestPrice} €";
             this.labelTypeArticle.Text = productType;
-            this.pictureBox1.ImageLocation = productImagePath;
+            this.pictureBox1.Image = productImage;
             this.iconButton1.IconColor = CustomColor.Orange;
             this.description = description;
             this.labelTypeArticle.ForeColor = CustomColor.Orange;

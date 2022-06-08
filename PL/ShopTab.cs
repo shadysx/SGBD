@@ -34,9 +34,9 @@ namespace PL
             
         }
 
-        public void AddProduct(string productName, string productType, string description, string productImagePath, decimal productBestPrice)
+        public void AddProduct(string productName, string productType, string description, Image productImage, decimal productBestPrice)
         {
-            ShopTabProduct article = new ShopTabProduct(productName, productType, description, productImagePath, productBestPrice);
+            ShopTabProduct article = new ShopTabProduct(productName, productType, description, productImage, productBestPrice);
             article.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(article);
             article.Show();
@@ -46,7 +46,7 @@ namespace PL
         {            
             foreach (DTO.Product p in products)
             {
-                AddProduct(p.PRODUCT_NAME, p.PRODUCT_TYPE,p.PRODUCT_DESCRIPTION, p.PICTURE_PATH, p.PRODUCT_BEST_PRICE);
+                AddProduct(p.PRODUCT_NAME, p.PRODUCT_TYPE,p.PRODUCT_DESCRIPTION, p.PRODUCT_IMAGE, p.PRODUCT_BEST_PRICE);
             }
         }
     }
