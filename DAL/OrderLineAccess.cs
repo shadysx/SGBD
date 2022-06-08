@@ -64,6 +64,22 @@ namespace DAL
             return retVal;
         }
 
+        public static OrderLine Select1OrderLine(int idProduct, int idShop, int idOrdered)
+        {
+            OrderLine retVal;
+
+            using (var connection = CON_MGR.Connection())
+                try
+                {
+                    retVal = connection.QuerySingleOrDefault<OrderLine>($"select * from order_line where ID_ORDERED = {idOrdered} and id_product = {idProduct} and id_shop = {idShop}");
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+            return retVal;
+        }
+
 
         public static void DeleteOrderLine(int idOrderLine)
         {

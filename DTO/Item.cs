@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,15 +31,31 @@ namespace DTO
         public string PRODUCT_TYPE { get; set; }
         public string PRODUCT_DESCRIPTION { get; set; }
 
-        // Picture
-        public string PICTURE_URL { get; set; }
-        public string PICTURE_PATH
+        // Picture        
+
+        public byte[] PICTURE { get; set; }
+        public Image PRODUCT_IMAGE
+        {
+            get
+            {
+                var arrayBinary = PICTURE.ToArray();
+                Image rImage = null;
+
+                using (MemoryStream ms = new MemoryStream(arrayBinary))
+                {
+                    rImage = Image.FromStream(ms);
+                    return rImage;
+                }
+            }
+        }
+
+        /*public string PICTURE_PATH
         {
             get
             {
                 return Environment.CurrentDirectory + $@"\..\..\..\Assets\Image\ProductImages\{PICTURE_URL}";
             }
-        }
+        }*/
 
         public override string ToString()
         {
@@ -53,10 +71,8 @@ namespace DTO
                     $"ID_PRODUCT : {ID_PRODUCT}\n" +
                     $"PRODUCT_NAME : {PRODUCT_NAME}\n" +
                     $"PRODUCT_TYPE : {PRODUCT_TYPE}\n" +
-                    $"PRODUCT_DESCRIPTION : {PRODUCT_DESCRIPTION}\n" +
-                    $"PICTURE_URL : {PICTURE_URL}\n" +
-                    $"PICTURE_PATH : {PICTURE_PATH}\n";
-        
+                    $"PRODUCT_DESCRIPTION : {PRODUCT_DESCRIPTION}\n";
+                         
 
         
         }

@@ -15,7 +15,7 @@ namespace PL
         private string description;
         public HistoryPurchaseItem(int iD_ORDERED, int iD_ORDER_LINE, int oRDER_LINE_QUANTITY, decimal oRDER_LINE_BUYING_PRICE, int iD_SHOP,
                         string sHOP_NAME, string sHOP_ADDRESS, string sHOP_CITY, string sHOP_COUNTRY, int iD_PRODUCT, string pRODUCT_NAME,
-                        string pRODUCT_TYPE, string pRODUCT_DESCRIPTION, string pICTURE_URL, string pICTURE_PATH)
+                        string pRODUCT_TYPE, string pRODUCT_DESCRIPTION, Image productImage)
         {
             InitializeComponent();
 
@@ -32,7 +32,7 @@ namespace PL
             this.labelQuantity.Text = "Quantity : " + oRDER_LINE_QUANTITY;
             this.labelPrice.Text = "€ " + oRDER_LINE_BUYING_PRICE;
             this.description = pRODUCT_DESCRIPTION;
-            this.pictureBox1.ImageLocation = pICTURE_PATH;            
+            this.pictureBox1.Image = productImage;            
         }
     }
 }

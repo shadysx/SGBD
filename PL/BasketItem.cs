@@ -27,7 +27,7 @@ namespace PL
 
         public BasketItem(int iD_ORDERED, int iD_ORDER_LINE, int oRDER_LINE_QUANTITY, decimal oRDER_LINE_BUYING_PRICE, int iD_SHOP, 
                         string sHOP_NAME, string sHOP_ADDRESS, string sHOP_CITY, string sHOP_COUNTRY, int iD_PRODUCT, string pRODUCT_NAME, 
-                        string pRODUCT_TYPE, string pRODUCT_DESCRIPTION, string pICTURE_URL, string pICTURE_PATH, Basket basketParent)
+                        string pRODUCT_TYPE, string pRODUCT_DESCRIPTION, Image productImage, Basket basketParent)
         {
             InitializeComponent();
             
@@ -44,7 +44,7 @@ namespace PL
             this.labelShopCity.Text = sHOP_CITY;
             this.labelQuantity.Text = "Quantity : ";
             this.labelPrice.Text = "€ " + oRDER_LINE_BUYING_PRICE;            
-            this.pictureBox1.ImageLocation = pICTURE_PATH;
+            this.pictureBox1.Image = productImage;
             this.labelQuantityInstant.Text = oRDER_LINE_QUANTITY + "";
 
             this.description = pRODUCT_DESCRIPTION;
