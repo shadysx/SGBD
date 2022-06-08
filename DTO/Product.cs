@@ -24,6 +24,20 @@ namespace DTO
                 return Environment.CurrentDirectory + $@"\..\..\..\Assets\Image\ProductImages\{PICTURE_URL}";
             }
         }
+        public byte[] PICTURE { get; set; }
+        public Image PRODUCT_IMAGE {
+            get
+            {
+                    var arrayBinary = PICTURE.ToArray();
+                    Image rImage = null;
+
+                    using (MemoryStream ms = new MemoryStream(arrayBinary))
+                    {
+                        rImage = Image.FromStream(ms);
+                        return rImage;
+                    }
+            }
+        }
         
 /*        public Image PRODUCT_PICTURE
         {

@@ -259,7 +259,7 @@
             this.button1.TabIndex = 50;
             this.button1.Text = "Upload";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.buttonUpload_Click);
             // 
             // textBoxProductType
             // 
@@ -271,16 +271,17 @@
             // 
             // buttonFetch
             // 
-            this.buttonFetch.Location = new System.Drawing.Point(486, 440);
+            this.buttonFetch.Location = new System.Drawing.Point(262, 531);
             this.buttonFetch.Name = "buttonFetch";
             this.buttonFetch.Size = new System.Drawing.Size(75, 23);
             this.buttonFetch.TabIndex = 52;
             this.buttonFetch.Text = "Fetch";
             this.buttonFetch.UseVisualStyleBackColor = true;
+            this.buttonFetch.Click += new System.EventHandler(this.buttonFetch_Click);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(486, 476);
+            this.pictureBox2.Location = new System.Drawing.Point(262, 393);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(149, 132);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -316,7 +317,6 @@
             this.Controls.Add(this.label1);
             this.Name = "EmployeeAddStockPanel";
             this.Text = "EmployeeAddStockPanel";
-            this.Click += new System.EventHandler(this.EmployeeAddStockPanel_Click);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

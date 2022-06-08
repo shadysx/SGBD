@@ -17,7 +17,7 @@ namespace DAL
 
             List<Product> products = new List<Product>();
 
-            string query = "select top 20 PRODUCT.ID_PRODUCT ,PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DESCRIPTION, ID_PICTURE, PICTURE_URL, min(SELLING_PRICE_EXCL_VAT) as PRODUCT_BEST_PRICE from PRODUCT inner join PICTURE on PICTURE.ID_PRODUCT = PRODUCT.ID_PRODUCT inner join stock on stock.ID_PRODUCT = PRODUCT.ID_PRODUCT group by product.ID_PRODUCT, PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DESCRIPTION, ID_PICTURE, PICTURE_URL order by newid()";
+            string query = "select top 20 PRODUCT.ID_PRODUCT ,PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DESCRIPTION, ID_PICTURE, PICTURE_URL, PICTURE, min(SELLING_PRICE_EXCL_VAT) as PRODUCT_BEST_PRICE from PRODUCT inner join PICTURE on PICTURE.ID_PRODUCT = PRODUCT.ID_PRODUCT inner join stock on stock.ID_PRODUCT = PRODUCT.ID_PRODUCT group by product.ID_PRODUCT, PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DESCRIPTION, ID_PICTURE, PICTURE_URL, PICTURE order by newid()";
 
 
             using (var connexion = CON_MGR.Connection())
@@ -118,7 +118,6 @@ namespace DAL
             using (var connexion = CON_MGR.Connection())
                 try
                 {
-                    Debug.WriteLine(query);
                     connexion.Query(query);
                 }
                 catch (Exception ex)
@@ -127,9 +126,48 @@ namespace DAL
                 }
         }
 
+        public static int SelectLastProductID()
+        {
+            string query = "select max(ID_PRODUCT) from product";
+            int lastProductID = 0;
+
+            using (var connexion = CON_MGR.Connection())
+            {
+                try
+                {
+                    lastProductID = connexion.Query<int>(query).Single();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+
+            return lastProductID;
+        }
         public static Byte[] FetchImageTest()
         {
             string query = "select top 1 PICTURE from picture order by PICTURE desc";
+            Byte[] bytes = null;
+
+            using (var connexion = CON_MGR.Connection())
+            {
+                try
+                {
+                    bytes = connexion.Query<Byte[]>(query).Single();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+
+            return bytes;
+        }
+
+        public static Byte[] SelectImageByProductName(string productName)
+        {
+            string query = $"select picture from product inner join picture on picture.ID_PRODUCT = product.ID_PRODUCT where PRODUCT_NAME = '{productName}'";
             Byte[] bytes = null;
 
             using (var connexion = CON_MGR.Connection())
@@ -150,8 +188,8 @@ namespace DAL
         {
             string query = "insert into  picture (PICTURE_URL, ID_PRODUCT, PICTURE) values (@PICTURE_URL,@ID_PRODUCT, @PICTURE)";
             var parameters = new DynamicParameters();
-            parameters.Add("@PICTURE_URL", "Hello world");
-            parameters.Add("@ID_PRODUCT", 24);
+            parameters.Add("@PICTURE_URL", pictureName);
+            parameters.Add("@ID_PRODUCT", productID);
             parameters.Add("@PICTURE", image);
 
             using (var connexion = CON_MGR.Connection())

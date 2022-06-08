@@ -20,13 +20,13 @@ namespace PL
     public partial class EmployeeAddStockPanel : Form
     {
         List<string> articleTypes = new List<string>();
-        string imagePath = ""; 
+        string fileName; 
         public EmployeeAddStockPanel()
         {
             InitializeComponent();
             this.articleTypes = ProductsAccess.SelectAllProductTypes();
             this.comboBox1.DataSource = articleTypes;
-            this.comboBox2.DataSource = ProductsAccess.SelectProductsNamesByType(comboBox1.SelectedItem.ToString());
+            //this.comboBox2.DataSource = ProductsAccess.SelectProductsNamesByType(comboBox1.SelectedItem.ToString());
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
@@ -38,6 +38,10 @@ namespace PL
         {
             this.numericUpDown1.Value = StockAccess.GetStockByShopIDAndProductName(Auth.CurrentUser.ID_SHOP, this.comboBox2.SelectedValue.ToString());
             decimal price = StockAccess.GetProductPriceFromSpecificShop(this.comboBox2.SelectedValue.ToString(), Auth.CurrentUser.ID_SHOP);
+            byte[] bytes = ProductsAccess.SelectImageByProductName("Ecran Samsung TEST");
+            Console.WriteLine(bytes);
+            //Image image = ConvertToImage(bytes);
+            //this.pictureBox2.Image = image;
             this.textBox1.Text = price.ToString();
         }
 
@@ -50,55 +54,43 @@ namespace PL
         }
 
     
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonCreate_Click(object sender, EventArgs e)
         {
             try
             {
-
-
                 //Convert picture box image to byte array
                 MemoryStream ms = new MemoryStream();
                 pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 byte[] buff = ms.GetBuffer();
 
-                //Working, need to pass the picturebox image (buff is not used yet)
-                //Insert image                
-                ProductsAccess.InsertImage("wallpaper.jpg", 24, buff);
-                
+                ProductsAccess.InsertProduct(this.textBoxProductName.Text, this.textBoxProductType.Text, this.textBoxProductDescription.Text);
+                ProductsAccess.InsertImage(this.fileName, ProductsAccess.SelectLastProductID(), buff);
+        
+                MessageBox.Show("Référence ajoutée, vous pouvez maintenant gerer le stock");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
-                //Working, Fetch image
-                byte[] bytes = ProductsAccess.FetchImageTest();
-                Image image = ConvertToImage(bytes);
-                pictureBox2.Image = image;
-                MessageBox.Show("Done");
-
-
-                //Use part of this to load a file into the picturebox
-                /*             OpenFileDialog dialog = new OpenFileDialog();
-                               if(dialog.ShowDialog() == DialogResult.OK)
-                               {
-                                   this.pictureBox1.ImageLocation = dialog.FileName.ToString();
-                                   string path = Path.Combine(@"\image\");
-                                   if (!Directory.Exists(path))
-                                   {
-                                       Directory.CreateDirectory(path);
-                                   }
-                                   var fileName = System.IO.Path.GetFileName(dialog.FileName);
-                                   path = path + fileName;
-                                   File.Copy(dialog.FileName, path);
-                                   this.imagePath = fileName;
-                               }*/
+        private void buttonUpload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Import image from pc to picturebox
+                OpenFileDialog dialog = new OpenFileDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    this.pictureBox1.ImageLocation = dialog.FileName.ToString();
+                    var file = System.IO.Path.GetFileName(dialog.FileName);
+                    this.fileName = file;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        public static byte[] ImageToByte(Image img)
-        {
-            ImageConverter converter = new ImageConverter();
-            return (byte[])converter.ConvertTo(img, typeof(byte[]));
         }
 
         public static Image ConvertToImage(Binary iBinary)
@@ -113,24 +105,15 @@ namespace PL
             return rImage;
         }
 
-
-        private void EmployeeAddStockPanel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonCreate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ProductsAccess.InsertProduct(this.textBoxProductName.Text, this.textBoxProductType.Text, this.textBoxProductDescription.Text);
         
-                MessageBox.Show("Référence ajoutée, vous pouvez maintenant gerer le stock");
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+        private void buttonFetch_Click(object sender, EventArgs e)
+        {
+            
+            //Working, Fetch image
+            byte[] bytes = ProductsAccess.FetchImageTest();
+            Image image = ConvertToImage(bytes);
+            pictureBox2.Image = image;
+            MessageBox.Show("Done");
         }
     }
 }
