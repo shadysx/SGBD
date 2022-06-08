@@ -33,7 +33,7 @@ namespace PL
             this.labelDescription.Text = description;
             this.labelDescription.ForeColor = CustomColor.White;
             this.labelDescription.AutoSize = false;
-            this.labelDescription.Size = new System.Drawing.Size(this.panelRight.Size.Width - 150, this.panelRight.Size.Height);
+            this.labelDescription.Size = new System.Drawing.Size(this.panelRight.Size.Width - 15, this.panelRight.Size.Height);
 
 
 

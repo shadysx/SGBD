@@ -116,6 +116,24 @@
     <Compile Include="BasketItem.Designer.cs">
       <DependentUpon>BasketItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryPurchase.Designer.cs">
+      <DependentUpon>HistoryPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryPurchaseItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryPurchaseItem.Designer.cs">
+      <DependentUpon>HistoryPurchaseItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShopTabProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,12 +179,6 @@
     <Compile Include="ShopTab.Designer.cs">
       <DependentUpon>ShopTab.cs</DependentUpon>
     </Compile>
-    <Compile Include="Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AccountSettings.resx">
       <DependentUpon>AccountSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +196,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BasketItem.resx">
       <DependentUpon>BasketItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History.resx">
+      <DependentUpon>History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryPurchase.resx">
+      <DependentUpon>HistoryPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryPurchaseItem.resx">
+      <DependentUpon>HistoryPurchaseItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShopTabProduct.resx">
       <DependentUpon>ShopTabProduct.cs</DependentUpon>
@@ -215,9 +236,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShopTab.resx">
       <DependentUpon>ShopTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DTO.Account.datasource" />

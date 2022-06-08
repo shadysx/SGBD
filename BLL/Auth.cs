@@ -39,7 +39,7 @@ namespace BLL
 
         private static void LoadBasket(Account account)
         {
-            Ordered ordered = OrderedAccess.SelectOrdered(account.ID_ACCOUNT);
+            Ordered ordered = OrderedAccess.SelectActualOrdered(account.ID_ACCOUNT);
 
             if (ordered != null && ordered.ORDERED_DATE < new DateTime(1880, 1, 1))
             {
@@ -48,7 +48,7 @@ namespace BLL
             else
             {
                 OrderedAccess.InsertNewOrdered(account.ID_ACCOUNT);
-                account.ACCOUNT_CURRENT_BASKET = OrderedAccess.SelectOrdered(account.ID_ACCOUNT);
+                account.ACCOUNT_CURRENT_BASKET = OrderedAccess.SelectActualOrdered(account.ID_ACCOUNT);
             }              
         }
 

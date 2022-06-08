@@ -44,11 +44,15 @@ namespace PL
             
             foreach (FontAwesome.Sharp.IconButton i in this.panelLeft.Controls.OfType<FontAwesome.Sharp.IconButton>())
             {
-                i.Tag = i.Text;
-                i.FlatAppearance.MouseDownBackColor = Color.Transparent;
-                i.FlatAppearance.MouseOverBackColor = CustomColor.Orange;
-            }         
+                i.Tag = i.Text;                
+                i.FlatAppearance.MouseOverBackColor = Color.FromArgb(180,CustomColor.Orange);
+                i.IconColor = CustomColor.Orange;
+            }
+
             
+            this.iconButtonProfile.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, CustomColor.Orange);
+            this.iconButtonProfile.IconColor = CustomColor.Orange;
+
 
         }
 
@@ -88,6 +92,13 @@ namespace PL
             this.OpenChildForm(new Basket());
         }
 
+        private void iconButtonHistory_Click(object sender, EventArgs e)
+        {
+            RefreshUI();
+            DrawSelectedIcon(this.iconButtonHistory);
+            this.OpenChildForm(new History());
+        }
+
         private void iconButtonAdminPanel_Click(object sender, EventArgs e)
         {
             RefreshUI();
@@ -103,13 +114,13 @@ namespace PL
             icon.Text = "";
             icon.IconColor = CustomColor.Orange;
             icon.Size = new System.Drawing.Size(61, 47);
-            icon.Location = new System.Drawing.Point(136, icon.Location.Y);            
+            icon.Location = new System.Drawing.Point(121, icon.Location.Y);            
             icon.FlatAppearance.MouseOverBackColor = Color.Transparent;
 
             this.iconArrow.IconColor = CustomColor.Orange;
             this.iconArrow.Visible = true;
 
-            this.iconArrow.Location = new System.Drawing.Point(76, icon.Location.Y);
+            this.iconArrow.Location = new System.Drawing.Point(61, icon.Location.Y);
             this.iconArrow.FlatAppearance.MouseOverBackColor = Color.Transparent;
 
         }
@@ -170,13 +181,13 @@ namespace PL
                 i.Size = new System.Drawing.Size(197, 47);
                 i.Location = new System.Drawing.Point(0, i.Location.Y);
                 i.Text = i.Tag.ToString();
-                i.IconColor = Color.White;
+                i.IconColor = Color.Orange;
                 i.ForeColor = Color.White;
                 i.IconSize = 48;
-                i.FlatAppearance.MouseOverBackColor = CustomColor.Orange;
+                i.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, CustomColor.Orange);
 
             }
-            this.iconButtonProfile.IconColor = Color.White;
+            
 
 
             // Clear Tous les controles du Right Panel
@@ -226,11 +237,10 @@ namespace PL
             this.iconArrow.Name = "iconArrow";
             this.iconArrow.Size = new System.Drawing.Size(54, 47);
             this.iconArrow.TabIndex = 4;
-            this.iconArrow.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            this.iconArrow.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            this.iconArrow.FlatAppearance.MouseOverBackColor = Color.Transparent;            
             this.iconArrow.Visible = false;
         }
 
-
+        
     }
 }

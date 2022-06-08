@@ -39,30 +39,30 @@
             // labelTypeArticle
             // 
             this.labelTypeArticle.AutoSize = true;
-            this.labelTypeArticle.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTypeArticle.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTypeArticle.Location = new System.Drawing.Point(164, 9);
             this.labelTypeArticle.Name = "labelTypeArticle";
-            this.labelTypeArticle.Size = new System.Drawing.Size(78, 37);
+            this.labelTypeArticle.Size = new System.Drawing.Size(75, 36);
             this.labelTypeArticle.TabIndex = 1;
             this.labelTypeArticle.Text = "label1";
             // 
             // labelNameArticle
             // 
             this.labelNameArticle.AutoSize = true;
-            this.labelNameArticle.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNameArticle.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNameArticle.Location = new System.Drawing.Point(166, 46);
             this.labelNameArticle.Name = "labelNameArticle";
-            this.labelNameArticle.Size = new System.Drawing.Size(58, 28);
+            this.labelNameArticle.Size = new System.Drawing.Size(55, 26);
             this.labelNameArticle.TabIndex = 2;
             this.labelNameArticle.Text = "label1";
             // 
             // labelPrix
             // 
             this.labelPrix.AutoSize = true;
-            this.labelPrix.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrix.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPrix.Location = new System.Drawing.Point(497, 46);
             this.labelPrix.Name = "labelPrix";
-            this.labelPrix.Size = new System.Drawing.Size(155, 34);
+            this.labelPrix.Size = new System.Drawing.Size(138, 30);
             this.labelPrix.TabIndex = 4;
             this.labelPrix.Text = "From € 245.99";
             // 

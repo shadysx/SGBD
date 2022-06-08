@@ -43,6 +43,7 @@
             this.iconButtonHome = new FontAwesome.Sharp.IconButton();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.panelRight = new System.Windows.Forms.Panel();
+            this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -159,6 +160,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelLeft.Controls.Add(this.iconButtonHistory);
             this.panelLeft.Controls.Add(this.iconButtonAdminPanel);
             this.panelLeft.Controls.Add(this.iconButtonBasket);
             this.panelLeft.Controls.Add(this.iconButtonShop);
@@ -180,11 +182,11 @@
             this.iconButtonAdminPanel.IconColor = System.Drawing.Color.White;
             this.iconButtonAdminPanel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonAdminPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonAdminPanel.Location = new System.Drawing.Point(0, 178);
+            this.iconButtonAdminPanel.Location = new System.Drawing.Point(0, 231);
             this.iconButtonAdminPanel.Name = "iconButtonAdminPanel";
             this.iconButtonAdminPanel.Size = new System.Drawing.Size(197, 47);
             this.iconButtonAdminPanel.TabIndex = 3;
-            this.iconButtonAdminPanel.Text = "        Employee";
+            this.iconButtonAdminPanel.Text = "            Employee";
             this.iconButtonAdminPanel.UseVisualStyleBackColor = false;
             this.iconButtonAdminPanel.Visible = false;
             this.iconButtonAdminPanel.Click += new System.EventHandler(this.iconButtonAdminPanel_Click);
@@ -205,7 +207,7 @@
             this.iconButtonBasket.Name = "iconButtonBasket";
             this.iconButtonBasket.Size = new System.Drawing.Size(197, 47);
             this.iconButtonBasket.TabIndex = 2;
-            this.iconButtonBasket.Text = "    Basket";
+            this.iconButtonBasket.Text = "          Basket";
             this.iconButtonBasket.UseVisualStyleBackColor = false;
             this.iconButtonBasket.Click += new System.EventHandler(this.iconButtonBasket_Click);
             // 
@@ -224,7 +226,7 @@
             this.iconButtonShop.Name = "iconButtonShop";
             this.iconButtonShop.Size = new System.Drawing.Size(197, 47);
             this.iconButtonShop.TabIndex = 1;
-            this.iconButtonShop.Text = "  Shop";
+            this.iconButtonShop.Text = "          Shop";
             this.iconButtonShop.UseVisualStyleBackColor = false;
             this.iconButtonShop.Click += new System.EventHandler(this.iconButtonShop_Click);
             // 
@@ -243,7 +245,7 @@
             this.iconButtonHome.Name = "iconButtonHome";
             this.iconButtonHome.Size = new System.Drawing.Size(197, 47);
             this.iconButtonHome.TabIndex = 0;
-            this.iconButtonHome.Text = "  Home";
+            this.iconButtonHome.Text = "           Home";
             this.iconButtonHome.UseVisualStyleBackColor = false;
             this.iconButtonHome.Click += new System.EventHandler(this.iconButtonHome_Click);
             // 
@@ -255,6 +257,26 @@
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(1132, 697);
             this.panelRight.TabIndex = 0;
+            // 
+            // iconButtonHistory
+            // 
+            this.iconButtonHistory.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonHistory.FlatAppearance.BorderSize = 0;
+            this.iconButtonHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.iconButtonHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonHistory.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonHistory.ForeColor = System.Drawing.Color.White;
+            this.iconButtonHistory.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
+            this.iconButtonHistory.IconColor = System.Drawing.Color.White;
+            this.iconButtonHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonHistory.Location = new System.Drawing.Point(0, 178);
+            this.iconButtonHistory.Name = "iconButtonHistory";
+            this.iconButtonHistory.Size = new System.Drawing.Size(197, 47);
+            this.iconButtonHistory.TabIndex = 4;
+            this.iconButtonHistory.Text = "          History";
+            this.iconButtonHistory.UseVisualStyleBackColor = false;
+            this.iconButtonHistory.Click += new System.EventHandler(this.iconButtonHistory_Click);
             // 
             // Main
             // 
@@ -300,5 +322,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton iconButtonAdminPanel;
+        private FontAwesome.Sharp.IconButton iconButtonHistory;
     }
 }

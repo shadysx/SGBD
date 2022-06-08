@@ -131,5 +131,25 @@ namespace DAL
             return stock;
 
         }
+
+        public static Stock GetStockOf1Article(int shopID, int idProduct)
+        {
+            string query = $"select * from stock where ID_PRODUCT = {idProduct} and ID_SHOP = {shopID}";
+            Stock s = new Stock();
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    s = connexion.QuerySingleOrDefault<Stock>(query);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }            
+
+            return s;
+
+        }
     }
 }

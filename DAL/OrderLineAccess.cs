@@ -11,7 +11,7 @@ namespace DAL
 {
     public class OrderLineAccess
     {
-        public static int AddProductToBasket(OrderLine orderline)
+        public static int InsertNewOrderLine(OrderLine orderline)
         {
             int retVal;
 
@@ -30,15 +30,15 @@ namespace DAL
             return retVal;
         }
 
-        public static void ModifyOrderline(OrderLine orderLine, int idOrderLine)
+        public static void ModifyOrderline(int quantity,decimal buyingPrice,  int idOrderLine)
         {
             // La Ligne ci-bas est juste parce que mon Visual Studio est en Français
-            string s = Convert.ToInt32(orderLine.ORDER_LINE_BUYING_PRICE).ToString() + "." + orderLine.ORDER_LINE_BUYING_PRICE.ToString().Substring(orderLine.ORDER_LINE_BUYING_PRICE.ToString().Length - 2);
+            string s = Convert.ToInt32(buyingPrice).ToString() + "." + buyingPrice.ToString().Substring(buyingPrice.ToString().Length - 2);
 
             using (var connection = CON_MGR.Connection())
                 try
                 {
-                    connection.Execute($"update ORDER_LINE set ORDER_LINE_QUANTITY = {orderLine.ORDER_LINE_QUANTITY}, order_line_buying_price = {s} where id_order_line = {idOrderLine}");
+                    connection.Execute($"update ORDER_LINE set ORDER_LINE_QUANTITY = {quantity}, order_line_buying_price = {s} where id_order_line = {idOrderLine}");
                 }
                 catch (Exception ex)
                 {
@@ -66,6 +66,22 @@ namespace DAL
             return retVal;
         }
 
+
+        public static void DeleteOrderLine(int idOrderLine)
+        {
+           
+
+            using (var connection = CON_MGR.Connection())
+                try
+                {
+                    connection.Execute($"delete from order_line where ID_ORDER_LINE = {idOrderLine}");
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+            
+        }
 
     }
 }

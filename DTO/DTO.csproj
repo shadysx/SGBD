@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="HistoryPurchaseDTO.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Ordered.cs" />
     <Compile Include="OrderLine.cs" />

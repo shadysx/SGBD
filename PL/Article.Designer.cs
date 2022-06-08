@@ -78,10 +78,10 @@
             this.iconButton1.IconColor = System.Drawing.Color.IndianRed;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 40;
-            this.iconButton1.Location = new System.Drawing.Point(1030, 19);
+            this.iconButton1.Location = new System.Drawing.Point(1034, 19);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(2, 5, 2, 2);
-            this.iconButton1.Size = new System.Drawing.Size(50, 37);
+            this.iconButton1.Size = new System.Drawing.Size(46, 37);
             this.iconButton1.TabIndex = 3;
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);

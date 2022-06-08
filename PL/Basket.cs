@@ -47,7 +47,7 @@ namespace PL
                                 string sHOP_NAME, string sHOP_ADDRESS, string sHOP_CITY, string sHOP_COUNTRY, int iD_PRODUCT, string pRODUCT_NAME, 
                                 string pRODUCT_TYPE, string pRODUCT_DESCRIPTION, string pICTURE_URL, string pICTURE_PATH)
         {
-            BasketItem basketItem = new BasketItem(iD_ORDERED, iD_ORDER_LINE, oRDER_LINE_QUANTITY, oRDER_LINE_BUYING_PRICE, iD_SHOP, sHOP_NAME, sHOP_ADDRESS, sHOP_CITY, sHOP_COUNTRY, iD_PRODUCT, pRODUCT_NAME, pRODUCT_TYPE, pRODUCT_DESCRIPTION, pICTURE_URL, pICTURE_PATH);
+            BasketItem basketItem = new BasketItem(iD_ORDERED, iD_ORDER_LINE, oRDER_LINE_QUANTITY, oRDER_LINE_BUYING_PRICE, iD_SHOP, sHOP_NAME, sHOP_ADDRESS, sHOP_CITY, sHOP_COUNTRY, iD_PRODUCT, pRODUCT_NAME, pRODUCT_TYPE, pRODUCT_DESCRIPTION, pICTURE_URL, pICTURE_PATH, this);
             basketItem.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(basketItem);
             basketItem.Show();
@@ -75,7 +75,7 @@ namespace PL
 
                     Auth.CurrentUser.ACCOUNT_CURRENT_BASKET = null;
                     OrderedAccess.InsertNewOrdered(Auth.CurrentUser.ID_ACCOUNT);
-                    Auth.CurrentUser.ACCOUNT_CURRENT_BASKET = OrderedAccess.SelectOrdered(Auth.CurrentUser.ID_ACCOUNT);
+                    Auth.CurrentUser.ACCOUNT_CURRENT_BASKET = OrderedAccess.SelectActualOrdered(Auth.CurrentUser.ID_ACCOUNT);
 
                     this.Dispose();
                 }                

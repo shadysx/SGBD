@@ -11,7 +11,7 @@ namespace DAL
 {
     public class OrderedAccess
     {
-        public static Ordered SelectOrdered(int idAccount)
+        public static Ordered SelectActualOrdered(int idAccount)
         {
             Ordered retval = null;
 
@@ -29,6 +29,25 @@ namespace DAL
             return retval;
         }
 
+        
+        public static List<HistoryPurchaseDTO> SelectAllHistoryPurchaseDTO(int idAccount)
+        {
+            List<HistoryPurchaseDTO> retval = null;
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    retval = connexion.Query<HistoryPurchaseDTO>($"select sum(ol.ORDER_LINE_BUYING_PRICE) as TOTAL_PRICE, sum(ol.ORDER_LINE_QUANTITY) as TOTAL_QUANTITY, o.ID_ORDERED, o.ID_ACCOUNT , o.ORDERED_DATE from ORDER_LINE ol inner join ORDERED o on o.ID_ORDERED = ol.ID_ORDERED where o.ID_ACCOUNT = {idAccount} group by o.ID_ORDERED, o.ID_ACCOUNT, o.ORDERED_DATE order by o.ID_ORDERED desc").ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            return retval;
+
+        }
 
 
         public static void InsertNewOrdered(int idAccount)

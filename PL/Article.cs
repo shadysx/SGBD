@@ -38,6 +38,7 @@ namespace PL
             this.idShop = idShop;
             this.idProduct = idProduct;        
             this.iconButton1.IconColor = CustomColor.Orange;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, CustomColor.White);
             this.image = image;
             this.timer1.Stop();
             
@@ -109,7 +110,7 @@ namespace PL
             {
                 if (this.quantity > 0)
                 {                  
-                    OrderLineAccess.AddProductToBasket(orderLine);
+                    OrderLineAccess.InsertNewOrderLine(orderLine);
                     GreenCheck();
                     PlayPopUp(orderLine.ORDER_LINE_BUYING_PRICE);
                 }                    
@@ -118,7 +119,7 @@ namespace PL
             }         
             else if (isModified && isValide)
             {                
-                OrderLineAccess.ModifyOrderline(orderLine, idOrderLine);
+                OrderLineAccess.ModifyOrderline(orderLine.ORDER_LINE_QUANTITY, orderLine.ORDER_LINE_BUYING_PRICE, idOrderLine);
                 GreenCheck();
                 PlayPopUp(orderLine.ORDER_LINE_BUYING_PRICE);
             }

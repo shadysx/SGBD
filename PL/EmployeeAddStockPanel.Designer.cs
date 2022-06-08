@@ -267,7 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1439, 694);
+            this.ClientSize = new System.Drawing.Size(1135, 701);
             this.Controls.Add(this.textBoxProductType);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -288,6 +288,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeAddStockPanel";
             this.Text = "EmployeeAddStockPanel";
             this.Click += new System.EventHandler(this.EmployeeAddStockPanel_Click);
