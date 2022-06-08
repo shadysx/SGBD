@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Dapper;
 using DTO;
 using System.Diagnostics;
+using System.Drawing;
 
 namespace DAL
 {
@@ -126,21 +127,45 @@ namespace DAL
                 }
         }
 
-        public static void InsertImageForLastProduct(string filePath)
+        public static Byte[] FetchImageTest()
         {
-            string lastProductIDQuery = "select top 1 ID_PRODUCT from PRODUCT order by ID_PRODUCT desc";
-            int lastProductID;
+            string query = "select top 1 PICTURE from picture order by PICTURE desc";
+            Byte[] bytes = null;
 
             using (var connexion = CON_MGR.Connection())
+            {
                 try
                 {
-                    lastProductID = connexion.Query<int>(lastProductIDQuery).Single();
-                    connexion.Query($"INSERT INTO PICTURE VALUES('{filePath}', {lastProductID})");
+                    bytes = connexion.Query<Byte[]>(query).Single();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex);
                 }
+            }
+
+            return bytes;
         }
+        public static void InsertImage(string pictureName, int productID ,byte[] image)
+        {
+            string query = "insert into  picture (PICTURE_URL, ID_PRODUCT, PICTURE) values (@PICTURE_URL,@ID_PRODUCT, @PICTURE)";
+            var parameters = new DynamicParameters();
+            parameters.Add("@PICTURE_URL", "Hello world");
+            parameters.Add("@ID_PRODUCT", 24);
+            parameters.Add("@PICTURE", image);
+
+            using (var connexion = CON_MGR.Connection())
+            {
+                try
+                {
+                    connexion.Execute(query, parameters);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+        }
+
     }
 }

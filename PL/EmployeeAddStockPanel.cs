@@ -12,6 +12,8 @@ using DTO;
 using System.Diagnostics;
 using BLL;
 using System.IO;
+using System.Data.Linq;
+
 
 namespace PL
 {
@@ -52,20 +54,37 @@ namespace PL
         {
             try
             {
-                OpenFileDialog dialog = new OpenFileDialog();
-                if(dialog.ShowDialog() == DialogResult.OK)
-                {
-                    this.pictureBox1.ImageLocation = dialog.FileName.ToString();
-                    string path = Path.Combine(@"\image\");
-                    if (!Directory.Exists(path))
-                    {
-                        Directory.CreateDirectory(path);
-                    }
-                    var fileName = System.IO.Path.GetFileName(dialog.FileName);
-                    path = path + fileName;
-                    File.Copy(dialog.FileName, path);
-                    this.imagePath = fileName;
-                }
+
+
+                //Convert picture box image to byte array
+                MemoryStream ms = new MemoryStream();
+                pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                byte[] buff = ms.GetBuffer();
+
+                //Working, need to pass the picturebox image
+                byte[] bytes;
+                ProductsAccess.InsertImage("wallpaper.jpg", 24, buff);
+                bytes = ProductsAccess.FetchImageTest();
+                Image image = ConvertToImage(bytes);
+                pictureBox2.Image = image;
+                MessageBox.Show("Done");
+
+
+                //Use part of this to load a file into the picturebox
+                /*             OpenFileDialog dialog = new OpenFileDialog();
+                               if(dialog.ShowDialog() == DialogResult.OK)
+                               {
+                                   this.pictureBox1.ImageLocation = dialog.FileName.ToString();
+                                   string path = Path.Combine(@"\image\");
+                                   if (!Directory.Exists(path))
+                                   {
+                                       Directory.CreateDirectory(path);
+                                   }
+                                   var fileName = System.IO.Path.GetFileName(dialog.FileName);
+                                   path = path + fileName;
+                                   File.Copy(dialog.FileName, path);
+                                   this.imagePath = fileName;
+                               }*/
             }
             catch (Exception ex)
             {
@@ -73,8 +92,28 @@ namespace PL
             }
         }
 
+        public static byte[] ImageToByte(Image img)
+        {
+            ImageConverter converter = new ImageConverter();
+            return (byte[])converter.ConvertTo(img, typeof(byte[]));
+        }
+
+        public static Image ConvertToImage(Binary iBinary)
+        {
+            var arrayBinary = iBinary.ToArray();
+            Image rImage = null;
+
+            using (MemoryStream ms = new MemoryStream(arrayBinary))
+            {
+                rImage = Image.FromStream(ms);
+            }
+            return rImage;
+        }
+
+
         private void EmployeeAddStockPanel_Click(object sender, EventArgs e)
         {
+
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
@@ -82,7 +121,7 @@ namespace PL
             try
             {
                 ProductsAccess.InsertProduct(this.textBoxProductName.Text, this.textBoxProductType.Text, this.textBoxProductDescription.Text);
-                ProductsAccess.InsertImageForLastProduct(this.imagePath);
+        
                 MessageBox.Show("Référence ajoutée, vous pouvez maintenant gerer le stock");
             }
             catch(Exception ex)
