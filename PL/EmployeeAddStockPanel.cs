@@ -24,6 +24,7 @@ namespace PL
         public EmployeeAddStockPanel()
         {
             InitializeComponent();
+            this.BackColor = CustomColor.DarkBlue;
             this.articleTypes = ProductsAccess.SelectAllProductTypes();
             this.comboBox1.DataSource = articleTypes;
             //this.comboBox2.DataSource = ProductsAccess.SelectProductsNamesByType(comboBox1.SelectedItem.ToString());
@@ -38,10 +39,9 @@ namespace PL
         {
             this.numericUpDown1.Value = StockAccess.GetStockByShopIDAndProductName(Auth.CurrentUser.ID_SHOP, this.comboBox2.SelectedValue.ToString());
             decimal price = StockAccess.GetProductPriceFromSpecificShop(this.comboBox2.SelectedValue.ToString(), Auth.CurrentUser.ID_SHOP);
-            byte[] bytes = ProductsAccess.SelectImageByProductName("Ecran Samsung TEST");
-            Console.WriteLine(bytes);
-            //Image image = ConvertToImage(bytes);
-            //this.pictureBox2.Image = image;
+            byte[] bytes = ProductsAccess.SelectImageByProductName(this.comboBox2.SelectedValue.ToString());
+            Image image = ConvertToImage(bytes);
+            this.pictureBox2.Image = image;
             this.textBox1.Text = price.ToString();
         }
 
@@ -103,17 +103,6 @@ namespace PL
                 rImage = Image.FromStream(ms);
             }
             return rImage;
-        }
-
-        
-        private void buttonFetch_Click(object sender, EventArgs e)
-        {
-            
-            //Working, Fetch image
-            byte[] bytes = ProductsAccess.FetchImageTest();
-            Image image = ConvertToImage(bytes);
-            pictureBox2.Image = image;
-            MessageBox.Show("Done");
         }
     }
 }

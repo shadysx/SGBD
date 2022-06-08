@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
             this.ButtonConfirmStock = new CustomControls.RJControls.RJButton();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -49,8 +48,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxProductType = new System.Windows.Forms.TextBox();
-            this.buttonFetch = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -59,18 +60,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 188);
+            this.label1.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(82, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(604, 25);
+            this.label1.Size = new System.Drawing.Size(183, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Pour quel type de produit voulez vous modifier le stock?";
+            this.label1.Text = "Type de produit";
             // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(14, 228);
+            this.comboBox1.Location = new System.Drawing.Point(89, 102);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(397, 28);
             this.comboBox1.TabIndex = 1;
@@ -79,10 +81,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 294);
+            this.label2.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(84, 149);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 25);
+            this.label2.Size = new System.Drawing.Size(242, 37);
             this.label2.TabIndex = 2;
             this.label2.Text = "Reference du produit";
             // 
@@ -90,7 +93,7 @@
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(14, 334);
+            this.comboBox2.Location = new System.Drawing.Point(91, 192);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(397, 28);
             this.comboBox2.TabIndex = 3;
@@ -99,20 +102,10 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(14, 440);
+            this.numericUpDown1.Location = new System.Drawing.Point(89, 298);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 400);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Stock Actuel ";
             // 
             // ButtonConfirmStock
             // 
@@ -126,7 +119,7 @@
             this.ButtonConfirmStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonConfirmStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonConfirmStock.ForeColor = System.Drawing.Color.Black;
-            this.ButtonConfirmStock.Location = new System.Drawing.Point(14, 570);
+            this.ButtonConfirmStock.Location = new System.Drawing.Point(89, 444);
             this.ButtonConfirmStock.Name = "ButtonConfirmStock";
             this.ButtonConfirmStock.Size = new System.Drawing.Size(76, 24);
             this.ButtonConfirmStock.TabIndex = 35;
@@ -138,17 +131,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 500);
+            this.label4.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(82, 362);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 25);
+            this.label4.Size = new System.Drawing.Size(154, 37);
             this.label4.TabIndex = 36;
             this.label4.Text = "Prix de vente";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(14, 540);
+            this.textBox1.Location = new System.Drawing.Point(89, 414);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(118, 20);
             this.textBox1.TabIndex = 37;
@@ -165,7 +159,7 @@
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreate.ForeColor = System.Drawing.Color.Black;
-            this.buttonCreate.Location = new System.Drawing.Point(651, 632);
+            this.buttonCreate.Location = new System.Drawing.Point(603, 641);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(76, 24);
             this.buttonCreate.TabIndex = 47;
@@ -177,74 +171,79 @@
             // textBoxProductDescription
             // 
             this.textBoxProductDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductDescription.Location = new System.Drawing.Point(647, 334);
+            this.textBoxProductDescription.Location = new System.Drawing.Point(603, 298);
             this.textBoxProductDescription.Multiline = true;
             this.textBoxProductDescription.Name = "textBoxProductDescription";
-            this.textBoxProductDescription.Size = new System.Drawing.Size(297, 117);
+            this.textBoxProductDescription.Size = new System.Drawing.Size(397, 136);
             this.textBoxProductDescription.TabIndex = 45;
             // 
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescription.Location = new System.Drawing.Point(644, 294);
+            this.labelDescription.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescription.ForeColor = System.Drawing.Color.White;
+            this.labelDescription.Location = new System.Drawing.Point(598, 252);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(219, 25);
+            this.labelDescription.Size = new System.Drawing.Size(256, 37);
             this.labelDescription.TabIndex = 44;
-            this.labelDescription.Text = "Product Description";
+            this.labelDescription.Text = "Description du produit";
             // 
             // labelProductType
             // 
             this.labelProductType.AutoSize = true;
-            this.labelProductType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductType.Location = new System.Drawing.Point(640, 188);
+            this.labelProductType.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProductType.ForeColor = System.Drawing.Color.White;
+            this.labelProductType.Location = new System.Drawing.Point(598, 149);
             this.labelProductType.Name = "labelProductType";
-            this.labelProductType.Size = new System.Drawing.Size(152, 25);
+            this.labelProductType.Size = new System.Drawing.Size(184, 37);
             this.labelProductType.TabIndex = 42;
-            this.labelProductType.Text = "Product Type";
+            this.labelProductType.Text = "Type du produit";
             // 
             // labelProductName
             // 
             this.labelProductName.AutoSize = true;
-            this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductName.Location = new System.Drawing.Point(644, 74);
+            this.labelProductName.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProductName.ForeColor = System.Drawing.Color.White;
+            this.labelProductName.Location = new System.Drawing.Point(596, 57);
             this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(172, 25);
+            this.labelProductName.Size = new System.Drawing.Size(183, 37);
             this.labelProductName.TabIndex = 40;
             this.labelProductName.Text = "Nom du produit";
             // 
             // textBoxProductName
             // 
             this.textBoxProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductName.Location = new System.Drawing.Point(647, 114);
+            this.textBoxProductName.Location = new System.Drawing.Point(603, 102);
             this.textBoxProductName.Name = "textBoxProductName";
-            this.textBoxProductName.Size = new System.Drawing.Size(297, 29);
+            this.textBoxProductName.Size = new System.Drawing.Size(397, 29);
             this.textBoxProductName.TabIndex = 39;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(646, 26);
+            this.label5.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(598, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(371, 29);
+            this.label5.Size = new System.Drawing.Size(346, 37);
             this.label5.TabIndex = 38;
             this.label5.Text = "Ajouter une nouvelle référence";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 135);
+            this.label6.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(82, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(186, 25);
+            this.label6.Size = new System.Drawing.Size(192, 37);
             this.label6.TabIndex = 48;
             this.label6.Text = "Modifier le stock";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(651, 476);
+            this.pictureBox1.Location = new System.Drawing.Point(605, 485);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(190, 150);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -253,48 +252,72 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(869, 539);
+            this.button1.Location = new System.Drawing.Point(801, 551);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(143, 23);
             this.button1.TabIndex = 50;
-            this.button1.Text = "Upload";
+            this.button1.Text = "Telecharger une image";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.buttonUpload_Click);
             // 
             // textBoxProductType
             // 
             this.textBoxProductType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductType.Location = new System.Drawing.Point(647, 228);
+            this.textBoxProductType.Location = new System.Drawing.Point(605, 192);
             this.textBoxProductType.Name = "textBoxProductType";
-            this.textBoxProductType.Size = new System.Drawing.Size(297, 29);
+            this.textBoxProductType.Size = new System.Drawing.Size(397, 29);
             this.textBoxProductType.TabIndex = 51;
-            // 
-            // buttonFetch
-            // 
-            this.buttonFetch.Location = new System.Drawing.Point(262, 531);
-            this.buttonFetch.Name = "buttonFetch";
-            this.buttonFetch.Size = new System.Drawing.Size(75, 23);
-            this.buttonFetch.TabIndex = 52;
-            this.buttonFetch.Text = "Fetch";
-            this.buttonFetch.UseVisualStyleBackColor = true;
-            this.buttonFetch.Click += new System.EventHandler(this.buttonFetch_Click);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(262, 393);
+            this.pictureBox2.Location = new System.Drawing.Point(324, 298);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(149, 132);
+            this.pictureBox2.Size = new System.Drawing.Size(162, 162);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 53;
             this.pictureBox2.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(598, 444);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(201, 37);
+            this.label7.TabIndex = 54;
+            this.label7.Text = "Image du produit";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(84, 252);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 37);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Stock Actuel ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(317, 252);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(178, 37);
+            this.label8.TabIndex = 55;
+            this.label8.Text = "Image actuelle";
             // 
             // EmployeeAddStockPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1439, 694);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.buttonFetch);
             this.Controls.Add(this.textBoxProductType);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -332,7 +355,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label3;
         private CustomControls.RJControls.RJButton ButtonConfirmStock;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
@@ -347,7 +369,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxProductType;
-        private System.Windows.Forms.Button buttonFetch;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
     }
 }

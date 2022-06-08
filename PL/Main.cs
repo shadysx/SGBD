@@ -103,7 +103,7 @@ namespace PL
         {
             RefreshUI();
             DrawSelectedIcon(this.iconButtonAdminPanel);
-            this.OpenChildForm(new EmployeePanel());
+            this.OpenChildForm(new EmployeeAddStockPanel());
         }
 
 
