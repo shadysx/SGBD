@@ -61,10 +61,13 @@ namespace PL
                 pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 byte[] buff = ms.GetBuffer();
 
-                //Working, need to pass the picturebox image
-                byte[] bytes;
+                //Working, need to pass the picturebox image (buff is not used yet)
+                //Insert image                
                 ProductsAccess.InsertImage("wallpaper.jpg", 24, buff);
-                bytes = ProductsAccess.FetchImageTest();
+                
+
+                //Working, Fetch image
+                byte[] bytes = ProductsAccess.FetchImageTest();
                 Image image = ConvertToImage(bytes);
                 pictureBox2.Image = image;
                 MessageBox.Show("Done");
