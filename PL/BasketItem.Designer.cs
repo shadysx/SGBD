@@ -42,6 +42,7 @@
             this.iconButtonPlus = new FontAwesome.Sharp.IconButton();
             this.labelQuantityInstant = new System.Windows.Forms.Label();
             this.labelQuantityChanged = new System.Windows.Forms.Label();
+            this.iconButtonDelete = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,9 +135,9 @@
             this.iconButtonInfo.IconColor = System.Drawing.Color.Black;
             this.iconButtonInfo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonInfo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButtonInfo.Location = new System.Drawing.Point(1033, 32);
+            this.iconButtonInfo.Location = new System.Drawing.Point(1033, 7);
             this.iconButtonInfo.Name = "iconButtonInfo";
-            this.iconButtonInfo.Size = new System.Drawing.Size(53, 51);
+            this.iconButtonInfo.Size = new System.Drawing.Size(53, 49);
             this.iconButtonInfo.TabIndex = 8;
             this.iconButtonInfo.UseVisualStyleBackColor = false;
             this.iconButtonInfo.Click += new System.EventHandler(this.iconButton1_Click);
@@ -208,11 +209,28 @@
             this.labelQuantityChanged.Text = "Quantity changed !";
             this.labelQuantityChanged.Visible = false;
             // 
+            // iconButtonDelete
+            // 
+            this.iconButtonDelete.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonDelete.FlatAppearance.BorderSize = 0;
+            this.iconButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonDelete.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.iconButtonDelete.IconColor = System.Drawing.Color.Black;
+            this.iconButtonDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconButtonDelete.Location = new System.Drawing.Point(1033, 59);
+            this.iconButtonDelete.Name = "iconButtonDelete";
+            this.iconButtonDelete.Size = new System.Drawing.Size(53, 49);
+            this.iconButtonDelete.TabIndex = 20;
+            this.iconButtonDelete.UseVisualStyleBackColor = false;
+            this.iconButtonDelete.Click += new System.EventHandler(this.iconButtonDelete_Click);
+            // 
             // BasketItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1114, 114);
+            this.Controls.Add(this.iconButtonDelete);
             this.Controls.Add(this.labelQuantityChanged);
             this.Controls.Add(this.labelQuantityInstant);
             this.Controls.Add(this.iconButtonPlus);
@@ -251,5 +269,6 @@
         public FontAwesome.Sharp.IconButton iconButtonPlus;
         public System.Windows.Forms.Label labelQuantityInstant;
         public System.Windows.Forms.Label labelQuantityChanged;
+        private FontAwesome.Sharp.IconButton iconButtonDelete;
     }
 }

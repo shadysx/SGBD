@@ -50,9 +50,9 @@ namespace PL
 
         }
 
-        public void AddProduct(string name, string seller, decimal price, int quantity, string country, int idShop, int idProduct)
+        public void AddProduct(string name, string seller,string shopAddress, string shopCity, decimal price, int quantity, string country, int idShop, int idProduct)
         {
-            Article article = new Article(name, seller, price, quantity, country, idShop, idProduct, this.pictureBox.Image);
+            Article article = new Article(name, seller, shopAddress, shopCity, price, quantity, country, idShop, idProduct, this.pictureBox.Image);
             article.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(article);
             article.Show();
@@ -63,7 +63,7 @@ namespace PL
         {
             foreach (Stock s in stock)
             {
-                AddProduct(s.PRODUCT_NAME, s.SHOP_NAME, s.SELLING_PRICE_EXCL_VAT, s.STOCK_QUANTITY, s.SHOP_COUNTRY, s.ID_SHOP, s.ID_PRODUCT);
+                AddProduct(s.PRODUCT_NAME, s.SHOP_NAME, s.SHOP_ADDRESS,s.SHOP_CITY, s.SELLING_PRICE_EXCL_VAT, s.STOCK_QUANTITY, s.SHOP_COUNTRY, s.ID_SHOP, s.ID_PRODUCT);
             }
         }
 

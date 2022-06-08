@@ -33,8 +33,9 @@ namespace DAL
         public static void ModifyOrderline(int quantity,decimal buyingPrice,  int idOrderLine)
         {
             // La Ligne ci-bas est juste parce que mon Visual Studio est en Français
-            string s = Convert.ToInt32(buyingPrice).ToString() + "." + buyingPrice.ToString().Substring(buyingPrice.ToString().Length - 2);
 
+            string s = (int)(buyingPrice) + "." + buyingPrice.ToString().Substring(buyingPrice.ToString().Length - 2);
+            Debug.WriteLine(s);
             using (var connection = CON_MGR.Connection())
                 try
                 {

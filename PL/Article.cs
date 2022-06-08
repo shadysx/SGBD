@@ -28,15 +28,18 @@ namespace PL
         private Image image;
         private PopupNotifier popUp;
 
-        public Article(string name, string seller, decimal price, int availableStock, string country, int idShop, int idProduct, Image imageProduct)
+        public Article(string name, string seller, string shopAddress, string shopCity, decimal price, int availableStock, string country, int idShop, int idProduct, Image imageProduct)
         {
             InitializeComponent();
             InitializePopup();
             this.iconButton1.IconColor = CustomColor.Orange;
             this.iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, CustomColor.White);
-            this.image = imageProduct;
+            this.labelAddress.Text = shopAddress;
+            this.labelCity.Text = shopCity;
             this.labelVendeur.Text = seller;
             this.labelPays.Text = country;
+
+            this.image = imageProduct;            
             this.name = name;
             this.price = price;
             this.idShop = idShop;
@@ -44,116 +47,93 @@ namespace PL
 
             this.actualOrderLine = OrderLineAccess.Select1OrderLine(idProduct, idShop, Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
             this.availableStock = availableStock;
-            this.availableStockForClient = availableStock - actualOrderLine.ORDER_LINE_QUANTITY;
-            
-            
+
+            if (this.actualOrderLine != null)
+                this.availableStockForClient = availableStock - this.actualOrderLine.ORDER_LINE_QUANTITY;
+            else
+                this.availableStockForClient = availableStock;
+
+
+
             this.timer1.Stop();
 
             if (this.availableStockForClient <= 0)
             {
-                this.labelQuantite.Text = "This Product is Sold Out !";
-                this.labelQuantite.Font = new Font("Poppins", 13, FontStyle.Bold);
-                this.labelQuantite.Location = new Point(this.labelQuantite.Location.X + 200, this.labelQuantite.Location.Y);
-                this.labelQuantite.ForeColor = CustomColor.Orange;
-                this.labelPrix.Visible = false;
-                this.labelPriceSelected.Visible = false;
-                this.iconButton1.Visible = false;
-                this.numericUpDown1.Visible = false;
+                ProductSoldOut();
             }
             else
             {
-                this.labelQuantite.Text = "Available quantity : " + availableStock.ToString();
-                this.labelPrix.Text = "€ " + price.ToString();
+                this.labelQuantite.Text = "Available quantity : " + availableStockForClient.ToString();
+                this.labelPrix.Text = "Price : " + price.ToString() + " €" ;
                 this.labelPriceSelected.Text = "Total : " + price.ToString() + " €";
             }
         }
 
 
         private void iconButton1_Click(object sender, EventArgs e)
-        {
+        {            
             this.actualOrderLine = OrderLineAccess.Select1OrderLine(idProduct, idShop, Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
             this.availableStock = StockAccess.GetStockOf1Article(this.idShop, this.idProduct).STOCK_QUANTITY;
-            this.availableStockForClient = availableStock - actualOrderLine.ORDER_LINE_QUANTITY;
-            // this.labelQuantite.Text = "Available quantity : " + availableStock.ToString();
+            if (this.actualOrderLine != null)
+                this.availableStockForClient = availableStock - this.actualOrderLine.ORDER_LINE_QUANTITY;
+            else
+                this.availableStockForClient = availableStock;
 
 
-            if (this.numericUpDown1.Value <= this.availableStock && this.numericUpDown1.Value > 0)
+
+            if (this.numericUpDown1.Value <= this.availableStockForClient && this.numericUpDown1.Value > 0)
             {
                 OrderLine newOrderLine = new OrderLine
                 {
-                    ORDER_LINE_QUANTITY = Convert.ToInt32(this.numericUpDown1.Value),
-                    ORDER_LINE_BUYING_PRICE = this.price * this.numericUpDown1.Value,
                     ID_SHOP = this.idShop,
                     ID_PRODUCT = this.idProduct,
-                    ID_ORDERED = Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED
+                    ID_ORDERED = Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED,
+                    ORDER_LINE_QUANTITY = Convert.ToInt32(this.numericUpDown1.Value),
+                    ORDER_LINE_BUYING_PRICE = this.price * this.numericUpDown1.Value
+
+                    
                 };
 
-                // Charge la liste d'oderline qui partage le meme ID_ORDERRED
-                List<OrderLine> listOrderLine = OrderLineAccess.SelectAllOrderLine(Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
+                Debug.Print("Creation " + newOrderLine.ORDER_LINE_BUYING_PRICE + "");
 
-                // On compare cette liste avec ID_PRODUCT et ID_SHOP pour pouvoir modifier l'insert dans la DB
-                bool isOrderLineExist = false;
-                int idOrderLine = 0;
-                int stockInCurrentLine = 0;
-
-                foreach (OrderLine ol in listOrderLine)
+                if (actualOrderLine != null)
                 {
-                    if (ol.ID_SHOP == newOrderLine.ID_SHOP && ol.ID_PRODUCT == newOrderLine.ID_PRODUCT)
+                    if (actualOrderLine.ID_SHOP == this.idShop && actualOrderLine.ID_PRODUCT == this.idProduct && actualOrderLine.ID_ORDERED == Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED)
                     {
-                        newOrderLine.ORDER_LINE_QUANTITY += ol.ORDER_LINE_QUANTITY;
-                        newOrderLine.ORDER_LINE_BUYING_PRICE += ol.ORDER_LINE_QUANTITY * ol.ORDER_LINE_BUYING_PRICE;
+                        newOrderLine.ORDER_LINE_QUANTITY += actualOrderLine.ORDER_LINE_QUANTITY;
+                        newOrderLine.ORDER_LINE_BUYING_PRICE += (actualOrderLine.ORDER_LINE_QUANTITY * this.price);                        
 
-                        stockInCurrentLine = ol.ORDER_LINE_QUANTITY;
-                        idOrderLine = ol.ID_ORDER_LINE;
-                        isOrderLineExist = true;
-                        break;
+                        OrderLineAccess.ModifyOrderline(newOrderLine.ORDER_LINE_QUANTITY, newOrderLine.ORDER_LINE_BUYING_PRICE, actualOrderLine.ID_ORDER_LINE);
+                        GreenCheck();
+                        PlayPopUp(newOrderLine.ORDER_LINE_BUYING_PRICE);                        
                     }
-                }
 
-                if (isOrderLineExist)
-                {
-                    OrderLineAccess.ModifyOrderline(newOrderLine.ORDER_LINE_QUANTITY, newOrderLine.ORDER_LINE_BUYING_PRICE, idOrderLine);
-                    GreenCheck();
-                    PlayPopUp(newOrderLine.ORDER_LINE_BUYING_PRICE);
+                    Debug.Print("Modifier " + newOrderLine.ORDER_LINE_BUYING_PRICE + "");
                 }
                 else
-                {
+                {                   
                     OrderLineAccess.InsertNewOrderLine(newOrderLine);
                     GreenCheck();
                     PlayPopUp(newOrderLine.ORDER_LINE_BUYING_PRICE);
+
+                    Debug.Print("Insert " + newOrderLine.ORDER_LINE_BUYING_PRICE + "");
                 }
 
-                this.availableStock -= Convert.ToInt32(numericUpDown1.Value - stockInCurrentLine);
-                this.labelQuantite.Text = "Available quantity : " + this.availableStock;
+                this.availableStockForClient -= Convert.ToInt32(this.numericUpDown1.Value);
+                this.labelQuantite.Text = "Available quantity : " + availableStockForClient.ToString(); 
+                               
 
             }
-            else if (this.numericUpDown1.Value > this.availableStock)
+            else if (this.numericUpDown1.Value > this.availableStockForClient)
             {                
-                MessageBox.Show("Cannot Add " + this.numericUpDown1.Value + " x " + this.name + "\nOnly " + this.availableStock + " still available in this shop");
-                this.numericUpDown1.Value = this.availableStock;
+                MessageBox.Show("Cannot Add " + this.numericUpDown1.Value + " x " + this.name + "\nOnly " + this.availableStockForClient + " still available in this shop");
+                this.numericUpDown1.Value = this.availableStockForClient;
             }
 
-
-            if (this.availableStock <= 0)
+            if (this.availableStockForClient <= 0)
             {
-                this.labelQuantite.Text = "This Product is Sold Out !";
-                this.labelQuantite.Font = new Font("Poppins", 13, FontStyle.Bold);
-                this.labelQuantite.Location = new Point(this.labelQuantite.Location.X + 200, this.labelQuantite.Location.Y);
-                this.labelQuantite.ForeColor = CustomColor.Orange;
-                this.labelPrix.Visible = false;
-                this.labelPriceSelected.Visible = false;
-                this.iconButton1.Visible = false;
-                this.numericUpDown1.Visible = false;
-                MessageBox.Show("The product " + this.name + " is sold out in this shop");
+                ProductSoldOut();                           
             }
-
-
-
-
-
-            
-
-
 
 
             /*
@@ -223,7 +203,17 @@ namespace PL
                                 */
         }
 
-
+        private void ProductSoldOut()
+        {
+            this.labelQuantite.Text = "This Product is Sold Out !";
+            this.labelQuantite.Font = new Font("Poppins", 13, FontStyle.Bold);
+            this.labelQuantite.Location = new Point(this.labelQuantite.Location.X, this.labelQuantite.Location.Y - 15);
+            this.labelQuantite.ForeColor = CustomColor.Orange;
+            this.labelPrix.Visible = false;
+            this.labelPriceSelected.Visible = false;
+            this.iconButton1.Visible = false;
+            this.numericUpDown1.Visible = false;
+        }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
@@ -245,7 +235,14 @@ namespace PL
 */
 
             if (this.numericUpDown1.Value < 0)
+            {
                 this.numericUpDown1.Value = 0;
+                this.labelPriceSelected.Text = "Total : " + 0 + " €";
+            }                
+            else
+            {
+                this.labelPriceSelected.Text = "Total : " + (numericUpDown1.Value * this.price).ToString() + " €"; ;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
