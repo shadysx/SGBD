@@ -37,13 +37,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
             this.iconButtonAdminPanel = new FontAwesome.Sharp.IconButton();
             this.iconButtonBasket = new FontAwesome.Sharp.IconButton();
             this.iconButtonShop = new FontAwesome.Sharp.IconButton();
             this.iconButtonHome = new FontAwesome.Sharp.IconButton();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.panelRight = new System.Windows.Forms.Panel();
-            this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -171,6 +171,26 @@
             this.panelLeft.Size = new System.Drawing.Size(200, 697);
             this.panelLeft.TabIndex = 1;
             // 
+            // iconButtonHistory
+            // 
+            this.iconButtonHistory.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonHistory.FlatAppearance.BorderSize = 0;
+            this.iconButtonHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.iconButtonHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonHistory.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonHistory.ForeColor = System.Drawing.Color.White;
+            this.iconButtonHistory.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
+            this.iconButtonHistory.IconColor = System.Drawing.Color.White;
+            this.iconButtonHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonHistory.Location = new System.Drawing.Point(0, 178);
+            this.iconButtonHistory.Name = "iconButtonHistory";
+            this.iconButtonHistory.Size = new System.Drawing.Size(197, 47);
+            this.iconButtonHistory.TabIndex = 4;
+            this.iconButtonHistory.Text = "          History";
+            this.iconButtonHistory.UseVisualStyleBackColor = false;
+            this.iconButtonHistory.Click += new System.EventHandler(this.iconButtonHistory_Click);
+            // 
             // iconButtonAdminPanel
             // 
             this.iconButtonAdminPanel.BackColor = System.Drawing.Color.Transparent;
@@ -251,32 +271,13 @@
             // 
             // panelRight
             // 
+            this.panelRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelRight.Controls.Add(this.panelProfileSubMenu);
             this.panelRight.ForeColor = System.Drawing.Color.Black;
             this.panelRight.Location = new System.Drawing.Point(197, 75);
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(1132, 697);
             this.panelRight.TabIndex = 0;
-            // 
-            // iconButtonHistory
-            // 
-            this.iconButtonHistory.BackColor = System.Drawing.Color.Transparent;
-            this.iconButtonHistory.FlatAppearance.BorderSize = 0;
-            this.iconButtonHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.iconButtonHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonHistory.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonHistory.ForeColor = System.Drawing.Color.White;
-            this.iconButtonHistory.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
-            this.iconButtonHistory.IconColor = System.Drawing.Color.White;
-            this.iconButtonHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonHistory.Location = new System.Drawing.Point(0, 178);
-            this.iconButtonHistory.Name = "iconButtonHistory";
-            this.iconButtonHistory.Size = new System.Drawing.Size(197, 47);
-            this.iconButtonHistory.TabIndex = 4;
-            this.iconButtonHistory.Text = "          History";
-            this.iconButtonHistory.UseVisualStyleBackColor = false;
-            this.iconButtonHistory.Click += new System.EventHandler(this.iconButtonHistory_Click);
             // 
             // Main
             // 

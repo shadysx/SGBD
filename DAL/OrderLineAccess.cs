@@ -48,8 +48,6 @@ namespace DAL
         }
 
 
-
-
         public static List<OrderLine> SelectAllOrderLine(int idOrdered)
         {
             List<OrderLine> retVal;
@@ -82,6 +80,8 @@ namespace DAL
                 }
             
         }
+
+        
 
     }
 }

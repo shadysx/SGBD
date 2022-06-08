@@ -39,5 +39,27 @@ namespace DTO
             }
         }
 
+        public override string ToString()
+        {
+            return $"ID_ORDERED : {ID_ORDERED}\n" +
+                    $"ID_ORDER_LINE : {ID_ORDER_LINE}\n" +
+                    $"ORDER_LINE_QUANTITY : {ORDER_LINE_QUANTITY}\n" +
+                    $"ORDER_LINE_BUYING_PRICE : {ORDER_LINE_BUYING_PRICE}\n" +
+                    $"ID_SHOP : {ID_SHOP}\n" +
+                    $"SHOP_NAME : {SHOP_NAME}\n" +
+                    $"SHOP_ADDRESS : {SHOP_ADDRESS}\n" +
+                    $"SHOP_CITY : {SHOP_CITY}\n" +
+                    $"SHOP_COUNTRY : {SHOP_COUNTRY}\n" +
+                    $"ID_PRODUCT : {ID_PRODUCT}\n" +
+                    $"PRODUCT_NAME : {PRODUCT_NAME}\n" +
+                    $"PRODUCT_TYPE : {PRODUCT_TYPE}\n" +
+                    $"PRODUCT_DESCRIPTION : {PRODUCT_DESCRIPTION}\n" +
+                    $"PICTURE_URL : {PICTURE_URL}\n" +
+                    $"PICTURE_PATH : {PICTURE_PATH}\n";
+        
+
+        
+        }
+
     }
 }

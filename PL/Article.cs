@@ -45,14 +45,16 @@ namespace PL
             if(this.quantity <= 0)
             {
                 this.labelQuantite.Text = "This Product is Sold Out !";
+                this.labelQuantite.ForeColor = CustomColor.Orange;
                 this.labelPrix.Visible = false;
                 this.labelPriceSelected.Visible = false;
+                this.iconButton1.Visible = false;
             }
             else
             {
                 this.labelQuantite.Text = "Available quantity : " + quantity.ToString();
                 this.labelPrix.Text = "€ " + price.ToString();
-                this.labelPriceSelected.Text = "€ " + price.ToString();
+                this.labelPriceSelected.Text = "Total : " + price.ToString() + " €";
             }               
 
 
@@ -62,7 +64,7 @@ namespace PL
 
         private void iconButton1_Click(object sender, EventArgs e)
         {            
-
+            
             OrderLine orderLine = new OrderLine
             {
                 ORDER_LINE_QUANTITY = Convert.ToInt32(this.numericUpDown1.Value),
@@ -72,7 +74,7 @@ namespace PL
                 ID_ORDERED = Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED
             };
 
-            // Charge la liste d'oderline qui partage le meme ID_ORDERRED
+            // Charge la liste d'oderline qui partage le meme ID_ORDERRED (lié au compte)
             List<OrderLine> list = OrderLineAccess.SelectAllOrderLine(Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
 
             // On compare cette liste avec ID_PRODUCT et ID_SHOP pour pouvoir modifier l'insert dans la DB
@@ -148,7 +150,7 @@ namespace PL
                 }                            
             }                         
             else
-                this.labelPriceSelected.Text = "€ " + (numericUpDown1.Value * this.price).ToString();
+                this.labelPriceSelected.Text = "Total : " + (numericUpDown1.Value * this.price).ToString() + " €";;
 
         }
 
