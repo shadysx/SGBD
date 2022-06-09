@@ -16,12 +16,14 @@ namespace PL
 {
     public partial class ShopTab : Form
     {
+
+        private List<Product> products;
         public ShopTab()
         {
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
             this.panelFilter.BackColor = CustomColor.DarkBlue;
-            List<DTO.Product> products = ProductsAccess.Select20RandomProducts();           
+            this.products = ProductsAccess.Select20RandomProducts();           
             DisplayProducts(products);
 
             

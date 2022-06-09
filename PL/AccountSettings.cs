@@ -21,6 +21,17 @@ namespace PL
         {
             InitializeComponent();
             LoadCurrentUserInfo();
+
+            this.labelAccountInfo.ForeColor = CustomColor.Orange;
+            this.labelUsername.ForeColor = CustomColor.Orange;
+            this.panelTopRight.BackColor = CustomColor.DarkBlue;            
+            this.panelBottom.BackColor = CustomColor.DarkBlue;
+            this.panelTop.BackColor = CustomColor.DarkBlue;
+
+            this.BackColor = CustomColor.DarkBlue;
+
+
+
         }
 
         private void LoadCurrentUserInfo()
@@ -51,27 +62,25 @@ namespace PL
             // Create Account with modify infos
             Account modifyAccount = Auth.CurrentUser;
 
-            if (this.textBoxAddress.Text.Trim() != "")
-                modifyAccount.ACCOUNT_ADDRESS = this.textBoxAddress.Text.Trim();
+            if (this.textBoxAddress.Texts.Trim() != "")
+                modifyAccount.ACCOUNT_ADDRESS = this.textBoxAddress.Texts.Trim();
             else
                 isAddressNull = true;
 
-            if (this.textBoxCity.Text.Trim() != "")
-                modifyAccount.ACCOUNT_CITY = this.textBoxCity.Text.Trim();
+            if (this.textBoxCity.Texts.Trim() != "")
+                modifyAccount.ACCOUNT_CITY = this.textBoxCity.Texts.Trim();
             else
                 isCityNull = true;
 
-            if (this.textBoxPostalCode.Text != "")
-                modifyAccount.ACCOUNT_POSTAL_CODE = this.textBoxPostalCode.Text.Trim();
+            if (this.textBoxPostalCode.Texts != "")
+                modifyAccount.ACCOUNT_POSTAL_CODE = this.textBoxPostalCode.Texts.Trim();
             else
                 isPostalCodeNull = true;
 
-            if (this.textBoxCountry.Text.Trim() != "")
-                modifyAccount.ACCOUNT_COUNTRY = this.textBoxCountry.Text.Trim();
+            if (this.textBoxCountry.Texts.Trim() != "")
+                modifyAccount.ACCOUNT_COUNTRY = this.textBoxCountry.Texts.Trim();
             else
-                isCountryNull = true;
-
-
+                isCountryNull = true;           
 
             // Use Rules Book Account
             RulesBookAccount rbAccount = new RulesBookAccount();
@@ -79,10 +88,9 @@ namespace PL
             var result = rbAccount.Validate(modifyAccount);
 
             if (!result.IsValid)
-            {
-
+            {                
                 foreach (var failure in result.Errors)
-                {
+                {                    
                     string s = failure.ErrorMessage;                    
 
                     if (!(failure.PropertyName.Contains("PASSWORD") || failure.PropertyName.Contains("EMAIL")))
@@ -128,8 +136,8 @@ namespace PL
                 {
                     BLL.DALRequest.InsertModifyAccount(modifyAccount);
 
-                    foreach (RJTextBox tb in this.Controls.OfType<RJTextBox>())
-                        tb.Text = "";
+                    foreach (RJTextBox tb in this.panelBottom.Controls.OfType<RJTextBox>())
+                        tb.Texts = null;
 
                     this.panelAccountUpdated.Visible = true;
 
@@ -156,26 +164,26 @@ namespace PL
 
             ResetErrorProviderRight();
 
-            if (textBoxNewPassword.Text.Length < 8 || textBoxNewPassword.Text.Length > 49)
+            if (textBoxNewPassword.Texts.Length < 8 || textBoxNewPassword.Texts.Length > 49)
             {
                 error = true;
                 this.errorProviderNewPassword.SetError(textBoxNewPassword, "Must contain at least between 8 and 49 char !");
             }
 
-            if (textBoxNewPassword.Text != textBoxNewConfirmPassword.Text)
+            if (textBoxNewPassword.Texts != textBoxNewConfirmPassword.Texts)
             {
                 error = true;
                 this.errorProviderNewConfirmPassword.SetError(textBoxNewConfirmPassword, "Passwords are different !");
             }
 
-            if (textBoxNewPassword.Text == textBoxOldPassword.Text)
+            if (textBoxNewPassword.Texts == textBoxOldPassword.Texts)
             {
                 error = true;
                 this.errorProviderNewPassword.SetError(textBoxNewPassword, "Same as old password !");
             }
 
 
-            if (Auth.ComputeSha256Hash(this.textBoxOldPassword.Text) != Auth.CurrentUser.ACCOUNT_PASSWORD)
+            if (Auth.ComputeSha256Hash(this.textBoxOldPassword.Texts) != Auth.CurrentUser.ACCOUNT_PASSWORD)
             {
                 error = true;
                 this.errorProviderOldPassword.SetError(textBoxOldPassword, "Wrong password !");
@@ -185,13 +193,13 @@ namespace PL
             {
                 if (!error)
                 {
-                    BLL.DALRequest.UpdatePassword(Auth.ComputeSha256Hash(this.textBoxNewPassword.Text), Auth.CurrentUser.ACCOUNT_USERNAME);
+                    BLL.DALRequest.UpdatePassword(Auth.ComputeSha256Hash(this.textBoxNewPassword.Texts), Auth.CurrentUser.ACCOUNT_USERNAME);
                     this.panelPasswordChange.Visible = true;
 
-                    BLL.Auth.CurrentUser.ACCOUNT_PASSWORD = Auth.ComputeSha256Hash(this.textBoxNewPassword.Text);
+                    BLL.Auth.CurrentUser.ACCOUNT_PASSWORD = Auth.ComputeSha256Hash(this.textBoxNewPassword.Texts);
 
-                    foreach (TextBox tb in this.Controls.OfType<TextBox>())
-                        tb.Text = null;
+                    foreach (RJTextBox tb in this.panelBottom.Controls.OfType<RJTextBox>())
+                        tb.Texts = null;
                 }
 
             }
@@ -216,6 +224,56 @@ namespace PL
             this.errorProviderOldPassword.SetError(textBoxOldPassword, null);
             this.errorProviderNewPassword.SetError(textBoxNewPassword, null);
             this.errorProviderNewConfirmPassword.SetError(textBoxNewConfirmPassword, null);
+        }
+
+        private void labelUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelTopRight_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labelPostalCode_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelAddress_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCountry_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelFirstName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelLastName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelBirthDate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -78,18 +78,8 @@ namespace PL
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
-        {
-            if (fromParent == "ShopTabProduct")
-            {
-                Main.mainInstance.OpenChildForm(new ShopTab());
-                this.Dispose();
-            }
-            else if (fromParent == "BasketItem")
-            {
-                this.Dispose();
-            }
-            
-            
+        {                         
+                this.Close();           
         }
     }
 }
