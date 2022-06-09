@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using CustomControls.RJControls;
 using DTO;
 
 
@@ -127,8 +128,8 @@ namespace PL
                 {
                     BLL.DALRequest.InsertModifyAccount(modifyAccount);
 
-                    foreach (TextBox tb in this.Controls.OfType<TextBox>())
-                        tb.Text = null;
+                    foreach (RJTextBox tb in this.Controls.OfType<RJTextBox>())
+                        tb.Text = "";
 
                     this.panelAccountUpdated.Visible = true;
 

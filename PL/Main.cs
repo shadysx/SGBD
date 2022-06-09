@@ -23,6 +23,8 @@ namespace PL
 
         private IconButton iconArrow;       
 
+        private bool isMenuTrigger;
+
         public Main(Form f)
         {
             Main.mainInstance = this;
@@ -34,7 +36,7 @@ namespace PL
             
 
             this.loginForm = (Login)f;
-            this.iconButtonProfile.Text = Auth.CurrentUser.ACCOUNT_USERNAME;
+            this.labelProfileUsername.Text = Auth.CurrentUser.ACCOUNT_USERNAME;
             this.panelProfileSubMenu.BackColor = CustomColor.Orange;
             this.panelTop.BackColor = CustomColor.DarkBlue;
             this.panelLeft.BackColor = CustomColor.DarkBlue;            
@@ -53,11 +55,11 @@ namespace PL
                 i.IconColor = CustomColor.Orange;
             }
 
-            
-            this.iconButtonProfile.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, CustomColor.Orange);
+                       
             this.iconButtonProfile.IconColor = CustomColor.Orange;
 
-
+            this.isMenuTrigger = false;
+            
         }
 
 
@@ -130,10 +132,23 @@ namespace PL
         }
 
         // Concern Profile Icon and Profile's sub menu
-        private void iconButtonProfile_Click(object sender, EventArgs e)
+
+        private void panelProfile_Click(object sender, EventArgs e)
         {
-            this.panelProfileSubMenu.Visible = true;
-            this.panelProfileSubMenu.BringToFront();
+            this.isMenuTrigger = !this.isMenuTrigger;
+
+            if(isMenuTrigger)
+            {
+                this.panelProfileSubMenu.Visible = true;
+                this.panelProfileSubMenu.BringToFront();
+            }                    
+            else
+            {
+                this.panelProfileSubMenu.Visible = false;               
+                this.panelRight.BringToFront();                
+            }
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -199,23 +214,28 @@ namespace PL
 
 
             // Redessine le Profile sub Menu (car tous les controles viennent d'être supprimé
+            DrawProfileSubMenu();        
+
+        }
+
+        private void DrawProfileSubMenu()
+        {
             this.panelProfileSubMenu = new System.Windows.Forms.Panel();
             this.panelProfileSubMenu.SuspendLayout();
             this.panelProfileSubMenu.BackColor = CustomColor.Orange;
             this.panelProfileSubMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelProfileSubMenu.Controls.Add(this.label2);
             this.panelProfileSubMenu.Controls.Add(this.label1);
-            this.panelProfileSubMenu.Location = new System.Drawing.Point(921, 0);
+            this.panelProfileSubMenu.Controls.Add(this.iconButton1);
+            this.panelProfileSubMenu.Controls.Add(this.iconButton3);
+            this.panelProfileSubMenu.Location = new System.Drawing.Point(858, -2);
             this.panelProfileSubMenu.Name = "panelProfileSubMenu";
-            this.panelProfileSubMenu.Size = new System.Drawing.Size(137, 66);
+            this.panelProfileSubMenu.Size = new System.Drawing.Size(174, 66);
             this.panelProfileSubMenu.TabIndex = 10;
             this.panelProfileSubMenu.Visible = false;
             this.panelRight.Controls.Add(this.panelProfileSubMenu);
             this.panelProfileSubMenu.ResumeLayout(false);
             this.panelProfileSubMenu.PerformLayout();
-
-            
-
         }
 
         private void iconPictureBox2_Click(object sender, EventArgs e)
@@ -244,6 +264,28 @@ namespace PL
             this.iconArrow.FlatAppearance.MouseOverBackColor = Color.Transparent;    
             this.iconArrow.FlatAppearance.MouseDownBackColor = Color.Transparent;
             this.iconArrow.Visible = false;
+        }
+
+        private void panel1_MouseEnter(object sender, EventArgs e)
+        {
+            this.panelProfile.BackColor = Color.FromArgb(255, CustomColor.Orange);
+            this.iconButtonProfile.Enabled = false;
+            this.labelProfileUsername.BackColor = Color.FromArgb(255, CustomColor.Orange);
+            this.labelProfileUsername.Enabled = false;
+
+        }
+
+        private void C_MouseEnter(object sender, EventArgs e)
+        {
+            this.panelProfile.BackColor = Color.FromArgb(180, CustomColor.Orange);
+        }
+
+        private void panelProfile_MouseLeave(object sender, EventArgs e)
+        {
+            this.panelProfile.BackColor = CustomColor.DarkBlue; ;
+            this.iconButtonProfile.Enabled = true;
+            this.labelProfileUsername.Enabled = true;
+            this.labelProfileUsername.BackColor = CustomColor.DarkBlue;
         }
 
         

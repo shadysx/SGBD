@@ -36,10 +36,6 @@
             this.labelPostalCodeChange = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.labelChangeSettings = new System.Windows.Forms.Label();
-            this.textBoxPostalCode = new System.Windows.Forms.TextBox();
-            this.textBoxCity = new System.Windows.Forms.TextBox();
-            this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.textBoxCountry = new System.Windows.Forms.TextBox();
             this.labelCountryChange = new System.Windows.Forms.Label();
             this.textBoxNewConfirmPassword = new System.Windows.Forms.TextBox();
             this.textBoxNewPassword = new System.Windows.Forms.TextBox();
@@ -81,6 +77,16 @@
             this.labelAddressInfo = new System.Windows.Forms.Label();
             this.labelCity = new System.Windows.Forms.Label();
             this.labelAddress = new System.Windows.Forms.Label();
+            this.textBoxAddress = new CustomControls.RJControls.RJTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.textBoxCity = new CustomControls.RJControls.RJTextBox();
+            this.textBoxPostalCode = new CustomControls.RJControls.RJTextBox();
+            this.textBoxCountry = new CustomControls.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCity)).BeginInit();
@@ -93,13 +99,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelPasswordChange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsername.Location = new System.Drawing.Point(247, 136);
+            this.labelUsername.Location = new System.Drawing.Point(69, 9);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(234, 48);
             this.labelUsername.TabIndex = 1;
@@ -108,7 +119,7 @@
             // labelAddressChange
             // 
             this.labelAddressChange.AutoSize = true;
-            this.labelAddressChange.Location = new System.Drawing.Point(176, 409);
+            this.labelAddressChange.Location = new System.Drawing.Point(144, 76);
             this.labelAddressChange.Name = "labelAddressChange";
             this.labelAddressChange.Size = new System.Drawing.Size(45, 13);
             this.labelAddressChange.TabIndex = 8;
@@ -117,7 +128,7 @@
             // labelCityChange
             // 
             this.labelCityChange.AutoSize = true;
-            this.labelCityChange.Location = new System.Drawing.Point(179, 448);
+            this.labelCityChange.Location = new System.Drawing.Point(147, 115);
             this.labelCityChange.Name = "labelCityChange";
             this.labelCityChange.Size = new System.Drawing.Size(24, 13);
             this.labelCityChange.TabIndex = 9;
@@ -126,7 +137,7 @@
             // labelPostalCodeChange
             // 
             this.labelPostalCodeChange.AutoSize = true;
-            this.labelPostalCodeChange.Location = new System.Drawing.Point(179, 487);
+            this.labelPostalCodeChange.Location = new System.Drawing.Point(147, 154);
             this.labelPostalCodeChange.Name = "labelPostalCodeChange";
             this.labelPostalCodeChange.Size = new System.Drawing.Size(64, 13);
             this.labelPostalCodeChange.TabIndex = 10;
@@ -135,9 +146,9 @@
             // pictureBox
             // 
             this.pictureBox.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.pictureBox.Location = new System.Drawing.Point(93, 113);
+            this.pictureBox.Location = new System.Drawing.Point(54, 32);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(136, 125);
+            this.pictureBox.Size = new System.Drawing.Size(152, 129);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
@@ -145,44 +156,16 @@
             // 
             this.labelChangeSettings.AutoSize = true;
             this.labelChangeSettings.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChangeSettings.Location = new System.Drawing.Point(174, 363);
+            this.labelChangeSettings.Location = new System.Drawing.Point(142, 30);
             this.labelChangeSettings.Name = "labelChangeSettings";
             this.labelChangeSettings.Size = new System.Drawing.Size(149, 28);
             this.labelChangeSettings.TabIndex = 15;
             this.labelChangeSettings.Text = "Change Settings";
             // 
-            // textBoxPostalCode
-            // 
-            this.textBoxPostalCode.Location = new System.Drawing.Point(266, 487);
-            this.textBoxPostalCode.Name = "textBoxPostalCode";
-            this.textBoxPostalCode.Size = new System.Drawing.Size(168, 20);
-            this.textBoxPostalCode.TabIndex = 18;
-            // 
-            // textBoxCity
-            // 
-            this.textBoxCity.Location = new System.Drawing.Point(266, 448);
-            this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(168, 20);
-            this.textBoxCity.TabIndex = 17;
-            // 
-            // textBoxAddress
-            // 
-            this.textBoxAddress.Location = new System.Drawing.Point(266, 409);
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(168, 20);
-            this.textBoxAddress.TabIndex = 16;
-            // 
-            // textBoxCountry
-            // 
-            this.textBoxCountry.Location = new System.Drawing.Point(266, 529);
-            this.textBoxCountry.Name = "textBoxCountry";
-            this.textBoxCountry.Size = new System.Drawing.Size(168, 20);
-            this.textBoxCountry.TabIndex = 23;
-            // 
             // labelCountryChange
             // 
             this.labelCountryChange.AutoSize = true;
-            this.labelCountryChange.Location = new System.Drawing.Point(179, 529);
+            this.labelCountryChange.Location = new System.Drawing.Point(147, 196);
             this.labelCountryChange.Name = "labelCountryChange";
             this.labelCountryChange.Size = new System.Drawing.Size(43, 13);
             this.labelCountryChange.TabIndex = 22;
@@ -190,7 +173,7 @@
             // 
             // textBoxNewConfirmPassword
             // 
-            this.textBoxNewConfirmPassword.Location = new System.Drawing.Point(755, 486);
+            this.textBoxNewConfirmPassword.Location = new System.Drawing.Point(201, 138);
             this.textBoxNewConfirmPassword.Name = "textBoxNewConfirmPassword";
             this.textBoxNewConfirmPassword.PasswordChar = '⬤';
             this.textBoxNewConfirmPassword.Size = new System.Drawing.Size(168, 20);
@@ -198,7 +181,7 @@
             // 
             // textBoxNewPassword
             // 
-            this.textBoxNewPassword.Location = new System.Drawing.Point(755, 447);
+            this.textBoxNewPassword.Location = new System.Drawing.Point(201, 99);
             this.textBoxNewPassword.Name = "textBoxNewPassword";
             this.textBoxNewPassword.PasswordChar = '⬤';
             this.textBoxNewPassword.Size = new System.Drawing.Size(168, 20);
@@ -206,7 +189,7 @@
             // 
             // textBoxOldPassword
             // 
-            this.textBoxOldPassword.Location = new System.Drawing.Point(755, 408);
+            this.textBoxOldPassword.Location = new System.Drawing.Point(201, 60);
             this.textBoxOldPassword.Name = "textBoxOldPassword";
             this.textBoxOldPassword.PasswordChar = '⬤';
             this.textBoxOldPassword.Size = new System.Drawing.Size(168, 20);
@@ -216,7 +199,7 @@
             // 
             this.labelChangePassword.AutoSize = true;
             this.labelChangePassword.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChangePassword.Location = new System.Drawing.Point(644, 363);
+            this.labelChangePassword.Location = new System.Drawing.Point(90, 15);
             this.labelChangePassword.Name = "labelChangePassword";
             this.labelChangePassword.Size = new System.Drawing.Size(162, 28);
             this.labelChangePassword.TabIndex = 27;
@@ -225,7 +208,7 @@
             // labelConfirmPassword
             // 
             this.labelConfirmPassword.AutoSize = true;
-            this.labelConfirmPassword.Location = new System.Drawing.Point(646, 490);
+            this.labelConfirmPassword.Location = new System.Drawing.Point(92, 142);
             this.labelConfirmPassword.Name = "labelConfirmPassword";
             this.labelConfirmPassword.Size = new System.Drawing.Size(91, 13);
             this.labelConfirmPassword.TabIndex = 26;
@@ -234,7 +217,7 @@
             // labelNewPassword
             // 
             this.labelNewPassword.AutoSize = true;
-            this.labelNewPassword.Location = new System.Drawing.Point(646, 451);
+            this.labelNewPassword.Location = new System.Drawing.Point(92, 103);
             this.labelNewPassword.Name = "labelNewPassword";
             this.labelNewPassword.Size = new System.Drawing.Size(78, 13);
             this.labelNewPassword.TabIndex = 25;
@@ -243,7 +226,7 @@
             // labelOldPassword
             // 
             this.labelOldPassword.AutoSize = true;
-            this.labelOldPassword.Location = new System.Drawing.Point(646, 412);
+            this.labelOldPassword.Location = new System.Drawing.Point(92, 64);
             this.labelOldPassword.Name = "labelOldPassword";
             this.labelOldPassword.Size = new System.Drawing.Size(72, 13);
             this.labelOldPassword.TabIndex = 24;
@@ -261,9 +244,9 @@
             this.buttonProfilePicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfilePicture.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProfilePicture.ForeColor = System.Drawing.Color.Black;
-            this.buttonProfilePicture.Location = new System.Drawing.Point(255, 187);
+            this.buttonProfilePicture.Location = new System.Drawing.Point(54, 167);
             this.buttonProfilePicture.Name = "buttonProfilePicture";
-            this.buttonProfilePicture.Size = new System.Drawing.Size(172, 26);
+            this.buttonProfilePicture.Size = new System.Drawing.Size(152, 27);
             this.buttonProfilePicture.TabIndex = 31;
             this.buttonProfilePicture.Text = "Choose Profile Picture...";
             this.buttonProfilePicture.TextColor = System.Drawing.Color.Black;
@@ -281,7 +264,7 @@
             this.buttonConfirmAccountSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmAccountSettings.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonConfirmAccountSettings.ForeColor = System.Drawing.Color.Black;
-            this.buttonConfirmAccountSettings.Location = new System.Drawing.Point(358, 555);
+            this.buttonConfirmAccountSettings.Location = new System.Drawing.Point(326, 233);
             this.buttonConfirmAccountSettings.Name = "buttonConfirmAccountSettings";
             this.buttonConfirmAccountSettings.Size = new System.Drawing.Size(76, 24);
             this.buttonConfirmAccountSettings.TabIndex = 32;
@@ -302,7 +285,7 @@
             this.buttonConfirmNewPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmNewPassword.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonConfirmNewPassword.ForeColor = System.Drawing.Color.Black;
-            this.buttonConfirmNewPassword.Location = new System.Drawing.Point(847, 512);
+            this.buttonConfirmNewPassword.Location = new System.Drawing.Point(293, 164);
             this.buttonConfirmNewPassword.Name = "buttonConfirmNewPassword";
             this.buttonConfirmNewPassword.Size = new System.Drawing.Size(76, 24);
             this.buttonConfirmNewPassword.TabIndex = 33;
@@ -357,7 +340,7 @@
             // 
             this.labelAccountInfo.AutoSize = true;
             this.labelAccountInfo.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAccountInfo.Location = new System.Drawing.Point(542, 86);
+            this.labelAccountInfo.Location = new System.Drawing.Point(12, 13);
             this.labelAccountInfo.Name = "labelAccountInfo";
             this.labelAccountInfo.Size = new System.Drawing.Size(193, 28);
             this.labelAccountInfo.TabIndex = 37;
@@ -366,7 +349,7 @@
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Location = new System.Drawing.Point(545, 169);
+            this.labelLastName.Location = new System.Drawing.Point(15, 96);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(58, 13);
             this.labelLastName.TabIndex = 36;
@@ -375,7 +358,7 @@
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Location = new System.Drawing.Point(545, 138);
+            this.labelFirstName.Location = new System.Drawing.Point(15, 65);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(57, 13);
             this.labelFirstName.TabIndex = 35;
@@ -385,7 +368,7 @@
             // 
             this.labelFirstNameInfo.AutoSize = true;
             this.labelFirstNameInfo.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFirstNameInfo.Location = new System.Drawing.Point(641, 136);
+            this.labelFirstNameInfo.Location = new System.Drawing.Point(111, 63);
             this.labelFirstNameInfo.Name = "labelFirstNameInfo";
             this.labelFirstNameInfo.Size = new System.Drawing.Size(114, 22);
             this.labelFirstNameInfo.TabIndex = 39;
@@ -395,7 +378,7 @@
             // 
             this.labelLastNameInfo.AutoSize = true;
             this.labelLastNameInfo.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastNameInfo.Location = new System.Drawing.Point(641, 168);
+            this.labelLastNameInfo.Location = new System.Drawing.Point(111, 95);
             this.labelLastNameInfo.Name = "labelLastNameInfo";
             this.labelLastNameInfo.Size = new System.Drawing.Size(114, 22);
             this.labelLastNameInfo.TabIndex = 40;
@@ -405,7 +388,7 @@
             // 
             this.labelEmailInfo.AutoSize = true;
             this.labelEmailInfo.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmailInfo.Location = new System.Drawing.Point(641, 201);
+            this.labelEmailInfo.Location = new System.Drawing.Point(111, 128);
             this.labelEmailInfo.Name = "labelEmailInfo";
             this.labelEmailInfo.Size = new System.Drawing.Size(114, 22);
             this.labelEmailInfo.TabIndex = 42;
@@ -414,7 +397,7 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(545, 202);
+            this.labelEmail.Location = new System.Drawing.Point(15, 129);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(32, 13);
             this.labelEmail.TabIndex = 41;
@@ -424,7 +407,7 @@
             // 
             this.panelAccountUpdated.Controls.Add(this.labelSuccess);
             this.panelAccountUpdated.Controls.Add(this.pictureBox1);
-            this.panelAccountUpdated.Location = new System.Drawing.Point(228, 595);
+            this.panelAccountUpdated.Location = new System.Drawing.Point(562, 611);
             this.panelAccountUpdated.Name = "panelAccountUpdated";
             this.panelAccountUpdated.Size = new System.Drawing.Size(204, 62);
             this.panelAccountUpdated.TabIndex = 43;
@@ -454,7 +437,7 @@
             // 
             this.panelPasswordChange.Controls.Add(this.label1);
             this.panelPasswordChange.Controls.Add(this.pictureBox2);
-            this.panelPasswordChange.Location = new System.Drawing.Point(703, 595);
+            this.panelPasswordChange.Location = new System.Drawing.Point(845, 611);
             this.panelPasswordChange.Name = "panelPasswordChange";
             this.panelPasswordChange.Size = new System.Drawing.Size(204, 62);
             this.panelPasswordChange.TabIndex = 44;
@@ -483,7 +466,7 @@
             // labelBirthDate
             // 
             this.labelBirthDate.AutoSize = true;
-            this.labelBirthDate.Location = new System.Drawing.Point(545, 236);
+            this.labelBirthDate.Location = new System.Drawing.Point(15, 163);
             this.labelBirthDate.Name = "labelBirthDate";
             this.labelBirthDate.Size = new System.Drawing.Size(54, 13);
             this.labelBirthDate.TabIndex = 45;
@@ -493,7 +476,7 @@
             // 
             this.labelBirthDateInfo.AutoSize = true;
             this.labelBirthDateInfo.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBirthDateInfo.Location = new System.Drawing.Point(641, 234);
+            this.labelBirthDateInfo.Location = new System.Drawing.Point(111, 161);
             this.labelBirthDateInfo.Name = "labelBirthDateInfo";
             this.labelBirthDateInfo.Size = new System.Drawing.Size(114, 22);
             this.labelBirthDateInfo.TabIndex = 46;
@@ -503,7 +486,7 @@
             // 
             this.labelCountryInfo.AutoSize = true;
             this.labelCountryInfo.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountryInfo.Location = new System.Drawing.Point(912, 234);
+            this.labelCountryInfo.Location = new System.Drawing.Point(410, 162);
             this.labelCountryInfo.Name = "labelCountryInfo";
             this.labelCountryInfo.Size = new System.Drawing.Size(114, 22);
             this.labelCountryInfo.TabIndex = 54;
@@ -512,7 +495,7 @@
             // labelCountry
             // 
             this.labelCountry.AutoSize = true;
-            this.labelCountry.Location = new System.Drawing.Point(816, 236);
+            this.labelCountry.Location = new System.Drawing.Point(314, 164);
             this.labelCountry.Name = "labelCountry";
             this.labelCountry.Size = new System.Drawing.Size(43, 13);
             this.labelCountry.TabIndex = 53;
@@ -522,7 +505,7 @@
             // 
             this.labelPostalCodeInfo.AutoSize = true;
             this.labelPostalCodeInfo.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPostalCodeInfo.Location = new System.Drawing.Point(912, 201);
+            this.labelPostalCodeInfo.Location = new System.Drawing.Point(410, 129);
             this.labelPostalCodeInfo.Name = "labelPostalCodeInfo";
             this.labelPostalCodeInfo.Size = new System.Drawing.Size(114, 22);
             this.labelPostalCodeInfo.TabIndex = 52;
@@ -531,7 +514,7 @@
             // labelPostalCode
             // 
             this.labelPostalCode.AutoSize = true;
-            this.labelPostalCode.Location = new System.Drawing.Point(816, 202);
+            this.labelPostalCode.Location = new System.Drawing.Point(314, 130);
             this.labelPostalCode.Name = "labelPostalCode";
             this.labelPostalCode.Size = new System.Drawing.Size(64, 13);
             this.labelPostalCode.TabIndex = 51;
@@ -541,7 +524,7 @@
             // 
             this.labelCityInfo.AutoSize = true;
             this.labelCityInfo.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCityInfo.Location = new System.Drawing.Point(912, 168);
+            this.labelCityInfo.Location = new System.Drawing.Point(410, 96);
             this.labelCityInfo.Name = "labelCityInfo";
             this.labelCityInfo.Size = new System.Drawing.Size(114, 22);
             this.labelCityInfo.TabIndex = 50;
@@ -551,7 +534,7 @@
             // 
             this.labelAddressInfo.AutoSize = true;
             this.labelAddressInfo.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddressInfo.Location = new System.Drawing.Point(912, 136);
+            this.labelAddressInfo.Location = new System.Drawing.Point(410, 64);
             this.labelAddressInfo.Name = "labelAddressInfo";
             this.labelAddressInfo.Size = new System.Drawing.Size(114, 22);
             this.labelAddressInfo.TabIndex = 49;
@@ -560,7 +543,7 @@
             // labelCity
             // 
             this.labelCity.AutoSize = true;
-            this.labelCity.Location = new System.Drawing.Point(817, 169);
+            this.labelCity.Location = new System.Drawing.Point(315, 97);
             this.labelCity.Name = "labelCity";
             this.labelCity.Size = new System.Drawing.Size(24, 13);
             this.labelCity.TabIndex = 48;
@@ -569,57 +552,206 @@
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Location = new System.Drawing.Point(816, 138);
+            this.labelAddress.Location = new System.Drawing.Point(314, 66);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(45, 13);
             this.labelAddress.TabIndex = 47;
             this.labelAddress.Text = "Address";
+            // 
+            // textBoxAddress
+            // 
+            this.textBoxAddress.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxAddress.BorderColor = System.Drawing.Color.Black;
+            this.textBoxAddress.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.textBoxAddress.BorderRadius = 15;
+            this.textBoxAddress.BorderSize = 2;
+            this.textBoxAddress.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxAddress.Location = new System.Drawing.Point(230, 62);
+            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAddress.Multiline = false;
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.textBoxAddress.PasswordChar = false;
+            this.textBoxAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxAddress.PlaceholderText = "";
+            this.textBoxAddress.Size = new System.Drawing.Size(172, 34);
+            this.textBoxAddress.TabIndex = 55;
+            this.textBoxAddress.Texts = "";
+            this.textBoxAddress.UnderlinedStyle = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelUsername);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1136, 62);
+            this.panel1.TabIndex = 56;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.rjButton1);
+            this.panel2.Controls.Add(this.pictureBox);
+            this.panel2.Controls.Add(this.buttonProfilePicture);
+            this.panel2.Location = new System.Drawing.Point(12, 68);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(264, 234);
+            this.panel2.TabIndex = 57;
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.White;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.White;
+            this.rjButton1.BorderColor = System.Drawing.Color.Black;
+            this.rjButton1.BorderRadius = 10;
+            this.rjButton1.BorderSize = 1;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton1.ForeColor = System.Drawing.Color.Black;
+            this.rjButton1.Location = new System.Drawing.Point(54, 204);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(152, 27);
+            this.rjButton1.TabIndex = 32;
+            this.rjButton1.Text = "Choose Profile Picture...";
+            this.rjButton1.TextColor = System.Drawing.Color.Black;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.labelAccountInfo);
+            this.panel3.Controls.Add(this.labelFirstName);
+            this.panel3.Controls.Add(this.labelLastName);
+            this.panel3.Controls.Add(this.labelFirstNameInfo);
+            this.panel3.Controls.Add(this.labelCountryInfo);
+            this.panel3.Controls.Add(this.labelLastNameInfo);
+            this.panel3.Controls.Add(this.labelCountry);
+            this.panel3.Controls.Add(this.labelEmail);
+            this.panel3.Controls.Add(this.labelPostalCodeInfo);
+            this.panel3.Controls.Add(this.labelEmailInfo);
+            this.panel3.Controls.Add(this.labelPostalCode);
+            this.panel3.Controls.Add(this.labelBirthDate);
+            this.panel3.Controls.Add(this.labelCityInfo);
+            this.panel3.Controls.Add(this.labelBirthDateInfo);
+            this.panel3.Controls.Add(this.labelAddressInfo);
+            this.panel3.Controls.Add(this.labelAddress);
+            this.panel3.Controls.Add(this.labelCity);
+            this.panel3.Location = new System.Drawing.Point(298, 68);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(814, 234);
+            this.panel3.TabIndex = 58;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.textBoxPostalCode);
+            this.panel4.Controls.Add(this.textBoxCountry);
+            this.panel4.Controls.Add(this.textBoxCity);
+            this.panel4.Controls.Add(this.labelChangeSettings);
+            this.panel4.Controls.Add(this.labelAddressChange);
+            this.panel4.Controls.Add(this.labelCityChange);
+            this.panel4.Controls.Add(this.labelPostalCodeChange);
+            this.panel4.Controls.Add(this.textBoxAddress);
+            this.panel4.Controls.Add(this.labelCountryChange);
+            this.panel4.Controls.Add(this.buttonConfirmAccountSettings);
+            this.panel4.Location = new System.Drawing.Point(38, 321);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(468, 274);
+            this.panel4.TabIndex = 59;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.labelChangePassword);
+            this.panel5.Controls.Add(this.labelOldPassword);
+            this.panel5.Controls.Add(this.labelNewPassword);
+            this.panel5.Controls.Add(this.labelConfirmPassword);
+            this.panel5.Controls.Add(this.textBoxOldPassword);
+            this.panel5.Controls.Add(this.textBoxNewPassword);
+            this.panel5.Controls.Add(this.buttonConfirmNewPassword);
+            this.panel5.Controls.Add(this.textBoxNewConfirmPassword);
+            this.panel5.Location = new System.Drawing.Point(640, 362);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(444, 216);
+            this.panel5.TabIndex = 60;
+            // 
+            // textBoxCity
+            // 
+            this.textBoxCity.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxCity.BorderColor = System.Drawing.Color.Black;
+            this.textBoxCity.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.textBoxCity.BorderRadius = 15;
+            this.textBoxCity.BorderSize = 2;
+            this.textBoxCity.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxCity.Location = new System.Drawing.Point(230, 105);
+            this.textBoxCity.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCity.Multiline = false;
+            this.textBoxCity.Name = "textBoxCity";
+            this.textBoxCity.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.textBoxCity.PasswordChar = false;
+            this.textBoxCity.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxCity.PlaceholderText = "";
+            this.textBoxCity.Size = new System.Drawing.Size(172, 34);
+            this.textBoxCity.TabIndex = 56;
+            this.textBoxCity.Texts = "";
+            this.textBoxCity.UnderlinedStyle = false;
+            // 
+            // textBoxPostalCode
+            // 
+            this.textBoxPostalCode.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxPostalCode.BorderColor = System.Drawing.Color.Black;
+            this.textBoxPostalCode.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.textBoxPostalCode.BorderRadius = 15;
+            this.textBoxPostalCode.BorderSize = 2;
+            this.textBoxPostalCode.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPostalCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxPostalCode.Location = new System.Drawing.Point(230, 147);
+            this.textBoxPostalCode.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPostalCode.Multiline = false;
+            this.textBoxPostalCode.Name = "textBoxPostalCode";
+            this.textBoxPostalCode.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.textBoxPostalCode.PasswordChar = false;
+            this.textBoxPostalCode.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxPostalCode.PlaceholderText = "";
+            this.textBoxPostalCode.Size = new System.Drawing.Size(172, 34);
+            this.textBoxPostalCode.TabIndex = 61;
+            this.textBoxPostalCode.Texts = "";
+            this.textBoxPostalCode.UnderlinedStyle = false;
+            // 
+            // textBoxCountry
+            // 
+            this.textBoxCountry.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxCountry.BorderColor = System.Drawing.Color.Black;
+            this.textBoxCountry.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.textBoxCountry.BorderRadius = 15;
+            this.textBoxCountry.BorderSize = 2;
+            this.textBoxCountry.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxCountry.Location = new System.Drawing.Point(230, 189);
+            this.textBoxCountry.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCountry.Multiline = false;
+            this.textBoxCountry.Name = "textBoxCountry";
+            this.textBoxCountry.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.textBoxCountry.PasswordChar = false;
+            this.textBoxCountry.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxCountry.PlaceholderText = "";
+            this.textBoxCountry.Size = new System.Drawing.Size(172, 34);
+            this.textBoxCountry.TabIndex = 62;
+            this.textBoxCountry.Texts = "";
+            this.textBoxCountry.UnderlinedStyle = false;
             // 
             // AccountSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 701);
-            this.Controls.Add(this.labelCountryInfo);
-            this.Controls.Add(this.labelCountry);
-            this.Controls.Add(this.labelPostalCodeInfo);
-            this.Controls.Add(this.labelPostalCode);
-            this.Controls.Add(this.labelCityInfo);
-            this.Controls.Add(this.labelAddressInfo);
-            this.Controls.Add(this.labelCity);
-            this.Controls.Add(this.labelAddress);
-            this.Controls.Add(this.labelBirthDateInfo);
-            this.Controls.Add(this.labelBirthDate);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelPasswordChange);
             this.Controls.Add(this.panelAccountUpdated);
-            this.Controls.Add(this.labelEmailInfo);
-            this.Controls.Add(this.labelEmail);
-            this.Controls.Add(this.labelLastNameInfo);
-            this.Controls.Add(this.labelFirstNameInfo);
-            this.Controls.Add(this.labelAccountInfo);
-            this.Controls.Add(this.labelLastName);
-            this.Controls.Add(this.labelFirstName);
-            this.Controls.Add(this.buttonConfirmNewPassword);
-            this.Controls.Add(this.buttonConfirmAccountSettings);
-            this.Controls.Add(this.buttonProfilePicture);
-            this.Controls.Add(this.textBoxNewConfirmPassword);
-            this.Controls.Add(this.textBoxNewPassword);
-            this.Controls.Add(this.textBoxOldPassword);
-            this.Controls.Add(this.labelChangePassword);
-            this.Controls.Add(this.labelConfirmPassword);
-            this.Controls.Add(this.labelNewPassword);
-            this.Controls.Add(this.labelOldPassword);
-            this.Controls.Add(this.textBoxCountry);
-            this.Controls.Add(this.labelCountryChange);
-            this.Controls.Add(this.textBoxPostalCode);
-            this.Controls.Add(this.textBoxCity);
-            this.Controls.Add(this.textBoxAddress);
-            this.Controls.Add(this.labelChangeSettings);
-            this.Controls.Add(this.labelPostalCodeChange);
-            this.Controls.Add(this.labelCityChange);
-            this.Controls.Add(this.labelAddressChange);
-            this.Controls.Add(this.labelUsername);
-            this.Controls.Add(this.pictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AccountSettings";
             this.Text = "AccountSettings";
@@ -637,8 +769,16 @@
             this.panelPasswordChange.ResumeLayout(false);
             this.panelPasswordChange.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -649,10 +789,6 @@
         private System.Windows.Forms.Label labelPostalCodeChange;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label labelChangeSettings;
-        private System.Windows.Forms.TextBox textBoxPostalCode;
-        private System.Windows.Forms.TextBox textBoxCity;
-        private System.Windows.Forms.TextBox textBoxAddress;
-        private System.Windows.Forms.TextBox textBoxCountry;
         private System.Windows.Forms.Label labelCountryChange;
         private System.Windows.Forms.TextBox textBoxNewConfirmPassword;
         private System.Windows.Forms.TextBox textBoxNewPassword;
@@ -694,5 +830,15 @@
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.Label labelBirthDateInfo;
         private System.Windows.Forms.Label labelBirthDate;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private CustomControls.RJControls.RJTextBox textBoxPostalCode;
+        private CustomControls.RJControls.RJTextBox textBoxCountry;
+        private CustomControls.RJControls.RJTextBox textBoxCity;
+        private CustomControls.RJControls.RJTextBox textBoxAddress;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private CustomControls.RJControls.RJButton rjButton1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

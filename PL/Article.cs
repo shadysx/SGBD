@@ -128,6 +128,7 @@ namespace PL
             {                
                 MessageBox.Show("Cannot Add " + this.numericUpDown1.Value + " x " + this.name + "\nOnly " + this.availableStockForClient + " still available in this shop");
                 this.numericUpDown1.Value = this.availableStockForClient;
+                this.labelQuantite.Text = "Available quantity : " + availableStockForClient.ToString();
             }
 
             if (this.availableStockForClient <= 0)
