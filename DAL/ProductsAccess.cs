@@ -389,12 +389,12 @@ namespace DAL
 
             return products;
         }*/
-        public static List<Product> SelectFilteredProducts(string query)
+
+        public static List<Product> SelectFilteredProducts(string searchByName, string searchByType, string orderBy)
         {
             List<Product> products = new List<Product>();
-
             using (var connexion = CON_MGR.Connection())
-                try { products = connexion.Query<Product>(query).ToList(); }
+                try { products = connexion.Query<Product>($"execute SelectFilteredProducts '{searchByName.Replace("'","''")}', '{searchByType.Replace("'", "''")}', '{orderBy.Replace("'", "''")}'").ToList(); }
                 catch (Exception ex) { throw ex; }
 
             return products;

@@ -37,15 +37,15 @@ namespace PL
             this.rjButton1.BackColor = CustomColor.Orange;
             
             
-            List<DTO.Product> products = BLLShopTab.Select20RandomProducts();           
-            DisplayProducts(FilteredProducts(this.textBoxSearchByName.Text, this.comboBoxSearchByType.SelectedValue.ToString(), this.comboBoxOrderBy.SelectedValue.ToString()));
-            
-            
+            List<DTO.Product> products = BLLShopTab.Select20RandomProducts();
+            DisplayProducts(products);
+
         }
 
         private void filterButtonClick(object sender, EventArgs e)
         {
-            while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
+            while (flowLayoutPanel1.Controls.Count > 0) 
+                flowLayoutPanel1.Controls.RemoveAt(0);
             DisplayProducts(FilteredProducts(this.textBoxSearchByName.Text, this.comboBoxSearchByType.SelectedValue.ToString(), this.comboBoxOrderBy.SelectedValue.ToString()));
             this.products = BLLShopTab.Select20RandomProducts();           
         }
@@ -62,21 +62,22 @@ namespace PL
             if (productType != "Tous")
                 searchByType += $"{productType}";
             if (orderBy == "Prix Croissant")
-                orderBy = "ORDER BY PRODUCT_BEST_PRICE";
+                orderBy = "PRODUCT_BEST_PRICE";
             else if (orderBy == "Prix Décroissant")
-                orderBy = "ORDER BY PRODUCT_BEST_PRICE DESC";
+                orderBy = "PRODUCT_BEST_PRICE DESC";
             else if (orderBy == "A-Z")
-                orderBy = "ORDER BY PRODUCT_NAME";
+                orderBy = "PRODUCT_NAME";
             else if (orderBy == "Z-A")
-                orderBy = "ORDER BY PRODUCT_NAME DESC";
+                orderBy = "PRODUCT_NAME DESC";
 
-            string query = "SELECT PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DESCRIPTION, PICTURE, min(SELLING_PRICE_EXCL_VAT) as PRODUCT_BEST_PRICE " +
+            /*string query = "SELECT PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DESCRIPTION, PICTURE, min(SELLING_PRICE_EXCL_VAT) as PRODUCT_BEST_PRICE " +
                            "from PRODUCT inner join PICTURE on PICTURE.ID_PRODUCT = PRODUCT.ID_PRODUCT inner join stock on stock.ID_PRODUCT = PRODUCT.ID_PRODUCT " +
                            $"WHERE lower(PRODUCT_NAME) LIKE '%{searchByName}%' " + $"AND PRODUCT_TYPE LIKE '%{searchByType}%' " +
                            "group by PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DESCRIPTION, ID_PICTURE, PICTURE_URL, PICTURE " +
-                           $"{orderBy}";
-                        
-            filteredProducts = BLLShopTab.SelectFilteredProducts(query);
+                           $"ORDER BY {orderBy}";*/
+
+            
+            filteredProducts = BLLShopTab.SelectFilteredProducts(searchByName, searchByType, orderBy) ;
 
             return filteredProducts;
         }
