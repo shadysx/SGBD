@@ -70,9 +70,6 @@ namespace PL
                            "group by PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DESCRIPTION, ID_PICTURE, PICTURE_URL, PICTURE " +
                            $"{orderBy}";
                         
-            MessageBox.Show(query);
-
-
             filteredProducts = ProductsAccess.SelectFilteredProducts(query);
 
             return filteredProducts;
