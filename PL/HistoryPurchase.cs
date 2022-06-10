@@ -20,11 +20,9 @@ namespace PL
             
             this.labelDate.Text = "Order date : " + date.ToString("dd-MM-yyyy"); 
             this.labelTotalQuantity.Text = "Total Items : " + totalQuantity;
-            this.labelTotalPrice.Text = "Total Price : " + totalPrice + " €";
-            
+            this.labelTotalPrice.Text = "Total Price : " + totalPrice + " €";            
 
             this.BackColor = Color.White;
-
         }
     }
 }

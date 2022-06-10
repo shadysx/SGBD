@@ -1,5 +1,4 @@
 ﻿using BLL;
-using DAL;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -47,7 +46,7 @@ namespace PL
 
             this.flowLayoutPanel1.BackColor = CustomColor.DarkBlue;
 
-            this.listHistory = OrderedAccess.SelectAllHistoryPurchaseDTO(Auth.CurrentUser.ID_ACCOUNT);
+            this.listHistory = DLLHistory.SelectAllHistoryPurchaseDTO(Auth.CurrentUser.ID_ACCOUNT);
             DisplayProducts(listHistory);
         }
 
@@ -80,7 +79,7 @@ namespace PL
 
 
 
-                List<Item> items = ItemAccess.SelectAllItem(idOrdered);
+                List<Item> items = DLLHistory.SelectAllItem(idOrdered);
                 DisplaySubProducts(items);
 
 

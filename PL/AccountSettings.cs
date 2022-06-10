@@ -144,7 +144,7 @@ namespace PL
             {
                 if (!isBookUnvalidate && !(isCountryNull && isCityNull && isAddressNull && isPostalCodeNull))
                 {
-                    BLL.DALRequest.InsertModifyAccount(modifyAccount);
+                    BLLAccountSettings.InsertModifyAccount(modifyAccount);
 
                     foreach (RJTextBox tb in this.panelBottom.Controls.OfType<RJTextBox>())
                         tb.Texts = null;
@@ -199,7 +199,7 @@ namespace PL
             {
                 if (!error)
                 {
-                    BLL.DALRequest.UpdatePassword(Auth.ComputeSha256Hash(this.textBoxNewPassword.Texts), Auth.CurrentUser.ACCOUNT_USERNAME);
+                    BLLAccountSettings.UpdatePassword(Auth.ComputeSha256Hash(this.textBoxNewPassword.Texts), Auth.CurrentUser.ACCOUNT_USERNAME);
                     this.panelPasswordChange.Visible = true;
 
                     BLL.Auth.CurrentUser.ACCOUNT_PASSWORD = Auth.ComputeSha256Hash(this.textBoxNewPassword.Texts);

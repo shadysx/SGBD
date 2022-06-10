@@ -11,9 +11,9 @@ namespace BLL
     public class BLLAccountSettings
     {
         public static Byte[] SelectProfileImage(int idAccount) { return AccountAccess.SelectProfileImage(Auth.CurrentUser.ID_ACCOUNT); }
-
         public static void InsertProfileImage(string pictureName, int idAccount, byte[] image) { AccountAccess.InsertProfileImage(pictureName, idAccount, image); }
-
         public static void ModifyProfileImage(string pictureName, int idAccount, byte[] image) { AccountAccess.ModifyProfileImage(pictureName, idAccount, image); }
+        public static void InsertModifyAccount(Account modifyAccount) { AccountAccess.InsertModifyAccount(modifyAccount); }
+        public static void UpdatePassword(string newPassword, string username) { AccountAccess.UpdatePassword(newPassword, username); }
     }
 }
