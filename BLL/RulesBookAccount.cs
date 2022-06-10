@@ -13,20 +13,20 @@ namespace BLL
     {
         public RulesBookAccount()
         {
-            RuleFor(a => a.ACCOUNT_EMAIL).Matches(@"^((.{4,50})([@])([a-z]{2,10})[.]([a-z]{2,3}))$");
-            RuleFor(a => a.ACCOUNT_USERNAME).Matches("^\\S+$");
-            RuleFor(a => a.ACCOUNT_USERNAME).Length(4,99);
+            RuleFor(a => a.ACCOUNT_EMAIL).Matches(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$");
+            RuleFor(a => a.ACCOUNT_USERNAME).Matches("^[A-Za-z][A-Za-z0-9_]{4,25}$");
+            RuleFor(a => a.ACCOUNT_USERNAME).Length(4,25);
             RuleFor(a => a.ACCOUNT_PASSWORD).Length(8,49);
-            RuleFor(a => a.ACCOUNT_LAST_NAME).Matches("^((([A-Z]{1})([a-z]+))((((\\s|[-]))[A-Z]{1})([a-z]+))*)$");
+            RuleFor(a => a.ACCOUNT_LAST_NAME).Matches("^[a-zA-Z ,.'-]+$");
             RuleFor(a => a.ACCOUNT_LAST_NAME).Length(1, 99);
-            RuleFor(a => a.ACCOUNT_FIRST_NAME).Matches("^((([A-Z]{1})([a-z]+))((((\\s|[-]))[A-Z]{1})([a-z]+))*)$");
+            RuleFor(a => a.ACCOUNT_FIRST_NAME).Matches("^[a-zA-Z ,.'-]+$");
             RuleFor(a => a.ACCOUNT_FIRST_NAME).Length(1, 99);
             RuleFor(a => a.ACCOUNT_BIRTH_DATE).InclusiveBetween(new DateTime(1880, 1, 1), DateTime.Now);
             RuleFor(a => a.ACCOUNT_ADDRESS).Length(1, 249);
             RuleFor(a => a.ACCOUNT_CITY).Length(1,49);
             RuleFor(a => a.ACCOUNT_POSTAL_CODE).Matches("^([0-9]+)(([-]|[0-9])*)([0-9]+)$");
             RuleFor(a => a.ACCOUNT_POSTAL_CODE).Length(1, 49);
-            RuleFor(a => a.ACCOUNT_COUNTRY).Matches("^(\\D)+$");
+            RuleFor(a => a.ACCOUNT_COUNTRY).Matches("^[a-zA-Z ,.'-]+$");
             RuleFor(a => a.ACCOUNT_COUNTRY).Length(1, 49);                        
         }
     }

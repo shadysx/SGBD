@@ -12,7 +12,10 @@ namespace DAL
 {
     public class ProductsAccess
     {
-        public static List<Product> Select20RandomProducts()
+
+        //PROCEDURE 18
+
+        /*public static List<Product> Select20RandomProducts()
         {
 
             List<Product> products = new List<Product>();
@@ -32,8 +35,35 @@ namespace DAL
                 }
 
             return products;
+        }*/
+
+
+        public static List<Product> Select20RandomProducts()
+        {
+
+            List<Product> products = new List<Product>();
+
+            string query = "execute Select20RandomProducts";
+
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    products = connexion.Query<Product>(query).ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            return products;
         }
-        public static List<string> SelectAllProductTypes()
+
+
+        // PROCEDURE 19
+
+        /*public static List<string> SelectAllProductTypes()
         {
 
             List<Product> products = new List<Product>();
@@ -58,8 +88,38 @@ namespace DAL
                 }
 
             return productsTypes;
+        }*/
+        public static List<string> SelectAllProductTypes()
+        {
+
+            List<Product> products = new List<Product>();
+            List<string> productsTypes = new List<string>();
+
+            string query = "execute SelectAllProductTypes";
+
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    products = connexion.Query<Product>(query).ToList();
+                    foreach (Product product in products)
+                    {
+                        productsTypes.Add(product.PRODUCT_TYPE);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            return productsTypes;
         }
-        public static int SelectProductIDByName(string productName)
+
+
+        //PROCEDURE 20
+
+        /*public static int SelectProductIDByName(string productName)
         {
 
             Product product =  new Product();
@@ -81,10 +141,35 @@ namespace DAL
                 }
 
             return productID;
+        }*/
+        public static int SelectProductIDByName(string productName)
+        {
+
+            Product product = new Product();
+            int productID;
+
+            string query = $"execute SelectProductIDByName '{productName.Replace("'", "''")}'";
+
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    product = connexion.Query<Product>(query).Single();
+                    productID = product.ID_PRODUCT;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            return productID;
         }
 
-        
-        public static List<string> SelectProductsNamesByType(string type)
+
+        // PROCEDURE 21
+
+        /*public static List<string> SelectProductsNamesByType(string type)
         {
 
             List<Product> products = new List<Product>();
@@ -109,9 +194,36 @@ namespace DAL
                 }
 
             return productsNames;
+        }*/
+        public static List<string> SelectProductsNamesByType(string type)
+        {
+
+            List<Product> products = new List<Product>();
+            List<string> productsNames = new List<string>();
+
+            string query = $"execute SelectProductsNamesByType '{type.Replace("'", "''")}'";
+
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    products = connexion.Query<Product>(query).ToList();
+                    foreach (Product product in products)
+                    {
+                        productsNames.Add(product.PRODUCT_NAME);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            return productsNames;
         }
 
-        public static void InsertProduct(string productName, string productType, string productDescription )
+        //PROCEDURE 22
+        /*public static void InsertProduct(string productName, string productType, string productDescription )
         {
             string query = $"INSERT INTO PRODUCT VALUES('{productName.Replace("'", "''")}', '{productType.Replace("'", "''")}', '{productDescription.Replace("'", "''")}')";
 
@@ -124,9 +236,25 @@ namespace DAL
                 {
                     Console.WriteLine(ex);
                 }
+        }*/
+        public static void InsertProduct(string productName, string productType, string productDescription)
+        {
+            string query = $"execute InsertProduct '{productName.Replace("'", "''")}', '{productType.Replace("'", "''")}', '{productDescription.Replace("'", "''")}'";
+
+            using (var connexion = CON_MGR.Connection())
+                try
+                {
+                    connexion.Query(query);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
         }
 
-        public static int SelectLastProductID()
+        // PROCEDURE 23
+
+        /*public static int SelectLastProductID()
         {
             string query = "select max(ID_PRODUCT) from product";
             int lastProductID = 0;
@@ -144,10 +272,32 @@ namespace DAL
             }
 
             return lastProductID;
-        }
-        public static Byte[] FetchImageTest()
+        }*/
+        public static int SelectLastProductID()
         {
-            string query = "select top 1 PICTURE from picture order by PICTURE desc";
+            string query = "execute SelectLastProductID";
+            int lastProductID = 0;
+
+            using (var connexion = CON_MGR.Connection())
+            {
+                try
+                {
+                    lastProductID = connexion.Query<int>(query).Single();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+
+            return lastProductID;
+        }
+
+
+        // PROCEDURE 24
+        /*public static Byte[] SelectImageByProductName(string productName)
+        {
+            string query = $"select picture from product inner join picture on picture.ID_PRODUCT = product.ID_PRODUCT where PRODUCT_NAME = '{productName.Replace("'","''")}'";
             Byte[] bytes = null;
 
             using (var connexion = CON_MGR.Connection())
@@ -163,11 +313,10 @@ namespace DAL
             }
 
             return bytes;
-        }
-
+        }*/
         public static Byte[] SelectImageByProductName(string productName)
         {
-            string query = $"select picture from product inner join picture on picture.ID_PRODUCT = product.ID_PRODUCT where PRODUCT_NAME = '{productName}'";
+            string query = $"execute SelectImageByProductName '{productName.Replace("'","''")}'";
             Byte[] bytes = null;
 
             using (var connexion = CON_MGR.Connection())
@@ -184,7 +333,10 @@ namespace DAL
 
             return bytes;
         }
-        public static void InsertImage(string pictureName, int productID ,byte[] image)
+
+        // PROCEDURE 25
+
+        /*public static void InsertProductImage(string pictureName, int productID ,byte[] image)
         {
             string query = "insert into  picture (PICTURE_URL, ID_PRODUCT, PICTURE) values (@PICTURE_URL,@ID_PRODUCT, @PICTURE)";
             var parameters = new DynamicParameters();
@@ -203,7 +355,26 @@ namespace DAL
                     Console.WriteLine(ex);
                 }
             }
-        }
+        }*/
+        public static void InsertProductImage(string pictureName, int productID, byte[] image)
+        {
+            string query = "execute InsertProductImage @PICTURE_URL, @ID_PRODUCT, @PICTURE";
+            var parameters = new DynamicParameters();
+            parameters.Add("@PICTURE_URL", pictureName);
+            parameters.Add("@ID_PRODUCT", productID);
+            parameters.Add("@PICTURE", image);
 
+            using (var connexion = CON_MGR.Connection())
+            {
+                try
+                {
+                    connexion.Execute(query, parameters);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+        }
     }
 }

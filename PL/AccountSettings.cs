@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Linq;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using CustomControls.RJControls;
+using DAL;
 using DTO;
 
 
@@ -17,6 +20,10 @@ namespace PL
 {
     public partial class AccountSettings : Form
     {
+        string fileName;
+        byte[] profileImage;
+        bool isImageLoad;
+
         public AccountSettings()
         {
             InitializeComponent();
@@ -24,14 +31,17 @@ namespace PL
 
             this.labelAccountInfo.ForeColor = CustomColor.Orange;
             this.labelUsername.ForeColor = CustomColor.Orange;
-            this.panelTopRight.BackColor = CustomColor.DarkBlue;            
+            this.panelTopRight.BackColor = CustomColor.DarkBlue;
             this.panelBottom.BackColor = CustomColor.DarkBlue;
             this.panelTop.BackColor = CustomColor.DarkBlue;
 
             this.BackColor = CustomColor.DarkBlue;
 
+            this.profileImage = AccountAccess.SelectProfileImage(Auth.CurrentUser.ID_ACCOUNT);
+            if (this.profileImage != null)
+                this.pictureBox.Image = ConvertToImage(AccountAccess.SelectProfileImage(Auth.CurrentUser.ID_ACCOUNT));
 
-
+            this.isImageLoad = false;
         }
 
         private void LoadCurrentUserInfo()
@@ -80,7 +90,7 @@ namespace PL
             if (this.textBoxCountry.Texts.Trim() != "")
                 modifyAccount.ACCOUNT_COUNTRY = this.textBoxCountry.Texts.Trim();
             else
-                isCountryNull = true;           
+                isCountryNull = true;
 
             // Use Rules Book Account
             RulesBookAccount rbAccount = new RulesBookAccount();
@@ -88,10 +98,10 @@ namespace PL
             var result = rbAccount.Validate(modifyAccount);
 
             if (!result.IsValid)
-            {                
+            {
                 foreach (var failure in result.Errors)
-                {                    
-                    string s = failure.ErrorMessage;                    
+                {
+                    string s = failure.ErrorMessage;
 
                     if (!(failure.PropertyName.Contains("PASSWORD") || failure.PropertyName.Contains("EMAIL")))
                     {
@@ -274,6 +284,78 @@ namespace PL
         private void labelBirthDate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonProfilePicture_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Import image from pc to picturebox
+                OpenFileDialog dialog = new OpenFileDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    this.pictureBox.ImageLocation = dialog.FileName.ToString();
+                    var file = System.IO.Path.GetFileName(dialog.FileName);
+                    this.fileName = file;
+                    this.isImageLoad = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonConfirmProfilePicture_Click(object sender, EventArgs e)
+        {
+            if (this.pictureBox.Image != null && this.isImageLoad)
+            {
+                //Convert picture box image to byte array
+                MemoryStream ms = new MemoryStream();
+                pictureBox.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                byte[] buff = ms.GetBuffer();
+
+                if (this.profileImage == null)
+                {                    
+                    try
+                    {                        
+                        AccountAccess.InsertProfileImage(this.fileName, Auth.CurrentUser.ID_ACCOUNT, buff);                        
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                else
+                {
+                    try
+                    {                        
+                        AccountAccess.ModifyProfileImage(this.fileName, Auth.CurrentUser.ID_ACCOUNT, buff);                        
+                    }                    
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+
+                }
+
+                MessageBox.Show("Profile's picture edited");
+
+
+            }
+
+        }
+
+        public static Image ConvertToImage(Binary iBinary)
+        {
+            var arrayBinary = iBinary.ToArray();
+            Image rImage = null;
+
+            using (MemoryStream ms = new MemoryStream(arrayBinary))
+            {
+                rImage = Image.FromStream(ms);
+            }
+            return rImage;
         }
     }
 }

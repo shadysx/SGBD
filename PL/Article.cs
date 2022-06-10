@@ -45,22 +45,18 @@ namespace PL
             this.idShop = idShop;
             this.idProduct = idProduct;
 
+            this.timer1.Stop();
+
             this.actualOrderLine = OrderLineAccess.Select1OrderLine(idProduct, idShop, Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
             this.availableStock = availableStock;
 
             if (this.actualOrderLine != null)
                 this.availableStockForClient = availableStock - this.actualOrderLine.ORDER_LINE_QUANTITY;
             else
-                this.availableStockForClient = availableStock;
+                this.availableStockForClient = availableStock;            
 
-
-
-            this.timer1.Stop();
-
-            if (this.availableStockForClient <= 0)
-            {
-                ProductSoldOut();
-            }
+            if (this.availableStockForClient <= 0)            
+                ProductSoldOut();            
             else
             {
                 this.labelQuantite.Text = "Available quantity : " + availableStockForClient.ToString();
@@ -68,8 +64,6 @@ namespace PL
                 this.labelPriceSelected.Text = "Total : " + price.ToString() + " €";
             }
         }
-
-
         private void iconButton1_Click(object sender, EventArgs e)
         {            
             this.actualOrderLine = OrderLineAccess.Select1OrderLine(idProduct, idShop, Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
@@ -79,8 +73,6 @@ namespace PL
             else
                 this.availableStockForClient = availableStock;
 
-
-
             if (this.numericUpDown1.Value <= this.availableStockForClient && this.numericUpDown1.Value > 0)
             {
                 OrderLine newOrderLine = new OrderLine
@@ -89,12 +81,8 @@ namespace PL
                     ID_PRODUCT = this.idProduct,
                     ID_ORDERED = Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED,
                     ORDER_LINE_QUANTITY = Convert.ToInt32(this.numericUpDown1.Value),
-                    ORDER_LINE_BUYING_PRICE = this.price * this.numericUpDown1.Value
-
-                    
-                };
-
-                Debug.Print("Creation " + newOrderLine.ORDER_LINE_BUYING_PRICE + "");
+                    ORDER_LINE_BUYING_PRICE = this.price * this.numericUpDown1.Value                    
+                };                
 
                 if (actualOrderLine != null)
                 {
@@ -106,17 +94,13 @@ namespace PL
                         OrderLineAccess.ModifyOrderline(newOrderLine.ORDER_LINE_QUANTITY, newOrderLine.ORDER_LINE_BUYING_PRICE, actualOrderLine.ID_ORDER_LINE);
                         GreenCheck();
                         PlayPopUp(newOrderLine.ORDER_LINE_BUYING_PRICE);                        
-                    }
-
-                    Debug.Print("Modifier " + newOrderLine.ORDER_LINE_BUYING_PRICE + "");
+                    }                    
                 }
                 else
                 {                   
                     OrderLineAccess.InsertNewOrderLine(newOrderLine);
                     GreenCheck();
-                    PlayPopUp(newOrderLine.ORDER_LINE_BUYING_PRICE);
-
-                    Debug.Print("Insert " + newOrderLine.ORDER_LINE_BUYING_PRICE + "");
+                    PlayPopUp(newOrderLine.ORDER_LINE_BUYING_PRICE);                    
                 }
 
                 this.availableStockForClient -= Convert.ToInt32(this.numericUpDown1.Value);
@@ -135,73 +119,7 @@ namespace PL
             {
                 ProductSoldOut();                           
             }
-
-
-            /*
-                        OrderLine orderLine = new OrderLine
-                        {
-                            ORDER_LINE_QUANTITY = Convert.ToInt32(this.numericUpDown1.Value),
-                            ORDER_LINE_BUYING_PRICE = this.price * this.numericUpDown1.Value,
-                            ID_SHOP = this.idShop,
-                            ID_PRODUCT = this.idProduct,
-                            ID_ORDERED = Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED
-                        };
-
-                        // Charge la liste d'oderline qui partage le meme ID_ORDERRED (lié au compte)
-                        List<OrderLine> list = OrderLineAccess.SelectAllOrderLine(Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
-
-                        // On compare cette liste avec ID_PRODUCT et ID_SHOP pour pouvoir modifier l'insert dans la DB
-                        bool isModified = false;
-                        bool isValide = true;
-                        int idOrderLine = 0;
-                        int quantityLeft = 0;
-                        OrderLine orderLineQuantity = null;
-
-                        foreach(OrderLine ol in list)
-                        {
-                            if(ol.ID_SHOP == orderLine.ID_SHOP && ol.ID_PRODUCT == orderLine.ID_PRODUCT)
-                            {                                 
-                                if(orderLine.ORDER_LINE_QUANTITY + ol.ORDER_LINE_QUANTITY > this.availableStock)
-                                {                       
-                                    quantityLeft = this.availableStock - ol.ORDER_LINE_QUANTITY;
-                                    isValide = false;
-                                    break;
-                                }
-                                else
-                                {
-                                    orderLine.ORDER_LINE_QUANTITY += ol.ORDER_LINE_QUANTITY;
-                                    orderLine.ORDER_LINE_BUYING_PRICE += ol.ORDER_LINE_QUANTITY * ol.ORDER_LINE_BUYING_PRICE;
-                                    idOrderLine = ol.ID_ORDER_LINE;
-                                    isModified = true;
-                                    orderLineQuantity = ol;
-                                    break;
-                                }                    
-                            }
-                        }
-
-                        // Suivant s'il faut Insert ou Update la table 
-
-                        if (!isModified && isValide)
-                        {
-                            if (this.availableStock > 0)
-                            {                  
-                                OrderLineAccess.InsertNewOrderLine(orderLine);
-                                GreenCheck();
-                                PlayPopUp(orderLine.ORDER_LINE_BUYING_PRICE);
-                            }                    
-                            else
-                                MessageBox.Show("The product " + this.name + " is sold out in this shop");
-                        }         
-                        else if (isModified && isValide)
-                        {                
-                            OrderLineAccess.ModifyOrderline(orderLine.ORDER_LINE_QUANTITY, orderLine.ORDER_LINE_BUYING_PRICE, idOrderLine);
-                            GreenCheck();
-                            PlayPopUp(orderLine.ORDER_LINE_BUYING_PRICE);
-                        }
-
-                        else if(!isModified && !isValide)
-                            MessageBox.Show("Cannot Add " + this.numericUpDown1.Value + " x " + this.name + "\nOnly " + quantityLeft + " still available in this shop");
-                                */
+                        
         }
 
         private void ProductSoldOut()
@@ -218,23 +136,6 @@ namespace PL
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            /*if (this.numericUpDown1.Value > availableStock)
-            {
-                if (availableStock <= 0)
-                {
-                    this.numericUpDown1.Value = availableStock;
-                    MessageBox.Show("The product " + this.name + " is sold out in this shop");
-                }
-                else
-                {
-                    this.numericUpDown1.Value = availableStock;
-                    MessageBox.Show("Cannot select more than the available stock");
-                }
-            }
-            else
-                this.labelPriceSelected.Text = "Total : " + (numericUpDown1.Value * this.price).ToString() + " €"; ;
-*/
-
             if (this.numericUpDown1.Value < 0)
             {
                 this.numericUpDown1.Value = 0;
@@ -242,7 +143,7 @@ namespace PL
             }                
             else
             {
-                this.labelPriceSelected.Text = "Total : " + (numericUpDown1.Value * this.price).ToString() + " €"; ;
+                this.labelPriceSelected.Text = "Total : " + (numericUpDown1.Value * this.price).ToString() + " €"; 
             }
         }
 

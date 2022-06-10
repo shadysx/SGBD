@@ -76,7 +76,7 @@ namespace PL
             if (itemStock.STOCK_QUANTITY > 0)
             {
                 this.labelQuantityInstant.Text = Convert.ToInt32(this.labelQuantityInstant.Text) + 1 + "";
-                Debug.Print("test" + Convert.ToDecimal(Convert.ToInt32(this.labelQuantityInstant.Text) * this.itemStock.SELLING_PRICE_EXCL_VAT));
+                
 
                 OrderLineAccess.ModifyOrderline(Convert.ToInt32(this.labelQuantityInstant.Text), Convert.ToDecimal(Convert.ToInt32(this.labelQuantityInstant.Text) * this.itemStock.SELLING_PRICE_EXCL_VAT), this.idOrderLine);
                 this.itemStock.STOCK_QUANTITY--;

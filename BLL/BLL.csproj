@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
+    <Compile Include="BLLRegistration.cs" />
     <Compile Include="DALRequest.cs" />
     <Compile Include="LogicLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
