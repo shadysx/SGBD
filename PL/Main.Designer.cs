@@ -269,6 +269,10 @@
             this.iconButtonHome.UseVisualStyleBackColor = false;
             this.iconButtonHome.Click += new System.EventHandler(this.iconButtonHome_Click);
             // 
+            // kryptonPalette1
+            // 
+            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
+            // 
             // panelRight
             // 
             this.panelRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -276,7 +280,7 @@
             this.panelRight.ForeColor = System.Drawing.Color.Black;
             this.panelRight.Location = new System.Drawing.Point(197, 75);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(1132, 697);
+            this.panelRight.Size = new System.Drawing.Size(1119, 685);
             this.panelRight.TabIndex = 0;
             // 
             // Main
@@ -295,7 +299,9 @@
             this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.StateCommon.Border.Rounding = 20;
+            this.Load += new System.EventHandler(this.Main_Load);
             this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();

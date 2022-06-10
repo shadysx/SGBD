@@ -33,6 +33,18 @@ namespace DAL
 
             return products;
         }
+
+        public static List<Product> SelectFilteredProducts(string query)
+        {
+            List <Product> products = new List<Product>();
+
+            using (var connexion = CON_MGR.Connection())
+                try { products = connexion.Query<Product>(query).ToList(); }
+                catch (Exception ex) { throw ex; }
+
+            return products;
+        }
+
         public static List<string> SelectAllProductTypes()
         {
 

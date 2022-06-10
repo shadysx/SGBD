@@ -21,17 +21,61 @@ namespace PL
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
             this.panelFilter.BackColor = CustomColor.DarkBlue;
-            List<DTO.Product> products = ProductsAccess.Select20RandomProducts();           
-            DisplayProducts(products);
 
+            List<string> orderByWhat = new List<string>() {"Prix Croissant", "Prix Décroissant", "A-Z", "Z-A"};
+            List<string> types = new List<string>();
+            types.Add("Tous");
+
+            foreach (string type in ProductsAccess.SelectAllProductTypes())
+                types.Add(type);
+
+            this.comboBoxSearchByType.DataSource = types;
+            this.comboBoxOrderBy.DataSource = orderByWhat;
+            
+            
+            List<DTO.Product> products = ProductsAccess.Select20RandomProducts();           
+            DisplayProducts(FilteredProducts(this.textBoxSearchByName.Text, this.comboBoxSearchByType.SelectedValue.ToString(), this.comboBoxOrderBy.SelectedValue.ToString()));
             
             
         }
 
-
-        private void ShopTab_Load(object sender, EventArgs e)
+        private void filterButtonClick(object sender, EventArgs e)
         {
-            
+            while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
+            DisplayProducts(FilteredProducts(this.textBoxSearchByName.Text, this.comboBoxSearchByType.SelectedValue.ToString(), this.comboBoxOrderBy.SelectedValue.ToString()));
+        }
+
+        private List<Product> FilteredProducts(string productName, string productType, string orderBy)//string productType, string orderBy
+        {
+            List<Product> filteredProducts = new List<Product>();
+            string searchByName = "";
+            string searchByType = "";
+
+            if (productName != "")
+                searchByName += $"{productName} ";
+            if (productType != "Tous")
+                searchByType += $"{productType}";
+            if (orderBy == "Prix Croissant")
+                orderBy = "ORDER BY PRODUCT_BEST_PRICE";
+            else if (orderBy == "Prix Décroissant")
+                orderBy = "ORDER BY PRODUCT_BEST_PRICE DESC";
+            else if (orderBy == "A-Z")
+                orderBy = "ORDER BY PRODUCT_NAME";
+            else if (orderBy == "Z-A")
+                orderBy = "ORDER BY PRODUCT_NAME DESC";
+
+            string query = "SELECT PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DESCRIPTION, PICTURE, min(SELLING_PRICE_EXCL_VAT) as PRODUCT_BEST_PRICE " +
+                           "from PRODUCT inner join PICTURE on PICTURE.ID_PRODUCT = PRODUCT.ID_PRODUCT inner join stock on stock.ID_PRODUCT = PRODUCT.ID_PRODUCT " +
+                           $"WHERE PRODUCT_NAME LIKE '%{searchByName}%' " + $"AND PRODUCT_TYPE LIKE '%{searchByType}%' " +
+                           "group by PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DESCRIPTION, ID_PICTURE, PICTURE_URL, PICTURE " +
+                           $"{orderBy}";
+                        
+            MessageBox.Show(query);
+
+
+            filteredProducts = ProductsAccess.SelectFilteredProducts(query);
+
+            return filteredProducts;
         }
 
         public void AddProduct(string productName, string productType, string description, Image productImage, decimal productBestPrice)
@@ -49,5 +93,7 @@ namespace PL
                 AddProduct(p.PRODUCT_NAME, p.PRODUCT_TYPE,p.PRODUCT_DESCRIPTION, p.PRODUCT_IMAGE, p.PRODUCT_BEST_PRICE);
             }
         }
+
+
     }
 }

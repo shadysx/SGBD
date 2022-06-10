@@ -93,18 +93,6 @@
     <Compile Include="EmployeeAddStockPanel.Designer.cs">
       <DependentUpon>EmployeeAddStockPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeePanel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmployeePanel.Designer.cs">
-      <DependentUpon>EmployeePanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeInsertNewProductPanel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmployeeInsertNewProductPanel.Designer.cs">
-      <DependentUpon>EmployeeInsertNewProductPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Basket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,12 +173,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeAddStockPanel.resx">
       <DependentUpon>EmployeeAddStockPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EmployeePanel.resx">
-      <DependentUpon>EmployeePanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeInsertNewProductPanel.resx">
-      <DependentUpon>EmployeeInsertNewProductPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Basket.resx">
       <DependentUpon>Basket.cs</DependentUpon>

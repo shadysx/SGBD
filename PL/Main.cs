@@ -30,6 +30,7 @@ namespace PL
             InitializeComponent();
             this.panelRight.BackColor = CustomColor.DarkBlue;
             this.panelRight.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + $@"\..\..\..\Assets\Image\homebackground.png");
+            this.BackColor = CustomColor.DarkBlue;
             
             
 
@@ -246,6 +247,9 @@ namespace PL
             this.iconArrow.Visible = false;
         }
 
-        
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

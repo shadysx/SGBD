@@ -58,6 +58,23 @@ namespace PL
         {
             try
             {
+                if (this.textBoxProductName.Text == "")
+                {
+                    throw new Exception("Veuillez entrez un Nom de produit!");
+                }
+                if (this.textBoxProductType.Text == "")
+                {
+                    throw new Exception("Veuillez entrez un type de produit");
+                }
+                if (this.textBoxProductDescription.Text == "")
+                {
+                    throw new Exception("Veuillez entrez une description");
+                }
+                if (this.pictureBox1.Image == null)
+                {
+                    throw new Exception("Veuillez ajouter une image au produit");
+                }
+
                 //Convert picture box image to byte array
                 MemoryStream ms = new MemoryStream();
                 pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
