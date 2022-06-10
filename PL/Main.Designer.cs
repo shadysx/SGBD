@@ -31,30 +31,30 @@
             this.components = new System.ComponentModel.Container();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelProfile = new System.Windows.Forms.Panel();
-            this.iconButtonProfile = new FontAwesome.Sharp.IconButton();
             this.labelProfileUsername = new System.Windows.Forms.Label();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.panelLeft = new System.Windows.Forms.Panel();
+            this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
+            this.panelRight = new System.Windows.Forms.Panel();
             this.panelProfileSubMenu = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelLeft = new System.Windows.Forms.Panel();
             this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
             this.iconButtonAdminPanel = new FontAwesome.Sharp.IconButton();
             this.iconButtonBasket = new FontAwesome.Sharp.IconButton();
             this.iconButtonShop = new FontAwesome.Sharp.IconButton();
             this.iconButtonHome = new FontAwesome.Sharp.IconButton();
-            this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
-            this.panelRight = new System.Windows.Forms.Panel();
+            this.iconButtonProfile = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panelTop.SuspendLayout();
             this.panelProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.panelProfileSubMenu.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.panelRight.SuspendLayout();
+            this.panelProfileSubMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
@@ -82,27 +82,6 @@
             this.panelProfile.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             this.panelProfile.MouseLeave += new System.EventHandler(this.panelProfile_MouseLeave);
             // 
-            // iconButtonProfile
-            // 
-            this.iconButtonProfile.BackColor = System.Drawing.Color.Transparent;
-            this.iconButtonProfile.FlatAppearance.BorderSize = 0;
-            this.iconButtonProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButtonProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButtonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonProfile.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonProfile.ForeColor = System.Drawing.Color.White;
-            this.iconButtonProfile.IconChar = FontAwesome.Sharp.IconChar.Portrait;
-            this.iconButtonProfile.IconColor = System.Drawing.Color.White;
-            this.iconButtonProfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonProfile.IconSize = 35;
-            this.iconButtonProfile.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButtonProfile.Location = new System.Drawing.Point(18, 0);
-            this.iconButtonProfile.Name = "iconButtonProfile";
-            this.iconButtonProfile.Size = new System.Drawing.Size(43, 52);
-            this.iconButtonProfile.TabIndex = 3;
-            this.iconButtonProfile.TabStop = false;
-            this.iconButtonProfile.UseVisualStyleBackColor = false;
-            // 
             // labelProfileUsername
             // 
             this.labelProfileUsername.AutoSize = true;
@@ -114,36 +93,34 @@
             this.labelProfileUsername.TabIndex = 4;
             this.labelProfileUsername.Text = "labelProfileUsername";
             // 
-            // iconPictureBox2
+            // panelLeft
             // 
-            this.iconPictureBox2.BackgroundImage = global::PL.Properties.Resources.mc_red;
-            this.iconPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 17;
-            this.iconPictureBox2.Location = new System.Drawing.Point(1300, 8);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(17, 21);
-            this.iconPictureBox2.TabIndex = 1;
-            this.iconPictureBox2.TabStop = false;
-            this.iconPictureBox2.Click += new System.EventHandler(this.iconPictureBox2_Click);
+            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelLeft.Controls.Add(this.iconButtonHistory);
+            this.panelLeft.Controls.Add(this.iconButtonAdminPanel);
+            this.panelLeft.Controls.Add(this.iconButtonBasket);
+            this.panelLeft.Controls.Add(this.iconButtonShop);
+            this.panelLeft.Controls.Add(this.iconButtonHome);
+            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeft.Location = new System.Drawing.Point(0, 75);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(200, 697);
+            this.panelLeft.TabIndex = 1;
             // 
-            // iconPictureBox1
+            // kryptonPalette1
             // 
-            this.iconPictureBox1.BackgroundImage = global::PL.Properties.Resources.Stock_Overflow1;
-            this.iconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 52;
-            this.iconPictureBox1.Location = new System.Drawing.Point(18, 12);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(182, 52);
-            this.iconPictureBox1.TabIndex = 0;
-            this.iconPictureBox1.TabStop = false;
+            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
+            // 
+            // panelRight
+            // 
+            this.panelRight.BackgroundImage = global::PL.Properties.Resources.pngegg__1_;
+            this.panelRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelRight.Controls.Add(this.panelProfileSubMenu);
+            this.panelRight.ForeColor = System.Drawing.Color.Black;
+            this.panelRight.Location = new System.Drawing.Point(197, 75);
+            this.panelRight.Name = "panelRight";
+            this.panelRight.Size = new System.Drawing.Size(1119, 685);
+            this.panelRight.TabIndex = 0;
             // 
             // panelProfileSubMenu
             // 
@@ -228,20 +205,6 @@
             this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
-            // 
-            // panelLeft
-            // 
-            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panelLeft.Controls.Add(this.iconButtonHistory);
-            this.panelLeft.Controls.Add(this.iconButtonAdminPanel);
-            this.panelLeft.Controls.Add(this.iconButtonBasket);
-            this.panelLeft.Controls.Add(this.iconButtonShop);
-            this.panelLeft.Controls.Add(this.iconButtonHome);
-            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeft.Location = new System.Drawing.Point(0, 75);
-            this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(200, 697);
-            this.panelLeft.TabIndex = 1;
             // 
             // iconButtonHistory
             // 
@@ -341,18 +304,57 @@
             this.iconButtonHome.UseVisualStyleBackColor = false;
             this.iconButtonHome.Click += new System.EventHandler(this.iconButtonHome_Click);
             // 
-            // kryptonPalette1
+            // iconButtonProfile
             // 
-            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
+            this.iconButtonProfile.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonProfile.FlatAppearance.BorderSize = 0;
+            this.iconButtonProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButtonProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButtonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonProfile.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonProfile.ForeColor = System.Drawing.Color.White;
+            this.iconButtonProfile.IconChar = FontAwesome.Sharp.IconChar.Portrait;
+            this.iconButtonProfile.IconColor = System.Drawing.Color.White;
+            this.iconButtonProfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonProfile.IconSize = 35;
+            this.iconButtonProfile.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButtonProfile.Location = new System.Drawing.Point(18, 0);
+            this.iconButtonProfile.Name = "iconButtonProfile";
+            this.iconButtonProfile.Size = new System.Drawing.Size(43, 52);
+            this.iconButtonProfile.TabIndex = 3;
+            this.iconButtonProfile.TabStop = false;
+            this.iconButtonProfile.UseVisualStyleBackColor = false;
             // 
-            // panelRight
+            // iconPictureBox2
             // 
-            this.panelRight.Controls.Add(this.panelProfileSubMenu);
-            this.panelRight.ForeColor = System.Drawing.Color.Black;
-            this.panelRight.Location = new System.Drawing.Point(197, 75);
-            this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(1119, 685);
-            this.panelRight.TabIndex = 0;
+            this.iconPictureBox2.BackgroundImage = global::PL.Properties.Resources.mc_red;
+            this.iconPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 17;
+            this.iconPictureBox2.Location = new System.Drawing.Point(1300, 8);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(17, 21);
+            this.iconPictureBox2.TabIndex = 1;
+            this.iconPictureBox2.TabStop = false;
+            this.iconPictureBox2.Click += new System.EventHandler(this.iconPictureBox2_Click);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackgroundImage = global::PL.Properties.Resources.Stock_Overflow1;
+            this.iconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 52;
+            this.iconPictureBox1.Location = new System.Drawing.Point(18, 12);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(182, 52);
+            this.iconPictureBox1.TabIndex = 0;
+            this.iconPictureBox1.TabStop = false;
             // 
             // Main
             // 
@@ -376,12 +378,12 @@
             this.panelTop.ResumeLayout(false);
             this.panelProfile.ResumeLayout(false);
             this.panelProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.panelProfileSubMenu.ResumeLayout(false);
-            this.panelProfileSubMenu.PerformLayout();
             this.panelLeft.ResumeLayout(false);
             this.panelRight.ResumeLayout(false);
+            this.panelProfileSubMenu.ResumeLayout(false);
+            this.panelProfileSubMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
