@@ -36,6 +36,8 @@
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panelProfileSubMenu = new System.Windows.Forms.Panel();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
@@ -46,8 +48,6 @@
             this.iconButtonHome = new FontAwesome.Sharp.IconButton();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.panelRight = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.panelTop.SuspendLayout();
             this.panelProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
@@ -76,7 +76,8 @@
             this.panelProfile.Location = new System.Drawing.Point(1024, 17);
             this.panelProfile.Name = "panelProfile";
             this.panelProfile.Size = new System.Drawing.Size(228, 58);
-            this.panelProfile.TabIndex = 5;
+            this.panelProfile.TabIndex = 6;
+            this.panelProfile.TabStop = true;
             this.panelProfile.Click += new System.EventHandler(this.panelProfile_Click);
             this.panelProfile.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             this.panelProfile.MouseLeave += new System.EventHandler(this.panelProfile_MouseLeave);
@@ -99,6 +100,7 @@
             this.iconButtonProfile.Name = "iconButtonProfile";
             this.iconButtonProfile.Size = new System.Drawing.Size(43, 52);
             this.iconButtonProfile.TabIndex = 3;
+            this.iconButtonProfile.TabStop = false;
             this.iconButtonProfile.UseVisualStyleBackColor = false;
             // 
             // labelProfileUsername
@@ -156,6 +158,46 @@
             this.panelProfileSubMenu.Size = new System.Drawing.Size(174, 66);
             this.panelProfileSubMenu.TabIndex = 10;
             this.panelProfileSubMenu.Visible = false;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.ForeColor = System.Drawing.Color.White;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.iconButton3.IconColor = System.Drawing.Color.White;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 25;
+            this.iconButton3.Location = new System.Drawing.Point(5, 34);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(29, 28);
+            this.iconButton3.TabIndex = 6;
+            this.iconButton3.TabStop = false;
+            this.iconButton3.UseVisualStyleBackColor = false;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(4, 5);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(29, 28);
+            this.iconButton1.TabIndex = 5;
+            this.iconButton1.TabStop = false;
+            this.iconButton1.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -235,7 +277,7 @@
             this.iconButtonAdminPanel.Location = new System.Drawing.Point(0, 231);
             this.iconButtonAdminPanel.Name = "iconButtonAdminPanel";
             this.iconButtonAdminPanel.Size = new System.Drawing.Size(197, 47);
-            this.iconButtonAdminPanel.TabIndex = 3;
+            this.iconButtonAdminPanel.TabIndex = 5;
             this.iconButtonAdminPanel.Text = "            Employee";
             this.iconButtonAdminPanel.UseVisualStyleBackColor = false;
             this.iconButtonAdminPanel.Visible = false;
@@ -256,7 +298,7 @@
             this.iconButtonBasket.Location = new System.Drawing.Point(0, 125);
             this.iconButtonBasket.Name = "iconButtonBasket";
             this.iconButtonBasket.Size = new System.Drawing.Size(197, 47);
-            this.iconButtonBasket.TabIndex = 2;
+            this.iconButtonBasket.TabIndex = 3;
             this.iconButtonBasket.Text = "          Basket";
             this.iconButtonBasket.UseVisualStyleBackColor = false;
             this.iconButtonBasket.Click += new System.EventHandler(this.iconButtonBasket_Click);
@@ -275,7 +317,7 @@
             this.iconButtonShop.Location = new System.Drawing.Point(0, 72);
             this.iconButtonShop.Name = "iconButtonShop";
             this.iconButtonShop.Size = new System.Drawing.Size(197, 47);
-            this.iconButtonShop.TabIndex = 1;
+            this.iconButtonShop.TabIndex = 2;
             this.iconButtonShop.Text = "          Shop";
             this.iconButtonShop.UseVisualStyleBackColor = false;
             this.iconButtonShop.Click += new System.EventHandler(this.iconButtonShop_Click);
@@ -294,7 +336,7 @@
             this.iconButtonHome.Location = new System.Drawing.Point(0, 19);
             this.iconButtonHome.Name = "iconButtonHome";
             this.iconButtonHome.Size = new System.Drawing.Size(197, 47);
-            this.iconButtonHome.TabIndex = 0;
+            this.iconButtonHome.TabIndex = 1;
             this.iconButtonHome.Text = "           Home";
             this.iconButtonHome.UseVisualStyleBackColor = false;
             this.iconButtonHome.Click += new System.EventHandler(this.iconButtonHome_Click);
@@ -307,44 +349,6 @@
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(1132, 697);
             this.panelRight.TabIndex = 0;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(4, 5);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(29, 28);
-            this.iconButton1.TabIndex = 5;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.White;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.iconButton3.IconColor = System.Drawing.Color.White;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 25;
-            this.iconButton3.Location = new System.Drawing.Point(5, 34);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(29, 28);
-            this.iconButton3.TabIndex = 6;
-            this.iconButton3.UseVisualStyleBackColor = false;
             // 
             // Main
             // 

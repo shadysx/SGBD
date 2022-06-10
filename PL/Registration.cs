@@ -16,7 +16,6 @@ using System.Diagnostics;
 using CustomControls.RJControls;
 using System.IO;
 using System.Data.Linq;
-using DAL;
 
 namespace PL
 {

@@ -298,7 +298,6 @@ namespace DAL
                 }
 
             return s;
-
         }
     }
 }

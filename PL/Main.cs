@@ -32,9 +32,7 @@ namespace PL
             InitializeComponent();
             this.panelRight.BackColor = CustomColor.DarkBlue;
             this.panelRight.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + $@"\..\..\..\Assets\Image\homebackground.png");
-            
-            
-
+                       
             this.loginForm = (Login)f;
             this.labelProfileUsername.Text = Auth.CurrentUser.ACCOUNT_USERNAME;
             this.panelProfileSubMenu.BackColor = CustomColor.Orange;
@@ -54,12 +52,11 @@ namespace PL
                 i.FlatAppearance.MouseOverBackColor = Color.FromArgb(180,CustomColor.Orange);
                 i.IconColor = CustomColor.Orange;
             }
-
                        
             this.iconButtonProfile.IconColor = CustomColor.Orange;
 
             this.isMenuTrigger = false;
-            
+            DrawSelectedIcon(this.iconButtonHome);
         }
 
 
@@ -83,6 +80,7 @@ namespace PL
         private void iconButtonHome_Click(object sender, EventArgs e)
         {
             RefreshUI();
+            DrawSelectedIcon(this.iconButtonHome);
         }
 
         private void iconButtonShop_Click(object sender, EventArgs e)
@@ -230,8 +228,7 @@ namespace PL
             this.panelProfileSubMenu.Controls.Add(this.iconButton3);
             this.panelProfileSubMenu.Location = new System.Drawing.Point(858, -2);
             this.panelProfileSubMenu.Name = "panelProfileSubMenu";
-            this.panelProfileSubMenu.Size = new System.Drawing.Size(174, 66);
-            this.panelProfileSubMenu.TabIndex = 10;
+            this.panelProfileSubMenu.Size = new System.Drawing.Size(174, 66);            
             this.panelProfileSubMenu.Visible = false;
             this.panelRight.Controls.Add(this.panelProfileSubMenu);
             this.panelProfileSubMenu.ResumeLayout(false);
@@ -264,6 +261,7 @@ namespace PL
             this.iconArrow.FlatAppearance.MouseOverBackColor = Color.Transparent;    
             this.iconArrow.FlatAppearance.MouseDownBackColor = Color.Transparent;
             this.iconArrow.Visible = false;
+            this.iconArrow.TabStop = false;
         }
 
         private void panel1_MouseEnter(object sender, EventArgs e)

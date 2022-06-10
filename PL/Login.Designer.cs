@@ -65,6 +65,7 @@
             this.textBoxUserName.TabIndex = 0;
             this.textBoxUserName.Texts = "Irwin";
             this.textBoxUserName.UnderlinedStyle = false;
+            this.textBoxUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUserName_KeyPress);
             // 
             // textBoxPassWord
             // 
@@ -84,9 +85,10 @@
             this.textBoxPassWord.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxPassWord.PlaceholderText = "";
             this.textBoxPassWord.Size = new System.Drawing.Size(250, 38);
-            this.textBoxPassWord.TabIndex = 1;
+            this.textBoxPassWord.TabIndex = 2;
             this.textBoxPassWord.Texts = "password";
             this.textBoxPassWord.UnderlinedStyle = false;
+            this.textBoxPassWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPassWord_KeyPress);
             // 
             // buttonLogin
             // 
@@ -103,7 +105,7 @@
             this.buttonLogin.Location = new System.Drawing.Point(20, 249);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(120, 33);
-            this.buttonLogin.TabIndex = 2;
+            this.buttonLogin.TabIndex = 3;
             this.buttonLogin.Text = "Log In";
             this.buttonLogin.TextColor = System.Drawing.Color.White;
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -124,7 +126,7 @@
             this.buttonRegister.Location = new System.Drawing.Point(150, 249);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(120, 33);
-            this.buttonRegister.TabIndex = 3;
+            this.buttonRegister.TabIndex = 4;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.buttonRegister.UseVisualStyleBackColor = false;

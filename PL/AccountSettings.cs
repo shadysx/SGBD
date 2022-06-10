@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using CustomControls.RJControls;
-using DAL;
 using DTO;
 
 
@@ -37,9 +36,9 @@ namespace PL
 
             this.BackColor = CustomColor.DarkBlue;
 
-            this.profileImage = AccountAccess.SelectProfileImage(Auth.CurrentUser.ID_ACCOUNT);
+            this.profileImage = BLLAccountSettings.SelectProfileImage(Auth.CurrentUser.ID_ACCOUNT);
             if (this.profileImage != null)
-                this.pictureBox.Image = ConvertToImage(AccountAccess.SelectProfileImage(Auth.CurrentUser.ID_ACCOUNT));
+                this.pictureBox.Image = ConvertToImage(this.profileImage);
 
             this.isImageLoad = false;
         }
@@ -54,6 +53,7 @@ namespace PL
             this.labelCityInfo.Text = Auth.CurrentUser.ACCOUNT_CITY;
             this.labelPostalCodeInfo.Text = Auth.CurrentUser.ACCOUNT_POSTAL_CODE;
             this.labelCountryInfo.Text = Auth.CurrentUser.ACCOUNT_COUNTRY;
+            this.labelBirthDateInfo.Text = Auth.CurrentUser.ACCOUNT_BIRTH_DATE.ToString("dd-MM-yyyy");
         }
 
         private void buttonConfirmAccountSettings_Click(object sender, EventArgs e)
@@ -155,15 +155,11 @@ namespace PL
 
                     LoadCurrentUserInfo();
                 }
-
             }
             catch (Exception ex)
             {
                 Debug.Print(ex.Message);
             }
-
-
-
         }
 
         private void buttonConfirmNewPassword_Click(object sender, EventArgs e)
@@ -218,7 +214,6 @@ namespace PL
                 Debug.Print(ex.Message);
             }
 
-
         }
 
         private void ResetErrorProviderLeft()
@@ -235,56 +230,7 @@ namespace PL
             this.errorProviderNewPassword.SetError(textBoxNewPassword, null);
             this.errorProviderNewConfirmPassword.SetError(textBoxNewConfirmPassword, null);
         }
-
-        private void labelUsername_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelTopRight_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void labelPostalCode_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelAddress_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelCity_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelCountry_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelFirstName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelLastName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelBirthDate_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void buttonProfilePicture_Click(object sender, EventArgs e)
         {
@@ -318,8 +264,8 @@ namespace PL
                 if (this.profileImage == null)
                 {                    
                     try
-                    {                        
-                        AccountAccess.InsertProfileImage(this.fileName, Auth.CurrentUser.ID_ACCOUNT, buff);                        
+                    {
+                        BLLAccountSettings.InsertProfileImage(this.fileName, Auth.CurrentUser.ID_ACCOUNT, buff);                        
                     }
                     catch (Exception ex)
                     {
@@ -329,8 +275,8 @@ namespace PL
                 else
                 {
                     try
-                    {                        
-                        AccountAccess.ModifyProfileImage(this.fileName, Auth.CurrentUser.ID_ACCOUNT, buff);                        
+                    {
+                        BLLAccountSettings.ModifyProfileImage(this.fileName, Auth.CurrentUser.ID_ACCOUNT, buff);                        
                     }                    
                     catch (Exception ex)
                     {
@@ -338,9 +284,7 @@ namespace PL
                     }
 
                 }
-
                 MessageBox.Show("Profile's picture edited");
-
 
             }
 

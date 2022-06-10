@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
-using DAL;
+using BLL;
 using System.Diagnostics;
 using System.Threading;
 
@@ -18,16 +18,14 @@ namespace PL
     {
 
         private List<Product> products;
+        
         public ShopTab()
         {
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
             this.panelFilter.BackColor = CustomColor.DarkBlue;
-            this.products = ProductsAccess.Select20RandomProducts();           
+            this.products = BLLShopTab.Select20RandomProducts();           
             DisplayProducts(products);
-
-            
-            
         }
 
 
@@ -37,7 +35,7 @@ namespace PL
         }
 
         public void AddProduct(string productName, string productType, string description, Image productImage, decimal productBestPrice)
-        {
+        {            
             ShopTabProduct article = new ShopTabProduct(productName, productType, description, productImage, productBestPrice);
             article.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(article);

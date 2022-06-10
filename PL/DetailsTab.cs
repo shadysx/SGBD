@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL;
+using BLL;
 using DTO;
 
 namespace PL
@@ -35,19 +35,15 @@ namespace PL
             this.labelDescription.AutoSize = false;
             this.labelDescription.Size = new System.Drawing.Size(this.panelRight.Size.Width - 15, this.panelRight.Size.Height);
 
-
-
-            if (fromParent == "ShopTabProduct")
+            if (this.fromParent == "ShopTabProduct")
             {
-                List<Stock> stocks = StockAccess.GetStock(productName);
+                List<Stock> stocks = BLLDetailsTab.GetStock(productName);
                 DisplayProducts(stocks);
             }
-            else if(fromParent == "BasketItem")
+            else if(this.fromParent == "BasketItem")
             {
                 labelAvailable.Visible = false;
             }
-
-
         }
 
         public void AddProduct(string name, string seller,string shopAddress, string shopCity, decimal price, int quantity, string country, int idShop, int idProduct)
@@ -65,16 +61,6 @@ namespace PL
             {
                 AddProduct(s.PRODUCT_NAME, s.SHOP_NAME, s.SHOP_ADDRESS,s.SHOP_CITY, s.SELLING_PRICE_EXCL_VAT, s.STOCK_QUANTITY, s.SHOP_COUNTRY, s.ID_SHOP, s.ID_PRODUCT);
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelNom_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

@@ -20,6 +20,7 @@ namespace PL
             InitializeComponent();
             FormStyles();
             registrationForm = new Registration(this);
+            this.textBoxUserName.Focus();
         }
 
         public void FormStyles()
@@ -88,6 +89,18 @@ namespace PL
         private void iconPictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void textBoxUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+                buttonLogin_Click(sender, e);
+        }
+
+        private void textBoxPassWord_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                buttonLogin_Click(sender, e);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +23,8 @@ namespace PL
             this.iconButton1.IconColor = CustomColor.Orange;
             this.description = description;
             this.labelTypeArticle.ForeColor = CustomColor.Orange;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, CustomColor.White);            
+            this.iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, CustomColor.White);
+            
         }
 
         private void Article_Load(object sender, EventArgs e)

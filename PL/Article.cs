@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
-using DAL;
 using BLL;
 using System.Diagnostics;
 using System.Threading;
@@ -47,7 +46,7 @@ namespace PL
 
             this.timer1.Stop();
 
-            this.actualOrderLine = OrderLineAccess.Select1OrderLine(idProduct, idShop, Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
+            this.actualOrderLine = BLLArticle.Select1OrderLine(idProduct, idShop, Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
             this.availableStock = availableStock;
 
             if (this.actualOrderLine != null)
@@ -66,8 +65,8 @@ namespace PL
         }
         private void iconButton1_Click(object sender, EventArgs e)
         {            
-            this.actualOrderLine = OrderLineAccess.Select1OrderLine(idProduct, idShop, Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
-            this.availableStock = StockAccess.GetStockOf1Article(this.idShop, this.idProduct).STOCK_QUANTITY;
+            this.actualOrderLine = BLLArticle.Select1OrderLine(idProduct, idShop, Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
+            this.availableStock = BLLArticle.GetStockOf1Article(this.idShop, this.idProduct).STOCK_QUANTITY;
             if (this.actualOrderLine != null)
                 this.availableStockForClient = availableStock - this.actualOrderLine.ORDER_LINE_QUANTITY;
             else
@@ -89,16 +88,16 @@ namespace PL
                     if (actualOrderLine.ID_SHOP == this.idShop && actualOrderLine.ID_PRODUCT == this.idProduct && actualOrderLine.ID_ORDERED == Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED)
                     {
                         newOrderLine.ORDER_LINE_QUANTITY += actualOrderLine.ORDER_LINE_QUANTITY;
-                        newOrderLine.ORDER_LINE_BUYING_PRICE += (actualOrderLine.ORDER_LINE_QUANTITY * this.price);                        
+                        newOrderLine.ORDER_LINE_BUYING_PRICE += (actualOrderLine.ORDER_LINE_QUANTITY * this.price);
 
-                        OrderLineAccess.ModifyOrderline(newOrderLine.ORDER_LINE_QUANTITY, newOrderLine.ORDER_LINE_BUYING_PRICE, actualOrderLine.ID_ORDER_LINE);
+                        BLLArticle.ModifyOrderline(newOrderLine.ORDER_LINE_QUANTITY, newOrderLine.ORDER_LINE_BUYING_PRICE, actualOrderLine.ID_ORDER_LINE);
                         GreenCheck();
                         PlayPopUp(newOrderLine.ORDER_LINE_BUYING_PRICE);                        
                     }                    
                 }
                 else
-                {                   
-                    OrderLineAccess.InsertNewOrderLine(newOrderLine);
+                {
+                    BLLArticle.InsertNewOrderLine(newOrderLine);
                     GreenCheck();
                     PlayPopUp(newOrderLine.ORDER_LINE_BUYING_PRICE);                    
                 }
@@ -118,10 +117,8 @@ namespace PL
             if (this.availableStockForClient <= 0)
             {
                 ProductSoldOut();                           
-            }
-                        
+            }                        
         }
-
         private void ProductSoldOut()
         {
             this.labelQuantite.Text = "This Product is Sold Out !";
@@ -133,7 +130,6 @@ namespace PL
             this.iconButton1.Visible = false;
             this.numericUpDown1.Visible = false;
         }
-
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             if (this.numericUpDown1.Value < 0)
@@ -146,14 +142,12 @@ namespace PL
                 this.labelPriceSelected.Text = "Total : " + (numericUpDown1.Value * this.price).ToString() + " €"; 
             }
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.iconButton1.IconColor = CustomColor.Orange;
             timer1.Stop();
         }
-
         private void GreenCheck()
         {
             this.timer1.Start();
@@ -166,7 +160,6 @@ namespace PL
             this.popUp.ContentText = $"{this.numericUpDown1.Value} x {this.name} added to card\nTotal added : {d} €";
             this.popUp.Popup();
         }
-
         private void InitializePopup()
         {
             popUp = new PopupNotifier();

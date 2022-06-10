@@ -112,7 +112,7 @@
             this.labelUsername.Size = new System.Drawing.Size(234, 48);
             this.labelUsername.TabIndex = 1;
             this.labelUsername.Text = "labelUsername";
-            this.labelUsername.Click += new System.EventHandler(this.labelUsername_Click);
+            
             // 
             // labelAddressChange
             // 
@@ -228,7 +228,7 @@
             this.buttonConfirmAccountSettings.Location = new System.Drawing.Point(878, 206);
             this.buttonConfirmAccountSettings.Name = "buttonConfirmAccountSettings";
             this.buttonConfirmAccountSettings.Size = new System.Drawing.Size(76, 24);
-            this.buttonConfirmAccountSettings.TabIndex = 32;
+            this.buttonConfirmAccountSettings.TabIndex = 20;
             this.buttonConfirmAccountSettings.Text = "Confirm";
             this.buttonConfirmAccountSettings.TextColor = System.Drawing.Color.Black;
             this.buttonConfirmAccountSettings.UseVisualStyleBackColor = false;
@@ -249,7 +249,7 @@
             this.buttonConfirmNewPassword.Location = new System.Drawing.Point(394, 202);
             this.buttonConfirmNewPassword.Name = "buttonConfirmNewPassword";
             this.buttonConfirmNewPassword.Size = new System.Drawing.Size(76, 24);
-            this.buttonConfirmNewPassword.TabIndex = 33;
+            this.buttonConfirmNewPassword.TabIndex = 15;
             this.buttonConfirmNewPassword.Text = "Confirm";
             this.buttonConfirmNewPassword.TextColor = System.Drawing.Color.Black;
             this.buttonConfirmNewPassword.UseVisualStyleBackColor = false;
@@ -318,7 +318,7 @@
             this.labelLastName.Size = new System.Drawing.Size(76, 22);
             this.labelLastName.TabIndex = 36;
             this.labelLastName.Text = "Last Name";
-            this.labelLastName.Click += new System.EventHandler(this.labelLastName_Click);
+           
             // 
             // labelFirstName
             // 
@@ -330,7 +330,7 @@
             this.labelFirstName.Size = new System.Drawing.Size(76, 22);
             this.labelFirstName.TabIndex = 35;
             this.labelFirstName.Text = "First Name";
-            this.labelFirstName.Click += new System.EventHandler(this.labelFirstName_Click);
+            
             // 
             // labelFirstNameInfo
             // 
@@ -373,7 +373,7 @@
             this.labelEmail.Size = new System.Drawing.Size(43, 22);
             this.labelEmail.TabIndex = 41;
             this.labelEmail.Text = "Email";
-            this.labelEmail.Click += new System.EventHandler(this.labelEmail_Click);
+            
             // 
             // panelAccountUpdated
             // 
@@ -445,7 +445,7 @@
             this.labelBirthDate.Size = new System.Drawing.Size(71, 22);
             this.labelBirthDate.TabIndex = 45;
             this.labelBirthDate.Text = "Birth Date";
-            this.labelBirthDate.Click += new System.EventHandler(this.labelBirthDate_Click);
+            
             // 
             // labelBirthDateInfo
             // 
@@ -479,7 +479,7 @@
             this.labelCountry.Size = new System.Drawing.Size(60, 22);
             this.labelCountry.TabIndex = 53;
             this.labelCountry.Text = "Country";
-            this.labelCountry.Click += new System.EventHandler(this.labelCountry_Click);
+            
             // 
             // labelPostalCodeInfo
             // 
@@ -502,7 +502,7 @@
             this.labelPostalCode.Size = new System.Drawing.Size(83, 22);
             this.labelPostalCode.TabIndex = 51;
             this.labelPostalCode.Text = "Postal Code";
-            this.labelPostalCode.Click += new System.EventHandler(this.labelPostalCode_Click);
+            
             // 
             // labelCityInfo
             // 
@@ -535,7 +535,7 @@
             this.labelCity.Size = new System.Drawing.Size(34, 22);
             this.labelCity.TabIndex = 48;
             this.labelCity.Text = "City";
-            this.labelCity.Click += new System.EventHandler(this.labelCity_Click);
+            
             // 
             // labelAddress
             // 
@@ -546,7 +546,7 @@
             this.labelAddress.Size = new System.Drawing.Size(61, 22);
             this.labelAddress.TabIndex = 47;
             this.labelAddress.Text = "Address";
-            this.labelAddress.Click += new System.EventHandler(this.labelAddress_Click);
+            
             // 
             // textBoxAddress
             // 
@@ -566,7 +566,7 @@
             this.textBoxAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxAddress.PlaceholderText = "";
             this.textBoxAddress.Size = new System.Drawing.Size(258, 34);
-            this.textBoxAddress.TabIndex = 55;
+            this.textBoxAddress.TabIndex = 16;
             this.textBoxAddress.Texts = "";
             this.textBoxAddress.UnderlinedStyle = false;
             // 
@@ -616,7 +616,7 @@
             this.panelTopRight.Name = "panelTopRight";
             this.panelTopRight.Size = new System.Drawing.Size(710, 245);
             this.panelTopRight.TabIndex = 58;
-            this.panelTopRight.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTopRight_Paint);
+            
             // 
             // panelBottom
             // 
@@ -666,7 +666,7 @@
             this.textBoxNewConfirmPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxNewConfirmPassword.PlaceholderText = "";
             this.textBoxNewConfirmPassword.Size = new System.Drawing.Size(172, 34);
-            this.textBoxNewConfirmPassword.TabIndex = 58;
+            this.textBoxNewConfirmPassword.TabIndex = 14;
             this.textBoxNewConfirmPassword.Texts = "";
             this.textBoxNewConfirmPassword.UnderlinedStyle = false;
             // 
@@ -688,7 +688,7 @@
             this.textBoxPostalCode.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxPostalCode.PlaceholderText = "";
             this.textBoxPostalCode.Size = new System.Drawing.Size(258, 34);
-            this.textBoxPostalCode.TabIndex = 61;
+            this.textBoxPostalCode.TabIndex = 18;
             this.textBoxPostalCode.Texts = "";
             this.textBoxPostalCode.UnderlinedStyle = false;
             // 
@@ -710,7 +710,7 @@
             this.textBoxNewPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxNewPassword.PlaceholderText = "";
             this.textBoxNewPassword.Size = new System.Drawing.Size(172, 34);
-            this.textBoxNewPassword.TabIndex = 57;
+            this.textBoxNewPassword.TabIndex = 13;
             this.textBoxNewPassword.Texts = "";
             this.textBoxNewPassword.UnderlinedStyle = false;
             // 
@@ -732,7 +732,7 @@
             this.textBoxCountry.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxCountry.PlaceholderText = "";
             this.textBoxCountry.Size = new System.Drawing.Size(258, 34);
-            this.textBoxCountry.TabIndex = 62;
+            this.textBoxCountry.TabIndex = 19;
             this.textBoxCountry.Texts = "";
             this.textBoxCountry.UnderlinedStyle = false;
             // 
@@ -754,7 +754,7 @@
             this.textBoxOldPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxOldPassword.PlaceholderText = "";
             this.textBoxOldPassword.Size = new System.Drawing.Size(172, 34);
-            this.textBoxOldPassword.TabIndex = 56;
+            this.textBoxOldPassword.TabIndex = 12;
             this.textBoxOldPassword.Texts = "";
             this.textBoxOldPassword.UnderlinedStyle = false;
             // 
@@ -776,7 +776,7 @@
             this.textBoxCity.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxCity.PlaceholderText = "";
             this.textBoxCity.Size = new System.Drawing.Size(258, 34);
-            this.textBoxCity.TabIndex = 56;
+            this.textBoxCity.TabIndex = 17;
             this.textBoxCity.Texts = "";
             this.textBoxCity.UnderlinedStyle = false;
             // 
@@ -795,7 +795,7 @@
             this.buttonConfirmProfilePicture.Location = new System.Drawing.Point(258, 323);
             this.buttonConfirmProfilePicture.Name = "buttonConfirmProfilePicture";
             this.buttonConfirmProfilePicture.Size = new System.Drawing.Size(36, 27);
-            this.buttonConfirmProfilePicture.TabIndex = 56;
+            this.buttonConfirmProfilePicture.TabIndex = 11;
             this.buttonConfirmProfilePicture.Text = "Ok";
             this.buttonConfirmProfilePicture.TextColor = System.Drawing.Color.Black;
             this.buttonConfirmProfilePicture.UseVisualStyleBackColor = false;
@@ -816,7 +816,7 @@
             this.buttonChooseProfilePicture.Location = new System.Drawing.Point(125, 323);
             this.buttonChooseProfilePicture.Name = "buttonChooseProfilePicture";
             this.buttonChooseProfilePicture.Size = new System.Drawing.Size(123, 27);
-            this.buttonChooseProfilePicture.TabIndex = 55;
+            this.buttonChooseProfilePicture.TabIndex = 10;
             this.buttonChooseProfilePicture.Text = "Browse picture";
             this.buttonChooseProfilePicture.TextColor = System.Drawing.Color.Black;
             this.buttonChooseProfilePicture.UseVisualStyleBackColor = false;

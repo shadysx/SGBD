@@ -163,7 +163,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(12, 405);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(120, 33);
-            this.buttonCancel.TabIndex = 2;
+            this.buttonCancel.TabIndex = 15;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.TextColor = System.Drawing.Color.White;
             this.buttonCancel.UseVisualStyleBackColor = false;
@@ -218,7 +218,7 @@
             this.textBoxEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxEmail.PlaceholderText = "";
             this.textBoxEmail.Size = new System.Drawing.Size(447, 34);
-            this.textBoxEmail.TabIndex = 2;
+            this.textBoxEmail.TabIndex = 1;
             this.textBoxEmail.Texts = "";
             this.textBoxEmail.UnderlinedStyle = false;
             // 
@@ -325,7 +325,7 @@
             this.buttonSubmit.Location = new System.Drawing.Point(660, 409);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(126, 33);
-            this.buttonSubmit.TabIndex = 3;
+            this.buttonSubmit.TabIndex = 14;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.TextColor = System.Drawing.Color.White;
             this.buttonSubmit.UseVisualStyleBackColor = false;
@@ -349,7 +349,7 @@
             this.textBoxUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxUsername.PlaceholderText = "";
             this.textBoxUsername.Size = new System.Drawing.Size(172, 34);
-            this.textBoxUsername.TabIndex = 19;
+            this.textBoxUsername.TabIndex = 2;
             this.textBoxUsername.Texts = "";
             this.textBoxUsername.UnderlinedStyle = false;
             // 
@@ -374,7 +374,7 @@
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(186, 35);
             this.datePicker.SkinColor = System.Drawing.Color.MediumSlateBlue;
-            this.datePicker.TabIndex = 23;
+            this.datePicker.TabIndex = 6;
             this.datePicker.TextColor = System.Drawing.Color.White;
             // 
             // textBoxPassword
@@ -395,7 +395,7 @@
             this.textBoxPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxPassword.PlaceholderText = "";
             this.textBoxPassword.Size = new System.Drawing.Size(167, 34);
-            this.textBoxPassword.TabIndex = 26;
+            this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.Texts = "";
             this.textBoxPassword.UnderlinedStyle = false;
             // 
@@ -417,7 +417,7 @@
             this.textBoxConfirmPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxConfirmPassword.PlaceholderText = "";
             this.textBoxConfirmPassword.Size = new System.Drawing.Size(167, 34);
-            this.textBoxConfirmPassword.TabIndex = 27;
+            this.textBoxConfirmPassword.TabIndex = 4;
             this.textBoxConfirmPassword.Texts = "";
             this.textBoxConfirmPassword.UnderlinedStyle = false;
             // 
@@ -439,7 +439,7 @@
             this.textBoxLastName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxLastName.PlaceholderText = "";
             this.textBoxLastName.Size = new System.Drawing.Size(167, 34);
-            this.textBoxLastName.TabIndex = 28;
+            this.textBoxLastName.TabIndex = 8;
             this.textBoxLastName.Texts = "";
             this.textBoxLastName.UnderlinedStyle = false;
             // 
@@ -461,7 +461,7 @@
             this.textBoxFirstName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxFirstName.PlaceholderText = "";
             this.textBoxFirstName.Size = new System.Drawing.Size(172, 34);
-            this.textBoxFirstName.TabIndex = 29;
+            this.textBoxFirstName.TabIndex = 7;
             this.textBoxFirstName.Texts = "";
             this.textBoxFirstName.UnderlinedStyle = false;
             // 
@@ -483,7 +483,7 @@
             this.textBoxAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxAddress.PlaceholderText = "";
             this.textBoxAddress.Size = new System.Drawing.Size(447, 34);
-            this.textBoxAddress.TabIndex = 30;
+            this.textBoxAddress.TabIndex = 13;
             this.textBoxAddress.Texts = "";
             this.textBoxAddress.UnderlinedStyle = false;
             // 
@@ -516,7 +516,7 @@
             this.textBoxCountry.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxCountry.PlaceholderText = "";
             this.textBoxCountry.Size = new System.Drawing.Size(172, 34);
-            this.textBoxCountry.TabIndex = 32;
+            this.textBoxCountry.TabIndex = 9;
             this.textBoxCountry.Texts = "";
             this.textBoxCountry.UnderlinedStyle = false;
             // 
@@ -538,7 +538,7 @@
             this.textBoxCity.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxCity.PlaceholderText = "";
             this.textBoxCity.Size = new System.Drawing.Size(172, 34);
-            this.textBoxCity.TabIndex = 33;
+            this.textBoxCity.TabIndex = 10;
             this.textBoxCity.Texts = "";
             this.textBoxCity.UnderlinedStyle = false;
             // 
@@ -560,7 +560,7 @@
             this.textBoxPostalCode.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxPostalCode.PlaceholderText = "";
             this.textBoxPostalCode.Size = new System.Drawing.Size(100, 34);
-            this.textBoxPostalCode.TabIndex = 34;
+            this.textBoxPostalCode.TabIndex = 11;
             this.textBoxPostalCode.Texts = "";
             this.textBoxPostalCode.UnderlinedStyle = false;
             // 
@@ -579,7 +579,7 @@
             this.buttonChooseProfilePicture.Location = new System.Drawing.Point(264, 175);
             this.buttonChooseProfilePicture.Name = "buttonChooseProfilePicture";
             this.buttonChooseProfilePicture.Size = new System.Drawing.Size(91, 32);
-            this.buttonChooseProfilePicture.TabIndex = 35;
+            this.buttonChooseProfilePicture.TabIndex = 5;
             this.buttonChooseProfilePicture.Text = "Select...";
             this.buttonChooseProfilePicture.TextColor = System.Drawing.Color.White;
             this.buttonChooseProfilePicture.UseVisualStyleBackColor = false;
@@ -680,7 +680,6 @@
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 38;
             this.pictureBox.TabStop = false;
-            
             // 
             // Registration
             // 
