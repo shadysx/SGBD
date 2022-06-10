@@ -27,7 +27,9 @@ namespace PL
             this.BackColor = CustomColor.DarkBlue;
             this.articleTypes = ProductsAccess.SelectAllProductTypes();
             this.comboBox1.DataSource = articleTypes;
-            //this.comboBox2.DataSource = ProductsAccess.SelectProductsNamesByType(comboBox1.SelectedItem.ToString());
+            this.rjButton1.BackColor = CustomColor.Orange;
+            this.rjButton3.BackColor = Color.White;
+            this.rjButton2.BackColor = CustomColor.Orange;
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
@@ -84,6 +86,7 @@ namespace PL
                 ProductsAccess.InsertProductImage(this.fileName, ProductsAccess.SelectLastProductID(), buff);
         
                 MessageBox.Show("Référence ajoutée, vous pouvez maintenant gerer le stock");
+                Main.mainInstance.OpenChildForm(new EmployeeAddStockPanel());
             }
             catch(Exception ex)
             {

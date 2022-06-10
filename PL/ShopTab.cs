@@ -29,14 +29,15 @@ namespace PL
             List<string> types = new List<string>();
             types.Add("Tous");
 
-            foreach (string type in ProductsAccess.SelectAllProductTypes())
+            foreach (string type in BLLShopTab.SelectAllProductTypes())
                 types.Add(type);
 
             this.comboBoxSearchByType.DataSource = types;
             this.comboBoxOrderBy.DataSource = orderByWhat;
+            this.rjButton1.BackColor = CustomColor.Orange;
             
             
-            List<DTO.Product> products = ProductsAccess.Select20RandomProducts();           
+            List<DTO.Product> products = BLLShopTab.Select20RandomProducts();           
             DisplayProducts(FilteredProducts(this.textBoxSearchByName.Text, this.comboBoxSearchByType.SelectedValue.ToString(), this.comboBoxOrderBy.SelectedValue.ToString()));
             
             
@@ -47,7 +48,6 @@ namespace PL
             while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
             DisplayProducts(FilteredProducts(this.textBoxSearchByName.Text, this.comboBoxSearchByType.SelectedValue.ToString(), this.comboBoxOrderBy.SelectedValue.ToString()));
             this.products = BLLShopTab.Select20RandomProducts();           
-            DisplayProducts(products);
         }
 
         private List<Product> FilteredProducts(string productName, string productType, string orderBy)//string productType, string orderBy
@@ -55,6 +55,7 @@ namespace PL
             List<Product> filteredProducts = new List<Product>();
             string searchByName = "";
             string searchByType = "";
+            productName = productName.ToLower();
 
             if (productName != "")
                 searchByName += $"{productName} ";
@@ -71,11 +72,11 @@ namespace PL
 
             string query = "SELECT PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DESCRIPTION, PICTURE, min(SELLING_PRICE_EXCL_VAT) as PRODUCT_BEST_PRICE " +
                            "from PRODUCT inner join PICTURE on PICTURE.ID_PRODUCT = PRODUCT.ID_PRODUCT inner join stock on stock.ID_PRODUCT = PRODUCT.ID_PRODUCT " +
-                           $"WHERE PRODUCT_NAME LIKE '%{searchByName}%' " + $"AND PRODUCT_TYPE LIKE '%{searchByType}%' " +
+                           $"WHERE lower(PRODUCT_NAME) LIKE '%{searchByName}%' " + $"AND PRODUCT_TYPE LIKE '%{searchByType}%' " +
                            "group by PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DESCRIPTION, ID_PICTURE, PICTURE_URL, PICTURE " +
                            $"{orderBy}";
                         
-            filteredProducts = ProductsAccess.SelectFilteredProducts(query);
+            filteredProducts = BLLShopTab.SelectFilteredProducts(query);
 
             return filteredProducts;
         }
