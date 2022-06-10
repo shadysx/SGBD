@@ -58,11 +58,10 @@
             // 
             // labelNameArticle
             // 
-            this.labelNameArticle.AutoSize = true;
             this.labelNameArticle.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameArticle.Location = new System.Drawing.Point(162, 50);
+            this.labelNameArticle.Location = new System.Drawing.Point(162, 38);
             this.labelNameArticle.Name = "labelNameArticle";
-            this.labelNameArticle.Size = new System.Drawing.Size(144, 26);
+            this.labelNameArticle.Size = new System.Drawing.Size(290, 56);
             this.labelNameArticle.TabIndex = 7;
             this.labelNameArticle.Text = "labelNameArticle";
             // 
@@ -70,7 +69,7 @@
             // 
             this.labelTypeArticle.AutoSize = true;
             this.labelTypeArticle.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTypeArticle.Location = new System.Drawing.Point(160, 8);
+            this.labelTypeArticle.Location = new System.Drawing.Point(160, 5);
             this.labelTypeArticle.Name = "labelTypeArticle";
             this.labelTypeArticle.Size = new System.Drawing.Size(186, 36);
             this.labelTypeArticle.TabIndex = 6;
@@ -89,40 +88,40 @@
             // labelShopName
             // 
             this.labelShopName.AutoSize = true;
-            this.labelShopName.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShopName.Location = new System.Drawing.Point(422, 18);
+            this.labelShopName.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShopName.Location = new System.Drawing.Point(472, 12);
             this.labelShopName.Name = "labelShopName";
-            this.labelShopName.Size = new System.Drawing.Size(134, 26);
+            this.labelShopName.Size = new System.Drawing.Size(133, 26);
             this.labelShopName.TabIndex = 12;
             this.labelShopName.Text = "labelShopName";
             // 
             // labelShopAddress
             // 
             this.labelShopAddress.AutoSize = true;
-            this.labelShopAddress.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShopAddress.Location = new System.Drawing.Point(422, 50);
+            this.labelShopAddress.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShopAddress.Location = new System.Drawing.Point(472, 46);
             this.labelShopAddress.Name = "labelShopAddress";
-            this.labelShopAddress.Size = new System.Drawing.Size(150, 26);
+            this.labelShopAddress.Size = new System.Drawing.Size(149, 26);
             this.labelShopAddress.TabIndex = 13;
             this.labelShopAddress.Text = "labelShopAddress";
             // 
             // labelCountry
             // 
             this.labelCountry.AutoSize = true;
-            this.labelCountry.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountry.Location = new System.Drawing.Point(162, 82);
+            this.labelCountry.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCountry.Location = new System.Drawing.Point(162, 87);
             this.labelCountry.Name = "labelCountry";
-            this.labelCountry.Size = new System.Drawing.Size(111, 26);
+            this.labelCountry.Size = new System.Drawing.Size(110, 26);
             this.labelCountry.TabIndex = 14;
             this.labelCountry.Text = "labelCountry";
             // 
             // labelShopCity
             // 
             this.labelShopCity.AutoSize = true;
-            this.labelShopCity.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShopCity.Location = new System.Drawing.Point(422, 82);
+            this.labelShopCity.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShopCity.Location = new System.Drawing.Point(472, 80);
             this.labelShopCity.Name = "labelShopCity";
-            this.labelShopCity.Size = new System.Drawing.Size(118, 26);
+            this.labelShopCity.Size = new System.Drawing.Size(117, 26);
             this.labelShopCity.TabIndex = 15;
             this.labelShopCity.Text = "labelShopCity";
             // 

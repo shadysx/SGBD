@@ -23,15 +23,15 @@ namespace PL
 
         private IconButton iconArrow;       
 
-        private bool isMenuTrigger;
+        private bool isProfileSubMenuTrigger;
 
         public Main(Form f)
         {
             Main.mainInstance = this;
 
             InitializeComponent();
-            this.panelRight.BackColor = CustomColor.DarkBlue;
-            this.panelRight.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + $@"\..\..\..\Assets\Image\homebackground.png");
+            this.panelRight.BackColor = Color.White;
+            
             this.BackColor = CustomColor.DarkBlue;
             
             
@@ -58,7 +58,7 @@ namespace PL
                        
             this.iconButtonProfile.IconColor = CustomColor.Orange;
 
-            this.isMenuTrigger = false;
+            this.isProfileSubMenuTrigger = false;
             DrawSelectedIcon(this.iconButtonHome);
         }
 
@@ -84,6 +84,7 @@ namespace PL
         {
             RefreshUI();
             DrawSelectedIcon(this.iconButtonHome);
+            this.isProfileSubMenuTrigger = false;
         }
 
         private void iconButtonShop_Click(object sender, EventArgs e)
@@ -91,12 +92,14 @@ namespace PL
             RefreshUI();
             DrawSelectedIcon(this.iconButtonShop);
             this.OpenChildForm(new ShopTab());
+            this.isProfileSubMenuTrigger = false;
         }
         private void iconButtonBasket_Click(object sender, EventArgs e)
         {
             RefreshUI();
             DrawSelectedIcon(this.iconButtonBasket);
             this.OpenChildForm(new Basket());
+            this.isProfileSubMenuTrigger = false;
         }
 
         private void iconButtonHistory_Click(object sender, EventArgs e)
@@ -104,6 +107,7 @@ namespace PL
             RefreshUI();
             DrawSelectedIcon(this.iconButtonHistory);
             this.OpenChildForm(new History());
+            this.isProfileSubMenuTrigger = false;
         }
 
         private void iconButtonAdminPanel_Click(object sender, EventArgs e)
@@ -111,6 +115,7 @@ namespace PL
             RefreshUI();
             DrawSelectedIcon(this.iconButtonAdminPanel);
             this.OpenChildForm(new EmployeeAddStockPanel());
+            this.isProfileSubMenuTrigger = false;
         }
 
 
@@ -136,12 +141,12 @@ namespace PL
 
         private void panelProfile_Click(object sender, EventArgs e)
         {
-            this.isMenuTrigger = !this.isMenuTrigger;
+            this.isProfileSubMenuTrigger = !this.isProfileSubMenuTrigger;
 
-            if(isMenuTrigger)
+            if(isProfileSubMenuTrigger)
             {
                 this.panelProfileSubMenu.Visible = true;
-                this.panelProfileSubMenu.BringToFront();
+                this.panelProfileSubMenu.BringToFront();                
             }                    
             else
             {
@@ -149,13 +154,16 @@ namespace PL
                 this.panelRight.BringToFront();                
             }
 
+            
 
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
+            RefreshUI();
             this.OpenChildForm(new AccountSettings());
             this.panelProfileSubMenu.Visible = false;
+            this.isProfileSubMenuTrigger = false;           
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -274,12 +282,7 @@ namespace PL
             this.labelProfileUsername.BackColor = Color.FromArgb(255, CustomColor.Orange);
             this.labelProfileUsername.Enabled = false;
 
-        }
-
-        private void C_MouseEnter(object sender, EventArgs e)
-        {
-            this.panelProfile.BackColor = Color.FromArgb(180, CustomColor.Orange);
-        }
+        }        
 
         private void panelProfile_MouseLeave(object sender, EventArgs e)
         {

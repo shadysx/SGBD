@@ -71,40 +71,40 @@
             // labelShopCity
             // 
             this.labelShopCity.AutoSize = true;
-            this.labelShopCity.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShopCity.Location = new System.Drawing.Point(426, 82);
+            this.labelShopCity.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShopCity.Location = new System.Drawing.Point(462, 82);
             this.labelShopCity.Name = "labelShopCity";
-            this.labelShopCity.Size = new System.Drawing.Size(118, 26);
+            this.labelShopCity.Size = new System.Drawing.Size(117, 26);
             this.labelShopCity.TabIndex = 26;
             this.labelShopCity.Text = "labelShopCity";
             // 
             // labelCountry
             // 
             this.labelCountry.AutoSize = true;
-            this.labelCountry.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountry.Location = new System.Drawing.Point(166, 81);
+            this.labelCountry.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCountry.Location = new System.Drawing.Point(165, 89);
             this.labelCountry.Name = "labelCountry";
-            this.labelCountry.Size = new System.Drawing.Size(111, 26);
+            this.labelCountry.Size = new System.Drawing.Size(110, 26);
             this.labelCountry.TabIndex = 25;
             this.labelCountry.Text = "labelCountry";
             // 
             // labelShopAddress
             // 
             this.labelShopAddress.AutoSize = true;
-            this.labelShopAddress.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShopAddress.Location = new System.Drawing.Point(426, 48);
+            this.labelShopAddress.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShopAddress.Location = new System.Drawing.Point(462, 46);
             this.labelShopAddress.Name = "labelShopAddress";
-            this.labelShopAddress.Size = new System.Drawing.Size(150, 26);
+            this.labelShopAddress.Size = new System.Drawing.Size(149, 26);
             this.labelShopAddress.TabIndex = 24;
             this.labelShopAddress.Text = "labelShopAddress";
             // 
             // labelShopName
             // 
             this.labelShopName.AutoSize = true;
-            this.labelShopName.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShopName.Location = new System.Drawing.Point(426, 12);
+            this.labelShopName.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShopName.Location = new System.Drawing.Point(462, 12);
             this.labelShopName.Name = "labelShopName";
-            this.labelShopName.Size = new System.Drawing.Size(134, 26);
+            this.labelShopName.Size = new System.Drawing.Size(133, 26);
             this.labelShopName.TabIndex = 23;
             this.labelShopName.Text = "labelShopName";
             // 
@@ -112,7 +112,7 @@
             // 
             this.labelQuantity.AutoSize = true;
             this.labelQuantity.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuantity.Location = new System.Drawing.Point(786, 34);
+            this.labelQuantity.Location = new System.Drawing.Point(797, 34);
             this.labelQuantity.Name = "labelQuantity";
             this.labelQuantity.Size = new System.Drawing.Size(116, 26);
             this.labelQuantity.TabIndex = 21;
@@ -122,7 +122,7 @@
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrice.Location = new System.Drawing.Point(786, 63);
+            this.labelPrice.Location = new System.Drawing.Point(797, 63);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Size = new System.Drawing.Size(86, 26);
             this.labelPrice.TabIndex = 20;
@@ -130,11 +130,10 @@
             // 
             // labelNameArticle
             // 
-            this.labelNameArticle.AutoSize = true;
             this.labelNameArticle.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameArticle.Location = new System.Drawing.Point(166, 49);
+            this.labelNameArticle.Location = new System.Drawing.Point(166, 38);
             this.labelNameArticle.Name = "labelNameArticle";
-            this.labelNameArticle.Size = new System.Drawing.Size(144, 26);
+            this.labelNameArticle.Size = new System.Drawing.Size(290, 57);
             this.labelNameArticle.TabIndex = 18;
             this.labelNameArticle.Text = "labelNameArticle";
             // 
@@ -142,7 +141,7 @@
             // 
             this.labelTypeArticle.AutoSize = true;
             this.labelTypeArticle.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTypeArticle.Location = new System.Drawing.Point(164, 7);
+            this.labelTypeArticle.Location = new System.Drawing.Point(164, 6);
             this.labelTypeArticle.Name = "labelTypeArticle";
             this.labelTypeArticle.Size = new System.Drawing.Size(186, 36);
             this.labelTypeArticle.TabIndex = 17;
