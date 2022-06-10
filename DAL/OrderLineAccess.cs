@@ -11,7 +11,8 @@ namespace DAL
 {
     public class OrderLineAccess
     {
-        public static int InsertNewOrderLine(OrderLine orderline)
+        // PROCEDURE 14
+        /*public static int InsertNewOrderLine(OrderLine orderline)
         {
             int retVal;
 
@@ -28,14 +29,32 @@ namespace DAL
                     throw (ex);
                 }
             return retVal;
+        }*/
+        public static int InsertNewOrderLine(OrderLine orderline)
+        {
+            int retVal;
+
+            using (var connection = CON_MGR.Connection())
+                try
+                {
+                    retVal = connection.Query<int>("execute InsertNewOrderLine @ORDER_LINE_QUANTITY,  @ORDER_LINE_BUYING_PRICE,  @ID_SHOP,  @ID_PRODUCT, @ID_ORDERED", orderline).Single();
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+            return retVal;
         }
 
-        public static void ModifyOrderline(int quantity,decimal buyingPrice,  int idOrderLine)
+
+
+        // PROCEDURE 15
+        /*public static void ModifyOrderline(int quantity,decimal buyingPrice,  int idOrderLine)
         {
             // La Ligne ci-bas est juste parce que mon Visual Studio est en Français
 
             string s = (int)(buyingPrice) + "." + buyingPrice.ToString().Substring(buyingPrice.ToString().Length - 2);
-            Debug.WriteLine(s);
+            
             using (var connection = CON_MGR.Connection())
                 try
                 {
@@ -46,10 +65,31 @@ namespace DAL
                     throw (ex);
                 }           
             
+        }*/
+        public static void ModifyOrderline(int quantity, decimal buyingPrice, int idOrderLine)
+        {
+            // La Ligne ci-bas est juste parce que mon Visual Studio est en Français
+
+            string s = (int)(buyingPrice) + "." + buyingPrice.ToString().Substring(buyingPrice.ToString().Length - 2);
+           
+            using (var connection = CON_MGR.Connection())
+                try
+                {
+                    connection.Execute($"execute ModifyOrderline {quantity}, {s}, {idOrderLine}");
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+
         }
 
 
-        public static List<OrderLine> SelectAllOrderLine(int idOrdered)
+
+
+        // ===============================================================
+        // APPAREMENT PAS UTILISER A VERIFIER
+        /*public static List<OrderLine> SelectAllOrderLine(int idOrdered)
         {
             List<OrderLine> retVal;
 
@@ -63,9 +103,19 @@ namespace DAL
                     throw (ex);
                 }
             return retVal;
-        }
+        }*/
+        // ===============================================================
 
-        public static OrderLine Select1OrderLine(int idProduct, int idShop, int idOrdered)
+
+
+
+
+
+
+
+        // PROCEDURE 16
+
+        /*public static OrderLine Select1OrderLine(int idProduct, int idShop, int idOrdered)
         {
             OrderLine retVal;
 
@@ -80,9 +130,28 @@ namespace DAL
                 }
             return retVal;
         }
+*/
+        public static OrderLine Select1OrderLine(int idProduct, int idShop, int idOrdered)
+        {
+            OrderLine retVal;
+
+            using (var connection = CON_MGR.Connection())
+                try
+                {
+                    retVal = connection.QuerySingleOrDefault<OrderLine>($"execute Select1OrderLine {idProduct}, {idShop} ,{idOrdered}");
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+            return retVal;
+        }
 
 
-        public static void DeleteOrderLine(int idOrderLine)
+
+        // PROCEDURE 17
+
+        /*public static void DeleteOrderLine(int idOrderLine)
         {
            
 
@@ -94,11 +163,26 @@ namespace DAL
                 catch (Exception ex)
                 {
                     throw (ex);
+                }            
+        }*/
+
+        public static void DeleteOrderLine(int idOrderLine)
+        {
+
+
+            using (var connection = CON_MGR.Connection())
+                try
+                {
+                    connection.Execute($"execute DeleteOrderLine {idOrderLine}");
                 }
-            
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+
         }
 
-        
+
 
     }
 }

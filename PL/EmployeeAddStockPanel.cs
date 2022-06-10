@@ -48,7 +48,7 @@ namespace PL
         private void ButtonConfirmStock_Click(object sender, EventArgs e)
         {
 
-            StockAccess.UpdateStock(ProductsAccess.SelectProductIDByName(this.comboBox2.SelectedValue.ToString()) ,Auth.CurrentUser.ID_SHOP, Convert.ToInt32(this.numericUpDown1.Value) , Convert.ToDecimal(this.textBox1.Text));
+            StockAccess.UpdateStock(ProductsAccess.SelectProductIDByName(this.comboBox2.SelectedValue.ToString()) ,Auth.CurrentUser.ID_SHOP, Convert.ToInt32(this.numericUpDown1.Value) , this.textBox1.Text);
             MessageBox.Show("Mise a jour effectuée");
             Main.mainInstance.OpenChildForm(new EmployeeAddStockPanel());
         }
@@ -81,7 +81,7 @@ namespace PL
                 byte[] buff = ms.GetBuffer();
 
                 ProductsAccess.InsertProduct(this.textBoxProductName.Text, this.textBoxProductType.Text, this.textBoxProductDescription.Text);
-                ProductsAccess.InsertImage(this.fileName, ProductsAccess.SelectLastProductID(), buff);
+                ProductsAccess.InsertProductImage(this.fileName, ProductsAccess.SelectLastProductID(), buff);
         
                 MessageBox.Show("Référence ajoutée, vous pouvez maintenant gerer le stock");
             }

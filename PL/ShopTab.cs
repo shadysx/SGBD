@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
-using DAL;
+using BLL;
 using System.Diagnostics;
 using System.Threading;
 
@@ -16,6 +16,9 @@ namespace PL
 {
     public partial class ShopTab : Form
     {
+
+        private List<Product> products;
+        
         public ShopTab()
         {
             InitializeComponent();
@@ -43,6 +46,8 @@ namespace PL
         {
             while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
             DisplayProducts(FilteredProducts(this.textBoxSearchByName.Text, this.comboBoxSearchByType.SelectedValue.ToString(), this.comboBoxOrderBy.SelectedValue.ToString()));
+            this.products = BLLShopTab.Select20RandomProducts();           
+            DisplayProducts(products);
         }
 
         private List<Product> FilteredProducts(string productName, string productType, string orderBy)//string productType, string orderBy
@@ -76,7 +81,7 @@ namespace PL
         }
 
         public void AddProduct(string productName, string productType, string description, Image productImage, decimal productBestPrice)
-        {
+        {            
             ShopTabProduct article = new ShopTabProduct(productName, productType, description, productImage, productBestPrice);
             article.TopLevel = false;
             this.flowLayoutPanel1.Controls.Add(article);

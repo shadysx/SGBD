@@ -40,7 +40,7 @@
             // 
             this.labelTypeArticle.AutoSize = true;
             this.labelTypeArticle.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTypeArticle.Location = new System.Drawing.Point(164, 9);
+            this.labelTypeArticle.Location = new System.Drawing.Point(171, 9);
             this.labelTypeArticle.Name = "labelTypeArticle";
             this.labelTypeArticle.Size = new System.Drawing.Size(75, 36);
             this.labelTypeArticle.TabIndex = 1;
@@ -48,11 +48,10 @@
             // 
             // labelNameArticle
             // 
-            this.labelNameArticle.AutoSize = true;
             this.labelNameArticle.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameArticle.Location = new System.Drawing.Point(166, 46);
+            this.labelNameArticle.Location = new System.Drawing.Point(173, 45);
             this.labelNameArticle.Name = "labelNameArticle";
-            this.labelNameArticle.Size = new System.Drawing.Size(55, 26);
+            this.labelNameArticle.Size = new System.Drawing.Size(356, 65);
             this.labelNameArticle.TabIndex = 2;
             this.labelNameArticle.Text = "label1";
             // 
@@ -60,7 +59,7 @@
             // 
             this.labelPrix.AutoSize = true;
             this.labelPrix.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrix.Location = new System.Drawing.Point(497, 46);
+            this.labelPrix.Location = new System.Drawing.Point(532, 44);
             this.labelPrix.Name = "labelPrix";
             this.labelPrix.Size = new System.Drawing.Size(138, 30);
             this.labelPrix.TabIndex = 4;
@@ -75,7 +74,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButton1.Location = new System.Drawing.Point(740, 36);
+            this.iconButton1.Location = new System.Drawing.Point(740, 32);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(50, 48);
             this.iconButton1.TabIndex = 3;
@@ -84,7 +83,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(5, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(155, 114);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

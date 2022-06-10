@@ -12,7 +12,7 @@ namespace PL
 {
     public partial class ShopTabProduct : Form
     {
-        private string description;
+        private string description;        
         public ShopTabProduct(string productName, string productType, string description, Image productImage, decimal bestPrice)
         {
             InitializeComponent();
@@ -24,6 +24,7 @@ namespace PL
             this.description = description;
             this.labelTypeArticle.ForeColor = CustomColor.Orange;
             this.iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, CustomColor.White);
+            
         }
 
         private void Article_Load(object sender, EventArgs e)
@@ -31,8 +32,10 @@ namespace PL
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
-        {
+        {            
             Main.mainInstance.OpenChildForm(new DetailsTab(this.labelNameArticle.Text, this.description, this.pictureBox1.Image, "ShopTabProduct"));
         }
+
+        
     }
 }
