@@ -48,6 +48,7 @@
             this.iconButtonHome = new FontAwesome.Sharp.IconButton();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.panelRight = new System.Windows.Forms.Panel();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panelTop.SuspendLayout();
             this.panelProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
@@ -232,6 +233,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelLeft.Controls.Add(this.iconButton2);
             this.panelLeft.Controls.Add(this.iconButtonHistory);
             this.panelLeft.Controls.Add(this.iconButtonAdminPanel);
             this.panelLeft.Controls.Add(this.iconButtonBasket);
@@ -259,7 +261,7 @@
             this.iconButtonHistory.Name = "iconButtonHistory";
             this.iconButtonHistory.Size = new System.Drawing.Size(197, 47);
             this.iconButtonHistory.TabIndex = 4;
-            this.iconButtonHistory.Text = "          History";
+            this.iconButtonHistory.Text = "      History";
             this.iconButtonHistory.UseVisualStyleBackColor = false;
             this.iconButtonHistory.Click += new System.EventHandler(this.iconButtonHistory_Click);
             // 
@@ -278,7 +280,7 @@
             this.iconButtonAdminPanel.Name = "iconButtonAdminPanel";
             this.iconButtonAdminPanel.Size = new System.Drawing.Size(197, 47);
             this.iconButtonAdminPanel.TabIndex = 5;
-            this.iconButtonAdminPanel.Text = "            Employee";
+            this.iconButtonAdminPanel.Text = "              Employee";
             this.iconButtonAdminPanel.UseVisualStyleBackColor = false;
             this.iconButtonAdminPanel.Visible = false;
             this.iconButtonAdminPanel.Click += new System.EventHandler(this.iconButtonAdminPanel_Click);
@@ -299,7 +301,7 @@
             this.iconButtonBasket.Name = "iconButtonBasket";
             this.iconButtonBasket.Size = new System.Drawing.Size(197, 47);
             this.iconButtonBasket.TabIndex = 3;
-            this.iconButtonBasket.Text = "          Basket";
+            this.iconButtonBasket.Text = "      Basket";
             this.iconButtonBasket.UseVisualStyleBackColor = false;
             this.iconButtonBasket.Click += new System.EventHandler(this.iconButtonBasket_Click);
             // 
@@ -318,7 +320,7 @@
             this.iconButtonShop.Name = "iconButtonShop";
             this.iconButtonShop.Size = new System.Drawing.Size(197, 47);
             this.iconButtonShop.TabIndex = 2;
-            this.iconButtonShop.Text = "          Shop";
+            this.iconButtonShop.Text = " Shop";
             this.iconButtonShop.UseVisualStyleBackColor = false;
             this.iconButtonShop.Click += new System.EventHandler(this.iconButtonShop_Click);
             // 
@@ -337,13 +339,9 @@
             this.iconButtonHome.Name = "iconButtonHome";
             this.iconButtonHome.Size = new System.Drawing.Size(197, 47);
             this.iconButtonHome.TabIndex = 1;
-            this.iconButtonHome.Text = "           Home";
+            this.iconButtonHome.Text = "   Home";
             this.iconButtonHome.UseVisualStyleBackColor = false;
             this.iconButtonHome.Click += new System.EventHandler(this.iconButtonHome_Click);
-            // 
-            // kryptonPalette1
-            // 
-            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             // 
             // panelRight
             // 
@@ -353,6 +351,25 @@
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(1119, 685);
             this.panelRight.TabIndex = 0;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.ForeColor = System.Drawing.Color.White;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+            this.iconButton2.IconColor = System.Drawing.Color.White;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(0, 284);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(197, 47);
+            this.iconButton2.TabIndex = 6;
+            this.iconButton2.Text = "     Admin";
+            this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Visible = false;
             // 
             // Main
             // 
@@ -370,7 +387,6 @@
             this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.StateCommon.Border.Rounding = 20;
             this.Load += new System.EventHandler(this.Main_Load);
             this.panelTop.ResumeLayout(false);
@@ -407,5 +423,6 @@
         private System.Windows.Forms.Label labelProfileUsername;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }
