@@ -234,7 +234,7 @@
             // 
             // datePicker
             // 
-            this.datePicker.Location = new System.Drawing.Point(39, 385);
+            this.datePicker.Location = new System.Drawing.Point(28, 384);
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(188, 29);
             this.datePicker.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
