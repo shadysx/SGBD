@@ -31,6 +31,45 @@ namespace DAL
 
             return shopInfo;
         }*/
+        public static List<string> GetShopNameList()
+        {
+            List<string> list = new List<string>();
+
+            string query = $"select SHOP_NAME from SHOP";
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    list = connexion.Query<string>(query).ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            return list;
+
+        }
+
+        public static int GetShopIDByName(string shopName)
+        {
+            int id = 0;
+
+            string query = $"select ID_SHOP from SHOP where SHOP_NAME = '{shopName}'";
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    id = connexion.Query<int>(query).Single();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            return id;
+
+        }
 
         public static ShopInfo GetShopInfo(int shopID)
         {

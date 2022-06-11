@@ -82,7 +82,7 @@ namespace DAL
             using (var connection = CON_MGR.Connection())
                 try
                 {
-                    retVal = connection.Query<int>("Execute InsertNewAccount @ACCOUNT_EMAIL , @ACCOUNT_USERNAME , @ACCOUNT_PASSWORD , @ACCOUNT_LAST_NAME , @ACCOUNT_FIRST_NAME , @ACCOUNT_BIRTH_DATE , @ACCOUNT_ADDRESS , @ACCOUNT_CITY , @ACCOUNT_POSTAL_CODE , @ACCOUNT_COUNTRY , @ACCOUNT_ROLE", newAccount).Single();
+                    retVal = connection.Query<int>("Execute InsertNewAccount @ACCOUNT_EMAIL , @ACCOUNT_USERNAME , @ACCOUNT_PASSWORD , @ACCOUNT_LAST_NAME , @ACCOUNT_FIRST_NAME , @ACCOUNT_BIRTH_DATE , @ACCOUNT_ADDRESS , @ACCOUNT_CITY , @ACCOUNT_POSTAL_CODE , @ACCOUNT_COUNTRY , @ACCOUNT_ROLE, @ID_SHOP", newAccount).Single();
                 }
                 catch (Exception ex)
                 {

@@ -42,6 +42,10 @@ namespace PL
             this.panelTop.BackColor = CustomColor.DarkBlue;
             this.panelLeft.BackColor = CustomColor.DarkBlue;            
 
+            if (Auth.CurrentUser.ACCOUNT_ROLE == "EMPLOYEE")
+            {
+                this.iconButtonEmployeePanel.Visible = true;
+            }
             if (Auth.CurrentUser.ACCOUNT_ROLE == "ADMIN")
             {
                 this.iconButtonAdminPanel.Visible = true;
@@ -113,7 +117,7 @@ namespace PL
         private void iconButtonAdminPanel_Click(object sender, EventArgs e)
         {
             RefreshUI();
-            DrawSelectedIcon(this.iconButtonAdminPanel);
+            DrawSelectedIcon(this.iconButtonEmployeePanel);
             this.OpenChildForm(new EmployeeAddStockPanel());
             this.isProfileSubMenuTrigger = false;
         }
@@ -295,6 +299,11 @@ namespace PL
         private void Main_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void iconButtonAdminPanel_Click_1(object sender, EventArgs e)
+        {
+            Main.mainInstance.OpenChildForm(new AdminPanel());
         }
     }
 }

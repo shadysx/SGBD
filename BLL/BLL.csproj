@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Auth.cs" />
     <Compile Include="BLLAccountSettings.cs" />
+    <Compile Include="BLLAdminPanel.cs" />
     <Compile Include="BLLArticle.cs" />
     <Compile Include="BLLDetailsTab.cs" />
     <Compile Include="BLLRegistration.cs" />

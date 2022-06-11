@@ -87,6 +87,12 @@
     <Compile Include="AccountSettings.Designer.cs">
       <DependentUpon>AccountSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeAddStockPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </Compile>
     <EmbeddedResource Include="AccountSettings.resx">
       <DependentUpon>AccountSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeAddStockPanel.resx">
       <DependentUpon>EmployeeAddStockPanel.cs</DependentUpon>
