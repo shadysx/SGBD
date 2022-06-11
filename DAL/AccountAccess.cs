@@ -168,6 +168,24 @@ namespace DAL
 
 
 
+        static public Account GetAccoundByID(int accountID)
+        {
+            Account acc = null;
+
+            string query = $"SELECT * FROM ACCOUNT WHERE ID_ACCOUNT = {accountID}";
+
+            using (var connexion = CON_MGR.Connection())
+                try
+                {
+                    acc = connexion.Query<Account>(query).Single();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            return acc;
+
+        }
 
 
         // OLD REQUEST (without stored procedure)
