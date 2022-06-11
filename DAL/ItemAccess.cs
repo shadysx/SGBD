@@ -9,7 +9,31 @@ using DTO;
 namespace DAL
 {
     public class ItemAccess
-    {
+    {        
+        // PROCEDURE 9
+        public static List<Item> SelectAllItem(int idOrdered)
+        {
+            List<Item> retVal = null;
+            string query = $"execute SelectAllItem {idOrdered}";
+
+            using (var connection = CON_MGR.Connection())
+                try
+                {
+                    retVal = connection.Query<Item>(query).ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+            return retVal;
+        }
+
+
+
+
+
+
+        // OLD REQUEST (without stored procedure)
 
         // PROCEDURE 9
 
@@ -29,22 +53,5 @@ namespace DAL
                 }
             return retVal;
         }*/
-
-        public static List<Item> SelectAllItem(int idOrdered)
-        {
-            List<Item> retVal = null;
-            string query = $"execute SelectAllItem {idOrdered}";
-
-            using (var connection = CON_MGR.Connection())
-                try
-                {
-                    retVal = connection.Query<Item>(query).ToList();
-                }
-                catch (Exception ex)
-                {
-                    throw (ex);
-                }
-            return retVal;
-        }
     }
 }

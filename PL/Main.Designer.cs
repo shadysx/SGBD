@@ -36,9 +36,10 @@
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
             this.iconButtonAdminPanel = new FontAwesome.Sharp.IconButton();
+            this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
+            this.iconButtonEmployeePanel = new FontAwesome.Sharp.IconButton();
             this.iconButtonBasket = new FontAwesome.Sharp.IconButton();
             this.iconButtonShop = new FontAwesome.Sharp.IconButton();
             this.iconButtonHome = new FontAwesome.Sharp.IconButton();
@@ -91,7 +92,7 @@
             this.iconButtonProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.iconButtonProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButtonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonProfile.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonProfile.ForeColor = System.Drawing.Color.White;
             this.iconButtonProfile.IconChar = FontAwesome.Sharp.IconChar.Portrait;
             this.iconButtonProfile.IconColor = System.Drawing.Color.White;
@@ -108,11 +109,11 @@
             // labelProfileUsername
             // 
             this.labelProfileUsername.AutoSize = true;
-            this.labelProfileUsername.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProfileUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProfileUsername.ForeColor = System.Drawing.Color.White;
             this.labelProfileUsername.Location = new System.Drawing.Point(60, 17);
             this.labelProfileUsername.Name = "labelProfileUsername";
-            this.labelProfileUsername.Size = new System.Drawing.Size(175, 26);
+            this.labelProfileUsername.Size = new System.Drawing.Size(169, 18);
             this.labelProfileUsername.TabIndex = 4;
             this.labelProfileUsername.Text = "labelProfileUsername";
             // 
@@ -150,9 +151,9 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panelLeft.Controls.Add(this.iconButton4);
-            this.panelLeft.Controls.Add(this.iconButtonHistory);
             this.panelLeft.Controls.Add(this.iconButtonAdminPanel);
+            this.panelLeft.Controls.Add(this.iconButtonHistory);
+            this.panelLeft.Controls.Add(this.iconButtonEmployeePanel);
             this.panelLeft.Controls.Add(this.iconButtonBasket);
             this.panelLeft.Controls.Add(this.iconButtonShop);
             this.panelLeft.Controls.Add(this.iconButtonHome);
@@ -162,23 +163,25 @@
             this.panelLeft.Size = new System.Drawing.Size(200, 697);
             this.panelLeft.TabIndex = 1;
             // 
-            // iconButton4
+            // iconButtonAdminPanel
             // 
-            this.iconButton4.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.ForeColor = System.Drawing.Color.White;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Wrench;
-            this.iconButton4.IconColor = System.Drawing.Color.White;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(3, 285);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(197, 47);
-            this.iconButton4.TabIndex = 6;
-            this.iconButton4.Text = "   Admin";
-            this.iconButton4.UseVisualStyleBackColor = false;
+            this.iconButtonAdminPanel.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonAdminPanel.FlatAppearance.BorderSize = 0;
+            this.iconButtonAdminPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonAdminPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonAdminPanel.ForeColor = System.Drawing.Color.White;
+            this.iconButtonAdminPanel.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+            this.iconButtonAdminPanel.IconColor = System.Drawing.Color.White;
+            this.iconButtonAdminPanel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonAdminPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonAdminPanel.Location = new System.Drawing.Point(0, 635);
+            this.iconButtonAdminPanel.Name = "iconButtonAdminPanel";
+            this.iconButtonAdminPanel.Size = new System.Drawing.Size(197, 47);
+            this.iconButtonAdminPanel.TabIndex = 6;
+            this.iconButtonAdminPanel.Text = "   Admin";
+            this.iconButtonAdminPanel.UseVisualStyleBackColor = false;
+            this.iconButtonAdminPanel.Visible = false;
+            this.iconButtonAdminPanel.Click += new System.EventHandler(this.iconButtonAdminPanel_Click_1);
             // 
             // iconButtonHistory
             // 
@@ -186,7 +189,7 @@
             this.iconButtonHistory.FlatAppearance.BorderSize = 0;
             this.iconButtonHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.iconButtonHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonHistory.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonHistory.ForeColor = System.Drawing.Color.White;
             this.iconButtonHistory.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
             this.iconButtonHistory.IconColor = System.Drawing.Color.White;
@@ -200,25 +203,25 @@
             this.iconButtonHistory.UseVisualStyleBackColor = false;
             this.iconButtonHistory.Click += new System.EventHandler(this.iconButtonHistory_Click);
             // 
-            // iconButtonAdminPanel
+            // iconButtonEmployeePanel
             // 
-            this.iconButtonAdminPanel.BackColor = System.Drawing.Color.Transparent;
-            this.iconButtonAdminPanel.FlatAppearance.BorderSize = 0;
-            this.iconButtonAdminPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonAdminPanel.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonAdminPanel.ForeColor = System.Drawing.Color.White;
-            this.iconButtonAdminPanel.IconChar = FontAwesome.Sharp.IconChar.SlidersH;
-            this.iconButtonAdminPanel.IconColor = System.Drawing.Color.White;
-            this.iconButtonAdminPanel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonAdminPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonAdminPanel.Location = new System.Drawing.Point(0, 231);
-            this.iconButtonAdminPanel.Name = "iconButtonAdminPanel";
-            this.iconButtonAdminPanel.Size = new System.Drawing.Size(197, 47);
-            this.iconButtonAdminPanel.TabIndex = 5;
-            this.iconButtonAdminPanel.Text = "            Employee";
-            this.iconButtonAdminPanel.UseVisualStyleBackColor = false;
-            this.iconButtonAdminPanel.Visible = false;
-            this.iconButtonAdminPanel.Click += new System.EventHandler(this.iconButtonAdminPanel_Click);
+            this.iconButtonEmployeePanel.BackColor = System.Drawing.Color.Transparent;
+            this.iconButtonEmployeePanel.FlatAppearance.BorderSize = 0;
+            this.iconButtonEmployeePanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonEmployeePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonEmployeePanel.ForeColor = System.Drawing.Color.White;
+            this.iconButtonEmployeePanel.IconChar = FontAwesome.Sharp.IconChar.SlidersH;
+            this.iconButtonEmployeePanel.IconColor = System.Drawing.Color.White;
+            this.iconButtonEmployeePanel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonEmployeePanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonEmployeePanel.Location = new System.Drawing.Point(0, 231);
+            this.iconButtonEmployeePanel.Name = "iconButtonEmployeePanel";
+            this.iconButtonEmployeePanel.Size = new System.Drawing.Size(197, 47);
+            this.iconButtonEmployeePanel.TabIndex = 5;
+            this.iconButtonEmployeePanel.Text = "         Employee";
+            this.iconButtonEmployeePanel.UseVisualStyleBackColor = false;
+            this.iconButtonEmployeePanel.Visible = false;
+            this.iconButtonEmployeePanel.Click += new System.EventHandler(this.iconButtonAdminPanel_Click);
             // 
             // iconButtonBasket
             // 
@@ -226,7 +229,7 @@
             this.iconButtonBasket.FlatAppearance.BorderSize = 0;
             this.iconButtonBasket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.iconButtonBasket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonBasket.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonBasket.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonBasket.ForeColor = System.Drawing.Color.White;
             this.iconButtonBasket.IconChar = FontAwesome.Sharp.IconChar.CreditCard;
             this.iconButtonBasket.IconColor = System.Drawing.Color.White;
@@ -245,7 +248,7 @@
             this.iconButtonShop.BackColor = System.Drawing.Color.Transparent;
             this.iconButtonShop.FlatAppearance.BorderSize = 0;
             this.iconButtonShop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonShop.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonShop.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonShop.ForeColor = System.Drawing.Color.White;
             this.iconButtonShop.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
             this.iconButtonShop.IconColor = System.Drawing.Color.White;
@@ -255,7 +258,7 @@
             this.iconButtonShop.Name = "iconButtonShop";
             this.iconButtonShop.Size = new System.Drawing.Size(197, 47);
             this.iconButtonShop.TabIndex = 2;
-            this.iconButtonShop.Text = "Shop";
+            this.iconButtonShop.Text = "   Shop";
             this.iconButtonShop.UseVisualStyleBackColor = false;
             this.iconButtonShop.Click += new System.EventHandler(this.iconButtonShop_Click);
             // 
@@ -264,7 +267,7 @@
             this.iconButtonHome.BackColor = System.Drawing.Color.Transparent;
             this.iconButtonHome.FlatAppearance.BorderSize = 0;
             this.iconButtonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonHome.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonHome.ForeColor = System.Drawing.Color.White;
             this.iconButtonHome.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.iconButtonHome.IconColor = System.Drawing.Color.White;
@@ -299,7 +302,7 @@
             this.iconButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton3.ForeColor = System.Drawing.Color.White;
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.iconButton3.IconColor = System.Drawing.Color.White;
@@ -319,7 +322,7 @@
             this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.ForeColor = System.Drawing.Color.White;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.iconButton1.IconColor = System.Drawing.Color.White;
@@ -335,12 +338,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(34, 33);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(3);
-            this.label2.Size = new System.Drawing.Size(132, 29);
+            this.label2.Size = new System.Drawing.Size(154, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Log Out                      ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -350,12 +353,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(34, 5);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(3);
-            this.label1.Size = new System.Drawing.Size(131, 29);
+            this.label1.Size = new System.Drawing.Size(128, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Account Settings";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -378,7 +381,7 @@
             this.iconButton2.BackColor = System.Drawing.Color.Transparent;
             this.iconButton2.FlatAppearance.BorderSize = 0;
             this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton2.ForeColor = System.Drawing.Color.White;
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Wrench;
             this.iconButton2.IconColor = System.Drawing.Color.White;
@@ -437,7 +440,7 @@
         private System.Windows.Forms.Panel panelProfileSubMenu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton iconButtonAdminPanel;
+        private FontAwesome.Sharp.IconButton iconButtonEmployeePanel;
         private FontAwesome.Sharp.IconButton iconButtonHistory;
         private System.Windows.Forms.Panel panelProfile;
         private FontAwesome.Sharp.IconButton iconButtonProfile;
@@ -445,6 +448,6 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton iconButtonAdminPanel;
     }
 }

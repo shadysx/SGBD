@@ -1,121 +1,16 @@
-﻿using ComponentFactory.Krypton.Toolkit;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using DTO;
+using DAL;
 using BLL;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Diagnostics;
-using CustomControls.RJControls;
-using System.IO;
-using System.Data.Linq;
 
-namespace PL
+namespace Test
 {
-    public partial class Registration : KryptonForm
+    internal class MEmo
     {
-        private List<Account> accounts;
-        private Login loginForm;
-        // Variable pour l'image utilisateur
-        private string fileName;
-
-        public Registration(Form f)
-        {
-            InitializeComponent();
-            FormStyles();
-            this.loginForm = (Login)f;
-        }
-
-        private void FormStyles()
-        {
-            this.BackColor = CustomColor.White;
-            this.panelLeft.BackColor = CustomColor.DarkBlue;
-            this.panelRight.BackColor = CustomColor.LightBlue;
-            this.buttonCancel.BackColor = CustomColor.Orange;
-            this.buttonSubmit.BackColor = CustomColor.DarkBlue;
-            this.buttonSubmit.FlatAppearance.MouseOverBackColor = CustomColor.LightBlue;
-            this.labelSuccess.ForeColor = CustomColor.White;
-        }
-
-        private void iconPictureBox2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            // Save les infos users quand on change de form
-            SaveUserData();
-            this.loginForm.Show();
-            this.Hide();
-
-        }
-        private void Registration_Activated(object sender, EventArgs e)
-        {
-            // Affiche les data users, reinitialise les messages d'erreur au retour du focus
-            DisplayUserData();
-            ResetErrorProvider();
-
-            foreach (RJTextBox tb in this.Controls.OfType<RJTextBox>())
-                tb.BorderColor = Color.Black;
-
-            this.datePicker.BorderColor = Color.Black;
-            this.panelSuccess.Visible = false;
-        }
-
-
-        private void DisplayUserData()
-        {
-            // Affiche le text sauvegarder de tag => Text
-            this.textBoxEmail.Texts = (string)this.textBoxEmail.Tag;
-            this.textBoxUsername.Texts = (string)this.textBoxUsername.Tag;
-            this.textBoxPassword.Texts = (string)this.textBoxPassword.Tag;
-            this.textBoxConfirmPassword.Texts = (string)this.textBoxConfirmPassword.Tag;
-            this.textBoxLastName.Texts = (string)this.textBoxLastName.Tag;
-            this.textBoxFirstName.Texts = (string)this.textBoxFirstName.Tag;
-            if (datePicker.Tag != null)
-                this.datePicker.Value = Convert.ToDateTime(datePicker.Tag);
-            this.textBoxAddress.Texts = (string)this.textBoxAddress.Tag;
-            this.textBoxCity.Texts = (string)this.textBoxCity.Tag;
-            this.textBoxPostalCode.Texts = (string)this.textBoxPostalCode.Tag;
-            this.textBoxCountry.Texts = (string)this.textBoxCountry.Tag;
-        }
-
-        private void SaveUserData()
-        {
-            // Save les données users de text vers Tag 
-            this.textBoxEmail.Tag = this.textBoxEmail.Texts;
-            this.textBoxUsername.Tag = this.textBoxUsername.Texts;
-            this.textBoxPassword.Tag = this.textBoxPassword.Texts;
-            this.textBoxConfirmPassword.Tag = this.textBoxConfirmPassword.Texts;
-            this.textBoxLastName.Tag = this.textBoxLastName.Texts;
-            this.textBoxFirstName.Tag = this.textBoxFirstName.Texts;
-            this.datePicker.Tag = this.datePicker.Value.ToString();
-            this.textBoxAddress.Tag = this.textBoxAddress.Texts;
-            this.textBoxCity.Tag = this.textBoxCity.Texts;
-            this.textBoxPostalCode.Tag = this.textBoxPostalCode.Texts;
-            this.textBoxCountry.Tag = this.textBoxCountry.Texts;
-        }
-        private void ResetErrorProvider()
-        {
-            this.errorProviderEmail.SetError(textBoxEmail, null);
-            this.errorProviderUsername.SetError(textBoxUsername, null);
-            this.errorProviderPassword.SetError(textBoxPassword, null);
-            this.errorProviderConfirmPassword.SetError(textBoxConfirmPassword, null);
-            this.errorProviderBirthDate.SetError(datePicker, null);
-            this.errorProviderLastName.SetError(textBoxLastName, null);
-            this.errorProviderFirstName.SetError(textBoxFirstName, null);
-            this.errorProviderAddress.SetError(textBoxAddress, null);
-            this.errorProviderCity.SetError(textBoxCity, null);
-            this.errorProviderPostalCode.SetError(textBoxPostalCode, null);
-            this.errorProviderCountry.SetError(textBoxCountry, null);
-        }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
@@ -310,41 +205,6 @@ namespace PL
                     }
                 }
             }
-        }
-
-
-
-        private void buttonSelectProfileImage_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SaveUserData();
-                //Import image from pc to picturebox
-                OpenFileDialog dialog = new OpenFileDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    this.pictureBox.ImageLocation = dialog.FileName.ToString();
-                    var file = System.IO.Path.GetFileName(dialog.FileName);
-                    this.fileName = file;
-                }
-                DisplayUserData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        public static Image ConvertToImage(Binary iBinary)
-        {
-            var arrayBinary = iBinary.ToArray();
-            Image rImage = null;
-
-            using (MemoryStream ms = new MemoryStream(arrayBinary))
-            {
-                rImage = Image.FromStream(ms);
-            }
-            return rImage;
         }
     }
 }

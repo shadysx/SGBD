@@ -14,25 +14,30 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            /*
+
+            Account acc = new Account()
+            {
+                ACCOUNT_EMAIL = "testemployee@gmail.com",
+                ACCOUNT_USERNAME = "blyat",
+                ACCOUNT_PASSWORD = "password",
+                ACCOUNT_LAST_NAME = "vladimir",
+                ACCOUNT_FIRST_NAME = "putin",
+                ACCOUNT_BIRTH_DATE = new DateTime(2008, 3, 1, 7, 0, 0),
+                ACCOUNT_COUNTRY = "Russie",
+                ACCOUNT_ROLE = "EMPLOYEE",
+                ID_SHOP = 3
+            };
+
+            
+
             try
             {
-                Console.WriteLine("Hello world");
-                Console.Read();
-                //Auth.Login("ShadySX", "password");
+                Auth.SignUp(acc);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-
-            Console.WriteLine(Auth.CurrentUser);
-            */
-
-            //ProductsAccess.InsertImageForLastProduct("hello");
-
-            
-            
 
             Console.Read();
         }

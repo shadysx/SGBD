@@ -10,8 +10,83 @@ namespace DAL
 {
     public static class ShopInfoAccess
     {
-        // PROCEDURE 26
+        // PROCEDURE 27       
+        public static ShopInfo GetShopInfo(int shopID)
+        {
+            ShopInfo shopInfo = new ShopInfo();
 
+            string query = $"execute GetShopInfo {shopID}";
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    shopInfo = connexion.Query<ShopInfo>(query).Single();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            return shopInfo;
+        }
+        public static List<string> GetShopNameList()
+        {
+            List<string> list = new List<string>();
+
+            string query = $"select SHOP_NAME from SHOP";
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    list = connexion.Query<string>(query).ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            return list;
+
+        }
+
+        public static int GetShopIDByName(string shopName)
+        {
+            int id = 0;
+
+            string query = $"select ID_SHOP from SHOP where SHOP_NAME = '{shopName}'";
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    id = connexion.Query<int>(query).Single();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            return id;
+
+        }
+
+        public static void InsertNewShop(ShopInfo shop)
+        {
+            string query = $"INSERT INTO SHOP  VALUES(@SHOP_NAME, @SHOP_ADDRESS, @SHOP_POSTAL_CODE, @SHOP_CITY, @SHOP_COUNTRY)";
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    connexion.Execute(query, shop);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+        }
+
+        // PROCEDURE 27
+        // 
         /*public static ShopInfo GetShopInfo(int shopID)
         {
             ShopInfo shopInfo = new ShopInfo();
@@ -32,24 +107,5 @@ namespace DAL
             return shopInfo;
         }*/
 
-        public static ShopInfo GetShopInfo(int shopID)
-        {
-            ShopInfo shopInfo = new ShopInfo();
-
-            string query = $"execute GetShopInfo {shopID}";
-
-            using (var connexion = CON_MGR.Connection())
-                ////= SQL directe
-                try
-                {
-                    shopInfo = connexion.Query<ShopInfo>(query).Single();
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-            return shopInfo;
-        }
     }
 }
