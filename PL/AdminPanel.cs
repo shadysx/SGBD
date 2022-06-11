@@ -22,9 +22,26 @@ namespace PL
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
             this.comboBoxShop.DataSource = BLLAdminPanel.GetShopNameList();
+            this.kryptonComboBox1.DataSource = new List<string>() { "Utilisateur", "Email", "Nom"};
+            this.DisplayUsers();
 
         }
 
+
+        private void DisplayUsers()
+        {
+            List<Account> accounts = BLLAdminPanel.SelectAllAccounts();
+
+            foreach (Account account in accounts)
+            {
+                User user = new User(account.ID_ACCOUNT, account.ACCOUNT_USERNAME, account.ACCOUNT_EMAIL, account.ACCOUNT_FIRST_NAME, account.ACCOUNT_LAST_NAME, account.ACCOUNT_ROLE);
+                user.TopLevel = false;
+                this.flowLayoutPanel2.Controls.Add(user);
+                user.Show();
+            }
+
+
+        }
 
         private void buttonCreateEmployee_Click(object sender, EventArgs e)
         {
@@ -260,6 +277,11 @@ namespace PL
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
