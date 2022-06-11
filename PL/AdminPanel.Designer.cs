@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxEmail = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelUserName = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelPasswordConfirmation = new System.Windows.Forms.Label();
-            this.textBoxUserName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.textBoxUsername = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.textBoxPassword = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.textBoxPasswordConfirmation = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.textBoxConfirmPassword = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxFirstName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.textBoxLastName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.datePickerBirth = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.datePicker = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxCountry = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,7 +50,23 @@
             this.label6 = new System.Windows.Forms.Label();
             this.buttonCreateEmployee = new CustomControls.RJControls.RJButton();
             this.label7 = new System.Windows.Forms.Label();
+            this.errorProviderUsername = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderEmail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderLastName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderFirstName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderBirthDate = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCountry = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderConfirmPassword = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxShop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLastName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFirstName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderBirthDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCountry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderConfirmPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -68,6 +85,7 @@
             this.textBoxEmail.Location = new System.Drawing.Point(42, 93);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(395, 28);
+            this.textBoxEmail.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
             this.textBoxEmail.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -119,17 +137,17 @@
             this.labelPasswordConfirmation.TabIndex = 69;
             this.labelPasswordConfirmation.Text = "Confirmation";
             // 
-            // textBoxUserName
+            // textBoxUsername
             // 
-            this.textBoxUserName.Location = new System.Drawing.Point(42, 162);
-            this.textBoxUserName.Name = "textBoxUserName";
-            this.textBoxUserName.Size = new System.Drawing.Size(395, 28);
-            this.textBoxUserName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.textBoxUsername.Location = new System.Drawing.Point(42, 162);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(395, 28);
+            this.textBoxUsername.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.textBoxUserName.StateCommon.Border.Rounding = 12;
-            this.textBoxUserName.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUserName.TabIndex = 70;
+            this.textBoxUsername.StateCommon.Border.Rounding = 12;
+            this.textBoxUsername.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsername.TabIndex = 70;
             // 
             // textBoxPassword
             // 
@@ -143,17 +161,17 @@
             this.textBoxPassword.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.TabIndex = 71;
             // 
-            // textBoxPasswordConfirmation
+            // textBoxConfirmPassword
             // 
-            this.textBoxPasswordConfirmation.Location = new System.Drawing.Point(249, 241);
-            this.textBoxPasswordConfirmation.Name = "textBoxPasswordConfirmation";
-            this.textBoxPasswordConfirmation.Size = new System.Drawing.Size(188, 28);
-            this.textBoxPasswordConfirmation.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.textBoxConfirmPassword.Location = new System.Drawing.Point(249, 241);
+            this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
+            this.textBoxConfirmPassword.Size = new System.Drawing.Size(188, 28);
+            this.textBoxConfirmPassword.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.textBoxPasswordConfirmation.StateCommon.Border.Rounding = 12;
-            this.textBoxPasswordConfirmation.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPasswordConfirmation.TabIndex = 72;
+            this.textBoxConfirmPassword.StateCommon.Border.Rounding = 12;
+            this.textBoxConfirmPassword.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxConfirmPassword.TabIndex = 72;
             // 
             // label2
             // 
@@ -201,16 +219,16 @@
             this.textBoxLastName.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLastName.TabIndex = 76;
             // 
-            // datePickerBirth
+            // datePicker
             // 
-            this.datePickerBirth.Location = new System.Drawing.Point(42, 394);
-            this.datePickerBirth.Name = "datePickerBirth";
-            this.datePickerBirth.Size = new System.Drawing.Size(188, 29);
-            this.datePickerBirth.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.datePicker.Location = new System.Drawing.Point(42, 394);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(188, 29);
+            this.datePicker.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.datePickerBirth.StateCommon.Border.Rounding = 12;
-            this.datePickerBirth.TabIndex = 77;
+            this.datePicker.StateCommon.Border.Rounding = 12;
+            this.datePicker.TabIndex = 77;
             // 
             // label4
             // 
@@ -301,6 +319,46 @@
             this.label7.TabIndex = 84;
             this.label7.Text = "Créer un nouvel employé";
             // 
+            // errorProviderUsername
+            // 
+            this.errorProviderUsername.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderUsername.ContainerControl = this;
+            // 
+            // errorProviderEmail
+            // 
+            this.errorProviderEmail.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderEmail.ContainerControl = this;
+            // 
+            // errorProviderPassword
+            // 
+            this.errorProviderPassword.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderPassword.ContainerControl = this;
+            // 
+            // errorProviderLastName
+            // 
+            this.errorProviderLastName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderLastName.ContainerControl = this;
+            // 
+            // errorProviderFirstName
+            // 
+            this.errorProviderFirstName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderFirstName.ContainerControl = this;
+            // 
+            // errorProviderBirthDate
+            // 
+            this.errorProviderBirthDate.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderBirthDate.ContainerControl = this;
+            // 
+            // errorProviderCountry
+            // 
+            this.errorProviderCountry.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderCountry.ContainerControl = this;
+            // 
+            // errorProviderConfirmPassword
+            // 
+            this.errorProviderConfirmPassword.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderConfirmPassword.ContainerControl = this;
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,14 +371,14 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxCountry);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.datePickerBirth);
+            this.Controls.Add(this.datePicker);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxFirstName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxPasswordConfirmation);
+            this.Controls.Add(this.textBoxConfirmPassword);
             this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBoxUserName);
+            this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.labelPasswordConfirmation);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelUserName);
@@ -330,6 +388,14 @@
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxShop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLastName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFirstName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderBirthDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCountry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderConfirmPassword)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,14 +409,14 @@
         private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelPasswordConfirmation;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxUserName;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxUsername;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxPassword;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxPasswordConfirmation;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxConfirmPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxFirstName;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxLastName;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker datePickerBirth;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker datePicker;
         private System.Windows.Forms.Label label4;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxCountry;
         private System.Windows.Forms.Label label5;
@@ -358,5 +424,13 @@
         private System.Windows.Forms.Label label6;
         private CustomControls.RJControls.RJButton buttonCreateEmployee;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ErrorProvider errorProviderUsername;
+        private System.Windows.Forms.ErrorProvider errorProviderEmail;
+        private System.Windows.Forms.ErrorProvider errorProviderPassword;
+        private System.Windows.Forms.ErrorProvider errorProviderLastName;
+        private System.Windows.Forms.ErrorProvider errorProviderFirstName;
+        private System.Windows.Forms.ErrorProvider errorProviderBirthDate;
+        private System.Windows.Forms.ErrorProvider errorProviderCountry;
+        private System.Windows.Forms.ErrorProvider errorProviderConfirmPassword;
     }
 }

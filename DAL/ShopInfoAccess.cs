@@ -29,7 +29,7 @@ namespace DAL
                 }
 
             return shopInfo;
-        }*/
+        }
         public static List<string> GetShopNameList()
         {
             List<string> list = new List<string>();
