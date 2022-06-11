@@ -49,7 +49,20 @@
             this.label6 = new System.Windows.Forms.Label();
             this.buttonCreateEmployee = new CustomControls.RJControls.RJButton();
             this.label7 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxShopName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.labelShopName = new System.Windows.Forms.Label();
+            this.textBoxShopAddress = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelPostalCode = new System.Windows.Forms.Label();
+            this.textBoxShopPostal = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxShopCountry = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxShopCity = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.buttonCreateShop = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxShop)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +70,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(37, 26);
+            this.label1.Location = new System.Drawing.Point(23, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(252, 25);
             this.label1.TabIndex = 0;
@@ -65,7 +78,7 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(42, 93);
+            this.textBoxEmail.Location = new System.Drawing.Point(28, 76);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(395, 28);
             this.textBoxEmail.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -80,7 +93,7 @@
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmail.ForeColor = System.Drawing.Color.White;
-            this.labelEmail.Location = new System.Drawing.Point(37, 65);
+            this.labelEmail.Location = new System.Drawing.Point(23, 48);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(65, 25);
             this.labelEmail.TabIndex = 66;
@@ -91,7 +104,7 @@
             this.labelUserName.AutoSize = true;
             this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUserName.ForeColor = System.Drawing.Color.White;
-            this.labelUserName.Location = new System.Drawing.Point(37, 134);
+            this.labelUserName.Location = new System.Drawing.Point(23, 117);
             this.labelUserName.Name = "labelUserName";
             this.labelUserName.Size = new System.Drawing.Size(162, 25);
             this.labelUserName.TabIndex = 67;
@@ -102,7 +115,7 @@
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.ForeColor = System.Drawing.Color.White;
-            this.labelPassword.Location = new System.Drawing.Point(37, 213);
+            this.labelPassword.Location = new System.Drawing.Point(23, 196);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(142, 25);
             this.labelPassword.TabIndex = 68;
@@ -113,7 +126,7 @@
             this.labelPasswordConfirmation.AutoSize = true;
             this.labelPasswordConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPasswordConfirmation.ForeColor = System.Drawing.Color.White;
-            this.labelPasswordConfirmation.Location = new System.Drawing.Point(244, 213);
+            this.labelPasswordConfirmation.Location = new System.Drawing.Point(230, 196);
             this.labelPasswordConfirmation.Name = "labelPasswordConfirmation";
             this.labelPasswordConfirmation.Size = new System.Drawing.Size(133, 25);
             this.labelPasswordConfirmation.TabIndex = 69;
@@ -121,7 +134,7 @@
             // 
             // textBoxUserName
             // 
-            this.textBoxUserName.Location = new System.Drawing.Point(42, 162);
+            this.textBoxUserName.Location = new System.Drawing.Point(28, 145);
             this.textBoxUserName.Name = "textBoxUserName";
             this.textBoxUserName.Size = new System.Drawing.Size(395, 28);
             this.textBoxUserName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -133,7 +146,7 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(42, 241);
+            this.textBoxPassword.Location = new System.Drawing.Point(28, 224);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(188, 28);
             this.textBoxPassword.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -145,7 +158,7 @@
             // 
             // textBoxPasswordConfirmation
             // 
-            this.textBoxPasswordConfirmation.Location = new System.Drawing.Point(249, 241);
+            this.textBoxPasswordConfirmation.Location = new System.Drawing.Point(235, 224);
             this.textBoxPasswordConfirmation.Name = "textBoxPasswordConfirmation";
             this.textBoxPasswordConfirmation.Size = new System.Drawing.Size(188, 28);
             this.textBoxPasswordConfirmation.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -160,7 +173,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(244, 292);
+            this.label2.Location = new System.Drawing.Point(230, 275);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 25);
             this.label2.TabIndex = 73;
@@ -171,7 +184,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(37, 292);
+            this.label3.Location = new System.Drawing.Point(23, 275);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 25);
             this.label3.TabIndex = 74;
@@ -179,7 +192,7 @@
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(249, 320);
+            this.textBoxFirstName.Location = new System.Drawing.Point(235, 303);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(188, 28);
             this.textBoxFirstName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -191,7 +204,7 @@
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(42, 320);
+            this.textBoxLastName.Location = new System.Drawing.Point(28, 303);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(188, 28);
             this.textBoxLastName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -203,7 +216,7 @@
             // 
             // datePickerBirth
             // 
-            this.datePickerBirth.Location = new System.Drawing.Point(42, 394);
+            this.datePickerBirth.Location = new System.Drawing.Point(28, 377);
             this.datePickerBirth.Name = "datePickerBirth";
             this.datePickerBirth.Size = new System.Drawing.Size(188, 29);
             this.datePickerBirth.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -217,7 +230,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(37, 366);
+            this.label4.Location = new System.Drawing.Point(23, 349);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(191, 25);
             this.label4.TabIndex = 78;
@@ -225,7 +238,7 @@
             // 
             // textBoxCountry
             // 
-            this.textBoxCountry.Location = new System.Drawing.Point(249, 394);
+            this.textBoxCountry.Location = new System.Drawing.Point(235, 377);
             this.textBoxCountry.Name = "textBoxCountry";
             this.textBoxCountry.Size = new System.Drawing.Size(188, 28);
             this.textBoxCountry.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -240,7 +253,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(246, 366);
+            this.label5.Location = new System.Drawing.Point(232, 349);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 25);
             this.label5.TabIndex = 80;
@@ -249,7 +262,7 @@
             // comboBoxShop
             // 
             this.comboBoxShop.DropDownWidth = 180;
-            this.comboBoxShop.Location = new System.Drawing.Point(42, 471);
+            this.comboBoxShop.Location = new System.Drawing.Point(28, 454);
             this.comboBoxShop.Name = "comboBoxShop";
             this.comboBoxShop.Size = new System.Drawing.Size(188, 29);
             this.comboBoxShop.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -264,7 +277,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(39, 443);
+            this.label6.Location = new System.Drawing.Point(25, 426);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(220, 25);
             this.label6.TabIndex = 82;
@@ -281,7 +294,7 @@
             this.buttonCreateEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreateEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreateEmployee.ForeColor = System.Drawing.Color.White;
-            this.buttonCreateEmployee.Location = new System.Drawing.Point(42, 532);
+            this.buttonCreateEmployee.Location = new System.Drawing.Point(28, 515);
             this.buttonCreateEmployee.Name = "buttonCreateEmployee";
             this.buttonCreateEmployee.Size = new System.Drawing.Size(133, 35);
             this.buttonCreateEmployee.TabIndex = 83;
@@ -295,43 +308,198 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(549, 26);
+            this.label7.Location = new System.Drawing.Point(510, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(252, 25);
+            this.label7.Size = new System.Drawing.Size(283, 25);
             this.label7.TabIndex = 84;
-            this.label7.Text = "Créer un nouvel employé";
+            this.label7.Text = "Créer un nouveeau magasin";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.buttonCreateShop);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.textBoxShopCity);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.textBoxShopCountry);
+            this.panel1.Controls.Add(this.labelPostalCode);
+            this.panel1.Controls.Add(this.textBoxShopPostal);
+            this.panel1.Controls.Add(this.textBoxShopAddress);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.textBoxShopName);
+            this.panel1.Controls.Add(this.labelShopName);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.textBoxEmail);
+            this.panel1.Controls.Add(this.buttonCreateEmployee);
+            this.panel1.Controls.Add(this.labelEmail);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.labelUserName);
+            this.panel1.Controls.Add(this.comboBoxShop);
+            this.panel1.Controls.Add(this.labelPassword);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.labelPasswordConfirmation);
+            this.panel1.Controls.Add(this.textBoxCountry);
+            this.panel1.Controls.Add(this.textBoxUserName);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.textBoxPassword);
+            this.panel1.Controls.Add(this.datePickerBirth);
+            this.panel1.Controls.Add(this.textBoxPasswordConfirmation);
+            this.panel1.Controls.Add(this.textBoxLastName);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBoxFirstName);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(-1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1179, 595);
+            this.panel1.TabIndex = 85;
+            // 
+            // textBoxShopName
+            // 
+            this.textBoxShopName.Location = new System.Drawing.Point(515, 76);
+            this.textBoxShopName.Name = "textBoxShopName";
+            this.textBoxShopName.Size = new System.Drawing.Size(395, 28);
+            this.textBoxShopName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxShopName.StateCommon.Border.Rounding = 12;
+            this.textBoxShopName.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxShopName.TabIndex = 85;
+            // 
+            // labelShopName
+            // 
+            this.labelShopName.AutoSize = true;
+            this.labelShopName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShopName.ForeColor = System.Drawing.Color.White;
+            this.labelShopName.Location = new System.Drawing.Point(510, 48);
+            this.labelShopName.Name = "labelShopName";
+            this.labelShopName.Size = new System.Drawing.Size(173, 25);
+            this.labelShopName.TabIndex = 86;
+            this.labelShopName.Text = "Nom du magasin";
+            // 
+            // textBoxShopAddress
+            // 
+            this.textBoxShopAddress.Location = new System.Drawing.Point(515, 145);
+            this.textBoxShopAddress.Name = "textBoxShopAddress";
+            this.textBoxShopAddress.Size = new System.Drawing.Size(395, 28);
+            this.textBoxShopAddress.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxShopAddress.StateCommon.Border.Rounding = 12;
+            this.textBoxShopAddress.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxShopAddress.TabIndex = 87;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(510, 117);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 25);
+            this.label8.TabIndex = 88;
+            this.label8.Text = "Adresse ";
+            // 
+            // labelPostalCode
+            // 
+            this.labelPostalCode.AutoSize = true;
+            this.labelPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPostalCode.ForeColor = System.Drawing.Color.White;
+            this.labelPostalCode.Location = new System.Drawing.Point(717, 196);
+            this.labelPostalCode.Name = "labelPostalCode";
+            this.labelPostalCode.Size = new System.Drawing.Size(127, 25);
+            this.labelPostalCode.TabIndex = 89;
+            this.labelPostalCode.Text = "Code postal";
+            // 
+            // textBoxShopPostal
+            // 
+            this.textBoxShopPostal.Location = new System.Drawing.Point(722, 224);
+            this.textBoxShopPostal.Name = "textBoxShopPostal";
+            this.textBoxShopPostal.Size = new System.Drawing.Size(188, 28);
+            this.textBoxShopPostal.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxShopPostal.StateCommon.Border.Rounding = 12;
+            this.textBoxShopPostal.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxShopPostal.TabIndex = 90;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(510, 196);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 25);
+            this.label9.TabIndex = 91;
+            this.label9.Text = "Pays";
+            // 
+            // textBoxShopCountry
+            // 
+            this.textBoxShopCountry.Location = new System.Drawing.Point(515, 224);
+            this.textBoxShopCountry.Name = "textBoxShopCountry";
+            this.textBoxShopCountry.Size = new System.Drawing.Size(188, 28);
+            this.textBoxShopCountry.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxShopCountry.StateCommon.Border.Rounding = 12;
+            this.textBoxShopCountry.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxShopCountry.TabIndex = 92;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(510, 275);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 25);
+            this.label10.TabIndex = 93;
+            this.label10.Text = "Ville";
+            // 
+            // textBoxShopCity
+            // 
+            this.textBoxShopCity.Location = new System.Drawing.Point(515, 303);
+            this.textBoxShopCity.Name = "textBoxShopCity";
+            this.textBoxShopCity.Size = new System.Drawing.Size(188, 28);
+            this.textBoxShopCity.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxShopCity.StateCommon.Border.Rounding = 12;
+            this.textBoxShopCity.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxShopCity.TabIndex = 94;
+            // 
+            // buttonCreateShop
+            // 
+            this.buttonCreateShop.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonCreateShop.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonCreateShop.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonCreateShop.BorderRadius = 12;
+            this.buttonCreateShop.BorderSize = 0;
+            this.buttonCreateShop.FlatAppearance.BorderSize = 0;
+            this.buttonCreateShop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCreateShop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCreateShop.ForeColor = System.Drawing.Color.White;
+            this.buttonCreateShop.Location = new System.Drawing.Point(515, 515);
+            this.buttonCreateShop.Name = "buttonCreateShop";
+            this.buttonCreateShop.Size = new System.Drawing.Size(133, 35);
+            this.buttonCreateShop.TabIndex = 95;
+            this.buttonCreateShop.Text = "Créer";
+            this.buttonCreateShop.TextColor = System.Drawing.Color.White;
+            this.buttonCreateShop.UseVisualStyleBackColor = false;
+            this.buttonCreateShop.Click += new System.EventHandler(this.buttonCreateShop_Click);
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 649);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.buttonCreateEmployee);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBoxShop);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBoxCountry);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.datePickerBirth);
-            this.Controls.Add(this.textBoxLastName);
-            this.Controls.Add(this.textBoxFirstName);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxPasswordConfirmation);
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBoxUserName);
-            this.Controls.Add(this.labelPasswordConfirmation);
-            this.Controls.Add(this.labelPassword);
-            this.Controls.Add(this.labelUserName);
-            this.Controls.Add(this.labelEmail);
-            this.Controls.Add(this.textBoxEmail);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1171, 1055);
+            this.Controls.Add(this.panel1);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxShop)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -358,5 +526,17 @@
         private System.Windows.Forms.Label label6;
         private CustomControls.RJControls.RJButton buttonCreateEmployee;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel1;
+        private CustomControls.RJControls.RJButton buttonCreateShop;
+        private System.Windows.Forms.Label label10;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxShopCity;
+        private System.Windows.Forms.Label label9;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxShopCountry;
+        private System.Windows.Forms.Label labelPostalCode;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxShopPostal;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxShopAddress;
+        private System.Windows.Forms.Label label8;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxShopName;
+        private System.Windows.Forms.Label labelShopName;
     }
 }

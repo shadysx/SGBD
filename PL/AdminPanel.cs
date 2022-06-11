@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using DAL;
 
 namespace PL
 {
@@ -19,10 +20,6 @@ namespace PL
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
             this.comboBoxShop.DataSource = BLLAdminPanel.GetShopNameList();
-
-
-
-
         }
 
         private void buttonCreateEmployee_Click(object sender, EventArgs e)
@@ -53,6 +50,35 @@ namespace PL
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void buttonCreateShop_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                ShopInfo newShop = new ShopInfo()
+                {
+                    SHOP_NAME = this.textBoxShopName.Text,
+                    SHOP_ADDRESS = this.textBoxShopAddress.Text,
+                    SHOP_POSTAL_CODE = this.textBoxShopPostal.Text,
+                    SHOP_CITY = this.textBoxShopCity.Text,
+                    SHOP_COUNTRY = this.textBoxShopCountry.Text
+                };
+
+                ShopInfoAccess.InsertNewShop(newShop);
+
+                MessageBox.Show("Création du nouveau magasin avec succès");
+                Dispose();
+                Main.mainInstance.OpenChildForm(new AdminPanel());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
         }
     }
 }

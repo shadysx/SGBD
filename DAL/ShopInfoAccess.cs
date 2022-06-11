@@ -29,7 +29,7 @@ namespace DAL
                 }
 
             return shopInfo;
-        }*/
+        }
         public static List<string> GetShopNameList()
         {
             List<string> list = new List<string>();
@@ -68,6 +68,21 @@ namespace DAL
                 }
             return id;
 
+        }
+
+        public static void InsertNewShop(ShopInfo shop)
+        {
+            string query = $"INSERT INTO SHOP  VALUES(@SHOP_NAME, @SHOP_ADDRESS, @SHOP_POSTAL_CODE, @SHOP_CITY, @SHOP_COUNTRY)";
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    connexion.Execute(query, shop);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
         }
 
         // PROCEDURE 27
