@@ -17,11 +17,11 @@ using System.Data.Linq;
 
 namespace PL
 {
-    public partial class EmployeeAddStockPanel : Form
+    public partial class EmployeePanel : Form
     {
         List<string> articleTypes = new List<string>();
         string fileName; 
-        public EmployeeAddStockPanel()
+        public EmployeePanel()
         {
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
@@ -52,7 +52,7 @@ namespace PL
 
             StockAccess.UpdateStock(ProductsAccess.SelectProductIDByName(this.comboBox2.SelectedValue.ToString()) ,Auth.CurrentUser.ID_SHOP, Convert.ToInt32(this.numericUpDown1.Value) , this.textBox1.Text);
             MessageBox.Show("Mise a jour effectuée");
-            Main.mainInstance.OpenChildForm(new EmployeeAddStockPanel());
+            Main.mainInstance.OpenChildForm(new EmployeePanel());
         }
 
     
@@ -86,7 +86,7 @@ namespace PL
                 ProductsAccess.InsertProductImage(this.fileName, ProductsAccess.SelectLastProductID(), buff);
         
                 MessageBox.Show("Référence ajoutée, vous pouvez maintenant gerer le stock");
-                Main.mainInstance.OpenChildForm(new EmployeeAddStockPanel());
+                Main.mainInstance.OpenChildForm(new EmployeePanel());
             }
             catch(Exception ex)
             {

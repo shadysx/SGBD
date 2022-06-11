@@ -11,9 +11,9 @@ namespace DAL
     public static class ShopInfoAccess
     {
         // PROCEDURE 27       
-        public static ShopInfo GetShopInfo(int shopID)
+        public static Shop GetShopInfo(int shopID)
         {
-            ShopInfo shopInfo = new ShopInfo();
+            Shop shopInfo = new Shop();
 
             string query = $"execute GetShopInfo {shopID}";
 
@@ -21,7 +21,7 @@ namespace DAL
                 ////= SQL directe
                 try
                 {
-                    shopInfo = connexion.Query<ShopInfo>(query).Single();
+                    shopInfo = connexion.Query<Shop>(query).Single();
                 }
                 catch (Exception ex)
                 {
@@ -70,7 +70,7 @@ namespace DAL
 
         }
 
-        public static void InsertNewShop(ShopInfo shop)
+        public static void InsertNewShop(Shop shop)
         {
             string query = $"INSERT INTO SHOP  VALUES(@SHOP_NAME, @SHOP_ADDRESS, @SHOP_POSTAL_CODE, @SHOP_CITY, @SHOP_COUNTRY)";
             using (var connexion = CON_MGR.Connection())

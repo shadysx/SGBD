@@ -118,7 +118,7 @@ namespace PL
         {
             RefreshUI();
             DrawSelectedIcon(this.iconButtonEmployeePanel);
-            this.OpenChildForm(new EmployeeAddStockPanel());
+            this.OpenChildForm(new EmployeePanel());
             this.isProfileSubMenuTrigger = false;
         }
 

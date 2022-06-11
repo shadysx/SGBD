@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class ShopInfo
+    public class Shop
     {
         public string SHOP_ID { get; set; }
         public string SHOP_NAME { get; set; } 

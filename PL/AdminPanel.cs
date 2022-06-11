@@ -241,7 +241,7 @@ namespace PL
 
             try
             {
-                ShopInfo newShop = new ShopInfo()
+                Shop newShop = new Shop()
                 {
                     SHOP_NAME = this.textBoxShopName.Text,
                     SHOP_ADDRESS = this.textBoxShopAddress.Text,
