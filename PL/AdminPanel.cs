@@ -16,7 +16,7 @@ namespace PL
 {
     public partial class AdminPanel : Form
     {
-        List <Account> accounts;
+        List<Account> accounts;
         public AdminPanel()
         {
             InitializeComponent();
@@ -185,9 +185,9 @@ namespace PL
                         }
                     }
 
-                    
+
                 }
-                
+
             }
 
             if (this.textBoxConfirmPassword.Text != this.textBoxPassword.Text)
@@ -212,13 +212,28 @@ namespace PL
                         MessageBox.Show("Employé créé avec succès");
                         this.Dispose();
                         Main.mainInstance.OpenChildForm(new AdminPanel());
-                    }                 
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
+        }
+
+        private void ResetErrorProvider()
+        {
+            this.errorProviderEmail.SetError(textBoxEmail, null);
+            this.errorProviderUsername.SetError(textBoxUsername, null);
+            this.errorProviderPassword.SetError(textBoxPassword, null);
+            this.errorProviderConfirmPassword.SetError(textBoxConfirmPassword, null);
+            this.errorProviderBirthDate.SetError(datePicker, null);
+            this.errorProviderLastName.SetError(textBoxLastName, null);
+            this.errorProviderFirstName.SetError(textBoxFirstName, null);
+            this.errorProviderCountry.SetError(textBoxCountry, null);
         }
 
         private void buttonCreateShop_Click(object sender, EventArgs e)
@@ -246,22 +261,7 @@ namespace PL
                 MessageBox.Show(ex.Message);
             }
 
-
-
-                            
-            }            
-        }
-
-        private void ResetErrorProvider()
-        {
-            this.errorProviderEmail.SetError(textBoxEmail, null);
-            this.errorProviderUsername.SetError(textBoxUsername, null);
-            this.errorProviderPassword.SetError(textBoxPassword, null);
-            this.errorProviderConfirmPassword.SetError(textBoxConfirmPassword, null);
-            this.errorProviderBirthDate.SetError(datePicker, null);
-            this.errorProviderLastName.SetError(textBoxLastName, null);
-            this.errorProviderFirstName.SetError(textBoxFirstName, null);            
-            this.errorProviderCountry.SetError(textBoxCountry, null);
         }
     }
 }
+
