@@ -303,7 +303,11 @@ namespace PL
 
         private void iconButtonAdminPanel_Click_1(object sender, EventArgs e)
         {
-            Main.mainInstance.OpenChildForm(new AdminPanel());
+            RefreshUI();
+            DrawSelectedIcon(this.iconButtonAdminPanel);
+            this.OpenChildForm(new AdminPanel());
+            this.isProfileSubMenuTrigger = false;
+            
         }
     }
 }

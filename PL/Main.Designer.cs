@@ -36,7 +36,6 @@
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
             this.iconButtonAdminPanel = new FontAwesome.Sharp.IconButton();
             this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
             this.iconButtonEmployeePanel = new FontAwesome.Sharp.IconButton();
@@ -174,7 +173,7 @@
             this.iconButtonAdminPanel.IconColor = System.Drawing.Color.White;
             this.iconButtonAdminPanel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonAdminPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonAdminPanel.Location = new System.Drawing.Point(3, 285);
+            this.iconButtonAdminPanel.Location = new System.Drawing.Point(0, 635);
             this.iconButtonAdminPanel.Name = "iconButtonAdminPanel";
             this.iconButtonAdminPanel.Size = new System.Drawing.Size(197, 47);
             this.iconButtonAdminPanel.TabIndex = 6;
