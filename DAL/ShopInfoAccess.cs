@@ -10,8 +10,35 @@ namespace DAL
 {
     public static class ShopInfoAccess
     {
-        // PROCEDURE 26
+        // PROCEDURE 27       
+        public static ShopInfo GetShopInfo(int shopID)
+        {
+            ShopInfo shopInfo = new ShopInfo();
 
+            string query = $"execute GetShopInfo {shopID}";
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    shopInfo = connexion.Query<ShopInfo>(query).Single();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            return shopInfo;
+        }
+
+
+
+
+
+        // OLD REQUEST (without stored procedure)
+
+        // PROCEDURE 27
+        // 
         /*public static ShopInfo GetShopInfo(int shopID)
         {
             ShopInfo shopInfo = new ShopInfo();
@@ -32,24 +59,5 @@ namespace DAL
             return shopInfo;
         }*/
 
-        public static ShopInfo GetShopInfo(int shopID)
-        {
-            ShopInfo shopInfo = new ShopInfo();
-
-            string query = $"execute GetShopInfo {shopID}";
-
-            using (var connexion = CON_MGR.Connection())
-                ////= SQL directe
-                try
-                {
-                    shopInfo = connexion.Query<ShopInfo>(query).Single();
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-            return shopInfo;
-        }
     }
 }

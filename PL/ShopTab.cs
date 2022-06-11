@@ -16,7 +16,6 @@ namespace PL
 {
     public partial class ShopTab : Form
     {
-
         private List<Product> products;
         
         public ShopTab()
@@ -34,8 +33,7 @@ namespace PL
 
             this.comboBoxSearchByType.DataSource = types;
             this.comboBoxOrderBy.DataSource = orderByWhat;
-            this.rjButton1.BackColor = CustomColor.Orange;
-            
+            this.rjButton1.BackColor = CustomColor.Orange;            
             
             List<DTO.Product> products = BLLShopTab.Select20RandomProducts();
             DisplayProducts(products);
@@ -50,7 +48,7 @@ namespace PL
             this.products = BLLShopTab.Select20RandomProducts();           
         }
 
-        private List<Product> FilteredProducts(string productName, string productType, string orderBy)//string productType, string orderBy
+        private List<Product> FilteredProducts(string productName, string productType, string orderBy)
         {
             List<Product> filteredProducts = new List<Product>();
             string searchByName = "";
@@ -58,7 +56,7 @@ namespace PL
             productName = productName.ToLower();
 
             if (productName != "")
-                searchByName += $"{productName} ";
+                searchByName += $"{productName}";
             if (productType != "Tous")
                 searchByType += $"{productType}";
             if (orderBy == "Prix Croissant")
@@ -97,7 +95,6 @@ namespace PL
                 AddProduct(p.PRODUCT_NAME, p.PRODUCT_TYPE,p.PRODUCT_DESCRIPTION, p.PRODUCT_IMAGE, p.PRODUCT_BEST_PRICE);
             }
         }
-
 
     }
 }

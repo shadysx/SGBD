@@ -157,7 +157,8 @@ namespace PL
                 ACCOUNT_CITY = this.textBoxCity.Texts.Trim(),
                 ACCOUNT_POSTAL_CODE = this.textBoxPostalCode.Texts.Trim(),
                 ACCOUNT_COUNTRY = this.textBoxCountry.Texts.Trim(),
-                ACCOUNT_ROLE = "CLIENT"
+                ACCOUNT_ROLE = "CLIENT",
+                ID_SHOP = 0
             };
 
 
@@ -300,6 +301,7 @@ namespace PL
                         try
                         {
                             BLLRegistration.InsertProfileImage(this.fileName, BLLRegistration.GetLastCreatedAccount(), buff);
+                            this.pictureBox.Image = null;
                         }
                         catch (Exception ex)
                         {
