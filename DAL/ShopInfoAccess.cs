@@ -10,13 +10,12 @@ namespace DAL
 {
     public static class ShopInfoAccess
     {
-        // PROCEDURE 26
-
-        /*public static ShopInfo GetShopInfo(int shopID)
+        // PROCEDURE 27       
+        public static ShopInfo GetShopInfo(int shopID)
         {
             ShopInfo shopInfo = new ShopInfo();
 
-            string query = $"select * from SHOP where ID_SHOP = {shopID}";
+            string query = $"execute GetShopInfo {shopID}";
 
             using (var connexion = CON_MGR.Connection())
                 ////= SQL directe
@@ -71,11 +70,13 @@ namespace DAL
 
         }
 
-        public static ShopInfo GetShopInfo(int shopID)
+        // PROCEDURE 27
+        // 
+        /*public static ShopInfo GetShopInfo(int shopID)
         {
             ShopInfo shopInfo = new ShopInfo();
 
-            string query = $"execute GetShopInfo {shopID}";
+            string query = $"select * from SHOP where ID_SHOP = {shopID}";
 
             using (var connexion = CON_MGR.Connection())
                 ////= SQL directe
@@ -89,6 +90,7 @@ namespace DAL
                 }
 
             return shopInfo;
-        }
+        }*/
+
     }
 }

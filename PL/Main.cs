@@ -213,7 +213,7 @@ namespace PL
                 i.Size = new System.Drawing.Size(197, 47);
                 i.Location = new System.Drawing.Point(0, i.Location.Y);
                 i.Text = i.Tag.ToString();
-                i.IconColor = Color.Orange;
+                i.IconColor = CustomColor.Orange;
                 i.ForeColor = Color.White;
                 i.IconSize = 48;
                 i.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, CustomColor.Orange);

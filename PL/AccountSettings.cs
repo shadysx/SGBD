@@ -30,6 +30,8 @@ namespace PL
 
             this.labelAccountInfo.ForeColor = CustomColor.Orange;
             this.labelUsername.ForeColor = CustomColor.Orange;
+            this.labelChangeSettings.ForeColor = CustomColor.Orange;
+            this.labelChangePassword.ForeColor = CustomColor.Orange;
             this.panelTopRight.BackColor = CustomColor.DarkBlue;
             this.panelBottom.BackColor = CustomColor.DarkBlue;
             this.panelTop.BackColor = CustomColor.DarkBlue;
