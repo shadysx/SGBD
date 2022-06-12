@@ -36,8 +36,8 @@
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.iconButtonAdminPanel = new FontAwesome.Sharp.IconButton();
             this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
-            this.iconButtonAdminPanel = new FontAwesome.Sharp.IconButton();            
             this.iconButtonEmployeePanel = new FontAwesome.Sharp.IconButton();
             this.iconButtonBasket = new FontAwesome.Sharp.IconButton();
             this.iconButtonShop = new FontAwesome.Sharp.IconButton();
@@ -280,6 +280,10 @@
             this.iconButtonHome.UseVisualStyleBackColor = false;
             this.iconButtonHome.Click += new System.EventHandler(this.iconButtonHome_Click);
             // 
+            // kryptonPalette1
+            // 
+            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
+            // 
             // panelProfileSubMenu
             // 
             this.panelProfileSubMenu.BackColor = System.Drawing.Color.IndianRed;
@@ -366,7 +370,6 @@
             // 
             // panelRight
             // 
-            this.panelRight.BackgroundImage = global::PL.Properties.Resources.pngegg__1_;
             this.panelRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelRight.Controls.Add(this.panelProfileSubMenu);
             this.panelRight.ForeColor = System.Drawing.Color.Black;
@@ -410,6 +413,7 @@
             this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.StateCommon.Border.Rounding = 20;
             this.Load += new System.EventHandler(this.Main_Load);
             this.panelTop.ResumeLayout(false);

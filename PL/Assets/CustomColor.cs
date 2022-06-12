@@ -12,7 +12,7 @@ namespace PL
         public static Color DarkBlue 
         {
             get        
-            {                
+            {
                 return Color.FromArgb(7, 8, 38);
             }
         }
