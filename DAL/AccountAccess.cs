@@ -203,6 +203,29 @@ namespace DAL
         }
 
 
+        public static void UpdateAccount(Account newAccount)
+        {
+            string idShopnull = "null";
+            if(newAccount.ID_SHOP > 0)
+                idShopnull = "" + newAccount.ID_SHOP;
+
+
+            string query = $"Update Account set ACCOUNT_EMAIL = @ACCOUNT_EMAIL, ACCOUNT_USERNAME = @ACCOUNT_USERNAME, ACCOUNT_PASSWORD = @ACCOUNT_PASSWORD, ACCOUNT_LAST_NAME = @ACCOUNT_LAST_NAME, ACCOUNT_FIRST_NAME = @ACCOUNT_FIRST_NAME, ACCOUNT_BIRTH_DATE = @ACCOUNT_BIRTH_DATE, ACCOUNT_ADDRESS = @ACCOUNT_ADDRESS, ACCOUNT_CITY = @ACCOUNT_CITY, ACCOUNT_POSTAL_CODE = @ACCOUNT_POSTAL_CODE, ACCOUNT_COUNTRY = @ACCOUNT_COUNTRY, ACCOUNT_ROLE = @ACCOUNT_ROLE, ID_SHOP = {idShopnull} where ID_ACCOUNT = @ID_ACCOUNT";
+
+            using (var connexion = CON_MGR.Connection())
+                try
+                {
+                    connexion.Execute(query, newAccount);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+        }
+
+
+
+
         // OLD REQUEST (without stored procedure)
 
         // Procédure 1 

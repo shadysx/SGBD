@@ -26,6 +26,7 @@ namespace PL
             this.labelTitleModifyUser.ForeColor = CustomColor.Orange;
             this.labelID.ForeColor = CustomColor.Orange;
             this.labelTitleModifyShop.ForeColor = CustomColor.Orange;
+            this.label7.ForeColor = CustomColor.Orange;
 
             this.comboBoxShop.DataSource = BLLAdminPanel.GetShopNameList();
             this.kryptonComboBox1.DataSource = new List<string>() { "Utilisateur", "Email", "Nom" };
@@ -70,14 +71,13 @@ namespace PL
             bool isPasswordDifferent = false;
 
 
-            ResetErrorProvider();
+            ResetErrorProviderEmployee();
 
 
             // Reset la couleur de la Bordure des textbox en noir
-            foreach (ComponentFactory.Krypton.Toolkit.KryptonTextBox tb in this.Controls.OfType<ComponentFactory.Krypton.Toolkit.KryptonTextBox>())
-            {
+            foreach (ComponentFactory.Krypton.Toolkit.KryptonTextBox tb in this.panelCreateEmployee.Controls.OfType<ComponentFactory.Krypton.Toolkit.KryptonTextBox>())
                 tb.StateCommon.Border.Color1 = Color.Black;
-            }
+            
 
             this.datePicker.StateCommon.Border.Color1 = Color.Black;
 
@@ -219,7 +219,7 @@ namespace PL
                 {
                     if (Auth.SignUp(newAccount))
                     {
-                        foreach (ComponentFactory.Krypton.Toolkit.KryptonTextBox tb in this.Controls.OfType<ComponentFactory.Krypton.Toolkit.KryptonTextBox>())
+                        foreach (ComponentFactory.Krypton.Toolkit.KryptonTextBox tb in this.panelCreateEmployee.Controls.OfType<ComponentFactory.Krypton.Toolkit.KryptonTextBox>())
                             tb.Text = "";
                         MessageBox.Show("Employé créé avec succès");
                         this.Dispose();
@@ -236,7 +236,7 @@ namespace PL
 
         }
 
-        private void ResetErrorProvider()
+        private void ResetErrorProviderEmployee()
         {
             this.errorProviderEmail.SetError(textBoxEmail, null);
             this.errorProviderUsername.SetError(textBoxUsername, null);
@@ -246,11 +246,17 @@ namespace PL
             this.errorProviderLastName.SetError(textBoxLastName, null);
             this.errorProviderFirstName.SetError(textBoxFirstName, null);
             this.errorProviderCountry.SetError(textBoxCountry, null);
-            this.errorProviderShopName.SetError(textBoxCountry, null);
-            this.errorProviderShopAddress.SetError(textBoxCountry, null);
-            this.errorProviderShopCity.SetError(textBoxCountry, null);
-            this.errorProviderShopPostalCode.SetError(textBoxCountry, null);
-            this.errorProviderShopCountry.SetError(textBoxCountry, null);
+
+            
+        }
+
+        private void ResetErrorProviderShop()
+        {
+            this.errorProviderShopName.SetError(textBoxShopName, null);
+            this.errorProviderShopAddress.SetError(textBoxShopAddress, null);
+            this.errorProviderShopCity.SetError(textBoxShopCity, null);
+            this.errorProviderShopPostalCode.SetError(textBoxShopPostal, null);
+            this.errorProviderShopCountry.SetError(textBoxShopCountry, null);
         }
 
         private void buttonCreateShop_Click(object sender, EventArgs e)
@@ -258,7 +264,10 @@ namespace PL
 
             bool isBookUnvalidate = false;
 
-            ResetErrorProvider();
+            ResetErrorProviderShop();
+
+            foreach (ComponentFactory.Krypton.Toolkit.KryptonTextBox tb in this.panelCreateShop.Controls.OfType<ComponentFactory.Krypton.Toolkit.KryptonTextBox>())
+                tb.StateCommon.Border.Color1 = Color.Black;
 
             Shop newShop = new Shop()
             {
@@ -327,7 +336,7 @@ namespace PL
                     ShopInfoAccess.InsertNewShop(newShop);
 
                     MessageBox.Show("Création du nouveau magasin avec succès");
-                    foreach (ComponentFactory.Krypton.Toolkit.KryptonTextBox tb in this.Controls.OfType<ComponentFactory.Krypton.Toolkit.KryptonTextBox>())
+                    foreach (ComponentFactory.Krypton.Toolkit.KryptonTextBox tb in this.panelCreateShop.Controls.OfType<ComponentFactory.Krypton.Toolkit.KryptonTextBox>())
                         tb.Text = "";
                     Dispose();
 

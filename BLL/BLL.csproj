@@ -55,6 +55,8 @@
     <Compile Include="BLLAdminPanel.cs" />
     <Compile Include="BLLArticle.cs" />
     <Compile Include="BLLDetailsTab.cs" />
+    <Compile Include="BLLModifyShop.cs" />
+    <Compile Include="BLLModifyUser.cs" />
     <Compile Include="BLLRegistration.cs" />
     <Compile Include="BLLShopList.cs" />
     <Compile Include="BLLShopTab.cs" />

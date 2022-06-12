@@ -72,7 +72,7 @@ namespace DAL
 
         public static void InsertNewShop(Shop shop)
         {
-            string query = $"INSERT INTO SHOP  VALUES(@SHOP_NAME, @SHOP_ADDRESS, @SHOP_POSTAL_CODE, @SHOP_CITY, @SHOP_COUNTRY)";
+            string query = $"INSERT INTO SHOP VALUES(@SHOP_NAME, @SHOP_ADDRESS, @SHOP_POSTAL_CODE, @SHOP_CITY, @SHOP_COUNTRY)";
             using (var connexion = CON_MGR.Connection())
                 ////= SQL directe
                 try
@@ -111,6 +111,19 @@ namespace DAL
             {
                 throw ex;
             }
+        }
+
+        public static void UpdateShop(Shop shop)
+        {
+            using (var connexion = CON_MGR.Connection())
+                try
+                {
+                    connexion.Execute($"Update Shop set SHOP_NAME = @SHOP_NAME , SHOP_ADDRESS = @SHOP_ADDRESS, SHOP_COUNTRY = @SHOP_COUNTRY, SHOP_POSTAL_CODE = @SHOP_POSTAL_CODE, SHOP_CITY = @SHOP_CITY where ID_SHOP = @ID_SHOP",shop);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
         }
 
 

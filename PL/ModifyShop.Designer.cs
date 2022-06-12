@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelEditing = new System.Windows.Forms.Label();
-            this.labelAccountUsername = new System.Windows.Forms.Label();
+            this.labelShopName = new System.Windows.Forms.Label();
             this.buttonModify = new CustomControls.RJControls.RJButton();
             this.text = new System.Windows.Forms.Label();
             this.textBoxShopPostal = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -42,6 +43,16 @@
             this.textBoxShopName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.textBoxShopCountry = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.errorProviderShopName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderShopAddress = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderShopCity = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderShopPostalCode = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderShopCountry = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopCity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopPostalCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopCountry)).BeginInit();
             this.SuspendLayout();
             // 
             // labelEditing
@@ -55,16 +66,16 @@
             this.labelEditing.TabIndex = 143;
             this.labelEditing.Text = "Editing :";
             // 
-            // labelAccountUsername
+            // labelShopName
             // 
-            this.labelAccountUsername.AutoSize = true;
-            this.labelAccountUsername.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAccountUsername.ForeColor = System.Drawing.Color.White;
-            this.labelAccountUsername.Location = new System.Drawing.Point(183, 15);
-            this.labelAccountUsername.Name = "labelAccountUsername";
-            this.labelAccountUsername.Size = new System.Drawing.Size(137, 42);
-            this.labelAccountUsername.TabIndex = 142;
-            this.labelAccountUsername.Text = "labelNom";
+            this.labelShopName.AutoSize = true;
+            this.labelShopName.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShopName.ForeColor = System.Drawing.Color.White;
+            this.labelShopName.Location = new System.Drawing.Point(183, 15);
+            this.labelShopName.Name = "labelShopName";
+            this.labelShopName.Size = new System.Drawing.Size(215, 42);
+            this.labelShopName.TabIndex = 142;
+            this.labelShopName.Text = "labelShopName";
             // 
             // buttonModify
             // 
@@ -84,6 +95,7 @@
             this.buttonModify.Text = "Modifier";
             this.buttonModify.TextColor = System.Drawing.Color.White;
             this.buttonModify.UseVisualStyleBackColor = false;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // text
             // 
@@ -215,6 +227,31 @@
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
+            // errorProviderShopName
+            // 
+            this.errorProviderShopName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderShopName.ContainerControl = this;
+            // 
+            // errorProviderShopAddress
+            // 
+            this.errorProviderShopAddress.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderShopAddress.ContainerControl = this;
+            // 
+            // errorProviderShopCity
+            // 
+            this.errorProviderShopCity.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderShopCity.ContainerControl = this;
+            // 
+            // errorProviderShopPostalCode
+            // 
+            this.errorProviderShopPostalCode.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderShopPostalCode.ContainerControl = this;
+            // 
+            // errorProviderShopCountry
+            // 
+            this.errorProviderShopCountry.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderShopCountry.ContainerControl = this;
+            // 
             // ModifyShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,7 +259,7 @@
             this.ClientSize = new System.Drawing.Size(1135, 701);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.labelEditing);
-            this.Controls.Add(this.labelAccountUsername);
+            this.Controls.Add(this.labelShopName);
             this.Controls.Add(this.buttonModify);
             this.Controls.Add(this.text);
             this.Controls.Add(this.textBoxShopPostal);
@@ -237,6 +274,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModifyShop";
             this.Text = "ModifyShop";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopCity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopPostalCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopCountry)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,7 +288,7 @@
 
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label labelEditing;
-        private System.Windows.Forms.Label labelAccountUsername;
+        private System.Windows.Forms.Label labelShopName;
         private CustomControls.RJControls.RJButton buttonModify;
         private System.Windows.Forms.Label text;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxShopPostal;
@@ -258,5 +300,10 @@
         private System.Windows.Forms.Label label1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxShopName;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox textBoxShopCountry;
+        private System.Windows.Forms.ErrorProvider errorProviderShopName;
+        private System.Windows.Forms.ErrorProvider errorProviderShopAddress;
+        private System.Windows.Forms.ErrorProvider errorProviderShopCity;
+        private System.Windows.Forms.ErrorProvider errorProviderShopPostalCode;
+        private System.Windows.Forms.ErrorProvider errorProviderShopCountry;
     }
 }

@@ -36,7 +36,10 @@ namespace DTO
                     "ACCOUNT_CITY: " + ACCOUNT_CITY + "\n" +
                     "ACCOUNT_POSTAL_CODE: " + ACCOUNT_POSTAL_CODE + "\n" +
                     "ACCOUNT_COUNTRY: " + ACCOUNT_COUNTRY + "\n" +
-                    "ACCOUNT_ROLE: " + ACCOUNT_ROLE + "\n";
+                    "ACCOUNT_ROLE: " + ACCOUNT_ROLE + "\n" +
+                    "ID_SHOP: " + ID_SHOP + "\n" +
+                    "ID_ACCOUNT: " + ID_ACCOUNT +"\n" 
+                    ;
         }
 
     }
