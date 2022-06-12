@@ -85,6 +85,36 @@ namespace DAL
                 }
         }
 
+        public static List<Shop> SelectAllShop()
+        {
+            List<Shop> retval = new List<Shop>();
+            using (var connexion = CON_MGR.Connection())                
+                try
+                {
+                    retval = connexion.Query<Shop>("Select * from shop").ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            return retval;
+        }
+
+        public static void DeleteShop(int idShop)
+        {
+            using (var connexion = CON_MGR.Connection())
+            try
+            {
+                connexion.Execute($"delete from shop where ID_SHOP = {idShop}");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
         // PROCEDURE 27
         // 
         /*public static ShopInfo GetShopInfo(int shopID)

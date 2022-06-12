@@ -187,6 +187,21 @@ namespace DAL
 
         }
 
+        static public void DeleteAccount(int accountID)
+        {
+            string query = $"Delete from account WHERE ID_ACCOUNT = {accountID}";
+
+            using (var connexion = CON_MGR.Connection())
+                try
+                {
+                    connexion.Execute(query);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }           
+        }
+
 
         // OLD REQUEST (without stored procedure)
 

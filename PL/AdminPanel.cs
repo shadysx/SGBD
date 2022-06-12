@@ -20,13 +20,30 @@ namespace PL
         public AdminPanel()
         {
             InitializeComponent();
-            this.BackColor = CustomColor.DarkBlue;
+            this.BackColor = CustomColor.DarkBlue;            
+            this.labelTittleCreateEmployee.ForeColor = CustomColor.Orange;
+            this.labelTitleCreateShop.ForeColor = CustomColor.Orange;
+            this.labelTitleModifyUser.ForeColor = CustomColor.Orange;
+            this.labelID.ForeColor = CustomColor.Orange;
+
             this.comboBoxShop.DataSource = BLLAdminPanel.GetShopNameList();
-            this.kryptonComboBox1.DataSource = new List<string>() { "Utilisateur", "Email", "Nom"};
+            this.kryptonComboBox1.DataSource = new List<string>() { "Utilisateur", "Email", "Nom" };
             this.DisplayUsers();
+            this.DisplayShop();
 
         }
 
+        private void DisplayShop()
+        {
+            List<Shop> shops = BLLAdminPanel.SelectAllShop();
+            foreach (Shop s in shops)
+            {
+                ShopList sl = new ShopList(s.ID_SHOP, s.SHOP_ADDRESS, s.SHOP_CITY, s.SHOP_POSTAL_CODE, s.SHOP_NAME, s.SHOP_COUNTRY);
+                sl.TopLevel = false;
+                this.flowLayoutPanel3.Controls.Add(sl);
+                sl.Show();
+            }
+        }
 
         private void DisplayUsers()
         {
@@ -165,28 +182,6 @@ namespace PL
                             isBookUnvalidate = true;
                         }
 
-                        /*else if (failure.PropertyName.Contains("ADDRESS"))
-                        {
-                            this.textBoxAddress.BorderColor = Color.Red;
-                            errorProviderAddress.SetError(textBoxAddress, "Must contains at least between 1 and 249 char");
-                        }
-                        else if (failure.PropertyName.Contains("CITY"))
-                        {
-                            this.textBoxCity.BorderColor = Color.Red;
-                            errorProviderCity.SetError(textBoxCity, "Must contains at least between 1 and 49 char");
-                        }
-                        else if (failure.PropertyName.Contains("POSTAL_CODE") && s.Contains("format"))
-                        {
-                            this.textBoxPostalCode.BorderColor = Color.Red;
-                            errorProviderPostalCode.SetError(textBoxPostalCode, "Unvalid Format");
-                        }
-                        else if (failure.PropertyName.Contains("POSTAL_CODE") && s.Contains("caract"))
-                        {
-                            this.textBoxPostalCode.BorderColor = Color.Red;
-                            errorProviderPostalCode.SetError(textBoxPostalCode, "Must contains at least between 1 and 49 char");
-                        }*/
-
-
                         else if (failure.PropertyName.Contains("COUNTRY") && s.Contains("format"))
                         {
                             this.textBoxCountry.StateCommon.Border.Color1 = Color.Red;
@@ -201,7 +196,6 @@ namespace PL
                             isBookUnvalidate = true;
                         }
                     }
-
 
                 }
 
@@ -251,33 +245,98 @@ namespace PL
             this.errorProviderLastName.SetError(textBoxLastName, null);
             this.errorProviderFirstName.SetError(textBoxFirstName, null);
             this.errorProviderCountry.SetError(textBoxCountry, null);
+            this.errorProviderShopName.SetError(textBoxCountry, null);
+            this.errorProviderShopAddress.SetError(textBoxCountry, null);
+            this.errorProviderShopCity.SetError(textBoxCountry, null);
+            this.errorProviderShopPostalCode.SetError(textBoxCountry, null);
+            this.errorProviderShopCountry.SetError(textBoxCountry, null);
         }
 
         private void buttonCreateShop_Click(object sender, EventArgs e)
         {
 
-            try
+            bool isBookUnvalidate = false;
+
+            ResetErrorProvider();
+
+            Shop newShop = new Shop()
             {
-                Shop newShop = new Shop()
+                SHOP_NAME = this.textBoxShopName.Text,
+                SHOP_ADDRESS = this.textBoxShopAddress.Text,
+                SHOP_POSTAL_CODE = this.textBoxShopPostal.Text,
+                SHOP_CITY = this.textBoxShopCity.Text,
+                SHOP_COUNTRY = this.textBoxShopCountry.Text
+            };
+
+            RulesBookShop rbShop = new RulesBookShop();
+            var result = rbShop.Validate(newShop);
+
+            if (!result.IsValid)
+            {
+
+                foreach (var failure in result.Errors)
                 {
-                    SHOP_NAME = this.textBoxShopName.Text,
-                    SHOP_ADDRESS = this.textBoxShopAddress.Text,
-                    SHOP_POSTAL_CODE = this.textBoxShopPostal.Text,
-                    SHOP_CITY = this.textBoxShopCity.Text,
-                    SHOP_COUNTRY = this.textBoxShopCountry.Text
-                };
+                    string s = failure.ErrorMessage;
 
-                ShopInfoAccess.InsertNewShop(newShop);
+                    if (failure.PropertyName.Contains("NAME"))
+                    {
+                        this.textBoxShopName.StateCommon.Border.Color1 = Color.Red;
+                        errorProviderShopName.SetError(textBoxShopName, "Must contains at least between 1 and 149 char");
+                    }
+                    else if (failure.PropertyName.Contains("ADDRESS"))
+                    {
+                        this.textBoxShopAddress.StateCommon.Border.Color1 = Color.Red;
+                        errorProviderShopAddress.SetError(textBoxShopAddress, "Must contains at least between 1 and 149 char");
+                    }
+                    else if (failure.PropertyName.Contains("CITY"))
+                    {
+                        this.textBoxShopCity.StateCommon.Border.Color1 = Color.Red;
+                        errorProviderShopCity.SetError(textBoxShopCity, "Must contains at least between 1 and 49 char");
+                    }
+                    else if (failure.PropertyName.Contains("POSTAL_CODE") && s.Contains("format"))
+                    {
+                        this.textBoxShopPostal.StateCommon.Border.Color1 = Color.Red;
+                        errorProviderShopPostalCode.SetError(textBoxShopPostal, "Unvalid Format");
+                    }
+                    else if (failure.PropertyName.Contains("POSTAL_CODE") && s.Contains("caract"))
+                    {
+                        this.textBoxShopPostal.StateCommon.Border.Color1 = Color.Red;
+                        errorProviderShopPostalCode.SetError(textBoxShopPostal, "Must contains at least between 1 and 14 char");
+                    }
+                    else if (failure.PropertyName.Contains("COUNTRY") && s.Contains("format"))
+                    {
+                        this.textBoxShopCountry.StateCommon.Border.Color1 = Color.Red;
+                        errorProviderShopCountry.SetError(textBoxShopCountry, "Unvalid Format");
+                    }
 
-                MessageBox.Show("Création du nouveau magasin avec succès");
-                Dispose();
-                Main.mainInstance.OpenChildForm(new AdminPanel());
+                    else if (failure.PropertyName.Contains("COUNTRY") && s.Contains("caract"))
+                    {
+                        this.textBoxShopCountry.StateCommon.Border.Color1 = Color.Red;
+                        errorProviderShopCountry.SetError(textBoxShopCountry, "Must contains at least between 1 and 49 char");
+                    }
+                    isBookUnvalidate = true;
+                }
             }
-            catch (Exception ex)
+
+            // Lance l'INSERT
+            if (!isBookUnvalidate)
             {
-                MessageBox.Show(ex.Message);
-            }
+                try
+                {
+                    ShopInfoAccess.InsertNewShop(newShop);
 
+                    MessageBox.Show("Création du nouveau magasin avec succès");
+                    foreach (ComponentFactory.Krypton.Toolkit.KryptonTextBox tb in this.Controls.OfType<ComponentFactory.Krypton.Toolkit.KryptonTextBox>())
+                        tb.Text = "";
+                    Dispose();
+
+                    Main.mainInstance.OpenChildForm(new AdminPanel());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

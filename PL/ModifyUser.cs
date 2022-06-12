@@ -22,6 +22,12 @@ namespace PL
             Account acc = BLL.BLLAdminPanel.GetAccountByID(accountID);
             this.account = acc;
 
+            this.labelEditing.ForeColor = Color.White;
+            this.labelAccountUsername.ForeColor = CustomColor.Orange;
+            this.iconButton1.IconColor = CustomColor.Orange;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = CustomColor.White;
+            this.labelAccountUsername.Text = acc.ACCOUNT_USERNAME;
+
 
             this.textBoxEmail.Text = acc.ACCOUNT_EMAIL;
             this.textBoxUserName.Text = acc.ACCOUNT_USERNAME;
@@ -65,6 +71,12 @@ namespace PL
             {
                 this.comboBoxShop.Visible = false;
             }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Main.mainInstance.OpenChildForm(new AdminPanel());
         }
     }
 }

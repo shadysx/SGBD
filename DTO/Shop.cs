@@ -9,7 +9,7 @@ namespace DTO
 {
     public class Shop
     {
-        public string SHOP_ID { get; set; }
+        public int ID_SHOP { get; set; }
         public string SHOP_NAME { get; set; } 
         public string SHOP_ADDRESS { get; set; } 
         public string SHOP_POSTAL_CODE { get; set; } 
