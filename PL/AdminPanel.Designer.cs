@@ -88,7 +88,6 @@
             this.errorProviderShopCountry = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderShopPostalCode = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderShopCity = new System.Windows.Forms.ErrorProvider(this.components);
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -102,9 +101,10 @@
             this.label17 = new System.Windows.Forms.Label();
             this.kryptonComboBox2 = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.labelTitleModifyShop = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.comboBoxShop = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassword)).BeginInit();
@@ -123,11 +123,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopCountry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopPostalCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopCity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxShop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTittleCreateEmployee
@@ -779,10 +779,6 @@
             this.errorProviderShopCity.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderShopCity.ContainerControl = this;
             // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataSource = typeof(DTO.Account);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel5);
@@ -791,7 +787,7 @@
             this.panel4.Controls.Add(this.label17);
             this.panel4.Controls.Add(this.kryptonComboBox2);
             this.panel4.Controls.Add(this.kryptonTextBox2);
-            this.panel4.Controls.Add(this.label18);
+            this.panel4.Controls.Add(this.labelTitleModifyShop);
             this.panel4.Location = new System.Drawing.Point(3, 1046);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1075, 571);
@@ -830,9 +826,9 @@
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(714, 1);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 22);
+            this.label11.Size = new System.Drawing.Size(85, 22);
             this.label11.TabIndex = 12;
-            this.label11.Text = "Role";
+            this.label11.Text = "Code postal";
             // 
             // label13
             // 
@@ -843,7 +839,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(40, 22);
             this.label13.TabIndex = 11;
-            this.label13.Text = "Nom";
+            this.label13.Text = "Pays";
             // 
             // label14
             // 
@@ -852,9 +848,9 @@
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(417, 1);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 22);
+            this.label14.Size = new System.Drawing.Size(38, 22);
             this.label14.TabIndex = 10;
-            this.label14.Text = "Prenom";
+            this.label14.Text = "Ville";
             // 
             // label15
             // 
@@ -863,9 +859,9 @@
             this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(218, 1);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(45, 22);
+            this.label15.Size = new System.Drawing.Size(60, 22);
             this.label15.TabIndex = 9;
-            this.label15.Text = "Email";
+            this.label15.Text = "Adresse";
             // 
             // label16
             // 
@@ -874,9 +870,9 @@
             this.label16.ForeColor = System.Drawing.Color.Black;
             this.label16.Location = new System.Drawing.Point(85, 1);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(55, 22);
+            this.label16.Size = new System.Drawing.Size(40, 22);
             this.label16.TabIndex = 8;
-            this.label16.Text = "Pseudo";
+            this.label16.Text = "Nom";
             // 
             // flowLayoutPanel3
             // 
@@ -941,16 +937,16 @@
             this.kryptonTextBox2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonTextBox2.TabIndex = 96;
             // 
-            // label18
+            // labelTitleModifyShop
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(64, 22);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(237, 37);
-            this.label18.TabIndex = 96;
-            this.label18.Text = "Modifier un magasin";
+            this.labelTitleModifyShop.AutoSize = true;
+            this.labelTitleModifyShop.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleModifyShop.ForeColor = System.Drawing.Color.White;
+            this.labelTitleModifyShop.Location = new System.Drawing.Point(64, 22);
+            this.labelTitleModifyShop.Name = "labelTitleModifyShop";
+            this.labelTitleModifyShop.Size = new System.Drawing.Size(237, 37);
+            this.labelTitleModifyShop.TabIndex = 96;
+            this.labelTitleModifyShop.Text = "Modifier un magasin";
             // 
             // label19
             // 
@@ -975,6 +971,10 @@
             this.comboBoxShop.StateCommon.ComboBox.Border.Rounding = 12;
             this.comboBoxShop.TabIndex = 98;
             this.comboBoxShop.Text = "kryptonComboBox1";
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataSource = typeof(DTO.Account);
             // 
             // AdminPanel
             // 
@@ -1006,13 +1006,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopCountry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopPostalCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopCity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxShop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1095,6 +1095,6 @@
         private System.Windows.Forms.Label label17;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox kryptonComboBox2;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label labelTitleModifyShop;
     }
 }

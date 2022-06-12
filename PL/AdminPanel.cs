@@ -25,6 +25,7 @@ namespace PL
             this.labelTitleCreateShop.ForeColor = CustomColor.Orange;
             this.labelTitleModifyUser.ForeColor = CustomColor.Orange;
             this.labelID.ForeColor = CustomColor.Orange;
+            this.labelTitleModifyShop.ForeColor = CustomColor.Orange;
 
             this.comboBoxShop.DataSource = BLLAdminPanel.GetShopNameList();
             this.kryptonComboBox1.DataSource = new List<string>() { "Utilisateur", "Email", "Nom" };
