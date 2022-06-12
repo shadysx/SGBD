@@ -16,6 +16,8 @@ namespace BLL
         public static List<Shop> SelectAllShop() { return ShopInfoAccess.SelectAllShop(); }        
         public static Account GetAccountByID(int accountID) { return AccountAccess.GetAccoundByID(accountID); }
         public static Shop GetShopInfo(int shopID) { return DAL.ShopInfoAccess.GetShopInfo(shopID); }
+        public static List<Account> SelectAllAccountsBy(string by, string value) { return AccountAccess.SelectAllAccountsBy(by, value); }
+        public static List<Shop> SelectAllShopsBy(string by, string value) { return ShopInfoAccess.SelectAllShopsBy(by, value); }
 
     }
 }

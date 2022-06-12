@@ -57,19 +57,21 @@
             this.errorProviderCountry = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderConfirmPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelCreateEmployee = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.comboBoxShop = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.panelCreateShop = new System.Windows.Forms.Panel();
             this.buttonCreateShop = new CustomControls.RJControls.RJButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxShopCity = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxShopCountry = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.labelPostalCode = new System.Windows.Forms.Label();
-            this.textBoxShopPostal = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.textBoxShopAddress = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxShopName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.labelShopName = new System.Windows.Forms.Label();
+            this.textBoxShopName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxShopAddress = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxShopPostal = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.labelPostalCode = new System.Windows.Forms.Label();
+            this.textBoxShopCity = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.textBoxShopCountry = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -105,8 +107,6 @@
             this.errorProviderShopPostalCode = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderShopCity = new System.Windows.Forms.ErrorProvider(this.components);
             this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panelCreateShop = new System.Windows.Forms.Panel();
-            this.panelCreateEmployee = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassword)).BeginInit();
@@ -116,7 +116,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCountry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderConfirmPassword)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panelCreateEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxShop)).BeginInit();
+            this.panelCreateShop.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -130,8 +132,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopPostalCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopCity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
-            this.panelCreateShop.SuspendLayout();
-            this.panelCreateEmployee.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTittleCreateEmployee
@@ -154,6 +154,7 @@
             this.textBoxEmail.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxEmail.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.textBoxEmail.StateCommon.Border.Rounding = 12;
             this.textBoxEmail.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.TabIndex = 65;
@@ -210,6 +211,7 @@
             this.textBoxUsername.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxUsername.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.textBoxUsername.StateCommon.Border.Rounding = 12;
             this.textBoxUsername.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsername.TabIndex = 70;
@@ -223,6 +225,7 @@
             this.textBoxPassword.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxPassword.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.textBoxPassword.StateCommon.Border.Rounding = 12;
             this.textBoxPassword.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.TabIndex = 71;
@@ -236,6 +239,7 @@
             this.textBoxConfirmPassword.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxConfirmPassword.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.textBoxConfirmPassword.StateCommon.Border.Rounding = 12;
             this.textBoxConfirmPassword.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxConfirmPassword.TabIndex = 72;
@@ -270,6 +274,7 @@
             this.textBoxFirstName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxFirstName.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.textBoxFirstName.StateCommon.Border.Rounding = 12;
             this.textBoxFirstName.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFirstName.TabIndex = 75;
@@ -282,6 +287,7 @@
             this.textBoxLastName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxLastName.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.textBoxLastName.StateCommon.Border.Rounding = 12;
             this.textBoxLastName.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLastName.TabIndex = 76;
@@ -290,10 +296,12 @@
             // 
             this.datePicker.Location = new System.Drawing.Point(5, 344);
             this.datePicker.Name = "datePicker";
+            this.datePicker.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.datePicker.Size = new System.Drawing.Size(191, 29);
             this.datePicker.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.datePicker.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.datePicker.StateCommon.Border.Rounding = 12;
             this.datePicker.TabIndex = 77;
             // 
@@ -316,6 +324,7 @@
             this.textBoxCountry.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxCountry.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.textBoxCountry.StateCommon.Border.Rounding = 12;
             this.textBoxCountry.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCountry.TabIndex = 79;
@@ -411,6 +420,33 @@
             this.panel1.Size = new System.Drawing.Size(1074, 460);
             this.panel1.TabIndex = 85;
             // 
+            // panelCreateEmployee
+            // 
+            this.panelCreateEmployee.Controls.Add(this.labelTittleCreateEmployee);
+            this.panelCreateEmployee.Controls.Add(this.label19);
+            this.panelCreateEmployee.Controls.Add(this.labelPasswordConfirmation);
+            this.panelCreateEmployee.Controls.Add(this.comboBoxShop);
+            this.panelCreateEmployee.Controls.Add(this.labelPassword);
+            this.panelCreateEmployee.Controls.Add(this.buttonCreateEmployee);
+            this.panelCreateEmployee.Controls.Add(this.textBoxUsername);
+            this.panelCreateEmployee.Controls.Add(this.label5);
+            this.panelCreateEmployee.Controls.Add(this.labelUserName);
+            this.panelCreateEmployee.Controls.Add(this.textBoxCountry);
+            this.panelCreateEmployee.Controls.Add(this.textBoxPassword);
+            this.panelCreateEmployee.Controls.Add(this.label4);
+            this.panelCreateEmployee.Controls.Add(this.labelEmail);
+            this.panelCreateEmployee.Controls.Add(this.datePicker);
+            this.panelCreateEmployee.Controls.Add(this.textBoxConfirmPassword);
+            this.panelCreateEmployee.Controls.Add(this.textBoxLastName);
+            this.panelCreateEmployee.Controls.Add(this.textBoxEmail);
+            this.panelCreateEmployee.Controls.Add(this.textBoxFirstName);
+            this.panelCreateEmployee.Controls.Add(this.label2);
+            this.panelCreateEmployee.Controls.Add(this.label3);
+            this.panelCreateEmployee.Location = new System.Drawing.Point(71, 8);
+            this.panelCreateEmployee.Name = "panelCreateEmployee";
+            this.panelCreateEmployee.Size = new System.Drawing.Size(455, 450);
+            this.panelCreateEmployee.TabIndex = 101;
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -431,9 +467,29 @@
             this.comboBoxShop.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.comboBoxShop.StateCommon.ComboBox.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.comboBoxShop.StateCommon.ComboBox.Border.Rounding = 12;
             this.comboBoxShop.TabIndex = 98;
             this.comboBoxShop.Text = "kryptonComboBox1";
+            // 
+            // panelCreateShop
+            // 
+            this.panelCreateShop.Controls.Add(this.buttonCreateShop);
+            this.panelCreateShop.Controls.Add(this.labelShopName);
+            this.panelCreateShop.Controls.Add(this.textBoxShopName);
+            this.panelCreateShop.Controls.Add(this.label8);
+            this.panelCreateShop.Controls.Add(this.labelTitleCreateShop);
+            this.panelCreateShop.Controls.Add(this.textBoxShopAddress);
+            this.panelCreateShop.Controls.Add(this.label10);
+            this.panelCreateShop.Controls.Add(this.textBoxShopPostal);
+            this.panelCreateShop.Controls.Add(this.labelPostalCode);
+            this.panelCreateShop.Controls.Add(this.textBoxShopCity);
+            this.panelCreateShop.Controls.Add(this.textBoxShopCountry);
+            this.panelCreateShop.Controls.Add(this.label9);
+            this.panelCreateShop.Location = new System.Drawing.Point(575, 0);
+            this.panelCreateShop.Name = "panelCreateShop";
+            this.panelCreateShop.Size = new System.Drawing.Size(431, 457);
+            this.panelCreateShop.TabIndex = 100;
             // 
             // buttonCreateShop
             // 
@@ -455,86 +511,29 @@
             this.buttonCreateShop.UseVisualStyleBackColor = false;
             this.buttonCreateShop.Click += new System.EventHandler(this.buttonCreateShop_Click);
             // 
-            // label10
+            // labelShopName
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(16, 192);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(47, 30);
-            this.label10.TabIndex = 93;
-            this.label10.Text = "Ville";
+            this.labelShopName.AutoSize = true;
+            this.labelShopName.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShopName.ForeColor = System.Drawing.Color.White;
+            this.labelShopName.Location = new System.Drawing.Point(17, 58);
+            this.labelShopName.Name = "labelShopName";
+            this.labelShopName.Size = new System.Drawing.Size(161, 30);
+            this.labelShopName.TabIndex = 86;
+            this.labelShopName.Text = "Nom du magasin";
             // 
-            // textBoxShopCity
+            // textBoxShopName
             // 
-            this.textBoxShopCity.Location = new System.Drawing.Point(16, 222);
-            this.textBoxShopCity.Name = "textBoxShopCity";
-            this.textBoxShopCity.Size = new System.Drawing.Size(161, 28);
-            this.textBoxShopCity.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.textBoxShopName.Location = new System.Drawing.Point(17, 90);
+            this.textBoxShopName.Name = "textBoxShopName";
+            this.textBoxShopName.Size = new System.Drawing.Size(358, 28);
+            this.textBoxShopName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.textBoxShopCity.StateCommon.Border.Rounding = 12;
-            this.textBoxShopCity.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxShopCity.TabIndex = 94;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(17, 320);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 30);
-            this.label9.TabIndex = 91;
-            this.label9.Text = "Pays";
-            // 
-            // textBoxShopCountry
-            // 
-            this.textBoxShopCountry.Location = new System.Drawing.Point(16, 352);
-            this.textBoxShopCountry.Name = "textBoxShopCountry";
-            this.textBoxShopCountry.Size = new System.Drawing.Size(161, 28);
-            this.textBoxShopCountry.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.textBoxShopCountry.StateCommon.Border.Rounding = 12;
-            this.textBoxShopCountry.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxShopCountry.TabIndex = 92;
-            // 
-            // labelPostalCode
-            // 
-            this.labelPostalCode.AutoSize = true;
-            this.labelPostalCode.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPostalCode.ForeColor = System.Drawing.Color.White;
-            this.labelPostalCode.Location = new System.Drawing.Point(17, 253);
-            this.labelPostalCode.Name = "labelPostalCode";
-            this.labelPostalCode.Size = new System.Drawing.Size(116, 30);
-            this.labelPostalCode.TabIndex = 89;
-            this.labelPostalCode.Text = "Code postal";
-            // 
-            // textBoxShopPostal
-            // 
-            this.textBoxShopPostal.Location = new System.Drawing.Point(17, 285);
-            this.textBoxShopPostal.Name = "textBoxShopPostal";
-            this.textBoxShopPostal.Size = new System.Drawing.Size(161, 28);
-            this.textBoxShopPostal.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.textBoxShopPostal.StateCommon.Border.Rounding = 12;
-            this.textBoxShopPostal.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxShopPostal.TabIndex = 90;
-            // 
-            // textBoxShopAddress
-            // 
-            this.textBoxShopAddress.Location = new System.Drawing.Point(17, 154);
-            this.textBoxShopAddress.Name = "textBoxShopAddress";
-            this.textBoxShopAddress.Size = new System.Drawing.Size(358, 28);
-            this.textBoxShopAddress.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.textBoxShopAddress.StateCommon.Border.Rounding = 12;
-            this.textBoxShopAddress.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxShopAddress.TabIndex = 87;
+            this.textBoxShopName.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.textBoxShopName.StateCommon.Border.Rounding = 12;
+            this.textBoxShopName.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxShopName.TabIndex = 85;
             // 
             // label8
             // 
@@ -547,28 +546,90 @@
             this.label8.TabIndex = 88;
             this.label8.Text = "Adresse ";
             // 
-            // textBoxShopName
+            // textBoxShopAddress
             // 
-            this.textBoxShopName.Location = new System.Drawing.Point(17, 90);
-            this.textBoxShopName.Name = "textBoxShopName";
-            this.textBoxShopName.Size = new System.Drawing.Size(358, 28);
-            this.textBoxShopName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.textBoxShopAddress.Location = new System.Drawing.Point(17, 154);
+            this.textBoxShopAddress.Name = "textBoxShopAddress";
+            this.textBoxShopAddress.Size = new System.Drawing.Size(358, 28);
+            this.textBoxShopAddress.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.textBoxShopName.StateCommon.Border.Rounding = 12;
-            this.textBoxShopName.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxShopName.TabIndex = 85;
+            this.textBoxShopAddress.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.textBoxShopAddress.StateCommon.Border.Rounding = 12;
+            this.textBoxShopAddress.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxShopAddress.TabIndex = 87;
             // 
-            // labelShopName
+            // label10
             // 
-            this.labelShopName.AutoSize = true;
-            this.labelShopName.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShopName.ForeColor = System.Drawing.Color.White;
-            this.labelShopName.Location = new System.Drawing.Point(17, 58);
-            this.labelShopName.Name = "labelShopName";
-            this.labelShopName.Size = new System.Drawing.Size(161, 30);
-            this.labelShopName.TabIndex = 86;
-            this.labelShopName.Text = "Nom du magasin";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(16, 192);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 30);
+            this.label10.TabIndex = 93;
+            this.label10.Text = "Ville";
+            // 
+            // textBoxShopPostal
+            // 
+            this.textBoxShopPostal.Location = new System.Drawing.Point(17, 285);
+            this.textBoxShopPostal.Name = "textBoxShopPostal";
+            this.textBoxShopPostal.Size = new System.Drawing.Size(161, 28);
+            this.textBoxShopPostal.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxShopPostal.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.textBoxShopPostal.StateCommon.Border.Rounding = 12;
+            this.textBoxShopPostal.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxShopPostal.TabIndex = 90;
+            // 
+            // labelPostalCode
+            // 
+            this.labelPostalCode.AutoSize = true;
+            this.labelPostalCode.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPostalCode.ForeColor = System.Drawing.Color.White;
+            this.labelPostalCode.Location = new System.Drawing.Point(17, 253);
+            this.labelPostalCode.Name = "labelPostalCode";
+            this.labelPostalCode.Size = new System.Drawing.Size(116, 30);
+            this.labelPostalCode.TabIndex = 89;
+            this.labelPostalCode.Text = "Code postal";
+            // 
+            // textBoxShopCity
+            // 
+            this.textBoxShopCity.Location = new System.Drawing.Point(16, 222);
+            this.textBoxShopCity.Name = "textBoxShopCity";
+            this.textBoxShopCity.Size = new System.Drawing.Size(161, 28);
+            this.textBoxShopCity.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxShopCity.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.textBoxShopCity.StateCommon.Border.Rounding = 12;
+            this.textBoxShopCity.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxShopCity.TabIndex = 94;
+            // 
+            // textBoxShopCountry
+            // 
+            this.textBoxShopCountry.Location = new System.Drawing.Point(16, 352);
+            this.textBoxShopCountry.Name = "textBoxShopCountry";
+            this.textBoxShopCountry.Size = new System.Drawing.Size(161, 28);
+            this.textBoxShopCountry.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.textBoxShopCountry.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.textBoxShopCountry.StateCommon.Border.Rounding = 12;
+            this.textBoxShopCountry.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxShopCountry.TabIndex = 92;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(17, 320);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 30);
+            this.label9.TabIndex = 91;
+            this.label9.Text = "Pays";
             // 
             // flowLayoutPanel1
             // 
@@ -704,6 +765,7 @@
             this.rjButton1.Text = "Appliquer";
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
             // 
             // label12
             // 
@@ -725,6 +787,7 @@
             this.kryptonComboBox1.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonComboBox1.StateCommon.ComboBox.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonComboBox1.StateCommon.ComboBox.Border.Rounding = 12;
             this.kryptonComboBox1.TabIndex = 96;
             this.kryptonComboBox1.Text = "kryptonComboBox1";
@@ -737,6 +800,7 @@
             this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox1.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonTextBox1.StateCommon.Border.Rounding = 12;
             this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonTextBox1.TabIndex = 96;
@@ -873,6 +937,7 @@
             this.rjButton2.Text = "Appliquer";
             this.rjButton2.TextColor = System.Drawing.Color.White;
             this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
             // 
             // label17
             // 
@@ -894,9 +959,10 @@
             this.kryptonComboBox2.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonComboBox2.StateCommon.ComboBox.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonComboBox2.StateCommon.ComboBox.Border.Rounding = 12;
             this.kryptonComboBox2.TabIndex = 96;
-            this.kryptonComboBox2.Text = "kryptonComboBox2";
+            this.kryptonComboBox2.Text = "comboBox2";
             // 
             // kryptonTextBox2
             // 
@@ -906,6 +972,7 @@
             this.kryptonTextBox2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox2.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonTextBox2.StateCommon.Border.Rounding = 12;
             this.kryptonTextBox2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonTextBox2.TabIndex = 96;
@@ -950,52 +1017,6 @@
             // 
             this.accountBindingSource.DataSource = typeof(DTO.Account);
             // 
-            // panelCreateShop
-            // 
-            this.panelCreateShop.Controls.Add(this.buttonCreateShop);
-            this.panelCreateShop.Controls.Add(this.labelShopName);
-            this.panelCreateShop.Controls.Add(this.textBoxShopName);
-            this.panelCreateShop.Controls.Add(this.label8);
-            this.panelCreateShop.Controls.Add(this.labelTitleCreateShop);
-            this.panelCreateShop.Controls.Add(this.textBoxShopAddress);
-            this.panelCreateShop.Controls.Add(this.label10);
-            this.panelCreateShop.Controls.Add(this.textBoxShopPostal);
-            this.panelCreateShop.Controls.Add(this.labelPostalCode);
-            this.panelCreateShop.Controls.Add(this.textBoxShopCity);
-            this.panelCreateShop.Controls.Add(this.textBoxShopCountry);
-            this.panelCreateShop.Controls.Add(this.label9);
-            this.panelCreateShop.Location = new System.Drawing.Point(575, 0);
-            this.panelCreateShop.Name = "panelCreateShop";
-            this.panelCreateShop.Size = new System.Drawing.Size(431, 457);
-            this.panelCreateShop.TabIndex = 100;
-            // 
-            // panelCreateEmployee
-            // 
-            this.panelCreateEmployee.Controls.Add(this.labelTittleCreateEmployee);
-            this.panelCreateEmployee.Controls.Add(this.label19);
-            this.panelCreateEmployee.Controls.Add(this.labelPasswordConfirmation);
-            this.panelCreateEmployee.Controls.Add(this.comboBoxShop);
-            this.panelCreateEmployee.Controls.Add(this.labelPassword);
-            this.panelCreateEmployee.Controls.Add(this.buttonCreateEmployee);
-            this.panelCreateEmployee.Controls.Add(this.textBoxUsername);
-            this.panelCreateEmployee.Controls.Add(this.label5);
-            this.panelCreateEmployee.Controls.Add(this.labelUserName);
-            this.panelCreateEmployee.Controls.Add(this.textBoxCountry);
-            this.panelCreateEmployee.Controls.Add(this.textBoxPassword);
-            this.panelCreateEmployee.Controls.Add(this.label4);
-            this.panelCreateEmployee.Controls.Add(this.labelEmail);
-            this.panelCreateEmployee.Controls.Add(this.datePicker);
-            this.panelCreateEmployee.Controls.Add(this.textBoxConfirmPassword);
-            this.panelCreateEmployee.Controls.Add(this.textBoxLastName);
-            this.panelCreateEmployee.Controls.Add(this.textBoxEmail);
-            this.panelCreateEmployee.Controls.Add(this.textBoxFirstName);
-            this.panelCreateEmployee.Controls.Add(this.label2);
-            this.panelCreateEmployee.Controls.Add(this.label3);
-            this.panelCreateEmployee.Location = new System.Drawing.Point(71, 8);
-            this.panelCreateEmployee.Name = "panelCreateEmployee";
-            this.panelCreateEmployee.Size = new System.Drawing.Size(455, 450);
-            this.panelCreateEmployee.TabIndex = 101;
-            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1014,7 +1035,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCountry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderConfirmPassword)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panelCreateEmployee.ResumeLayout(false);
+            this.panelCreateEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxShop)).EndInit();
+            this.panelCreateShop.ResumeLayout(false);
+            this.panelCreateShop.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -1032,10 +1057,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopPostalCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderShopCity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
-            this.panelCreateShop.ResumeLayout(false);
-            this.panelCreateShop.PerformLayout();
-            this.panelCreateEmployee.ResumeLayout(false);
-            this.panelCreateEmployee.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

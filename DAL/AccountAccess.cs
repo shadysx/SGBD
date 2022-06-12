@@ -32,6 +32,27 @@ namespace DAL
             return retVal;
         }
 
+        public static List<Account> SelectAllAccountsBy(string by, string value)
+        {
+            string query = $"SELECT * FROM ACCOUNT WHERE {by} LIKE lower('%{value}%')";
+
+            value = value.ToLower();
+
+            List<Account> retVal = null;
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    retVal = connexion.Query<Account>(query).ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            return retVal;
+        }
+
         // Procédure 2
         public static int InsertNewAccount(Account newAccount)
         {

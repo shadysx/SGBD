@@ -29,15 +29,17 @@ namespace PL
             this.label7.ForeColor = CustomColor.Orange;
 
             this.comboBoxShop.DataSource = BLLAdminPanel.GetShopNameList();
-            this.kryptonComboBox1.DataSource = new List<string>() { "Utilisateur", "Email", "Nom" };
-            this.DisplayUsers();
-            this.DisplayShop();
+            this.kryptonComboBox1.DataSource = new List<string>() { "Prénom", "Utilisateur", "Email", "Nom", "Role" };
+            this.kryptonComboBox2.DataSource = new List<string>() { "Nom", "Ville", "Pays" };
+            List<Account> accounts = BLLAdminPanel.SelectAllAccounts();
+            List<Shop> shops = BLLAdminPanel.SelectAllShop();
+            this.DisplayUsers(accounts);
+            this.DisplayShop(shops);
 
         }
 
-        private void DisplayShop()
+        private void DisplayShop(List<Shop> shops)
         {
-            List<Shop> shops = BLLAdminPanel.SelectAllShop();
             foreach (Shop s in shops)
             {
                 ShopList sl = new ShopList(s.ID_SHOP, s.SHOP_ADDRESS, s.SHOP_CITY, s.SHOP_POSTAL_CODE, s.SHOP_NAME, s.SHOP_COUNTRY);
@@ -47,9 +49,9 @@ namespace PL
             }
         }
 
-        private void DisplayUsers()
+        private void DisplayUsers(List<Account> accounts)
         {
-            List<Account> accounts = BLLAdminPanel.SelectAllAccounts();
+            
 
             foreach (Account account in accounts)
             {
@@ -352,6 +354,71 @@ namespace PL
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+
+
+        private void FilterAccounts()
+        {
+            while (flowLayoutPanel2.Controls.Count > 0)
+                flowLayoutPanel2.Controls.RemoveAt(0);
+
+            string selectedItem = this.kryptonComboBox1.SelectedItem.ToString();
+
+            switch (selectedItem)
+            {
+                case "Email": 
+                    selectedItem = "ACCOUNT_EMAIL";
+                    break;
+                case "Utilisateur":
+                    selectedItem = "ACCOUNT_USERNAME";
+                    break;
+                case "Nom":
+                    selectedItem = "ACCOUNT_LAST_NAME";
+                    break;
+                case "Prénom":
+                    selectedItem = "ACCOUNT_FIRST_NAME";
+                    break;
+                case "Role":
+                    selectedItem = "ACCOUNT_ROLE";
+                    break;
+            }
+
+            DisplayUsers(BLLAdminPanel.SelectAllAccountsBy(selectedItem, this.kryptonTextBox1.Text));
+
+        }
+
+        private void FilterShops()
+        {
+            while (flowLayoutPanel3.Controls.Count > 0)
+                flowLayoutPanel3.Controls.RemoveAt(0);
+
+            string selectedItem = this.kryptonComboBox2.SelectedValue.ToString();
+
+            switch (selectedItem)
+            {
+                case "Nom":
+                    selectedItem = "SHOP_NAME";
+                    break;
+                case "Pays":
+                    selectedItem = "SHOP_COUNTRY";
+                    break;
+                case "Ville":
+                    selectedItem = "SHOP_CITY";
+                    break;
+            }
+
+            DisplayShop(BLLAdminPanel.SelectAllShopsBy(selectedItem, this.kryptonTextBox2.Text));
+
+        }
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            FilterAccounts();
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            FilterShops();
         }
     }
 }

@@ -100,6 +100,27 @@ namespace DAL
             return retval;
         }
 
+        public static List<Shop> SelectAllShopsBy(string by, string value)
+        {
+            string query = $"SELECT * FROM SHOP WHERE {by} LIKE lower('%{value}%')";
+
+            value = value.ToLower();
+
+            List<Shop> retVal = null;
+
+            using (var connexion = CON_MGR.Connection())
+                ////= SQL directe
+                try
+                {
+                    retVal = connexion.Query<Shop>(query).ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            return retVal;
+        }
+
         public static void DeleteShop(int idShop)
         {
             using (var connexion = CON_MGR.Connection())
