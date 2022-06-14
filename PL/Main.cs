@@ -83,12 +83,15 @@ namespace PL
         
 
 
+
         // Icon Button Panel Left
         private void iconButtonHome_Click(object sender, EventArgs e)
         {
             RefreshUI();
             DrawSelectedIcon(this.iconButtonHome);
             this.isProfileSubMenuTrigger = false;
+            this.OpenChildForm(new Home());
+            
         }
 
         private void iconButtonShop_Click(object sender, EventArgs e)
@@ -298,7 +301,10 @@ namespace PL
 
         private void Main_Load(object sender, EventArgs e)
         {
-
+            RefreshUI();
+            DrawSelectedIcon(this.iconButtonHome);
+            this.isProfileSubMenuTrigger = false;
+            this.OpenChildForm(new Home());
         }
 
         private void iconButtonAdminPanel_Click_1(object sender, EventArgs e)
