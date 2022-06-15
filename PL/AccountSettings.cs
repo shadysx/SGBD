@@ -38,7 +38,15 @@ namespace PL
 
             this.BackColor = CustomColor.DarkBlue;
 
-            this.profileImage = BLLAccountSettings.SelectProfileImage(Auth.CurrentUser.ID_ACCOUNT);
+            
+            try
+            {
+                this.profileImage = BLLAccountSettings.SelectProfileImage(Auth.CurrentUser.ID_ACCOUNT);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString()) ;
+            }
             if (this.profileImage != null)
                 this.pictureBox.Image = ConvertToImage(this.profileImage);
 

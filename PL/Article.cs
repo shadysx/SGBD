@@ -46,22 +46,27 @@ namespace PL
 
             this.timer1.Stop();
 
-            this.actualOrderLine = BLLArticle.Select1OrderLine(idProduct, idShop, Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
-            this.availableStock = availableStock;
-
-            if (this.actualOrderLine != null)
-                this.availableStockForClient = availableStock - this.actualOrderLine.ORDER_LINE_QUANTITY;
-            else
-                this.availableStockForClient = availableStock;            
-
-            if (this.availableStockForClient <= 0)            
-                ProductSoldOut();            
-            else
+            try
             {
-                this.labelQuantite.Text = "Available quantity : " + availableStockForClient.ToString();
-                this.labelPrix.Text = "Price : " + price.ToString() + " €" ;
-                this.labelPriceSelected.Text = "Total : " + price.ToString() + " €";
+                this.actualOrderLine = BLLArticle.Select1OrderLine(idProduct, idShop, Auth.CurrentUser.ACCOUNT_CURRENT_BASKET.ID_ORDERED);
+                this.availableStock = availableStock;
+
+                if (this.actualOrderLine != null)
+                    this.availableStockForClient = availableStock - this.actualOrderLine.ORDER_LINE_QUANTITY;
+                else
+                    this.availableStockForClient = availableStock;            
+
+                if (this.availableStockForClient <= 0)            
+                    ProductSoldOut();            
+                else
+                {
+                    this.labelQuantite.Text = "Available quantity : " + availableStockForClient.ToString();
+                    this.labelPrix.Text = "Price : " + price.ToString() + " €" ;
+                    this.labelPriceSelected.Text = "Total : " + price.ToString() + " €";
+                }
+
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         private void iconButton1_Click(object sender, EventArgs e)
         {            
@@ -90,17 +95,26 @@ namespace PL
                         newOrderLine.ORDER_LINE_QUANTITY += actualOrderLine.ORDER_LINE_QUANTITY;
                         newOrderLine.ORDER_LINE_BUYING_PRICE += (actualOrderLine.ORDER_LINE_QUANTITY * this.price);
 
-                        BLLArticle.ModifyOrderline(newOrderLine.ORDER_LINE_QUANTITY, newOrderLine.ORDER_LINE_BUYING_PRICE, actualOrderLine.ID_ORDER_LINE);
-                        GreenCheck();
-                        PlayPopUp(newOrderLine.ORDER_LINE_BUYING_PRICE);                        
-                    }                    
+                        try
+                        {
+                            BLLArticle.ModifyOrderline(newOrderLine.ORDER_LINE_QUANTITY, newOrderLine.ORDER_LINE_BUYING_PRICE, actualOrderLine.ID_ORDER_LINE);
+                            GreenCheck();
+                            PlayPopUp(newOrderLine.ORDER_LINE_BUYING_PRICE);                        
+
+                        }
+                        catch (Exception ex) { MessageBox.Show(ex.Message); }
+                                           }                    
                 }
                 else
                 {
-                    BLLArticle.InsertNewOrderLine(newOrderLine);
-                    GreenCheck();
-                    PlayPopUp(newOrderLine.ORDER_LINE_BUYING_PRICE);                    
-                }
+                    try
+                    {
+                        BLLArticle.InsertNewOrderLine(newOrderLine);
+                        GreenCheck();
+                        PlayPopUp(newOrderLine.ORDER_LINE_BUYING_PRICE);                    
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                                   }
 
                 this.availableStockForClient -= Convert.ToInt32(this.numericUpDown1.Value);
                 this.labelQuantite.Text = "Available quantity : " + availableStockForClient.ToString(); 

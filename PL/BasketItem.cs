@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL;
 using DTO;
 using BLL;
 using System.Diagnostics;
@@ -55,7 +54,7 @@ namespace PL
             this.idProduct = iD_PRODUCT;
             this.orderLineQuantity = oRDER_LINE_QUANTITY;
 
-            this.itemStock = StockAccess.GetStockOf1Article(this.idShop, idProduct);
+            this.itemStock = BLLBasket.GetStockOf1Article(this.idShop, idProduct);
             this.itemStock.STOCK_QUANTITY -= oRDER_LINE_QUANTITY;
             this.basketParent = basketParent;
 
@@ -69,67 +68,77 @@ namespace PL
         private void iconButtonPlus_Click(object sender, EventArgs e)
         {
             // On recharge le stock de l'article juste avant un changement 
-            this.itemStock = StockAccess.GetStockOf1Article(this.idShop, idProduct);
-            this.itemStock.STOCK_QUANTITY -= this.orderLineQuantity;
-            this.labelQuantityChanged.Visible = false;
-
-            if (itemStock.STOCK_QUANTITY > 0)
+            try
             {
-                this.labelQuantityInstant.Text = Convert.ToInt32(this.labelQuantityInstant.Text) + 1 + "";
-                
+                this.itemStock = BLLBasket.GetStockOf1Article(this.idShop, idProduct);
+                this.itemStock.STOCK_QUANTITY -= this.orderLineQuantity;
+                this.labelQuantityChanged.Visible = false;
 
-                OrderLineAccess.ModifyOrderline(Convert.ToInt32(this.labelQuantityInstant.Text), Convert.ToDecimal(Convert.ToInt32(this.labelQuantityInstant.Text) * this.itemStock.SELLING_PRICE_EXCL_VAT), this.idOrderLine);
-                this.itemStock.STOCK_QUANTITY--;
-                this.orderLineQuantity++;
+                if (itemStock.STOCK_QUANTITY > 0)
+                {
+                    this.labelQuantityInstant.Text = Convert.ToInt32(this.labelQuantityInstant.Text) + 1 + "";
+                    
 
-                this.labelPrice.Text = "€ " + Convert.ToDecimal(Convert.ToInt32(this.labelQuantityInstant.Text) * this.itemStock.SELLING_PRICE_EXCL_VAT);
+                    BLLBasket.ModifyOrderline(Convert.ToInt32(this.labelQuantityInstant.Text), Convert.ToDecimal(Convert.ToInt32(this.labelQuantityInstant.Text) * this.itemStock.SELLING_PRICE_EXCL_VAT), this.idOrderLine);
+                    this.itemStock.STOCK_QUANTITY--;
+                    this.orderLineQuantity++;
 
-                
-                decimal d = Convert.ToDecimal(this.basketParent.labelTotalPrice.Text.Replace("€", " ").Trim());
-                this.basketParent.labelTotalPrice.Text = (d + this.itemStock.SELLING_PRICE_EXCL_VAT) + " €";
-                this.basketParent.labelTotalNumberArticle.Text = Convert.ToInt32(this.basketParent.labelTotalNumberArticle.Text) + 1 + "";
+                    this.labelPrice.Text = "€ " + Convert.ToDecimal(Convert.ToInt32(this.labelQuantityInstant.Text) * this.itemStock.SELLING_PRICE_EXCL_VAT);
+
+                    
+                    decimal d = Convert.ToDecimal(this.basketParent.labelTotalPrice.Text.Replace("€", " ").Trim());
+                    this.basketParent.labelTotalPrice.Text = (d + this.itemStock.SELLING_PRICE_EXCL_VAT) + " €";
+                    this.basketParent.labelTotalNumberArticle.Text = Convert.ToInt32(this.basketParent.labelTotalNumberArticle.Text) + 1 + "";
+                }
+                else
+                {
+                    MessageBox.Show($"No more {this.labelNameArticle.Text} available in this shop");
+                }
             }
-            else
-            {
-                MessageBox.Show($"No more {this.labelNameArticle.Text} available in this shop");
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+           
             
         }
 
         private void iconButtonMinus_Click(object sender, EventArgs e)
         {
-            // On recharge le stock de l'article juste avant un changement 
-            this.itemStock = StockAccess.GetStockOf1Article(this.idShop, idProduct);
-            this.itemStock.STOCK_QUANTITY -= this.orderLineQuantity;
-            this.labelQuantityChanged.Visible = false;
-
-            if (Convert.ToInt32(this.labelQuantityInstant.Text) - 1 == 0)
+            try
             {
-                DialogResult r = MessageBox.Show( "Are you sure you want to delete this product from your basket ?", "Validation", MessageBoxButtons.OKCancel);
-                if(r == DialogResult.OK)
+                 // On recharge le stock de l'article juste avant un changement 
+                this.itemStock = BLLBasket.GetStockOf1Article(this.idShop, idProduct);
+                this.itemStock.STOCK_QUANTITY -= this.orderLineQuantity;
+                this.labelQuantityChanged.Visible = false;
+
+                if (Convert.ToInt32(this.labelQuantityInstant.Text) - 1 == 0)
                 {
-                    decimal d = Convert.ToDecimal(this.basketParent.labelTotalPrice.Text.Replace("€", " ").Trim());                    
-                    this.basketParent.labelTotalPrice.Text = (d - this.itemStock.SELLING_PRICE_EXCL_VAT) + " €";                    
+                    DialogResult r = MessageBox.Show( "Are you sure you want to delete this product from your basket ?", "Validation", MessageBoxButtons.OKCancel);
+                    if(r == DialogResult.OK)
+                    {
+                        decimal d = Convert.ToDecimal(this.basketParent.labelTotalPrice.Text.Replace("€", " ").Trim());                    
+                        this.basketParent.labelTotalPrice.Text = (d - this.itemStock.SELLING_PRICE_EXCL_VAT) + " €";                    
+                        this.basketParent.labelTotalNumberArticle.Text = Convert.ToInt32(this.basketParent.labelTotalNumberArticle.Text) - 1 + "";
+                        BLLBasket.DeleteOrderLine(idOrderLine);
+                        this.Dispose();
+                    }                               
+                    
+                }
+                else
+                {
+                    
+                    this.labelQuantityInstant.Text = Convert.ToInt32(this.labelQuantityInstant.Text) - 1 + "";                
+                    BLLBasket.ModifyOrderline(Convert.ToInt32(this.labelQuantityInstant.Text), Convert.ToDecimal(Convert.ToInt32(this.labelQuantityInstant.Text) * this.itemStock.SELLING_PRICE_EXCL_VAT), this.idOrderLine);
+                    itemStock.STOCK_QUANTITY++;
+                    this.orderLineQuantity--;
+
+                    this.labelPrice.Text = "€ " + Convert.ToDecimal(Convert.ToInt32(this.labelQuantityInstant.Text) * this.itemStock.SELLING_PRICE_EXCL_VAT);
+
+                    decimal d = Convert.ToDecimal(this.basketParent.labelTotalPrice.Text.Replace("€", " ").Trim());
+                    this.basketParent.labelTotalPrice.Text = (d - this.itemStock.SELLING_PRICE_EXCL_VAT) + " €";
                     this.basketParent.labelTotalNumberArticle.Text = Convert.ToInt32(this.basketParent.labelTotalNumberArticle.Text) - 1 + "";
-                    OrderLineAccess.DeleteOrderLine(idOrderLine);
-                    this.Dispose();
-                }                               
-                
+                } 
             }
-            else
-            {
-                
-                this.labelQuantityInstant.Text = Convert.ToInt32(this.labelQuantityInstant.Text) - 1 + "";                
-                OrderLineAccess.ModifyOrderline(Convert.ToInt32(this.labelQuantityInstant.Text), Convert.ToDecimal(Convert.ToInt32(this.labelQuantityInstant.Text) * this.itemStock.SELLING_PRICE_EXCL_VAT), this.idOrderLine);
-                itemStock.STOCK_QUANTITY++;
-                this.orderLineQuantity--;
-
-                this.labelPrice.Text = "€ " + Convert.ToDecimal(Convert.ToInt32(this.labelQuantityInstant.Text) * this.itemStock.SELLING_PRICE_EXCL_VAT);
-
-                decimal d = Convert.ToDecimal(this.basketParent.labelTotalPrice.Text.Replace("€", " ").Trim());
-                this.basketParent.labelTotalPrice.Text = (d - this.itemStock.SELLING_PRICE_EXCL_VAT) + " €";
-                this.basketParent.labelTotalNumberArticle.Text = Convert.ToInt32(this.basketParent.labelTotalNumberArticle.Text) - 1 + "";
-            }         
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+                   
 
             
            
@@ -143,7 +152,7 @@ namespace PL
                 decimal d = Convert.ToDecimal(this.basketParent.labelTotalPrice.Text.Replace("€", " ").Trim());
                 this.basketParent.labelTotalPrice.Text = (d - (this.itemStock.SELLING_PRICE_EXCL_VAT) * Convert.ToInt32(this.labelQuantityInstant.Text)) + " €";
                 this.basketParent.labelTotalNumberArticle.Text = Convert.ToInt32(this.basketParent.labelTotalNumberArticle.Text) - Convert.ToInt32(this.labelQuantityInstant.Text) + "";
-                OrderLineAccess.DeleteOrderLine(idOrderLine);
+                BLLBasket.DeleteOrderLine(idOrderLine);
                 this.Dispose();
             }
         }

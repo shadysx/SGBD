@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using DTO;
 using BLL;
 using CustomControls.RJControls;
-using DAL;
 
 namespace PL
 {
@@ -28,14 +27,32 @@ namespace PL
             this.labelTitleModifyShop.ForeColor = CustomColor.Orange;
             this.label7.ForeColor = CustomColor.Orange;
 
-            this.comboBoxShop.DataSource = BLLAdminPanel.GetShopNameList();
+            try
+            {
+                this.comboBoxShop.DataSource = BLLAdminPanel.GetShopNameList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             this.kryptonComboBox1.DataSource = new List<string>() { "Prénom", "Utilisateur", "Email", "Nom", "Role" };
             this.kryptonComboBox2.DataSource = new List<string>() { "Nom", "Ville", "Pays" };
-            List<Account> accounts = BLLAdminPanel.SelectAllAccounts();
-            List<Shop> shops = BLLAdminPanel.SelectAllShop();
-            this.DisplayUsers(accounts);
-            this.DisplayShop(shops);
 
+            try
+            {
+                List<Account> accounts = BLLAdminPanel.SelectAllAccounts();
+                List<Shop> shops = BLLAdminPanel.SelectAllShop();
+                this.DisplayUsers(accounts);
+                this.DisplayShop(shops);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
         }
 
         private void DisplayShop(List<Shop> shops)
@@ -66,7 +83,11 @@ namespace PL
 
         private void buttonCreateEmployee_Click(object sender, EventArgs e)
         {
-            accounts = BLL.BLLRegistration.SelectAllAccounts(); // CHANGER
+            try
+            {
+                accounts = BLLRegistration.SelectAllAccounts(); // CHANGER
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
 
             bool isDuplicated = false;
             bool isBookUnvalidate = false;
@@ -82,7 +103,6 @@ namespace PL
             
 
             this.datePicker.StateCommon.Border.Color1 = Color.Black;
-
 
             int id = BLLAdminPanel.GetShopIDByName(this.comboBoxShop.SelectedItem.ToString());
 
@@ -335,7 +355,7 @@ namespace PL
             {
                 try
                 {
-                    ShopInfoAccess.InsertNewShop(newShop);
+                    BLL.BLLEmployeePanel.InsertNewShop(newShop);
 
                     MessageBox.Show("Création du nouveau magasin avec succès");
                     foreach (ComponentFactory.Krypton.Toolkit.KryptonTextBox tb in this.panelCreateShop.Controls.OfType<ComponentFactory.Krypton.Toolkit.KryptonTextBox>())
@@ -384,7 +404,12 @@ namespace PL
                     break;
             }
 
-            DisplayUsers(BLLAdminPanel.SelectAllAccountsBy(selectedItem, this.kryptonTextBox1.Text));
+            try
+            {
+                DisplayUsers(BLLAdminPanel.SelectAllAccountsBy(selectedItem, this.kryptonTextBox1.Text));
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
 
         }
 
@@ -408,7 +433,11 @@ namespace PL
                     break;
             }
 
-            DisplayShop(BLLAdminPanel.SelectAllShopsBy(selectedItem, this.kryptonTextBox2.Text));
+            try
+            {
+                DisplayShop(BLLAdminPanel.SelectAllShopsBy(selectedItem, this.kryptonTextBox2.Text));
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
 
         }
         private void rjButton1_Click(object sender, EventArgs e)
