@@ -24,7 +24,12 @@ namespace PL
         {
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
-            this.articleTypes = BLLEmployeePanel.SelectAllProductTypes();
+            try
+            {
+                this.articleTypes = BLLEmployeePanel.SelectAllProductTypes();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
             this.comboBox1.DataSource = articleTypes;
             this.rjButton1.BackColor = CustomColor.Orange;
             this.rjButton3.BackColor = Color.White;
@@ -33,25 +38,37 @@ namespace PL
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
-            this.comboBox2.DataSource = BLLEmployeePanel.SelectProductsNamesByType(comboBox1.SelectedItem.ToString());
+            try
+            {
+                this.comboBox2.DataSource = BLLEmployeePanel.SelectProductsNamesByType(comboBox1.SelectedItem.ToString());
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
         {
-            this.numericUpDown1.Value = BLLEmployeePanel.GetStockByShopIDAndProductName(Auth.CurrentUser.ID_SHOP, this.comboBox2.SelectedValue.ToString());
-            decimal price = BLLEmployeePanel.GetProductPriceFromSpecificShop(this.comboBox2.SelectedValue.ToString(), Auth.CurrentUser.ID_SHOP);
-            byte[] bytes = BLLEmployeePanel.SelectImageByProductName(this.comboBox2.SelectedValue.ToString());
-            Image image = ConvertToImage(bytes);
-            this.pictureBox2.Image = image;
-            this.textBox1.Text = price.ToString();
+            try
+            {
+                this.numericUpDown1.Value = BLLEmployeePanel.GetStockByShopIDAndProductName(Auth.CurrentUser.ID_SHOP, this.comboBox2.SelectedValue.ToString());
+                decimal price = BLLEmployeePanel.GetProductPriceFromSpecificShop(this.comboBox2.SelectedValue.ToString(), Auth.CurrentUser.ID_SHOP);
+                byte[] bytes = BLLEmployeePanel.SelectImageByProductName(this.comboBox2.SelectedValue.ToString());
+                Image image = ConvertToImage(bytes);
+                this.pictureBox2.Image = image;
+                this.textBox1.Text = price.ToString();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void ButtonConfirmStock_Click(object sender, EventArgs e)
         {
+            try
+            {
+                BLLEmployeePanel.UpdateStock(BLLEmployeePanel.SelectProductIDByName(this.comboBox2.SelectedValue.ToString()) ,Auth.CurrentUser.ID_SHOP, Convert.ToInt32(this.numericUpDown1.Value) , this.textBox1.Text);
+                MessageBox.Show("Mise a jour effectuée");
+                Main.mainInstance.OpenChildForm(new EmployeePanel());
 
-            BLLEmployeePanel.UpdateStock(BLLEmployeePanel.SelectProductIDByName(this.comboBox2.SelectedValue.ToString()) ,Auth.CurrentUser.ID_SHOP, Convert.ToInt32(this.numericUpDown1.Value) , this.textBox1.Text);
-            MessageBox.Show("Mise a jour effectuée");
-            Main.mainInstance.OpenChildForm(new EmployeePanel());
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
     

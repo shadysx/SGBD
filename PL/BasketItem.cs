@@ -57,7 +57,6 @@ namespace PL
             this.itemStock = BLLBasket.GetStockOf1Article(this.idShop, idProduct);
             this.itemStock.STOCK_QUANTITY -= oRDER_LINE_QUANTITY;
             this.basketParent = basketParent;
-
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -96,8 +95,6 @@ namespace PL
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-           
-            
         }
 
         private void iconButtonMinus_Click(object sender, EventArgs e)
@@ -120,7 +117,6 @@ namespace PL
                         BLLBasket.DeleteOrderLine(idOrderLine);
                         this.Dispose();
                     }                               
-                    
                 }
                 else
                 {

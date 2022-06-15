@@ -20,7 +20,11 @@ namespace PL
         {
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
-            this.editingAccount = BLL.BLLAdminPanel.GetAccountByID(accountID);
+            try
+            {
+                this.editingAccount = BLL.BLLAdminPanel.GetAccountByID(accountID);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
 
 
             this.labelEditing.ForeColor = Color.White;
@@ -50,31 +54,35 @@ namespace PL
 
             if (this.editingAccount.ID_SHOP > 0)
             {
-                this.comboBoxShop.Visible = true;
-                Shop shop = BLL.BLLAdminPanel.GetShopInfo(this.editingAccount.ID_SHOP);
-                List<string> shopNames = BLL.BLLAdminPanel.GetShopNameList();
+                try
+                {
+                    this.comboBoxShop.Visible = true;
+                    Shop shop = BLL.BLLAdminPanel.GetShopInfo(this.editingAccount.ID_SHOP);
+                    List<string> shopNames = BLL.BLLAdminPanel.GetShopNameList();
 
-                this.comboBoxShop.DataSource = shopNames;
-                this.comboBoxShop.SelectedIndex = shopNames.IndexOf(shop.SHOP_NAME);
-
-
+                    this.comboBoxShop.DataSource = shopNames;
+                    this.comboBoxShop.SelectedIndex = shopNames.IndexOf(shop.SHOP_NAME);
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
-
-
         }
 
         private void comboBoxRole_SelectedValueChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (comboBoxRole.SelectedValue.ToString() == "EMPLOYEE")
+                {
+                    this.comboBoxShop.Visible = true;
+                    this.comboBoxShop.DataSource = BLLModifyUser.GetShopNameList();
+                }
+                else
+                {
+                    this.comboBoxShop.Visible = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-            if (comboBoxRole.SelectedValue.ToString() == "EMPLOYEE")
-            {
-                this.comboBoxShop.Visible = true;
-                this.comboBoxShop.DataSource = BLLModifyUser.GetShopNameList();
-            }
-            else
-            {
-                this.comboBoxShop.Visible = false;
-            }
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

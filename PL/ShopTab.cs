@@ -28,16 +28,24 @@ namespace PL
             List<string> types = new List<string>();
             types.Add("Tous");
 
-            foreach (string type in BLLShopTab.SelectAllProductTypes())
-                types.Add(type);
-
             this.comboBoxSearchByType.DataSource = types;
             this.comboBoxOrderBy.DataSource = orderByWhat;
             this.rjButton1.BackColor = CustomColor.Orange;            
             
-            List<DTO.Product> products = BLLShopTab.Select20RandomProducts();
-            DisplayProducts(products);
 
+
+            try
+            {
+                foreach (string type in BLLShopTab.SelectAllProductTypes())
+                    types.Add(type);
+
+                List<DTO.Product> products = BLLShopTab.Select20RandomProducts();
+                DisplayProducts(products);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+           
+                     
         }
 
         private void filterButtonClick(object sender, EventArgs e)

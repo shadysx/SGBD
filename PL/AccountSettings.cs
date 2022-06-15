@@ -223,7 +223,6 @@ namespace PL
             {
                 Debug.Print(ex.Message);
             }
-
         }
 
         private void ResetErrorProviderLeft()
@@ -295,9 +294,7 @@ namespace PL
 
                 }
                 MessageBox.Show("Profile's picture edited");
-
             }
-
         }
 
         public static Image ConvertToImage(Binary iBinary)

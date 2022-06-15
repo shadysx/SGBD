@@ -104,7 +104,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ShopTabProduct";
             this.Text = "Article";
-            this.Load += new System.EventHandler(this.Article_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

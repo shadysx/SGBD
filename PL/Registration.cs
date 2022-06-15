@@ -119,6 +119,10 @@ namespace PL
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
+            try
+            {
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
             // FONCTION POUR L'ENREGISTREMENT D'UN USER
             accounts = null;
             accounts = BLL.BLLRegistration.SelectAllAccounts();

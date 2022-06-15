@@ -33,9 +33,6 @@ namespace PL
             this.panelRight.BackColor = Color.White;
             
             this.BackColor = CustomColor.DarkBlue;
-            
-            
-
             this.loginForm = (Login)f;
             this.labelProfileUsername.Text = Auth.CurrentUser.ACCOUNT_USERNAME;
             this.panelProfileSubMenu.BackColor = CustomColor.Orange;
@@ -66,9 +63,6 @@ namespace PL
             DrawSelectedIcon(this.iconButtonHome);
         }
 
-
-
-
         public void OpenChildForm(Form f)
         {
             f.TopLevel = false;
@@ -78,11 +72,6 @@ namespace PL
             f.BringToFront();
             f.Show();
         }
-
-       
-        
-
-
 
         // Icon Button Panel Left
         private void iconButtonHome_Click(object sender, EventArgs e)
@@ -141,7 +130,6 @@ namespace PL
 
             this.iconArrow.Location = new System.Drawing.Point(61, icon.Location.Y);
             this.iconArrow.FlatAppearance.MouseOverBackColor = Color.Transparent;
-
         }
 
         // Concern Profile Icon and Profile's sub menu
@@ -160,9 +148,6 @@ namespace PL
                 this.panelProfileSubMenu.Visible = false;               
                 this.panelRight.BringToFront();                
             }
-
-            
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -198,18 +183,11 @@ namespace PL
         {
             this.label2.BackColor = CustomColor.DarkBlue;
         }
-
-
-
-
         public void RefreshUI()
         {
-
             // Rend l'arrow invisble 
             this.iconArrow.Visible = false;           
             
-
-
             // Redéfini la couleur de tous les Icon Button en Blanc
             foreach (FontAwesome.Sharp.IconButton i in this.panelLeft.Controls.OfType<FontAwesome.Sharp.IconButton>())
             {
@@ -223,8 +201,6 @@ namespace PL
 
             }
             
-
-
             // Clear Tous les controles du Right Panel
             this.panelRight.Controls.Clear();
 
@@ -288,7 +264,6 @@ namespace PL
             this.iconButtonProfile.Enabled = false;
             this.labelProfileUsername.BackColor = Color.FromArgb(255, CustomColor.Orange);
             this.labelProfileUsername.Enabled = false;
-
         }        
 
         private void panelProfile_MouseLeave(object sender, EventArgs e)
@@ -313,7 +288,6 @@ namespace PL
             DrawSelectedIcon(this.iconButtonAdminPanel);
             this.OpenChildForm(new AdminPanel());
             this.isProfileSubMenuTrigger = false;
-            
         }
     }
 }

@@ -49,27 +49,9 @@ namespace PL
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {            
-
-            
             this.registrationForm.Show();
 
-            
-
-
-
-
             this.Hide();
-            
-            /*Registration r = new Registration();
-            DialogResult result = r.ShowDialog();
-
-            this.Hide();
-            //if cancel
-            if (result == DialogResult.Cancel)
-            {
-                r.Close();
-                this.Show();
-            }*/
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)

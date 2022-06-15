@@ -26,11 +26,6 @@ namespace PL
             this.iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, CustomColor.White);
             
         }
-
-        private void Article_Load(object sender, EventArgs e)
-        {
-        }
-
         private void iconButton1_Click(object sender, EventArgs e)
         {            
             Main.mainInstance.OpenChildForm(new DetailsTab(this.labelNameArticle.Text, this.description, this.pictureBox1.Image, "ShopTabProduct"));

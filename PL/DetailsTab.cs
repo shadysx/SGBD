@@ -37,9 +37,13 @@ namespace PL
 
             if (this.fromParent == "ShopTabProduct")
             {
-                List<Stock> stocks = BLLDetailsTab.GetStock(productName);
-                DisplayProducts(stocks);
-            }
+                try
+                {
+                    List<Stock> stocks = BLLDetailsTab.GetStock(productName);
+                    DisplayProducts(stocks);
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                           }
             else if(this.fromParent == "BasketItem")
             {
                 labelAvailable.Visible = false;

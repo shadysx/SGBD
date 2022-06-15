@@ -47,7 +47,6 @@
             this.labelUsername.Size = new System.Drawing.Size(49, 19);
             this.labelUsername.TabIndex = 0;
             this.labelUsername.Text = "Pseudo";
-            this.labelUsername.Click += new System.EventHandler(this.labelUsername_Click);
             // 
             // labelEmail
             // 
@@ -58,7 +57,6 @@
             this.labelEmail.Size = new System.Drawing.Size(39, 19);
             this.labelEmail.TabIndex = 1;
             this.labelEmail.Text = "Email";
-            this.labelEmail.Click += new System.EventHandler(this.labelEmail_Click);
             // 
             // labelName
             // 
@@ -69,7 +67,6 @@
             this.labelName.Size = new System.Drawing.Size(51, 19);
             this.labelName.TabIndex = 2;
             this.labelName.Text = "Prenom";
-            this.labelName.Click += new System.EventHandler(this.labelName_Click);
             // 
             // labelLastName
             // 
@@ -80,7 +77,6 @@
             this.labelLastName.Size = new System.Drawing.Size(35, 19);
             this.labelLastName.TabIndex = 3;
             this.labelLastName.Text = "Nom";
-            this.labelLastName.Click += new System.EventHandler(this.labelLastName_Click);
             // 
             // labelRole
             // 
@@ -91,7 +87,6 @@
             this.labelRole.Size = new System.Drawing.Size(33, 19);
             this.labelRole.TabIndex = 4;
             this.labelRole.Text = "Role";
-            this.labelRole.Click += new System.EventHandler(this.labelRole_Click);
             // 
             // iconButton1
             // 
@@ -153,7 +148,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "User";
             this.Text = "User";
-            this.Load += new System.EventHandler(this.User_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

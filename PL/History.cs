@@ -46,8 +46,13 @@ namespace PL
 
             this.flowLayoutPanel1.BackColor = CustomColor.DarkBlue;
 
-            this.listHistory = DLLHistory.SelectAllHistoryPurchaseDTO(Auth.CurrentUser.ID_ACCOUNT);
-            DisplayProducts(listHistory);
+            try
+            {
+                this.listHistory = DLLHistory.SelectAllHistoryPurchaseDTO(Auth.CurrentUser.ID_ACCOUNT);
+                DisplayProducts(listHistory);
+
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         public void AddProduct(int idAccount, int idOrdered, DateTime date, decimal totalPrice, int totalQuantity)
@@ -78,17 +83,15 @@ namespace PL
                 this.flowLayoutPanel1.Controls.Add(historyPurchase);
 
 
-
-                List<Item> items = DLLHistory.SelectAllItem(idOrdered);
-                DisplaySubProducts(items);
-
+                try
+                {
+                    List<Item> items = DLLHistory.SelectAllItem(idOrdered);
+                    DisplaySubProducts(items);
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
 
                 historyPurchase.Show();
             }
-            
-
-
-
         }
 
         private void AddProduct(int iD_ORDERED, int iD_ORDER_LINE, int oRDER_LINE_QUANTITY, decimal oRDER_LINE_BUYING_PRICE, int iD_SHOP,
@@ -107,7 +110,6 @@ namespace PL
             foreach (Item i in itemsList)
             {
                 AddProduct(i.ID_ORDERED, i.ID_ORDER_LINE, i.ORDER_LINE_QUANTITY, i.ORDER_LINE_BUYING_PRICE, i.ID_SHOP, i.SHOP_NAME, i.SHOP_ADDRESS, i.SHOP_CITY, i.SHOP_COUNTRY, i.ID_PRODUCT, i.PRODUCT_NAME, i.PRODUCT_TYPE, i.PRODUCT_DESCRIPTION, i.PRODUCT_IMAGE);
-                
             }
         }
 
@@ -119,7 +121,5 @@ namespace PL
                 AddProduct(h.ID_ACCOUNT, h.ID_ORDERED, h.ORDERED_DATE, h.TOTAL_PRICE, h.TOTAL_QUANTITY);
             }
         }
-
-
     }
 }

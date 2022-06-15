@@ -51,8 +51,6 @@ namespace PL
             {
                 MessageBox.Show(ex.Message);
             }
-
-            
         }
 
         private void DisplayShop(List<Shop> shops)
@@ -219,9 +217,7 @@ namespace PL
                             isBookUnvalidate = true;
                         }
                     }
-
                 }
-
             }
 
             if (this.textBoxConfirmPassword.Text != this.textBoxPassword.Text)
@@ -230,8 +226,6 @@ namespace PL
                 errorProviderConfirmPassword.SetError(this.textBoxConfirmPassword, "Passwords are different !");
                 isPasswordDifferent = true;
             }
-
-
 
 
             // Lance l'INSERT
@@ -253,9 +247,7 @@ namespace PL
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
-
         }
 
         private void ResetErrorProviderEmployee()
@@ -268,8 +260,6 @@ namespace PL
             this.errorProviderLastName.SetError(textBoxLastName, null);
             this.errorProviderFirstName.SetError(textBoxFirstName, null);
             this.errorProviderCountry.SetError(textBoxCountry, null);
-
-            
         }
 
         private void ResetErrorProviderShop()
@@ -370,13 +360,6 @@ namespace PL
                 }
             }
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
 
         private void FilterAccounts()
         {

@@ -38,36 +38,6 @@ namespace PL
             Main.mainInstance.OpenChildForm(new ModifyUser(id));
         }
 
-        private void labelEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelLastName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelRole_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelUsername_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void User_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void iconButton2_Click(object sender, EventArgs e)
         {
             DialogResult r = MessageBox.Show("Are you sure you want to delete this account ?", "Validation", MessageBoxButtons.OKCancel);
