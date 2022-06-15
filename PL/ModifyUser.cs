@@ -21,7 +21,7 @@ namespace PL
             InitializeComponent();
             this.BackColor = CustomColor.DarkBlue;
             this.editingAccount = BLL.BLLAdminPanel.GetAccountByID(accountID);
-            
+
 
             this.labelEditing.ForeColor = Color.White;
             this.labelAccountUsername.ForeColor = CustomColor.Orange;
@@ -33,31 +33,31 @@ namespace PL
             this.textBoxEmail.Text = editingAccount.ACCOUNT_EMAIL;
             this.textBoxUsername.Text = editingAccount.ACCOUNT_USERNAME;
             this.textBoxFirstName.Text = editingAccount.ACCOUNT_FIRST_NAME;
-            this.textBoxLastName.Text = editingAccount.ACCOUNT_LAST_NAME;            
+            this.textBoxLastName.Text = editingAccount.ACCOUNT_LAST_NAME;
             this.datePicker.Value = editingAccount.ACCOUNT_BIRTH_DATE;
-            this.textBoxAddress.Text = editingAccount.ACCOUNT_ADDRESS; 
+            this.textBoxAddress.Text = editingAccount.ACCOUNT_ADDRESS;
             this.textBoxCity.Text = editingAccount.ACCOUNT_CITY;
             this.textBoxPostalCode.Text = editingAccount.ACCOUNT_POSTAL_CODE;
             this.textBoxCountry.Text = editingAccount.ACCOUNT_COUNTRY;
 
             this.comboBoxRole.DataSource = new List<string>() { "ADMIN", "EMPLOYEE", "CLIENT" };
 
-            if(editingAccount.ACCOUNT_ROLE == "EMPLOYEE")
+            if (editingAccount.ACCOUNT_ROLE == "EMPLOYEE")
                 this.comboBoxRole.SelectedIndex = 1;
             else if (editingAccount.ACCOUNT_ROLE == "CLIENT")
                 this.comboBoxRole.SelectedIndex = 2;
-            
+
 
             if (this.editingAccount.ID_SHOP > 0)
-            {                
+            {
                 this.comboBoxShop.Visible = true;
                 Shop shop = BLL.BLLAdminPanel.GetShopInfo(this.editingAccount.ID_SHOP);
-                List<string> shopNames = BLL.BLLAdminPanel.GetShopNameList();             
-                
+                List<string> shopNames = BLL.BLLAdminPanel.GetShopNameList();
+
                 this.comboBoxShop.DataSource = shopNames;
                 this.comboBoxShop.SelectedIndex = shopNames.IndexOf(shop.SHOP_NAME);
-                
-                
+
+
             }
 
 
@@ -65,7 +65,7 @@ namespace PL
 
         private void comboBoxRole_SelectedValueChanged(object sender, EventArgs e)
         {
-            
+
             if (comboBoxRole.SelectedValue.ToString() == "EMPLOYEE")
             {
                 this.comboBoxShop.Visible = true;
@@ -75,7 +75,7 @@ namespace PL
             {
                 this.comboBoxShop.Visible = false;
             }
-        }      
+        }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
@@ -86,14 +86,14 @@ namespace PL
         private void buttonModify_Click(object sender, EventArgs e)
         {
             // FONCTION POUR L'ENREGISTREMENT D'UN USER
-            
-            List <Account> accounts = BLLModifyUser.SelectAllAccounts();
+
+            List<Account> accounts = BLLModifyUser.SelectAllAccounts();
 
             // Reset de valeurs
 
             bool isDuplicated = false;
             bool isBookUnvalidate = false;
-            bool isPasswordDifferent = false;            
+            bool isPasswordDifferent = false;
 
             //Reset des erreurs
             ResetErrorProvider();
@@ -103,7 +103,7 @@ namespace PL
                 tb.StateCommon.Border.Color1 = Color.Black;
 
             this.datePicker.StateCommon.Border.Color1 = Color.Black;
-            
+
 
             // Creation d'un account DTO avec les textBox
             Account newAccount = new Account
@@ -127,13 +127,14 @@ namespace PL
             if (newAccount.ACCOUNT_ROLE == "EMPLOYEE")
                 idShop = BLLAdminPanel.GetShopIDByName(this.comboBoxShop.SelectedItem.ToString());
 
-            if(idShop != 0)
+            if (idShop != 0)
                 newAccount.ID_SHOP = idShop;
 
-            if( !(editingAccount.ACCOUNT_USERNAME == newAccount.ACCOUNT_USERNAME) || !(editingAccount.ACCOUNT_EMAIL == newAccount.ACCOUNT_EMAIL) )
+
+            // Check des doublons
+            foreach (Account a in accounts)
             {
-                // Check des doublons
-                foreach (Account a in accounts)
+                if (editingAccount.ACCOUNT_USERNAME != newAccount.ACCOUNT_USERNAME)
                 {
                     if (a.ACCOUNT_USERNAME.ToLower() == newAccount.ACCOUNT_USERNAME.ToLower())
                     {
@@ -141,7 +142,10 @@ namespace PL
                         this.textBoxUsername.StateCommon.Border.Color1 = Color.Red;
                         isDuplicated = true;
                     }
+                }
 
+                if (editingAccount.ACCOUNT_EMAIL != newAccount.ACCOUNT_EMAIL)
+                {
                     if (a.ACCOUNT_EMAIL.ToLower() == newAccount.ACCOUNT_EMAIL.ToLower())
                     {
                         errorProviderEmail.SetError(textBoxEmail, "This Email already exist");
@@ -149,8 +153,10 @@ namespace PL
                         isDuplicated = true;
                     }
                 }
+
             }
-            
+
+
 
 
             // Check à l'aide du RulesBook
@@ -257,7 +263,7 @@ namespace PL
             // Lance l'INSERT
             if (!isDuplicated && !isBookUnvalidate && !isPasswordDifferent)
             {
-                
+
                 try
                 {
                     newAccount.ACCOUNT_PASSWORD = Auth.ComputeSha256Hash(newAccount.ACCOUNT_PASSWORD);
@@ -267,12 +273,12 @@ namespace PL
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                }                                  
+                }
 
                 foreach (ComponentFactory.Krypton.Toolkit.KryptonTextBox tb in this.Controls.OfType<ComponentFactory.Krypton.Toolkit.KryptonTextBox>())
                     tb.Text = "";
 
-                MessageBox.Show("Modification de l'utilisateur effectuée avec succès");                
+                MessageBox.Show("Modification de l'utilisateur effectuée avec succès");
                 Dispose();
                 Main.mainInstance.OpenChildForm(new AdminPanel());
             }

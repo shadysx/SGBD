@@ -30,11 +30,17 @@ namespace DAL
 
             return shopInfo;
         }
+
+
+
+
+        // PROCEDURE 38
+
         public static List<string> GetShopNameList()
         {
             List<string> list = new List<string>();
 
-            string query = $"select SHOP_NAME from SHOP";
+            string query = $"execute GetShopNameList";
 
             using (var connexion = CON_MGR.Connection())
                 ////= SQL directe
@@ -50,11 +56,13 @@ namespace DAL
 
         }
 
+        // PROCEDURE 39
+
         public static int GetShopIDByName(string shopName)
         {
             int id = 0;
 
-            string query = $"select ID_SHOP from SHOP where SHOP_NAME = '{shopName}'";
+            string query = $"Execute GetShopIDByName '{shopName}'";
 
             using (var connexion = CON_MGR.Connection())
                 ////= SQL directe
@@ -70,9 +78,11 @@ namespace DAL
 
         }
 
+        // PROCEDURE 40
+
         public static void InsertNewShop(Shop shop)
         {
-            string query = $"INSERT INTO SHOP VALUES(@SHOP_NAME, @SHOP_ADDRESS, @SHOP_POSTAL_CODE, @SHOP_CITY, @SHOP_COUNTRY)";
+            string query = $"EXECUTE InsertNewShop @SHOP_NAME, @SHOP_ADDRESS, @SHOP_POSTAL_CODE, @SHOP_CITY, @SHOP_COUNTRY";
             using (var connexion = CON_MGR.Connection())
                 ////= SQL directe
                 try
@@ -85,13 +95,15 @@ namespace DAL
                 }
         }
 
+        // PROCEDURE 41
+
         public static List<Shop> SelectAllShop()
         {
             List<Shop> retval = new List<Shop>();
             using (var connexion = CON_MGR.Connection())                
                 try
                 {
-                    retval = connexion.Query<Shop>("Select * from shop").ToList();
+                    retval = connexion.Query<Shop>("Execute SelectAllShop").ToList();
                 }
                 catch (Exception ex)
                 {
@@ -100,9 +112,10 @@ namespace DAL
             return retval;
         }
 
+        // PROCEDURE 42
         public static List<Shop> SelectAllShopsBy(string by, string value)
         {
-            string query = $"SELECT * FROM SHOP WHERE {by} LIKE lower('%{value}%')";
+            string query = $"Execute SelectAllShopsBy '{by}', '{value}'";
 
             value = value.ToLower();
 
@@ -121,12 +134,14 @@ namespace DAL
             return retVal;
         }
 
+        // PROCEDURE 43
+
         public static void DeleteShop(int idShop)
         {
             using (var connexion = CON_MGR.Connection())
             try
             {
-                connexion.Execute($"delete from shop where ID_SHOP = {idShop}");
+                connexion.Execute($"Execute DeleteShop {idShop}");
             }
             catch (Exception ex)
             {
@@ -134,42 +149,19 @@ namespace DAL
             }
         }
 
+        // PROCEDURE 44
+
         public static void UpdateShop(Shop shop)
         {
             using (var connexion = CON_MGR.Connection())
                 try
                 {
-                    connexion.Execute($"Update Shop set SHOP_NAME = @SHOP_NAME , SHOP_ADDRESS = @SHOP_ADDRESS, SHOP_COUNTRY = @SHOP_COUNTRY, SHOP_POSTAL_CODE = @SHOP_POSTAL_CODE, SHOP_CITY = @SHOP_CITY where ID_SHOP = @ID_SHOP",shop);
+                    connexion.Execute($"Execute UpdateShop @SHOP_NAME, @SHOP_ADDRESS, @SHOP_POSTAL_CODE, @SHOP_CITY, @SHOP_COUNTRY, @ID_SHOP",shop);
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
         }
-
-
-
-        // PROCEDURE 27
-        // 
-        /*public static ShopInfo GetShopInfo(int shopID)
-        {
-            ShopInfo shopInfo = new ShopInfo();
-
-            string query = $"select * from SHOP where ID_SHOP = {shopID}";
-
-            using (var connexion = CON_MGR.Connection())
-                ////= SQL directe
-                try
-                {
-                    shopInfo = connexion.Query<ShopInfo>(query).Single();
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-            return shopInfo;
-        }*/
-
     }
 }
