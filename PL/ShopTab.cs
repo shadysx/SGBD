@@ -26,21 +26,23 @@ namespace PL
 
             List<string> orderByWhat = new List<string>() {"Prix Croissant", "Prix Décroissant", "A-Z", "Z-A"};
             List<string> types = new List<string>();
-            types.Add("Tous");
 
-            this.comboBoxSearchByType.DataSource = types;
-            this.comboBoxOrderBy.DataSource = orderByWhat;
-            this.rjButton1.BackColor = CustomColor.Orange;            
-            
+                        
 
 
             try
             {
+                List<DTO.Product> products = BLLShopTab.Select20RandomProducts();
+                DisplayProducts(products);
+                types.Add("Tous");
                 foreach (string type in BLLShopTab.SelectAllProductTypes())
                     types.Add(type);
 
-                List<DTO.Product> products = BLLShopTab.Select20RandomProducts();
-                DisplayProducts(products);
+
+                this.comboBoxSearchByType.DataSource = types;
+                this.comboBoxOrderBy.DataSource = orderByWhat;
+                this.rjButton1.BackColor = CustomColor.Orange;            
+
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 

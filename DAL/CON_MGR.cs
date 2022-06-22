@@ -12,7 +12,7 @@ namespace DAL
     {
         public static IDbConnection Connection()
         {
-            return new SqlConnection(@"Data Source=shady.ddns.net;Initial Catalog=DB_SGB_PROJECT_V2-1;Persist Security Info=True;User ID=sa;Password=this=Password**");
+            return new SqlConnection(@"Data Source = (local)\SQLEXPRESS; Initial Catalog = DB_SGB_PROJECT_V2-1; Integrated Security = True");
         }
         
     }
